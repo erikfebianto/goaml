@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "goAML", "http://localhost/goAML", "{008205C3-54C4-4F37-A160-7491D5E5AE48}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/goAML"
+		Debug.AspNetCompiler.PhysicalPath = "..\Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\goAML\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/goAML"
+		Release.AspNetCompiler.PhysicalPath = "..\Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\goAML\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\Web\"
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NawaDevBLL", "NawaDevBLL\NawaDevBLL.vbproj", "{4589DD81-6752-47C7-B788-F721D1383658}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NawaDevDAL", "NawaDevDAL\NawaDevDAL.vbproj", "{A9E082D0-5C61-470D-84BE-F6246EF92458}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{008205C3-54C4-4F37-A160-7491D5E5AE48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008205C3-54C4-4F37-A160-7491D5E5AE48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008205C3-54C4-4F37-A160-7491D5E5AE48}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{008205C3-54C4-4F37-A160-7491D5E5AE48}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4589DD81-6752-47C7-B788-F721D1383658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4589DD81-6752-47C7-B788-F721D1383658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4589DD81-6752-47C7-B788-F721D1383658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4589DD81-6752-47C7-B788-F721D1383658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9E082D0-5C61-470D-84BE-F6246EF92458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E082D0-5C61-470D-84BE-F6246EF92458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E082D0-5C61-470D-84BE-F6246EF92458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E082D0-5C61-470D-84BE-F6246EF92458}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {748DA43C-7EFA-475C-BBDF-AF8E5A70F29B}
+	EndGlobalSection
+EndGlobal

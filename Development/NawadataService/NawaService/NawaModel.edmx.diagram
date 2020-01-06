@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eeb18b53ba0148469cc6aab570b9b59b" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="NawaDataModel.EODScheduler" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODSchedulerDetail" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODSchedulerLog" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTask" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTaskDetailLog" Width="2.25" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTaskDetailType" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTaskLog" Width="1.5" PointX="9.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.LogConsoleService" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.SystemParameter" Width="1.5" PointX="11.72786090510332" PointY="3.0870079710553435" />
+        <EntityTypeShape EntityType="NawaDataModel.NawadataConnectionString" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTaskDetail" Width="1.875" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NawaDataModel.GeneratedFileList" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="NawaDataModel.GenerateFileTemplate" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="NawaDataModel.Vw_GeneratedFileList" Width="1.5" PointX="11.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,638 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/27/2019 6:30:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HENDRA"
+  DTS:CreatorName="HENDRA\nawadata"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{B9030769-3097-417E-8753-0D3CE1387C67}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="STG M CIF MDM"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{2AF003E9-483B-4E94-929C-D8A1C58C6AEC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AntasenaConnection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BA45C4EE-0B78-4D4B-A16C-1A5DBB04BB67}"
+      DTS:ObjectName="AntasenaConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=HENDRA;Initial Catalog=DemoAntasena4;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2D49E2D8-3515-4989-AA4C-396F0764E5D7}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Project\AntasenaBTPN\STG M CIF MDM.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUSS_DATE"
+              DTS:DTSID="{16411FB2-91CE-489D-BC2B-FC3F557FD85E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CIF"
+              DTS:DTSID="{8FE972B9-C1E9-42DE-833A-C1214AD1E5DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CRN"
+              DTS:DTSID="{C6E88B13-40EE-44D9-8B32-F27C9B4899BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BRANCH"
+              DTS:DTSID="{8182BBEE-E36A-4347-A103-BC778B1EACC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOURCE_CODE"
+              DTS:DTSID="{E57BB917-7D85-4F26-B452-172955DCF710}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;AntasenaConnection&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;STG M CIF MDM&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{50A23304-D128-408F-A9FC-10F6057CD7EA}"
+      DTS:ObjectName="STG M CIF MDM" />
+  </DTS:Configurations>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{277FFFB6-D58E-41C0-99A7-70ED2291E6CA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - STG M CIF MDM"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - STG M CIF MDM"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_M_CIF_MDM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AntasenaConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AntasenaConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].Columns[BUSS_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BUSS_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[BUSS_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].Columns[CIF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CIF"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[CIF]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[CIF]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].Columns[CRN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CRN"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[CRN]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[CRN]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].Columns[BRANCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BRANCH"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[BRANCH]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[BRANCH]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].Columns[SOURCE_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SOURCE_CODE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[SOURCE_CODE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[SOURCE_CODE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[CRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CRN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input].ExternalColumns[SOURCE_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SOURCE_CODE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - STG M CIF MDM_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[BUSS_DATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]"
+                      name="BUSS_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[CIF]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[CIF]"
+                      name="CIF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[CRN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[CRN]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[CRN]"
+                      name="CRN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[BRANCH]"
+                      name="BRANCH"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[SOURCE_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[SOURCE_CODE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].Columns[SOURCE_CODE]"
+                      name="SOURCE_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[CRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CRN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output].ExternalColumns[SOURCE_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SOURCE_CODE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - STG M CIF MDM.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - STG M CIF MDM_txt.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{3493A8E7-1F53-48B6-8CEF-4F09B23CDA0B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BA45C4EE-0B78-4D4B-A16C-1A5DBB04BB67}"
+          SQLTask:SqlStatementSource="truncate table [STG_M_CIF_MDM]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{52DDD0E2-BB05-4566-B803-7BFF07AED276\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{52DDD0E2-BB05-4566-B803-7BFF07AED276}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{52DDD0E2-BB05-4566-B803-7BFF07AED276}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task 1"
+          TopLeft="20.8333333333334,108.166666666667" />
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Preparation SQL Task 1"
+          TopLeft="5.50000000000001,5.50000000000004" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{52DDD0E2-BB05-4566-B803-7BFF07AED276\}]"
+          TopLeft="102.166666666667,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="224,42.6666666666667"
+          Id="Package\Data Flow Task 1\Destination - STG M CIF MDM"
+          TopLeft="5.50000000000001,108.166666666667" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task 1\Source - STG M CIF MDM_txt"
+          TopLeft="6.83333333333334,5.50000000000004" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="117.5,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - STG M CIF MDM">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

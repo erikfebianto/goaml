@@ -1,0 +1,1031 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/27/2019 6:24:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HENDRA"
+  DTS:CreatorName="HENDRA\nawadata"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{F11D0435-E7EF-4FFA-85EF-BAACFD774DD7}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="ParRating"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{F0F42BB6-4F66-4AF6-AAAA-6DACD99C454C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AntasenaConnection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FEE1903E-8E75-4239-BF00-C0080CFF2F45}"
+      DTS:ObjectName="AntasenaConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=HENDRA;Initial Catalog=DemoAntasena4;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{ABFF871D-2D88-46AC-A215-5E7879F22FDF}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Project\AntasenaBTPN\PAR_RATING.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUSS_DATE"
+              DTS:DTSID="{54A94390-C6C8-4F29-984E-396494150492}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BRANCH"
+              DTS:DTSID="{6E876571-A7B8-4C1A-BB6B-C7121BF068B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BRANCH_NAME"
+              DTS:DTSID="{9F93A1C0-A137-4DCF-8BDD-258A16289D62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LBU_FORM"
+              DTS:DTSID="{A46E3C95-947F-4FEF-BFF6-C127C3926C12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACCOUNT_TYPE"
+              DTS:DTSID="{12B07E77-FB25-4913-B462-852D4E8B2B0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACCOUNT_DESCRIPTION"
+              DTS:DTSID="{D3F410A8-394E-45DB-A9B1-C8FFB068A5AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CIF"
+              DTS:DTSID="{9B77738A-9CC4-41DD-9EE5-CA60E928BF3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUST_FULL_NAME"
+              DTS:DTSID="{F6FFF383-A679-4E6D-8E4D-372EB0085C32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LEMBAGA_PEMERINGKAT"
+              DTS:DTSID="{AF500F2A-A563-4238-81E1-4AE350E3741F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PERINGKAT_DEBITUR"
+              DTS:DTSID="{81769FB8-703F-40C2-A722-F82B399F6D37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TANGGAL_PEMERINGKATAN"
+              DTS:DTSID="{32FE8308-7151-4C17-A5C3-BE8E8FF7CE97}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="KETERANGAN"
+              DTS:DTSID="{AB91C934-98B2-4B37-A05C-13109B145017}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOURCE_SYSTEM"
+              DTS:DTSID="{A1A01085-5AB1-496E-B73C-68BD44109BE1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;AntasenaConnection&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;ParRating&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{70A39D40-A4D9-4EA2-9968-AD026301B72B}"
+      DTS:ObjectName="ParRating" />
+  </DTS:Configurations>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{E3873562-95E1-4643-BB10-1337103946AA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - PAR_RATING"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - PAR_RATING"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PAR_RATING]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - PAR_RATING.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AntasenaConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AntasenaConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[BUSS_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BUSS_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[BUSS_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[BRANCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BRANCH"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[BRANCH]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BRANCH]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[BRANCH_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BRANCH_NAME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[BRANCH_NAME]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BRANCH_NAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[LBU_FORM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LBU_FORM"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[LBU_FORM]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[LBU_FORM]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[ACCOUNT_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACCOUNT_TYPE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[ACCOUNT_TYPE]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_TYPE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[ACCOUNT_DESCRIPTION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACCOUNT_DESCRIPTION"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[ACCOUNT_DESCRIPTION]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[CIF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CIF"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[CIF]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[CIF]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[CUST_FULL_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CUST_FULL_NAME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[CUST_FULL_NAME]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[CUST_FULL_NAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[LEMBAGA_PEMERINGKAT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LEMBAGA_PEMERINGKAT"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[LEMBAGA_PEMERINGKAT]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[LEMBAGA_PEMERINGKAT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[PERINGKAT_DEBITUR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PERINGKAT_DEBITUR"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[PERINGKAT_DEBITUR]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[PERINGKAT_DEBITUR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[TANGGAL_PEMERINGKATAN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TANGGAL_PEMERINGKATAN"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[TANGGAL_PEMERINGKATAN]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[TANGGAL_PEMERINGKATAN]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[KETERANGAN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="KETERANGAN"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[KETERANGAN]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[KETERANGAN]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].Columns[SOURCE_SYSTEM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SOURCE_SYSTEM"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[SOURCE_SYSTEM]"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[SOURCE_SYSTEM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[BRANCH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[LBU_FORM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LBU_FORM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[ACCOUNT_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACCOUNT_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[ACCOUNT_DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACCOUNT_DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[CUST_FULL_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUST_FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[LEMBAGA_PEMERINGKAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LEMBAGA_PEMERINGKAT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[PERINGKAT_DEBITUR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PERINGKAT_DEBITUR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[TANGGAL_PEMERINGKATAN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TANGGAL_PEMERINGKATAN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[KETERANGAN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="KETERANGAN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input].ExternalColumns[SOURCE_SYSTEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SOURCE_SYSTEM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - PAR_RATING.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - PAR_RATING.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - PAR_RATING.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - PAR_RATING.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - PAR_RATING_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - PAR_RATING_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[BUSS_DATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]"
+                      name="BUSS_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BRANCH]"
+                      name="BRANCH"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BRANCH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH_NAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[BRANCH_NAME]"
+                      name="BRANCH_NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[LBU_FORM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[LBU_FORM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[LBU_FORM]"
+                      name="LBU_FORM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[ACCOUNT_TYPE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_TYPE]"
+                      name="ACCOUNT_TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[ACCOUNT_DESCRIPTION]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_DESCRIPTION]"
+                      name="ACCOUNT_DESCRIPTION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[CIF]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[CIF]"
+                      name="CIF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[CUST_FULL_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[CUST_FULL_NAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[CUST_FULL_NAME]"
+                      name="CUST_FULL_NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[LEMBAGA_PEMERINGKAT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[LEMBAGA_PEMERINGKAT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[LEMBAGA_PEMERINGKAT]"
+                      name="LEMBAGA_PEMERINGKAT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[PERINGKAT_DEBITUR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[PERINGKAT_DEBITUR]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[PERINGKAT_DEBITUR]"
+                      name="PERINGKAT_DEBITUR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[TANGGAL_PEMERINGKATAN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[TANGGAL_PEMERINGKATAN]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[TANGGAL_PEMERINGKATAN]"
+                      name="TANGGAL_PEMERINGKATAN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[KETERANGAN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[KETERANGAN]"
+                      length="8000"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[KETERANGAN]"
+                      name="KETERANGAN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[SOURCE_SYSTEM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[SOURCE_SYSTEM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].Columns[SOURCE_SYSTEM]"
+                      name="SOURCE_SYSTEM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[LBU_FORM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LBU_FORM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[ACCOUNT_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACCOUNT_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[ACCOUNT_DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACCOUNT_DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[CUST_FULL_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUST_FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[LEMBAGA_PEMERINGKAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LEMBAGA_PEMERINGKAT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[PERINGKAT_DEBITUR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PERINGKAT_DEBITUR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[TANGGAL_PEMERINGKATAN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TANGGAL_PEMERINGKATAN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[KETERANGAN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="KETERANGAN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output].ExternalColumns[SOURCE_SYSTEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SOURCE_SYSTEM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - PAR_RATING.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - PAR_RATING_txt.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{1FD0F46F-8C8E-42B5-AAF2-211E63CE2D33}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FEE1903E-8E75-4239-BF00-C0080CFF2F45}"
+          SQLTask:SqlStatementSource="truncate table [PAR_RATING]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{63574495-8744-40EF-B3F8-918A5C9E1349\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{63574495-8744-40EF-B3F8-918A5C9E1349}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{63574495-8744-40EF-B3F8-918A5C9E1349}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task 1"
+          TopLeft="20.8333333333334,108.166666666667" />
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Preparation SQL Task 1"
+          TopLeft="5.50000000000001,5.50000000000004" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{63574495-8744-40EF-B3F8-918A5C9E1349\}]"
+          TopLeft="102.166666666667,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package\Data Flow Task 1\Source - PAR_RATING_txt"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package\Data Flow Task 1\Destination - PAR_RATING"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

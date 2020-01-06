@@ -1,0 +1,54 @@
+﻿<%@ Master Language="VB" CodeFile="Site1.master.vb" Inherits="Site1" %>
+<%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
+<!DOCTYPE html>
+
+<html style="width: 100%; height: 100%;">
+
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="<%= Page.ResolveClientUrl("~/Styles/Site.Master.css") %>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/Form.Master.js") %>"></script>
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+
+            Ext.Ajax.timeout = 3600000;
+            Ext.net.DirectEvent.timeout = 3600000;
+            Ext.override(Ext.form.Basic, { timeout: Ext.Ajax.timeout / 1000 });
+            Ext.override(Ext.data.proxy.Server, { timeout: Ext.Ajax.timeout });
+            Ext.override(Ext.data.Connection, { timeout: Ext.Ajax.timeout });
+        });
+
+
+    </script>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+        <div>
+
+            <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Crisp" DirectMethodNamespace="NawadataDirect" ShowWarningOnAjaxFailure="false">
+            </ext:ResourceManager>
+
+            <ext:Viewport ID="Panel1" runat="server" Layout="FitLayout">
+                <Items>
+                    
+                    
+                </Items>
+                <Content>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                </Content>
+            </ext:Viewport>
+
+        </div>
+    </form>
+
+</body>

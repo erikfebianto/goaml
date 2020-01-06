@@ -1,0 +1,1781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NawaDevDAL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuditTrail_UserAccess">
+    <Key>
+      <PropertyRef Name="PK_UserAccessID" />
+    </Key>
+    <Property Name="PK_UserAccessID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Userid" Type="varchar" MaxLength="150" />
+    <Property Name="ActionDate" Type="datetime" />
+    <Property Name="Action" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="AuditTrail_UserLogin">
+    <Key>
+      <PropertyRef Name="UserLoginID" />
+    </Key>
+    <Property Name="UserLoginID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserLoginUserid" Type="varchar" MaxLength="150" />
+    <Property Name="UserLoginActionDate" Type="datetime" />
+    <Property Name="UserLoginAction" Type="varchar" MaxLength="50" />
+    <Property Name="UserLoginIPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="UserLoginDescription" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="AuditTrailDetail">
+    <Key>
+      <PropertyRef Name="PK_AuditTrailDetail_id" />
+    </Key>
+    <Property Name="PK_AuditTrailDetail_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_AuditTrailHeader_ID" Type="bigint" />
+    <Property Name="FieldName" Type="varchar" MaxLength="100" />
+    <Property Name="OldValue" Type="varchar(max)" />
+    <Property Name="NewValue" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="AuditTrailHeader">
+    <Key>
+      <PropertyRef Name="PK_AuditTrail_ID" />
+    </Key>
+    <Property Name="PK_AuditTrail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApproveBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleLabel" Type="varchar" MaxLength="100" />
+    <Property Name="FK_ModuleAction_ID" Type="int" />
+    <Property Name="FK_AuditTrailStatus_ID" Type="int" />
+    <Property Name="PK_ModuleApproval_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AuditTrailStatus">
+    <Key>
+      <PropertyRef Name="Pk_AuditTrailStatus_ID" />
+    </Key>
+    <Property Name="Pk_AuditTrailStatus_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuditTrailStatusName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CleansingReport">
+    <Key>
+      <PropertyRef Name="PK_Record_ID" />
+    </Key>
+    <Property Name="PK_Record_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Report_Date" Type="datetime" />
+    <Property Name="Kode_Cabang_BI" Type="varchar" MaxLength="50" />
+    <Property Name="SegmentData" Type="varchar" MaxLength="100" />
+    <Property Name="CleansingRules" Type="varchar(max)" />
+    <Property Name="KeyField" Type="varchar" MaxLength="100" />
+    <Property Name="KeyFieldValue" Type="varchar" MaxLength="1000" />
+    <Property Name="NamaField" Type="varchar" MaxLength="255" />
+    <Property Name="OriginalValue" Type="varchar(max)" />
+    <Property Name="CleanedValue" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="UniqueField" Type="varchar" MaxLength="50" />
+    <Property Name="UniqueValue" Type="varchar" MaxLength="500" />
+    <Property Name="ModuleID" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="50" />
+    <Property Name="Clean" Type="bit" />
+    <Property Name="Keep" Type="bit" />
+    <Property Name="FieldName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ELMAH_Error">
+    <Key>
+      <PropertyRef Name="ErrorId" />
+    </Key>
+    <Property Name="ErrorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Application" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Host" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Source" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusCode" Type="int" Nullable="false" />
+    <Property Name="TimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="Sequence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AllXml" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailStatus">
+    <Key>
+      <PropertyRef Name="PK_EmailStatus_ID" />
+    </Key>
+    <Property Name="PK_EmailStatus_ID" Type="int" Nullable="false" />
+    <Property Name="EmailStatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmailTemplate">
+    <Key>
+      <PropertyRef Name="PK_EmailTemplate_ID" />
+    </Key>
+    <Property Name="PK_EmailTemplate_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailTemplateName" Type="varchar" MaxLength="550" />
+    <Property Name="EmailTo" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailCC" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailBCC" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailSubject" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailBody" Type="varchar(max)" />
+    <Property Name="FK_Monitoringduration_ID" Type="int" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="StartTime" Type="varchar" MaxLength="50" />
+    <Property Name="ExcludeHoliday" Type="bit" />
+    <Property Name="IsSupportEmail" Type="bit" />
+    <Property Name="IsSupportNotification" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmailTemplateDetail">
+    <Key>
+      <PropertyRef Name="PK_EmailTemplateDetail_ID" />
+    </Key>
+    <Property Name="PK_EmailTemplateDetail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_EmailTemplate_ID" Type="int" />
+    <Property Name="Replacer" Type="varchar" MaxLength="550" />
+    <Property Name="FieldReplacer" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="EmailTemplateScheduler">
+    <Key>
+      <PropertyRef Name="PK_EmailTemplateScheduler_ID" />
+    </Key>
+    <Property Name="PK_EmailTemplateScheduler_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PK_EmailTemplate_ID" Type="bigint" />
+    <Property Name="ProcessDate" Type="datetime" />
+    <Property Name="FK_EmailStatus_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="EmailTemplateSchedulerDetail">
+    <Key>
+      <PropertyRef Name="PK_EmailTemplateSchedulerDetail_ID" />
+    </Key>
+    <Property Name="PK_EmailTemplateSchedulerDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_EmailTEmplateScheduler_ID" Type="bigint" />
+    <Property Name="UnikFieldTablePrimary" Type="varchar" MaxLength="500" />
+    <Property Name="EmailTo" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailCC" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailBCC" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailSubject" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailBody" Type="varchar(max)" />
+    <Property Name="ProcessDate" Type="datetime" />
+    <Property Name="SendEmailDate" Type="datetime" />
+    <Property Name="FK_EmailStatus_ID" Type="int" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+    <Property Name="retrycount" Type="int" />
+    <Property Name="EmailID" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="resendByUserCount" Type="int" Nullable="false" />
+    <Property Name="EmailIDReference" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="EODScheduler">
+    <Key>
+      <PropertyRef Name="PK_EODScheduler_ID" />
+    </Key>
+    <Property Name="PK_EODScheduler_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EODSchedulerName" Type="varchar" MaxLength="255" />
+    <Property Name="EODSchedulerDescription" Type="varchar" MaxLength="8000" />
+    <Property Name="HasPeriodikScheduler" Type="bit" />
+    <Property Name="EODPeriod" Type="int" />
+    <Property Name="FK_MsEODPeriod" Type="int" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EODSchedulerDetail">
+    <Key>
+      <PropertyRef Name="PK_EODSchedulerDetail_ID" />
+    </Key>
+    <Property Name="PK_EODSchedulerDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_EODSCheduler_ID" Type="bigint" />
+    <Property Name="FK_EODTask_ID" Type="bigint" />
+    <Property Name="OrderNo" Type="int" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EODSchedulerLog">
+    <Key>
+      <PropertyRef Name="PK_EODSchedulerLog_ID" />
+    </Key>
+    <Property Name="PK_EODSchedulerLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_EODSchedulerID" Type="bigint" />
+    <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+    <Property Name="DataDate" Type="datetime" />
+    <Property Name="ProcessDate" Type="datetime" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="Enddate" Type="datetime" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+    <Property Name="FK_MsEODStatus_ID" Type="int" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="EODTask">
+    <Key>
+      <PropertyRef Name="PK_EODTask_ID" />
+    </Key>
+    <Property Name="PK_EODTask_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EODTaskName" Type="varchar" MaxLength="250" />
+    <Property Name="EODTaskDescription" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EODTaskDetail">
+    <Key>
+      <PropertyRef Name="PK_EODTaskDetail_ID" />
+    </Key>
+    <Property Name="PK_EODTaskDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_EODTask_ID" Type="bigint" />
+    <Property Name="FK_EODTaskDetailType_ID" Type="int" />
+    <Property Name="OrderNo" Type="int" />
+    <Property Name="SSISName" Type="varchar" MaxLength="250" />
+    <Property Name="SSISFIle" Type="varbinary(max)" />
+    <Property Name="StoreProcedureName" Type="varchar" MaxLength="250" />
+    <Property Name="Keterangan" Type="varchar" MaxLength="8000" />
+    <Property Name="IsUseParameterProcessDate" Type="bit" />
+    <Property Name="IsUseParameterBranch" Type="bit" />
+  </EntityType>
+  <EntityType Name="EODTaskDetailLog">
+    <Key>
+      <PropertyRef Name="PK_EODTaskDetailLog_ID" />
+    </Key>
+    <Property Name="PK_EODTaskDetailLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EODSchedulerLogID" Type="bigint" />
+    <Property Name="EODTaskLogID" Type="bigint" />
+    <Property Name="FK_EODTAskDetail_ID" Type="bigint" />
+    <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="Enddate" Type="datetime" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+    <Property Name="FK_MsEODStatus_ID" Type="int" />
+    <Property Name="executionID" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="EODTaskDetailType">
+    <Key>
+      <PropertyRef Name="PK_EODTaskDetailType_ID" />
+    </Key>
+    <Property Name="PK_EODTaskDetailType_ID" Type="int" Nullable="false" />
+    <Property Name="EODTaskDetailType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EODTaskLog">
+    <Key>
+      <PropertyRef Name="PK_EODTaskLog_ID" />
+    </Key>
+    <Property Name="PK_EODTaskLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EODSchedulerLogID" Type="bigint" />
+    <Property Name="FK_EODTaskID" Type="bigint" />
+    <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="Enddate" Type="datetime" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+    <Property Name="FK_MsEODStatus_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="FileSecurity">
+    <Key>
+      <PropertyRef Name="FileSecurityID" />
+    </Key>
+    <Property Name="FileSecurityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileSecurityGroupId" Type="int" />
+    <Property Name="FileSecurityFileName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="GeneratedFileList">
+    <Key>
+      <PropertyRef Name="PK_GeneratedFileList_ID" />
+    </Key>
+    <Property Name="PK_GeneratedFileList_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TanggalData" Type="datetime" />
+    <Property Name="FK_LHBU_FormInfo_ID" Type="varchar" MaxLength="5" />
+    <Property Name="FileName" Type="varchar" MaxLength="250" />
+    <Property Name="FileType" Type="varchar" MaxLength="50" />
+    <Property Name="FileBin" Type="varbinary(max)" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="CompleteDate" Type="smalldatetime" />
+    <Property Name="ErrorMsg" Type="varchar(max)" />
+    <Property Name="Comment" Type="varchar" MaxLength="2000" />
+    <Property Name="GenerationStatus" Type="varchar" MaxLength="20" />
+    <Property Name="ApprovalStatus" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="smalldatetime" />
+    <Property Name="UpdatedDate" Type="smalldatetime" />
+    <Property Name="ApprovedDate" Type="smalldatetime" />
+    <Property Name="SubmitStatus" Type="varchar" MaxLength="50" />
+    <Property Name="SubmitNote" Type="varchar" MaxLength="2000" />
+    <Property Name="TotalData" Type="int" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="10" />
+    <Property Name="FK_Template_ID" Type="int" />
+    <Property Name="Request_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="GenerateFileTemplate">
+    <Key>
+      <PropertyRef Name="PK_GenerationFileTemplate_ID" />
+    </Key>
+    <Property Name="PK_GenerationFileTemplate_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenerateFileTemplateName" Type="varchar" MaxLength="250" />
+    <Property Name="FileNameFormat" Type="varchar" MaxLength="250" />
+    <Property Name="OutputFormat" Type="varchar(max)" />
+    <Property Name="LHBUFormName" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="150" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="FK_DelivMethod_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="GenerateFileTemplateAdditional">
+    <Key>
+      <PropertyRef Name="PK_GenerateFileTemplateAdditional_ID" />
+    </Key>
+    <Property Name="PK_GenerateFileTemplateAdditional_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_GenerationFileTemplate_ID" Type="bigint" />
+    <Property Name="SQLQuery" Type="varchar(max)" />
+    <Property Name="Alias" Type="varchar" MaxLength="150" />
+    <Property Name="UnikField" Type="varchar" MaxLength="150" />
+    <Property Name="OutputFormat" Type="varchar(max)" />
+    <Property Name="TableSource" Type="varchar" MaxLength="150" />
+    <Property Name="TanggalData" Type="varchar" MaxLength="100" />
+    <Property Name="RecordId" Type="varchar" MaxLength="100" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GenerateFileTemplateDetail">
+    <Key>
+      <PropertyRef Name="PK_GenerateFileTemplateDetail_ID" />
+    </Key>
+    <Property Name="PK_GenerateFileTemplateDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_GenerationFileTemplate_ID" Type="int" />
+    <Property Name="Replacer" Type="varchar" MaxLength="250" />
+    <Property Name="FieldReplacer" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="LogConsoleService">
+    <Key>
+      <PropertyRef Name="Pk_LogConsoleService_Id" />
+    </Key>
+    <Property Name="Pk_LogConsoleService_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogCreatedDate" Type="datetime" />
+    <Property Name="LogStatus" Type="varchar" MaxLength="255" />
+    <Property Name="LogInfo" Type="varchar(max)" />
+    <Property Name="LogDescription" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="MenuTemplate">
+    <Key>
+      <PropertyRef Name="mMenuID" />
+    </Key>
+    <Property Name="mMenuID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mMenuLabel" Type="varchar" MaxLength="250" />
+    <Property Name="mMenuParentID" Type="varchar" MaxLength="50" />
+    <Property Name="mMenuURL" Type="varchar" MaxLength="250" />
+    <Property Name="FK_Module_ID" Type="int" />
+    <Property Name="FK_Action_ID" Type="int" />
+    <Property Name="urutan" Type="int" />
+  </EntityType>
+  <EntityType Name="MExtType">
+    <Key>
+      <PropertyRef Name="PK_ExtType_ID" />
+    </Key>
+    <Property Name="PK_ExtType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExtTypeName" Type="varchar" MaxLength="150" />
+    <Property Name="ExtTypeDesc" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="MFieldType">
+    <Key>
+      <PropertyRef Name="PK_FieldType_ID" />
+    </Key>
+    <Property Name="PK_FieldType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FieldTypeCaption" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FieldTypeDescription" Type="varchar" MaxLength="255" />
+    <Property Name="FieldTypeSQLName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FieldTypeNetName" Type="varchar" MaxLength="50" />
+    <Property Name="CodeEffecttype" Type="varchar" MaxLength="50" />
+    <Property Name="CodeEffectNETType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MGroupMenu">
+    <Key>
+      <PropertyRef Name="PK_MGroupMenu_ID" />
+    </Key>
+    <Property Name="PK_MGroupMenu_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupMenuName" Type="varchar" MaxLength="250" />
+    <Property Name="GroupMenuDesciption" Type="varchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+    <Property Name="DataMenu" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="MGroupMenuAccess">
+    <Key>
+      <PropertyRef Name="PK_MGroupMenuAcess_ID" />
+    </Key>
+    <Property Name="PK_MGroupMenuAcess_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_GroupMenu_ID" Type="int" />
+    <Property Name="FK_Module_ID" Type="int" />
+    <Property Name="bAdd" Type="bit" />
+    <Property Name="bEdit" Type="bit" />
+    <Property Name="bDelete" Type="bit" />
+    <Property Name="bActivation" Type="bit" />
+    <Property Name="bView" Type="bit" />
+    <Property Name="bApproval" Type="bit" />
+    <Property Name="bUpload" Type="bit" />
+    <Property Name="bDetail" Type="bit" />
+  </EntityType>
+  <EntityType Name="MGroupMenuSettting">
+    <Key>
+      <PropertyRef Name="PK_MGroupMenuSettting_ID" />
+    </Key>
+    <Property Name="PK_MGroupMenuSettting_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_MGroupMenu_ID" Type="int" />
+    <Property Name="mMenuID" Type="varchar" MaxLength="50" />
+    <Property Name="mMenuLabel" Type="varchar" MaxLength="250" />
+    <Property Name="mMenuParentID" Type="varchar" MaxLength="50" />
+    <Property Name="mMenuURL" Type="varchar" MaxLength="250" />
+    <Property Name="FK_Module_ID" Type="int" />
+    <Property Name="FK_Action_ID" Type="int" />
+    <Property Name="urutan" Type="int" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="PK_Module_ID" />
+    </Key>
+    <Property Name="PK_Module_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="250" />
+    <Property Name="ModuleLabel" Type="varchar" MaxLength="250" />
+    <Property Name="ModuleDescription" Type="varchar" MaxLength="500" />
+    <Property Name="IsUseDesigner" Type="bit" />
+    <Property Name="IsUseApproval" Type="bit" />
+    <Property Name="IsSupportAdd" Type="bit" />
+    <Property Name="IsSupportEdit" Type="bit" />
+    <Property Name="IsSupportDelete" Type="bit" />
+    <Property Name="IsSupportActivation" Type="bit" />
+    <Property Name="IsSupportView" Type="bit" />
+    <Property Name="IsSupportUpload" Type="bit" />
+    <Property Name="IsSupportDetail" Type="bit" />
+    <Property Name="UrlAdd" Type="varchar" MaxLength="550" />
+    <Property Name="UrlEdit" Type="varchar" MaxLength="550" />
+    <Property Name="UrlDelete" Type="varchar" MaxLength="550" />
+    <Property Name="UrlActivation" Type="varchar" MaxLength="550" />
+    <Property Name="UrlView" Type="varchar" MaxLength="550" />
+    <Property Name="UrlUpload" Type="varchar" MaxLength="550" />
+    <Property Name="UrlApproval" Type="varchar" MaxLength="550" />
+    <Property Name="UrlApprovalDetail" Type="varchar" MaxLength="550" />
+    <Property Name="UrlDetail" Type="varchar" MaxLength="550" />
+    <Property Name="IsUseStoreProcedureValidation" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ModuleAction">
+    <Key>
+      <PropertyRef Name="PK_ModuleAction_ID" />
+    </Key>
+    <Property Name="PK_ModuleAction_ID" Type="int" Nullable="false" />
+    <Property Name="ModuleActionName" Type="varchar" MaxLength="250" />
+    <Property Name="ModuleActionDescription" Type="varchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="ModuleApproval">
+    <Key>
+      <PropertyRef Name="PK_ModuleApproval_ID" />
+    </Key>
+    <Property Name="PK_ModuleApproval_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="250" />
+    <Property Name="ModuleKey" Type="varchar" MaxLength="1000" />
+    <Property Name="ModuleField" Type="text" />
+    <Property Name="ModuleFieldBefore" Type="text" />
+    <Property Name="PK_ModuleAction_ID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ModuleField">
+    <Key>
+      <PropertyRef Name="PK_ModuleField_ID" />
+    </Key>
+    <Property Name="PK_ModuleField_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_Module_ID" Type="int" />
+    <Property Name="FieldName" Type="varchar" MaxLength="250" />
+    <Property Name="FieldLabel" Type="varchar" MaxLength="250" />
+    <Property Name="Sequence" Type="int" />
+    <Property Name="Required" Type="bit" />
+    <Property Name="IsPrimaryKey" Type="bit" />
+    <Property Name="IsUnik" Type="bit" />
+    <Property Name="IsShowInView" Type="bit" />
+    <Property Name="IsShowInForm" Type="bit" />
+    <Property Name="DefaultValue" Type="varchar(max)" />
+    <Property Name="FK_FieldType_ID" Type="int" />
+    <Property Name="SizeField" Type="int" />
+    <Property Name="FK_ExtType_ID" Type="int" />
+    <Property Name="TabelReferenceName" Type="varchar" MaxLength="250" />
+    <Property Name="TabelReferenceNameAlias" Type="varchar" MaxLength="250" />
+    <Property Name="TableReferenceFieldKey" Type="varchar" MaxLength="250" />
+    <Property Name="TableReferenceFieldDisplayName" Type="varchar" MaxLength="250" />
+    <Property Name="TableReferenceFilter" Type="varchar" MaxLength="1000" />
+    <Property Name="IsUseRegexValidation" Type="bit" />
+    <Property Name="TableReferenceAdditonalJoin" Type="varchar" MaxLength="1000" />
+    <Property Name="BCasCade" Type="bit" />
+    <Property Name="FieldNameParent" Type="varchar" MaxLength="250" />
+    <Property Name="FilterCascade" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="ModuleFieldDefault">
+    <Key>
+      <PropertyRef Name="PK_ModuleField_ID" />
+    </Key>
+    <Property Name="PK_ModuleField_ID" Type="bigint" Nullable="false" />
+    <Property Name="FieldName" Type="varchar" MaxLength="250" />
+    <Property Name="FieldLabel" Type="varchar" MaxLength="250" />
+    <Property Name="Sequence" Type="int" />
+    <Property Name="Required" Type="bit" />
+    <Property Name="IsPrimaryKey" Type="bit" />
+    <Property Name="IsUnik" Type="bit" />
+    <Property Name="FK_FieldType_ID" Type="int" />
+    <Property Name="SizeField" Type="int" />
+    <Property Name="FK_ExtType_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="ModuleFieldRegex">
+    <Key>
+      <PropertyRef Name="PK_ModuleFieldRegex" />
+    </Key>
+    <Property Name="PK_ModuleFieldRegex" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_ModuleField_ID" Type="bigint" />
+    <Property Name="Regex" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ModuleTime">
+    <Key>
+      <PropertyRef Name="PK_ModuleTime_ID" />
+    </Key>
+    <Property Name="PK_ModuleTime_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleTimeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ModuleValidation">
+    <Key>
+      <PropertyRef Name="PK_ModuleValidation_ID" />
+    </Key>
+    <Property Name="PK_ModuleValidation_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_Module_ID" Type="int" />
+    <Property Name="FK_ModuleAction_ID" Type="int" />
+    <Property Name="FK_ModuleTime_ID" Type="int" />
+    <Property Name="StoreProcedureName" Type="varchar" MaxLength="550" />
+    <Property Name="StoreProcedureParameter" Type="varchar" MaxLength="2000" />
+    <Property Name="StoreProcedureParameterValueFieldSequence" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MonitoringDuration">
+    <Key>
+      <PropertyRef Name="PK_MonitoringDuration_Id" />
+    </Key>
+    <Property Name="PK_MonitoringDuration_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MonitoringDurationName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MRole">
+    <Key>
+      <PropertyRef Name="PK_MRole_ID" />
+    </Key>
+    <Property Name="PK_MRole_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="100" />
+    <Property Name="RoleDescription" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.MRole_Upload' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MRole_Upload">
+    <Key>
+      <PropertyRef Name="PK_upload_ID" />
+    </Key>
+    <Property Name="PK_upload_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nawa_userid" Type="varchar" MaxLength="50" />
+    <Property Name="nawa_recordnumber" Type="bigint" />
+    <Property Name="KeteranganError" Type="varchar(max)" />
+    <Property Name="nawa_Action" Type="varchar" MaxLength="50" />
+    <Property Name="PK_MRole_ID" Type="varchar" MaxLength="8000" />
+    <Property Name="RoleName" Type="varchar" MaxLength="8000" />
+    <Property Name="RoleDescription" Type="varchar" MaxLength="8000" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="MsEODPeriod">
+    <Key>
+      <PropertyRef Name="PK_MsEODPeriod_Id" />
+    </Key>
+    <Property Name="PK_MsEODPeriod_Id" Type="int" Nullable="false" />
+    <Property Name="MsEODPeriodName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MsEODStatus">
+    <Key>
+      <PropertyRef Name="PK_MsEODStatus_ID" />
+    </Key>
+    <Property Name="PK_MsEODStatus_ID" Type="int" Nullable="false" />
+    <Property Name="MsEODStatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MUser">
+    <Key>
+      <PropertyRef Name="PK_MUser_ID" />
+    </Key>
+    <Property Name="PK_MUser_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="250" />
+    <Property Name="FK_MRole_ID" Type="int" />
+    <Property Name="FK_MGroupMenu_ID" Type="int" />
+    <Property Name="UserPasword" Type="varchar" MaxLength="250" />
+    <Property Name="UserPasswordSalt" Type="varchar" MaxLength="250" />
+    <Property Name="UserEmailAddress" Type="varchar" MaxLength="250" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="InUsed" Type="bit" />
+    <Property Name="IsDisabled" Type="bit" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="LastChangePassword" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MUserHistoryPassword">
+    <Key>
+      <PropertyRef Name="PK_MUser_HistoryPassword_ID" />
+    </Key>
+    <Property Name="PK_MUser_HistoryPassword_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" />
+    <Property Name="HistoryPassword" Type="varchar" MaxLength="250" />
+    <Property Name="HistoryPasswordDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ORS_FormInfo">
+    <Key>
+      <PropertyRef Name="Kode" />
+    </Key>
+    <Property Name="Kode" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FK_Module_ID" Type="int" />
+    <Property Name="KeyField" Type="varchar" MaxLength="50" />
+    <Property Name="KeyValue" Type="varchar" MaxLength="100" />
+    <Property Name="Periode" Type="varchar" MaxLength="10" />
+    <Property Name="DisplayField" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FK_DataSet" Type="int" />
+    <Property Name="FK_KelompokInformasi" Type="varchar" MaxLength="10" />
+    <Property Name="VersionCode" Type="varchar" MaxLength="100" />
+    <Property Name="NoUrut" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+    <Property Name="InformationID" Type="varchar" MaxLength="255" />
+    <Property Name="PeriodePelaporan" Type="varchar" MaxLength="100" />
+    <Property Name="DataDateDiffH" Type="int" />
+    <Property Name="FK_GenerateType" Type="varchar" MaxLength="100" />
+    <Property Name="TanggalTepatWaktuAkhir" Type="int" />
+    <Property Name="JamTepatWaktuAkhir" Type="int" />
+    <Property Name="TanggalKoreksiAkhir" Type="int" />
+    <Property Name="JamKoreksiAkhir" Type="int" />
+    <Property Name="TanggalKeterlambatanAkhir" Type="int" />
+    <Property Name="JamKeterlambatanAkhir" Type="int" />
+  </EntityType>
+  <EntityType Name="ORS_ValidationKey">
+    <Key>
+      <PropertyRef Name="Pk_LHBU_ValidationKey_ID" />
+    </Key>
+    <Property Name="Pk_LHBU_ValidationKey_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_Module_ID" Type="int" Nullable="false" />
+    <Property Name="KeyField" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="KeyValue" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Prefix_Module_Generator">
+    <Key>
+      <PropertyRef Name="PK_Prefix_ID" />
+    </Key>
+    <Property Name="PK_Prefix_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ref_DataSet">
+    <Key>
+      <PropertyRef Name="Pk_Ref_DataSet_Id" />
+    </Key>
+    <Property Name="Pk_Ref_DataSet_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ref_DataSetName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ref_KategoriValidasi">
+    <Key>
+      <PropertyRef Name="Pk_Ref_KategoriValidasi_Id" />
+    </Key>
+    <Property Name="Pk_Ref_KategoriValidasi_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ref_KategoriValidasiName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ReportQuery">
+    <Key>
+      <PropertyRef Name="PK_ReportQuery_ID" />
+    </Key>
+    <Property Name="PK_ReportQuery_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReportName" Type="varchar" MaxLength="550" />
+    <Property Name="ReportDescription" Type="varchar(max)" />
+    <Property Name="QueryData" Type="varchar(max)" />
+    <Property Name="IsUseDesigner" Type="bit" />
+    <Property Name="QueryObjectDesigner" Type="varchar(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SettingPersonal">
+    <Key>
+      <PropertyRef Name="PK_SettingPersonal_ID" />
+    </Key>
+    <Property Name="PK_SettingPersonal_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReportDate" Type="datetime" Nullable="false" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="6" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.SLIKParameter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SLIKParameter">
+    <Key>
+      <PropertyRef Name="PK_SLIKParameter_ID" />
+      <PropertyRef Name="OJK_KodeJenisLJK" />
+      <PropertyRef Name="OJK_KodeLJK" />
+    </Key>
+    <Property Name="PK_SLIKParameter_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OJK_KodeJenisLJK" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="OJK_KodeLJK" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Bulan" Type="varchar" MaxLength="2" />
+    <Property Name="Tahun" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="SystemParameter">
+    <Key>
+      <PropertyRef Name="PK_SystemParameter_ID" />
+    </Key>
+    <Property Name="PK_SystemParameter_ID" Type="int" Nullable="false" />
+    <Property Name="FK_SystemParameterGroup_ID" Type="int" />
+    <Property Name="SettingName" Type="varchar" MaxLength="250" />
+    <Property Name="SettingValue" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Hide" Type="bit" />
+    <Property Name="fk_MFieldType_ID" Type="int" />
+    <Property Name="IsEncript" Type="bit" />
+    <Property Name="EncriptionKey" Type="varchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="SystemParameterGroup">
+    <Key>
+      <PropertyRef Name="PK_SystemParameterGroup_ID" />
+    </Key>
+    <Property Name="PK_SystemParameterGroup_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SystemParameterGroup" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TextFileTemporaryTable">
+    <Key>
+      <PropertyRef Name="Pk_TextFileTemporaryTable_ID" />
+    </Key>
+    <Property Name="Pk_TextFileTemporaryTable_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="FK_FormInfo_ID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="DataSource" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TanggalData" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="100" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="TotalRecord" Type="int" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+    <Property Name="Data" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TextFileTemporaryTableDetail">
+    <Key>
+      <PropertyRef Name="FK_TextFileTemporaryTable_ID" />
+      <PropertyRef Name="Line" />
+    </Key>
+    <Property Name="FK_TextFileTemporaryTable_ID" Type="int" Nullable="false" />
+    <Property Name="Line" Type="int" Nullable="false" />
+    <Property Name="Data" Type="varchar(max)" />
+    <Property Name="Message" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ValidationParameter">
+    <Key>
+      <PropertyRef Name="PK_ValidationParameter" />
+    </Key>
+    <Property Name="PK_ValidationParameter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableName" Type="int" Nullable="false" />
+    <Property Name="FieldName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="ExpressionType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ValidationExpression" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="ValidationMessage" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ValidationType" Type="int" Nullable="false" />
+    <Property Name="ErrorType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+    <Property Name="Fk_Ref_DataSet_Id" Type="int" />
+    <Property Name="Fk_Ref_KategoriValidasi_Id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.ValidationSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ValidationSummary">
+    <Key>
+      <PropertyRef Name="PK_Record_ID" />
+    </Key>
+    <Property Name="PK_Record_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SegmentData" Type="varchar" MaxLength="1000" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="TanggalData" Type="datetime" />
+    <Property Name="ModuleURL" Type="varchar(max)" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="ValidationType">
+    <Key>
+      <PropertyRef Name="PK_ValidationType_ID" />
+    </Key>
+    <Property Name="PK_ValidationType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ValidationType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Web_ValidationReport_Row' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Web_ValidationReport_Row">
+    <Key>
+      <PropertyRef Name="SegmentData" />
+    </Key>
+    <Property Name="TanggalData" Type="datetime" />
+    <Property Name="SegmentData" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="RecordID" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleURL" Type="varchar" MaxLength="200" />
+    <Property Name="ModuleID" Type="int" />
+    <Property Name="KeyFieldValue" Type="varchar" MaxLength="1000" />
+    <Property Name="KeyField" Type="varchar" MaxLength="100" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="6" />
+    <Property Name="ReferenceField" Type="varchar" MaxLength="100" />
+    <Property Name="ReferenceValue" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Web_ValidationReport_RowComplate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Web_ValidationReport_RowComplate">
+    <Key>
+      <PropertyRef Name="PK_ID" />
+      <PropertyRef Name="SegmentData" />
+      <PropertyRef Name="Messagedetail" />
+    </Key>
+    <Property Name="PK_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TanggalData" Type="datetime" />
+    <Property Name="SegmentData" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="RecordID" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleURL" Type="varchar" MaxLength="200" />
+    <Property Name="ModuleID" Type="int" />
+    <Property Name="KeyFieldValue" Type="varchar" MaxLength="1000" />
+    <Property Name="KeyField" Type="varchar" MaxLength="100" />
+    <Property Name="Messagedetail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Edited" Type="bit" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="6" />
+    <Property Name="MessageDetailView" Type="varchar(max)" />
+    <Property Name="ReferenceField" Type="varchar" MaxLength="100" />
+    <Property Name="ReferenceValue" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.LastLogin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LastLogin">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="250" />
+    <Property Name="UserEmailAddress" Type="varchar" MaxLength="250" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="LastLoginInDays" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.ReportofDisableName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ReportofDisableName">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="250" />
+    <Property Name="UserEmailAddress" Type="varchar" MaxLength="250" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="LastLoginInDays" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_AuditTrail_UserAccess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_AuditTrail_UserAccess">
+    <Key>
+      <PropertyRef Name="PK_UserAccessID" />
+    </Key>
+    <Property Name="PK_UserAccessID" Type="bigint" Nullable="false" />
+    <Property Name="Userid" Type="varchar" MaxLength="150" />
+    <Property Name="ActionDate" Type="datetime" />
+    <Property Name="Action" Type="varchar" MaxLength="150" />
+    <Property Name="GroupMenuName" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_EODLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_EODLog">
+    <Key>
+      <PropertyRef Name="PK_EODSchedulerLog_ID" />
+      <PropertyRef Name="PK_EODTaskLog_ID" />
+      <PropertyRef Name="PK_EODTaskDetailLog_ID" />
+    </Key>
+    <Property Name="PK_EODSchedulerLog_ID" Type="bigint" Nullable="false" />
+    <Property Name="PK_EODTaskLog_ID" Type="bigint" Nullable="false" />
+    <Property Name="PK_EODTaskDetailLog_ID" Type="bigint" Nullable="false" />
+    <Property Name="EODSchedulerName" Type="varchar" MaxLength="255" />
+    <Property Name="EODTaskName" Type="varchar" MaxLength="250" />
+    <Property Name="EODTaskDetailType" Type="varchar" MaxLength="50" />
+    <Property Name="NAME" Type="varchar" MaxLength="250" />
+    <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+    <Property Name="DataDate" Type="datetime" />
+    <Property Name="ProcessDate" Type="datetime" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="Enddate" Type="datetime" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+    <Property Name="MsEODStatusName" Type="varchar" MaxLength="50" />
+    <Property Name="FK_MsEODStatus_ID" Type="int" />
+    <Property Name="TaskStatus" Type="varchar" MaxLength="50" />
+    <Property Name="FK_EODSchedulerID" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Vw_GeneratedFileList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_GeneratedFileList">
+    <Key>
+      <PropertyRef Name="PK_GeneratedFileList_ID" />
+      <PropertyRef Name="FormInfo" />
+    </Key>
+    <Property Name="Request_ID" Type="int" />
+    <Property Name="PK_GeneratedFileList_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PeriodeLaporan" Type="datetime" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="10" />
+    <Property Name="FK_LHBU_FormInfo_ID" Type="varchar" MaxLength="5" />
+    <Property Name="FormInfo" Type="varchar" MaxLength="263" Nullable="false" />
+    <Property Name="FK_Template_ID" Type="int" />
+    <Property Name="GenerateFileTemplateName" Type="varchar" MaxLength="250" />
+    <Property Name="FileName" Type="varchar" MaxLength="250" />
+    <Property Name="FileType" Type="varchar" MaxLength="50" />
+    <Property Name="StartDate" Type="smalldatetime" />
+    <Property Name="CompleteDate" Type="smalldatetime" />
+    <Property Name="ErrorMsg" Type="varchar(max)" />
+    <Property Name="Comment" Type="varchar" MaxLength="2000" />
+    <Property Name="GenerationStatus" Type="varchar" MaxLength="20" />
+    <Property Name="ApprovalStatus" Type="varchar" MaxLength="20" />
+    <Property Name="SubmitStatus" Type="varchar" MaxLength="50" />
+    <Property Name="SubmitNote" Type="varchar" MaxLength="2000" />
+    <Property Name="TotalData" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Vw_KelompokInformasiRelation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_KelompokInformasiRelation">
+    <Key>
+      <PropertyRef Name="SandiKelompokInformasi" />
+      <PropertyRef Name="SandiJenisLaporanInformasi" />
+      <PropertyRef Name="Nama" />
+    </Key>
+    <Property Name="SandiKelompokInformasi" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="KelompokInformasi" Type="varchar" MaxLength="100" />
+    <Property Name="SandiJenisLaporanInformasi" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="JenisLaporanInformasi" Type="varchar" MaxLength="255" />
+    <Property Name="FK_Module_ID" Type="int" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_KodeCabangActive' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_KodeCabangActive">
+    <Key>
+      <PropertyRef Name="Kode" />
+    </Key>
+    <Property Name="Kode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NamaCabang" Type="varchar" MaxLength="113" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Vw_ListAllCabang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_ListAllCabang">
+    <Key>
+      <PropertyRef Name="OJK_Kode" />
+    </Key>
+    <Property Name="OJK_Kode" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="FileSequence" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_MappingCounterparty' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_MappingCounterparty">
+    <Key>
+      <PropertyRef Name="PK_MappingCounterparty_ID" />
+      <PropertyRef Name="ProductFamily" />
+      <PropertyRef Name="CounterpartyName" />
+    </Key>
+    <Property Name="PK_MappingCounterparty_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductFamily" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CounterpartyName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="PergerakanDana" Type="bit" />
+    <Property Name="PihakTerkait" Type="bit" />
+    <Property Name="Bank" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_Menuall' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_Menuall">
+    <Key>
+      <PropertyRef Name="PK_MGroupMenuSettting_ID" />
+    </Key>
+    <Property Name="PK_MGroupMenuSettting_ID" Type="int" Nullable="false" />
+    <Property Name="FK_MGroupMenu_ID" Type="int" />
+    <Property Name="mMenuID" Type="varchar" MaxLength="50" />
+    <Property Name="mMenuLabel" Type="varchar" MaxLength="250" />
+    <Property Name="mMenuParentID" Type="varchar" MaxLength="50" />
+    <Property Name="mMenuURL" Type="varchar" MaxLength="250" />
+    <Property Name="FK_Module_ID" Type="int" />
+    <Property Name="FK_Action_ID" Type="int" />
+    <Property Name="urutan" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_Ref_SandiBankAlias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_Ref_SandiBankAlias">
+    <Key>
+      <PropertyRef Name="PK_SandiBankAlias_ID" />
+      <PropertyRef Name="KodeSandiBankAlias" />
+    </Key>
+    <Property Name="PK_SandiBankAlias_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KodeSandiBankAlias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NamaAlias" Type="varchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_Ref_SandiNasabahLainDalamNegeriAlias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_Ref_SandiNasabahLainDalamNegeriAlias">
+    <Key>
+      <PropertyRef Name="PK_SandiNasabahLainDalamNegeriAlias_ID" />
+    </Key>
+    <Property Name="PK_SandiNasabahLainDalamNegeriAlias_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="ApprovedDate" Type="datetime" />
+    <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+    <Property Name="KodeNasabahLainDalamNegeriAlias" Type="varchar" MaxLength="50" />
+    <Property Name="NamaNasabahLainDalamNegeriAlias" Type="varchar" MaxLength="500" />
+    <Property Name="LabelNasabahLainDalamNegeriAlias" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Vw_SettingPersonal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_SettingPersonal">
+    <Key>
+      <PropertyRef Name="PK_SettingPersonal_ID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="ReportDate" />
+    </Key>
+    <Property Name="PK_SettingPersonal_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReportDate" Type="datetime" Nullable="false" />
+    <Property Name="KdCabang" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_TextFileTemporaryTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_TextFileTemporaryTable">
+    <Key>
+      <PropertyRef Name="Pk_ORS_TextFileTemporaryTable_ID" />
+    </Key>
+    <Property Name="Pk_ORS_TextFileTemporaryTable_ID" Type="bigint" Nullable="false" />
+    <Property Name="UploadFileName" Type="varchar" MaxLength="255" />
+    <Property Name="ModuleLabel" Type="varchar" MaxLength="250" />
+    <Property Name="Report_Date" Type="datetime" />
+    <Property Name="StatusUpload" Type="varchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="TotalRecord" Type="int" />
+    <Property Name="ErrorMessage" Type="varchar" MaxLength="290" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.vw_ValidationReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_ValidationReport">
+    <Key>
+      <PropertyRef Name="TanggalData" />
+      <PropertyRef Name="SegmentData" />
+      <PropertyRef Name="ValidationType" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="TanggalData" Type="datetime" Nullable="false" />
+    <Property Name="SegmentData" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NamaField" Type="varchar" MaxLength="255" />
+    <Property Name="ValidationMessage" Type="varchar" MaxLength="8000" />
+    <Property Name="KeyFieldValue" Type="varchar" MaxLength="1000" />
+    <Property Name="KeyField" Type="varchar" MaxLength="100" />
+    <Property Name="ModuleURL" Type="varchar" MaxLength="200" />
+    <Property Name="RecordID" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleID" Type="int" />
+    <Property Name="ValidationType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Vw_validationReport_List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_validationReport_List">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SegmentData" />
+      <PropertyRef Name="TanggalData" />
+    </Key>
+    <Property Name="FieldName" Type="varchar" MaxLength="250" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SegmentData" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NamaField" Type="varchar" MaxLength="255" />
+    <Property Name="ValidationMessage" Type="varchar" MaxLength="8000" />
+    <Property Name="KeyFieldValue" Type="varchar" MaxLength="1000" />
+    <Property Name="KeyField" Type="varchar" MaxLength="100" />
+    <Property Name="ModuleURL" Type="varchar" MaxLength="200" />
+    <Property Name="RecordID" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleID" Type="int" />
+    <Property Name="FK_ValidationType" Type="int" />
+    <Property Name="Edited" Type="bit" />
+    <Property Name="ErrorType" Type="varchar" MaxLength="50" />
+    <Property Name="FieldValue" Type="varchar(max)" />
+    <Property Name="TanggalData" Type="datetime" Nullable="false" />
+    <Property Name="KodeCabang" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Vw_ValidationReportSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vw_ValidationReportSummary">
+    <Key>
+      <PropertyRef Name="SegmentData" />
+    </Key>
+    <Property Name="SegmentData" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NamaField" Type="varchar" MaxLength="255" />
+    <Property Name="ValidationMessage" Type="varchar" MaxLength="8000" />
+    <Property Name="Jumlah" Type="int" />
+  </EntityType>
+  <Association Name="FK_AuditTrailDetail_AuditTrailHeader">
+    <End Role="AuditTrailHeader" Type="Self.AuditTrailHeader" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AuditTrailDetail" Type="Self.AuditTrailDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditTrailHeader">
+        <PropertyRef Name="PK_AuditTrail_ID" />
+      </Principal>
+      <Dependent Role="AuditTrailDetail">
+        <PropertyRef Name="FK_AuditTrailHeader_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmailTemplate_MonitoringDuration">
+    <End Role="MonitoringDuration" Type="Self.MonitoringDuration" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EmailTemplate" Type="Self.EmailTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringDuration">
+        <PropertyRef Name="PK_MonitoringDuration_Id" />
+      </Principal>
+      <Dependent Role="EmailTemplate">
+        <PropertyRef Name="FK_Monitoringduration_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileSecurity_MGroupMenu">
+    <End Role="MGroupMenu" Type="Self.MGroupMenu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FileSecurity" Type="Self.FileSecurity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MGroupMenu">
+        <PropertyRef Name="PK_MGroupMenu_ID" />
+      </Principal>
+      <Dependent Role="FileSecurity">
+        <PropertyRef Name="FileSecurityGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleField_MExtType">
+    <End Role="MExtType" Type="Self.MExtType" Multiplicity="0..1" />
+    <End Role="ModuleField" Type="Self.ModuleField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MExtType">
+        <PropertyRef Name="PK_ExtType_ID" />
+      </Principal>
+      <Dependent Role="ModuleField">
+        <PropertyRef Name="FK_ExtType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleField_MFieldType">
+    <End Role="MFieldType" Type="Self.MFieldType" Multiplicity="0..1" />
+    <End Role="ModuleField" Type="Self.ModuleField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MFieldType">
+        <PropertyRef Name="PK_FieldType_ID" />
+      </Principal>
+      <Dependent Role="ModuleField">
+        <PropertyRef Name="FK_FieldType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleField_Module">
+    <End Role="Module" Type="Self.Module" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModuleField" Type="Self.ModuleField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="PK_Module_ID" />
+      </Principal>
+      <Dependent Role="ModuleField">
+        <PropertyRef Name="FK_Module_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleFieldRegex_ModuleFieldRegex">
+    <End Role="ModuleField" Type="Self.ModuleField" Multiplicity="0..1" />
+    <End Role="ModuleFieldRegex" Type="Self.ModuleFieldRegex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleField">
+        <PropertyRef Name="PK_ModuleField_ID" />
+      </Principal>
+      <Dependent Role="ModuleFieldRegex">
+        <PropertyRef Name="FK_ModuleField_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleValidation_Module">
+    <End Role="Module" Type="Self.Module" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModuleValidation" Type="Self.ModuleValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="PK_Module_ID" />
+      </Principal>
+      <Dependent Role="ModuleValidation">
+        <PropertyRef Name="FK_Module_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleValidation_ModuleAction">
+    <End Role="ModuleAction" Type="Self.ModuleAction" Multiplicity="0..1" />
+    <End Role="ModuleValidation" Type="Self.ModuleValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleAction">
+        <PropertyRef Name="PK_ModuleAction_ID" />
+      </Principal>
+      <Dependent Role="ModuleValidation">
+        <PropertyRef Name="FK_ModuleAction_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonitoringDuration_MonitoringDuration">
+    <End Role="MonitoringDuration" Type="Self.MonitoringDuration" Multiplicity="1" />
+    <End Role="MonitoringDuration1" Type="Self.MonitoringDuration" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringDuration">
+        <PropertyRef Name="PK_MonitoringDuration_Id" />
+      </Principal>
+      <Dependent Role="MonitoringDuration1">
+        <PropertyRef Name="PK_MonitoringDuration_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TextFileTemporaryTableDetail_TextFileTemporaryTable">
+    <End Role="TextFileTemporaryTable" Type="Self.TextFileTemporaryTable" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TextFileTemporaryTableDetail" Type="Self.TextFileTemporaryTableDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TextFileTemporaryTable">
+        <PropertyRef Name="Pk_TextFileTemporaryTable_ID" />
+      </Principal>
+      <Dependent Role="TextFileTemporaryTableDetail">
+        <PropertyRef Name="FK_TextFileTemporaryTable_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NawaDevDALStoreContainer">
+    <EntitySet Name="AuditTrail_UserAccess" EntityType="Self.AuditTrail_UserAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuditTrail_UserLogin" EntityType="Self.AuditTrail_UserLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuditTrailDetail" EntityType="Self.AuditTrailDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuditTrailHeader" EntityType="Self.AuditTrailHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuditTrailStatus" EntityType="Self.AuditTrailStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CleansingReport" EntityType="Self.CleansingReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ELMAH_Error" EntityType="Self.ELMAH_Error" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailStatus" EntityType="Self.EmailStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailTemplate" EntityType="Self.EmailTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailTemplateDetail" EntityType="Self.EmailTemplateDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailTemplateScheduler" EntityType="Self.EmailTemplateScheduler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailTemplateSchedulerDetail" EntityType="Self.EmailTemplateSchedulerDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EODScheduler" EntityType="Self.EODScheduler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EODSchedulerDetail" EntityType="Self.EODSchedulerDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EODSchedulerLog" EntityType="Self.EODSchedulerLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EODTask" EntityType="Self.EODTask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EODTaskDetail" EntityType="Self.EODTaskDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EODTaskDetailLog" EntityType="Self.EODTaskDetailLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EODTaskDetailType" EntityType="Self.EODTaskDetailType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EODTaskLog" EntityType="Self.EODTaskLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileSecurity" EntityType="Self.FileSecurity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GeneratedFileList" EntityType="Self.GeneratedFileList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GenerateFileTemplate" EntityType="Self.GenerateFileTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GenerateFileTemplateAdditional" EntityType="Self.GenerateFileTemplateAdditional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GenerateFileTemplateDetail" EntityType="Self.GenerateFileTemplateDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogConsoleService" EntityType="Self.LogConsoleService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuTemplate" EntityType="Self.MenuTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MExtType" EntityType="Self.MExtType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFieldType" EntityType="Self.MFieldType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MGroupMenu" EntityType="Self.MGroupMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MGroupMenuAccess" EntityType="Self.MGroupMenuAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MGroupMenuSettting" EntityType="Self.MGroupMenuSettting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Module" EntityType="Self.Module" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleAction" EntityType="Self.ModuleAction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleApproval" EntityType="Self.ModuleApproval" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleField" EntityType="Self.ModuleField" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleFieldDefault" EntityType="Self.ModuleFieldDefault" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleFieldRegex" EntityType="Self.ModuleFieldRegex" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleTime" EntityType="Self.ModuleTime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModuleValidation" EntityType="Self.ModuleValidation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonitoringDuration" EntityType="Self.MonitoringDuration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MRole" EntityType="Self.MRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsEODPeriod" EntityType="Self.MsEODPeriod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsEODStatus" EntityType="Self.MsEODStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MUser" EntityType="Self.MUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MUserHistoryPassword" EntityType="Self.MUserHistoryPassword" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORS_FormInfo" EntityType="Self.ORS_FormInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORS_ValidationKey" EntityType="Self.ORS_ValidationKey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prefix_Module_Generator" EntityType="Self.Prefix_Module_Generator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ref_DataSet" EntityType="Self.Ref_DataSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ref_KategoriValidasi" EntityType="Self.Ref_KategoriValidasi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportQuery" EntityType="Self.ReportQuery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SettingPersonal" EntityType="Self.SettingPersonal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemParameter" EntityType="Self.SystemParameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemParameterGroup" EntityType="Self.SystemParameterGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TextFileTemporaryTable" EntityType="Self.TextFileTemporaryTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TextFileTemporaryTableDetail" EntityType="Self.TextFileTemporaryTableDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ValidationParameter" EntityType="Self.ValidationParameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ValidationType" EntityType="Self.ValidationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MRole_Upload" EntityType="Self.MRole_Upload" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MRole_Upload].[PK_upload_ID] AS [PK_upload_ID], 
+    [MRole_Upload].[nawa_userid] AS [nawa_userid], 
+    [MRole_Upload].[nawa_recordnumber] AS [nawa_recordnumber], 
+    [MRole_Upload].[KeteranganError] AS [KeteranganError], 
+    [MRole_Upload].[nawa_Action] AS [nawa_Action], 
+    [MRole_Upload].[PK_MRole_ID] AS [PK_MRole_ID], 
+    [MRole_Upload].[RoleName] AS [RoleName], 
+    [MRole_Upload].[RoleDescription] AS [RoleDescription], 
+    [MRole_Upload].[Active] AS [Active]
+    FROM [dbo].[MRole_Upload] AS [MRole_Upload]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SLIKParameter" EntityType="Self.SLIKParameter" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SLIKParameter].[PK_SLIKParameter_ID] AS [PK_SLIKParameter_ID], 
+    [SLIKParameter].[OJK_KodeJenisLJK] AS [OJK_KodeJenisLJK], 
+    [SLIKParameter].[OJK_KodeLJK] AS [OJK_KodeLJK], 
+    [SLIKParameter].[Active] AS [Active], 
+    [SLIKParameter].[CreatedBy] AS [CreatedBy], 
+    [SLIKParameter].[LastUpdateBy] AS [LastUpdateBy], 
+    [SLIKParameter].[ApprovedBy] AS [ApprovedBy], 
+    [SLIKParameter].[CreatedDate] AS [CreatedDate], 
+    [SLIKParameter].[LastUpdateDate] AS [LastUpdateDate], 
+    [SLIKParameter].[ApprovedDate] AS [ApprovedDate], 
+    [SLIKParameter].[Bulan] AS [Bulan], 
+    [SLIKParameter].[Tahun] AS [Tahun]
+    FROM [dbo].[SLIKParameter] AS [SLIKParameter]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ValidationSummary" EntityType="Self.ValidationSummary" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ValidationSummary].[PK_Record_ID] AS [PK_Record_ID], 
+    [ValidationSummary].[SegmentData] AS [SegmentData], 
+    [ValidationSummary].[Status] AS [Status], 
+    [ValidationSummary].[TanggalData] AS [TanggalData], 
+    [ValidationSummary].[ModuleURL] AS [ModuleURL], 
+    [ValidationSummary].[KodeCabang] AS [KodeCabang]
+    FROM [dbo].[ValidationSummary] AS [ValidationSummary]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Web_ValidationReport_Row" EntityType="Self.Web_ValidationReport_Row" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Web_ValidationReport_Row].[TanggalData] AS [TanggalData], 
+    [Web_ValidationReport_Row].[SegmentData] AS [SegmentData], 
+    [Web_ValidationReport_Row].[RecordID] AS [RecordID], 
+    [Web_ValidationReport_Row].[ModuleURL] AS [ModuleURL], 
+    [Web_ValidationReport_Row].[ModuleID] AS [ModuleID], 
+    [Web_ValidationReport_Row].[KeyFieldValue] AS [KeyFieldValue], 
+    [Web_ValidationReport_Row].[KeyField] AS [KeyField], 
+    [Web_ValidationReport_Row].[KodeCabang] AS [KodeCabang], 
+    [Web_ValidationReport_Row].[ReferenceField] AS [ReferenceField], 
+    [Web_ValidationReport_Row].[ReferenceValue] AS [ReferenceValue]
+    FROM [dbo].[Web_ValidationReport_Row] AS [Web_ValidationReport_Row]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Web_ValidationReport_RowComplate" EntityType="Self.Web_ValidationReport_RowComplate" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Web_ValidationReport_RowComplate].[PK_ID] AS [PK_ID], 
+    [Web_ValidationReport_RowComplate].[TanggalData] AS [TanggalData], 
+    [Web_ValidationReport_RowComplate].[SegmentData] AS [SegmentData], 
+    [Web_ValidationReport_RowComplate].[RecordID] AS [RecordID], 
+    [Web_ValidationReport_RowComplate].[ModuleURL] AS [ModuleURL], 
+    [Web_ValidationReport_RowComplate].[ModuleID] AS [ModuleID], 
+    [Web_ValidationReport_RowComplate].[KeyFieldValue] AS [KeyFieldValue], 
+    [Web_ValidationReport_RowComplate].[KeyField] AS [KeyField], 
+    [Web_ValidationReport_RowComplate].[Messagedetail] AS [Messagedetail], 
+    [Web_ValidationReport_RowComplate].[Edited] AS [Edited], 
+    [Web_ValidationReport_RowComplate].[KodeCabang] AS [KodeCabang], 
+    [Web_ValidationReport_RowComplate].[MessageDetailView] AS [MessageDetailView], 
+    [Web_ValidationReport_RowComplate].[ReferenceField] AS [ReferenceField], 
+    [Web_ValidationReport_RowComplate].[ReferenceValue] AS [ReferenceValue]
+    FROM [dbo].[Web_ValidationReport_RowComplate] AS [Web_ValidationReport_RowComplate]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LastLogin" EntityType="Self.LastLogin" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LastLogin].[UserID] AS [UserID], 
+    [LastLogin].[UserName] AS [UserName], 
+    [LastLogin].[UserEmailAddress] AS [UserEmailAddress], 
+    [LastLogin].[LastLogin] AS [LastLogin], 
+    [LastLogin].[LastLoginInDays] AS [LastLoginInDays]
+    FROM [dbo].[LastLogin] AS [LastLogin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ReportofDisableName" EntityType="Self.ReportofDisableName" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ReportofDisableName].[UserID] AS [UserID], 
+    [ReportofDisableName].[UserName] AS [UserName], 
+    [ReportofDisableName].[UserEmailAddress] AS [UserEmailAddress], 
+    [ReportofDisableName].[LastLogin] AS [LastLogin], 
+    [ReportofDisableName].[LastLoginInDays] AS [LastLoginInDays]
+    FROM [dbo].[ReportofDisableName] AS [ReportofDisableName]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_AuditTrail_UserAccess" EntityType="Self.vw_AuditTrail_UserAccess" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_AuditTrail_UserAccess].[PK_UserAccessID] AS [PK_UserAccessID], 
+    [vw_AuditTrail_UserAccess].[Userid] AS [Userid], 
+    [vw_AuditTrail_UserAccess].[ActionDate] AS [ActionDate], 
+    [vw_AuditTrail_UserAccess].[Action] AS [Action], 
+    [vw_AuditTrail_UserAccess].[GroupMenuName] AS [GroupMenuName]
+    FROM [dbo].[vw_AuditTrail_UserAccess] AS [vw_AuditTrail_UserAccess]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_EODLog" EntityType="Self.vw_EODLog" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_EODLog].[PK_EODSchedulerLog_ID] AS [PK_EODSchedulerLog_ID], 
+    [vw_EODLog].[PK_EODTaskLog_ID] AS [PK_EODTaskLog_ID], 
+    [vw_EODLog].[PK_EODTaskDetailLog_ID] AS [PK_EODTaskDetailLog_ID], 
+    [vw_EODLog].[EODSchedulerName] AS [EODSchedulerName], 
+    [vw_EODLog].[EODTaskName] AS [EODTaskName], 
+    [vw_EODLog].[EODTaskDetailType] AS [EODTaskDetailType], 
+    [vw_EODLog].[NAME] AS [NAME], 
+    [vw_EODLog].[ExecuteBy] AS [ExecuteBy], 
+    [vw_EODLog].[DataDate] AS [DataDate], 
+    [vw_EODLog].[ProcessDate] AS [ProcessDate], 
+    [vw_EODLog].[StartDate] AS [StartDate], 
+    [vw_EODLog].[Enddate] AS [Enddate], 
+    [vw_EODLog].[ErrorMessage] AS [ErrorMessage], 
+    [vw_EODLog].[MsEODStatusName] AS [MsEODStatusName], 
+    [vw_EODLog].[FK_MsEODStatus_ID] AS [FK_MsEODStatus_ID], 
+    [vw_EODLog].[TaskStatus] AS [TaskStatus], 
+    [vw_EODLog].[FK_EODSchedulerID] AS [FK_EODSchedulerID]
+    FROM [dbo].[vw_EODLog] AS [vw_EODLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_GeneratedFileList" EntityType="Self.Vw_GeneratedFileList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_GeneratedFileList].[Request_ID] AS [Request_ID], 
+    [Vw_GeneratedFileList].[PK_GeneratedFileList_ID] AS [PK_GeneratedFileList_ID], 
+    [Vw_GeneratedFileList].[PeriodeLaporan] AS [PeriodeLaporan], 
+    [Vw_GeneratedFileList].[KodeCabang] AS [KodeCabang], 
+    [Vw_GeneratedFileList].[FK_LHBU_FormInfo_ID] AS [FK_LHBU_FormInfo_ID], 
+    [Vw_GeneratedFileList].[FormInfo] AS [FormInfo], 
+    [Vw_GeneratedFileList].[FK_Template_ID] AS [FK_Template_ID], 
+    [Vw_GeneratedFileList].[GenerateFileTemplateName] AS [GenerateFileTemplateName], 
+    [Vw_GeneratedFileList].[FileName] AS [FileName], 
+    [Vw_GeneratedFileList].[FileType] AS [FileType], 
+    [Vw_GeneratedFileList].[StartDate] AS [StartDate], 
+    [Vw_GeneratedFileList].[CompleteDate] AS [CompleteDate], 
+    [Vw_GeneratedFileList].[ErrorMsg] AS [ErrorMsg], 
+    [Vw_GeneratedFileList].[Comment] AS [Comment], 
+    [Vw_GeneratedFileList].[GenerationStatus] AS [GenerationStatus], 
+    [Vw_GeneratedFileList].[ApprovalStatus] AS [ApprovalStatus], 
+    [Vw_GeneratedFileList].[SubmitStatus] AS [SubmitStatus], 
+    [Vw_GeneratedFileList].[SubmitNote] AS [SubmitNote], 
+    [Vw_GeneratedFileList].[TotalData] AS [TotalData]
+    FROM [dbo].[Vw_GeneratedFileList] AS [Vw_GeneratedFileList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_KelompokInformasiRelation" EntityType="Self.Vw_KelompokInformasiRelation" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_KelompokInformasiRelation].[SandiKelompokInformasi] AS [SandiKelompokInformasi], 
+    [Vw_KelompokInformasiRelation].[KelompokInformasi] AS [KelompokInformasi], 
+    [Vw_KelompokInformasiRelation].[SandiJenisLaporanInformasi] AS [SandiJenisLaporanInformasi], 
+    [Vw_KelompokInformasiRelation].[JenisLaporanInformasi] AS [JenisLaporanInformasi], 
+    [Vw_KelompokInformasiRelation].[FK_Module_ID] AS [FK_Module_ID], 
+    [Vw_KelompokInformasiRelation].[Nama] AS [Nama]
+    FROM [dbo].[Vw_KelompokInformasiRelation] AS [Vw_KelompokInformasiRelation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_KodeCabangActive" EntityType="Self.vw_KodeCabangActive" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_KodeCabangActive].[Kode] AS [Kode], 
+    [vw_KodeCabangActive].[NamaCabang] AS [NamaCabang]
+    FROM [dbo].[vw_KodeCabangActive] AS [vw_KodeCabangActive]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_ListAllCabang" EntityType="Self.Vw_ListAllCabang" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_ListAllCabang].[OJK_Kode] AS [OJK_Kode], 
+    [Vw_ListAllCabang].[FileSequence] AS [FileSequence]
+    FROM [dbo].[Vw_ListAllCabang] AS [Vw_ListAllCabang]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_MappingCounterparty" EntityType="Self.vw_MappingCounterparty" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_MappingCounterparty].[PK_MappingCounterparty_ID] AS [PK_MappingCounterparty_ID], 
+    [vw_MappingCounterparty].[ProductFamily] AS [ProductFamily], 
+    [vw_MappingCounterparty].[CounterpartyName] AS [CounterpartyName], 
+    [vw_MappingCounterparty].[PergerakanDana] AS [PergerakanDana], 
+    [vw_MappingCounterparty].[PihakTerkait] AS [PihakTerkait], 
+    [vw_MappingCounterparty].[Bank] AS [Bank], 
+    [vw_MappingCounterparty].[Active] AS [Active], 
+    [vw_MappingCounterparty].[CreatedBy] AS [CreatedBy], 
+    [vw_MappingCounterparty].[LastUpdateBy] AS [LastUpdateBy], 
+    [vw_MappingCounterparty].[ApprovedBy] AS [ApprovedBy], 
+    [vw_MappingCounterparty].[CreatedDate] AS [CreatedDate], 
+    [vw_MappingCounterparty].[LastUpdateDate] AS [LastUpdateDate], 
+    [vw_MappingCounterparty].[ApprovedDate] AS [ApprovedDate], 
+    [vw_MappingCounterparty].[Alternateby] AS [Alternateby]
+    FROM [dbo].[vw_MappingCounterparty] AS [vw_MappingCounterparty]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_Menuall" EntityType="Self.vw_Menuall" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_Menuall].[PK_MGroupMenuSettting_ID] AS [PK_MGroupMenuSettting_ID], 
+    [vw_Menuall].[FK_MGroupMenu_ID] AS [FK_MGroupMenu_ID], 
+    [vw_Menuall].[mMenuID] AS [mMenuID], 
+    [vw_Menuall].[mMenuLabel] AS [mMenuLabel], 
+    [vw_Menuall].[mMenuParentID] AS [mMenuParentID], 
+    [vw_Menuall].[mMenuURL] AS [mMenuURL], 
+    [vw_Menuall].[FK_Module_ID] AS [FK_Module_ID], 
+    [vw_Menuall].[FK_Action_ID] AS [FK_Action_ID], 
+    [vw_Menuall].[urutan] AS [urutan]
+    FROM [dbo].[vw_Menuall] AS [vw_Menuall]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_Ref_SandiBankAlias" EntityType="Self.vw_Ref_SandiBankAlias" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_Ref_SandiBankAlias].[PK_SandiBankAlias_ID] AS [PK_SandiBankAlias_ID], 
+    [vw_Ref_SandiBankAlias].[KodeSandiBankAlias] AS [KodeSandiBankAlias], 
+    [vw_Ref_SandiBankAlias].[NamaAlias] AS [NamaAlias], 
+    [vw_Ref_SandiBankAlias].[Active] AS [Active], 
+    [vw_Ref_SandiBankAlias].[CreatedBy] AS [CreatedBy], 
+    [vw_Ref_SandiBankAlias].[LastUpdateBy] AS [LastUpdateBy], 
+    [vw_Ref_SandiBankAlias].[ApprovedBy] AS [ApprovedBy], 
+    [vw_Ref_SandiBankAlias].[CreatedDate] AS [CreatedDate], 
+    [vw_Ref_SandiBankAlias].[LastUpdateDate] AS [LastUpdateDate], 
+    [vw_Ref_SandiBankAlias].[ApprovedDate] AS [ApprovedDate], 
+    [vw_Ref_SandiBankAlias].[Alternateby] AS [Alternateby]
+    FROM [dbo].[vw_Ref_SandiBankAlias] AS [vw_Ref_SandiBankAlias]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_Ref_SandiNasabahLainDalamNegeriAlias" EntityType="Self.vw_Ref_SandiNasabahLainDalamNegeriAlias" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[PK_SandiNasabahLainDalamNegeriAlias_ID] AS [PK_SandiNasabahLainDalamNegeriAlias_ID], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[Active] AS [Active], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[CreatedBy] AS [CreatedBy], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[LastUpdateBy] AS [LastUpdateBy], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[ApprovedBy] AS [ApprovedBy], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[CreatedDate] AS [CreatedDate], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[LastUpdateDate] AS [LastUpdateDate], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[ApprovedDate] AS [ApprovedDate], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[Alternateby] AS [Alternateby], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[KodeNasabahLainDalamNegeriAlias] AS [KodeNasabahLainDalamNegeriAlias], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[NamaNasabahLainDalamNegeriAlias] AS [NamaNasabahLainDalamNegeriAlias], 
+    [vw_Ref_SandiNasabahLainDalamNegeriAlias].[LabelNasabahLainDalamNegeriAlias] AS [LabelNasabahLainDalamNegeriAlias]
+    FROM [dbo].[vw_Ref_SandiNasabahLainDalamNegeriAlias] AS [vw_Ref_SandiNasabahLainDalamNegeriAlias]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_SettingPersonal" EntityType="Self.Vw_SettingPersonal" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_SettingPersonal].[PK_SettingPersonal_ID] AS [PK_SettingPersonal_ID], 
+    [Vw_SettingPersonal].[UserID] AS [UserID], 
+    [Vw_SettingPersonal].[ReportDate] AS [ReportDate], 
+    [Vw_SettingPersonal].[KdCabang] AS [KdCabang]
+    FROM [dbo].[Vw_SettingPersonal] AS [Vw_SettingPersonal]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_TextFileTemporaryTable" EntityType="Self.vw_TextFileTemporaryTable" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_TextFileTemporaryTable].[Pk_ORS_TextFileTemporaryTable_ID] AS [Pk_ORS_TextFileTemporaryTable_ID], 
+    [vw_TextFileTemporaryTable].[UploadFileName] AS [UploadFileName], 
+    [vw_TextFileTemporaryTable].[ModuleLabel] AS [ModuleLabel], 
+    [vw_TextFileTemporaryTable].[Report_Date] AS [Report_Date], 
+    [vw_TextFileTemporaryTable].[StatusUpload] AS [StatusUpload], 
+    [vw_TextFileTemporaryTable].[StartDate] AS [StartDate], 
+    [vw_TextFileTemporaryTable].[EndDate] AS [EndDate], 
+    [vw_TextFileTemporaryTable].[TotalRecord] AS [TotalRecord], 
+    [vw_TextFileTemporaryTable].[ErrorMessage] AS [ErrorMessage]
+    FROM [dbo].[vw_TextFileTemporaryTable] AS [vw_TextFileTemporaryTable]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_ValidationReport" EntityType="Self.vw_ValidationReport" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_ValidationReport].[TanggalData] AS [TanggalData], 
+    [vw_ValidationReport].[SegmentData] AS [SegmentData], 
+    [vw_ValidationReport].[NamaField] AS [NamaField], 
+    [vw_ValidationReport].[ValidationMessage] AS [ValidationMessage], 
+    [vw_ValidationReport].[KeyFieldValue] AS [KeyFieldValue], 
+    [vw_ValidationReport].[KeyField] AS [KeyField], 
+    [vw_ValidationReport].[ModuleURL] AS [ModuleURL], 
+    [vw_ValidationReport].[RecordID] AS [RecordID], 
+    [vw_ValidationReport].[ModuleID] AS [ModuleID], 
+    [vw_ValidationReport].[ValidationType] AS [ValidationType], 
+    [vw_ValidationReport].[ID] AS [ID]
+    FROM [dbo].[vw_ValidationReport] AS [vw_ValidationReport]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_validationReport_List" EntityType="Self.Vw_validationReport_List" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_validationReport_List].[FieldName] AS [FieldName], 
+    [Vw_validationReport_List].[ID] AS [ID], 
+    [Vw_validationReport_List].[SegmentData] AS [SegmentData], 
+    [Vw_validationReport_List].[NamaField] AS [NamaField], 
+    [Vw_validationReport_List].[ValidationMessage] AS [ValidationMessage], 
+    [Vw_validationReport_List].[KeyFieldValue] AS [KeyFieldValue], 
+    [Vw_validationReport_List].[KeyField] AS [KeyField], 
+    [Vw_validationReport_List].[ModuleURL] AS [ModuleURL], 
+    [Vw_validationReport_List].[RecordID] AS [RecordID], 
+    [Vw_validationReport_List].[ModuleID] AS [ModuleID], 
+    [Vw_validationReport_List].[FK_ValidationType] AS [FK_ValidationType], 
+    [Vw_validationReport_List].[Edited] AS [Edited], 
+    [Vw_validationReport_List].[ErrorType] AS [ErrorType], 
+    [Vw_validationReport_List].[FieldValue] AS [FieldValue], 
+    [Vw_validationReport_List].[TanggalData] AS [TanggalData], 
+    [Vw_validationReport_List].[KodeCabang] AS [KodeCabang]
+    FROM [dbo].[Vw_validationReport_List] AS [Vw_validationReport_List]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_ValidationReportSummary" EntityType="Self.Vw_ValidationReportSummary" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_ValidationReportSummary].[SegmentData] AS [SegmentData], 
+    [Vw_ValidationReportSummary].[NamaField] AS [NamaField], 
+    [Vw_ValidationReportSummary].[ValidationMessage] AS [ValidationMessage], 
+    [Vw_ValidationReportSummary].[Jumlah] AS [Jumlah]
+    FROM [dbo].[Vw_ValidationReportSummary] AS [Vw_ValidationReportSummary]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AuditTrailDetail_AuditTrailHeader" Association="Self.FK_AuditTrailDetail_AuditTrailHeader">
+      <End Role="AuditTrailHeader" EntitySet="AuditTrailHeader" />
+      <End Role="AuditTrailDetail" EntitySet="AuditTrailDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmailTemplate_MonitoringDuration" Association="Self.FK_EmailTemplate_MonitoringDuration">
+      <End Role="MonitoringDuration" EntitySet="MonitoringDuration" />
+      <End Role="EmailTemplate" EntitySet="EmailTemplate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileSecurity_MGroupMenu" Association="Self.FK_FileSecurity_MGroupMenu">
+      <End Role="MGroupMenu" EntitySet="MGroupMenu" />
+      <End Role="FileSecurity" EntitySet="FileSecurity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleField_MExtType" Association="Self.FK_ModuleField_MExtType">
+      <End Role="MExtType" EntitySet="MExtType" />
+      <End Role="ModuleField" EntitySet="ModuleField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleField_MFieldType" Association="Self.FK_ModuleField_MFieldType">
+      <End Role="MFieldType" EntitySet="MFieldType" />
+      <End Role="ModuleField" EntitySet="ModuleField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleField_Module" Association="Self.FK_ModuleField_Module">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="ModuleField" EntitySet="ModuleField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleFieldRegex_ModuleFieldRegex" Association="Self.FK_ModuleFieldRegex_ModuleFieldRegex">
+      <End Role="ModuleField" EntitySet="ModuleField" />
+      <End Role="ModuleFieldRegex" EntitySet="ModuleFieldRegex" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleValidation_Module" Association="Self.FK_ModuleValidation_Module">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="ModuleValidation" EntitySet="ModuleValidation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleValidation_ModuleAction" Association="Self.FK_ModuleValidation_ModuleAction">
+      <End Role="ModuleAction" EntitySet="ModuleAction" />
+      <End Role="ModuleValidation" EntitySet="ModuleValidation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonitoringDuration_MonitoringDuration" Association="Self.FK_MonitoringDuration_MonitoringDuration">
+      <End Role="MonitoringDuration" EntitySet="MonitoringDuration" />
+      <End Role="MonitoringDuration1" EntitySet="MonitoringDuration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TextFileTemporaryTableDetail_TextFileTemporaryTable" Association="Self.FK_TextFileTemporaryTableDetail_TextFileTemporaryTable">
+      <End Role="TextFileTemporaryTable" EntitySet="TextFileTemporaryTable" />
+      <End Role="TextFileTemporaryTableDetail" EntitySet="TextFileTemporaryTableDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,2871 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/28/2019 5:27:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HENDRA"
+  DTS:CreatorName="HENDRA\nawadata"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{6A97A4A3-A9C1-404D-B4E3-623A23A674D4}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="STG_M_CIF"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{82B0730B-9A9C-415F-BA59-3362F5B7185C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AntasenaConnection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DCB65952-65C3-4C11-A13F-3BAC7EDC461B}"
+      DTS:ObjectName="AntasenaConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=HENDRA;Initial Catalog=DemoAntasena4;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7AA504E6-055D-4998-AA75-7A2A9A5F5999}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Project\AntasenaBTPN\STG M CIF.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUSS_DATE"
+              DTS:DTSID="{1F6CB182-BA68-4759-A0C9-6FD0EBAA06EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CIF"
+              DTS:DTSID="{1F44CB98-CC81-44F5-99C9-43C9FB54E695}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUST_SHORT_NAME"
+              DTS:DTSID="{9A06912F-5FAF-4EFE-8CBF-3AF1D369C325}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUST_FULL_NAME"
+              DTS:DTSID="{DAAF70A5-0B89-4C94-BA11-9C48088D4B27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BRANCH"
+              DTS:DTSID="{BB65AC92-3366-4873-8B15-32EEBA5B2963}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HADDRESS1"
+              DTS:DTSID="{013D2607-913A-4A21-80CC-0A5D2076EC2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HADDRESS2"
+              DTS:DTSID="{5A714F71-D5C6-4736-9BED-AF317C6ADAF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HADDRESS3"
+              DTS:DTSID="{C72155A5-6B38-4638-9C8B-B6F6257B00E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HPOST_CODE"
+              DTS:DTSID="{6BF3987D-8D19-4C87-A1D7-70CAAFA702E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HADDRESS4"
+              DTS:DTSID="{16E64287-B3A6-476B-AC42-ECD850799BC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HADDRESS5"
+              DTS:DTSID="{A67EF5B7-B63F-4FB5-9718-A09CEDA368CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MOBILE_PHONE"
+              DTS:DTSID="{81443DAF-D978-4CFE-BF4B-20B8C5C006B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOME_PHONE"
+              DTS:DTSID="{5F91330C-9632-4B8C-A985-3BD7D548C016}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FAX"
+              DTS:DTSID="{7E6507F4-72F3-4E02-B330-EB0F64458A21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GENDER"
+              DTS:DTSID="{ABD2F139-0F34-4742-89AA-987E3A665E72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PLACE_OF_BIRTH"
+              DTS:DTSID="{0013CA9E-4745-485E-81B5-625A9E9C7CE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BIRTH_DATE"
+              DTS:DTSID="{74972F8B-AC0C-449D-8256-94DFCD702486}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_TYPE"
+              DTS:DTSID="{F201DAD9-0E9C-44F0-885E-72199560F20F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_NUMBER"
+              DTS:DTSID="{3BF7BB08-6739-4312-BE4C-60C62E1ABC70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PASSPORT_NO"
+              DTS:DTSID="{215C6E25-1022-4164-968F-14FFBD4D9B3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CITIZENSHIP"
+              DTS:DTSID="{59C58C91-75F5-4D22-A5BB-9FC787CB1A63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROF_ID"
+              DTS:DTSID="{0045945E-8C0C-4B74-B6B1-A49BBED6E6FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MARITAL_STATUS"
+              DTS:DTSID="{8297927E-36AD-4929-90BC-5C51A66F6C16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RELIGION"
+              DTS:DTSID="{FF16B266-B314-4A72-AFF6-0C4AE38A745C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RO_CODE"
+              DTS:DTSID="{4BDDB21F-BC90-467C-AA92-FD6BA743782D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FOUNDER"
+              DTS:DTSID="{C16B8A10-357D-46A9-B122-828EAAC66FFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAST_MAINTAINED_DATE"
+              DTS:DTSID="{0758E85E-27FC-49A2-8F12-3C4DF16C1C92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LBU_SEKTOR_EKONOMI"
+              DTS:DTSID="{36487339-8387-4D88-9925-6310D44838CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NPWP"
+              DTS:DTSID="{27EC3EF0-B8B9-4FEA-8F6D-8065B9708FAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OPEN_DATE"
+              DTS:DTSID="{04044ED8-3B11-41C8-86B4-96EB61E8E21B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MOTHER_NAME"
+              DTS:DTSID="{F16070BB-3EF0-436D-A379-02D55B8AFBF7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CURRENT_INCOME"
+              DTS:DTSID="{EE698446-D204-4317-B35A-833473DC26F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOURCE_INCOME"
+              DTS:DTSID="{53AF49D2-C090-453E-911E-789578C48EC4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PURPOSE"
+              DTS:DTSID="{52EEFF5A-7AA8-439A-B92C-8F297B96E962}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EDUCATION"
+              DTS:DTSID="{0D062DEF-9D8A-461C-8A46-D4A87C8316E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LBU_GOL_NASABAH"
+              DTS:DTSID="{AF5187E2-DC4C-4E11-A686-9368207FDE2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROFESSION"
+              DTS:DTSID="{7CD47F29-DCD0-416D-A582-27A3931C591E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="JABATAN"
+              DTS:DTSID="{CD1851E9-4CAA-42E1-B8B8-E56989275E7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="JENIS_USAHA"
+              DTS:DTSID="{CB27DE2E-24B7-402C-8E2D-8CE792FE2C0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUSTOMER_TYPE"
+              DTS:DTSID="{255B7E3D-D6C6-4E91-BC8E-FAB4321CF4A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RESIDENCE_COUNTRY"
+              DTS:DTSID="{14947BC5-7A59-48D4-934D-EECED4394977}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_EXPIRED"
+              DTS:DTSID="{26DDF4A8-7F14-46A5-A92E-0A9F2341F295}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EMAIL"
+              DTS:DTSID="{A18DC9F2-50E7-4129-B5B0-E1FC6B8D28DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUSINESS_PHONE"
+              DTS:DTSID="{AF8DF248-D0A9-47C4-8F42-A594F61BC468}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOURCE_SYSTEM"
+              DTS:DTSID="{5BB36AF8-CFB3-4672-BF80-5452DDCC83A0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;AntasenaConnection&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;STG M CIF&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{4AB8AD23-522B-4A35-94C4-6DC9BF9E7C92}"
+      DTS:ObjectName="STG M CIF" />
+  </DTS:Configurations>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{185B7008-D95F-4D19-90CC-A8F649AD45C6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - STG_M_CIF"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - STG_M_CIF"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_M_CIF]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AntasenaConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AntasenaConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[BUSS_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BUSS_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[BUSS_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[CIF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CIF"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CIF]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CIF]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[CUST_SHORT_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CUST_SHORT_NAME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CUST_SHORT_NAME]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUST_SHORT_NAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[CUST_FULL_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CUST_FULL_NAME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CUST_FULL_NAME]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUST_FULL_NAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[BRANCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BRANCH"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[BRANCH]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BRANCH]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[HADDRESS1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="HADDRESS1"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS1]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[HADDRESS2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="HADDRESS2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS2]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[HADDRESS3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="HADDRESS3"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS3]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS3]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[HPOST_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HPOST_CODE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HPOST_CODE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HPOST_CODE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[HADDRESS4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="HADDRESS4"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS4]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS4]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[HADDRESS5]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="HADDRESS5"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS5]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS5]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[MOBILE_PHONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MOBILE_PHONE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[MOBILE_PHONE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MOBILE_PHONE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[HOME_PHONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HOME_PHONE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HOME_PHONE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HOME_PHONE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[FAX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FAX"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[FAX]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[FAX]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[GENDER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GENDER"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[GENDER]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[GENDER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[PLACE_OF_BIRTH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PLACE_OF_BIRTH"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PLACE_OF_BIRTH]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PLACE_OF_BIRTH]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[BIRTH_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BIRTH_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[BIRTH_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BIRTH_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[ID_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_TYPE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[ID_TYPE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_TYPE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[ID_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_NUMBER"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[ID_NUMBER]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_NUMBER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[PASSPORT_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PASSPORT_NO"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PASSPORT_NO]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PASSPORT_NO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[CITIZENSHIP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CITIZENSHIP"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CITIZENSHIP]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CITIZENSHIP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[PROF_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PROF_ID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PROF_ID]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PROF_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[MARITAL_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MARITAL_STATUS"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[MARITAL_STATUS]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MARITAL_STATUS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[RELIGION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RELIGION"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[RELIGION]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RELIGION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[RO_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RO_CODE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[RO_CODE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RO_CODE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[FOUNDER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FOUNDER"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[FOUNDER]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[FOUNDER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[LAST_MAINTAINED_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAST_MAINTAINED_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[LAST_MAINTAINED_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LAST_MAINTAINED_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[LBU_SEKTOR_EKONOMI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LBU_SEKTOR_EKONOMI"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[LBU_SEKTOR_EKONOMI]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LBU_SEKTOR_EKONOMI]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[NPWP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NPWP"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[NPWP]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[NPWP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[OPEN_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OPEN_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[OPEN_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[OPEN_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[MOTHER_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MOTHER_NAME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[MOTHER_NAME]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MOTHER_NAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[CURRENT_INCOME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CURRENT_INCOME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CURRENT_INCOME]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CURRENT_INCOME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[SOURCE_INCOME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SOURCE_INCOME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[SOURCE_INCOME]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[SOURCE_INCOME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[PURPOSE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PURPOSE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PURPOSE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PURPOSE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[EDUCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EDUCATION"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[EDUCATION]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[EDUCATION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[LBU_GOL_NASABAH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LBU_GOL_NASABAH"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[LBU_GOL_NASABAH]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LBU_GOL_NASABAH]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[PROFESSION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PROFESSION"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PROFESSION]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PROFESSION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[JABATAN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="JABATAN"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[JABATAN]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[JABATAN]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[JENIS_USAHA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="JENIS_USAHA"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[JENIS_USAHA]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[JENIS_USAHA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[CUSTOMER_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CUSTOMER_TYPE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CUSTOMER_TYPE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUSTOMER_TYPE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[RESIDENCE_COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RESIDENCE_COUNTRY"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[RESIDENCE_COUNTRY]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RESIDENCE_COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[ID_EXPIRED]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_EXPIRED"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[ID_EXPIRED]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_EXPIRED]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[EMAIL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EMAIL"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[EMAIL]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[EMAIL]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[BUSINESS_PHONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BUSINESS_PHONE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[BUSINESS_PHONE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BUSINESS_PHONE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].Columns[SOURCE_SYSTEM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SOURCE_SYSTEM"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[SOURCE_SYSTEM]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[SOURCE_SYSTEM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CUST_SHORT_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUST_SHORT_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CUST_FULL_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUST_FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HPOST_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HPOST_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HADDRESS5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS5" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[MOBILE_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOBILE_PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[HOME_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HOME_PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[FAX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FAX" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GENDER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PLACE_OF_BIRTH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PLACE_OF_BIRTH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[BIRTH_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BIRTH_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[ID_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[ID_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PASSPORT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PASSPORT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CITIZENSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CITIZENSHIP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PROF_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PROF_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[MARITAL_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MARITAL_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[RELIGION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RELIGION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[RO_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RO_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[FOUNDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FOUNDER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[LAST_MAINTAINED_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAST_MAINTAINED_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[LBU_SEKTOR_EKONOMI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LBU_SEKTOR_EKONOMI" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[NPWP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NPWP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[OPEN_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OPEN_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[MOTHER_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOTHER_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CURRENT_INCOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CURRENT_INCOME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[SOURCE_INCOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SOURCE_INCOME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PURPOSE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PURPOSE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[LBU_GOL_NASABAH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LBU_GOL_NASABAH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[PROFESSION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PROFESSION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[JABATAN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="JABATAN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[JENIS_USAHA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="JENIS_USAHA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[CUSTOMER_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUSTOMER_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[RESIDENCE_COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RESIDENCE_COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[ID_EXPIRED]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_EXPIRED" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[BUSINESS_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSINESS_PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input].ExternalColumns[SOURCE_SYSTEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="SOURCE_SYSTEM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - STG_M_CIF.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_CIF.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - STG_M_CIF.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[STG_M_CIF_Error]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AntasenaConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AntasenaConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flat File Source Error Output Column]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Flat File Source Error Output Column"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Flat File Source Error Output Column" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - STG M CIF_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - STG M CIF_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[BUSS_DATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]"
+                      name="BUSS_DATE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CIF]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CIF]"
+                      name="CIF"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUST_SHORT_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CUST_SHORT_NAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUST_SHORT_NAME]"
+                      name="CUST_SHORT_NAME"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUST_FULL_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CUST_FULL_NAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUST_FULL_NAME]"
+                      name="CUST_FULL_NAME"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BRANCH]"
+                      name="BRANCH"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS1]"
+                      length="250"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS1]"
+                      name="HADDRESS1"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS2]"
+                      length="250"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS2]"
+                      name="HADDRESS2"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS3]"
+                      length="250"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS3]"
+                      name="HADDRESS3"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HPOST_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HPOST_CODE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HPOST_CODE]"
+                      name="HPOST_CODE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS4]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS4]"
+                      length="250"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS4]"
+                      name="HADDRESS4"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS5]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS5]"
+                      length="250"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HADDRESS5]"
+                      name="HADDRESS5"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MOBILE_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[MOBILE_PHONE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MOBILE_PHONE]"
+                      name="MOBILE_PHONE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HOME_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HOME_PHONE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[HOME_PHONE]"
+                      name="HOME_PHONE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[FAX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[FAX]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[FAX]"
+                      name="FAX"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[GENDER]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[GENDER]"
+                      name="GENDER"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PLACE_OF_BIRTH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PLACE_OF_BIRTH]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PLACE_OF_BIRTH]"
+                      name="PLACE_OF_BIRTH"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BIRTH_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[BIRTH_DATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[ID_TYPE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_TYPE]"
+                      name="ID_TYPE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[ID_NUMBER]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_NUMBER]"
+                      name="ID_NUMBER"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PASSPORT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PASSPORT_NO]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PASSPORT_NO]"
+                      name="PASSPORT_NO"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CITIZENSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CITIZENSHIP]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CITIZENSHIP]"
+                      name="CITIZENSHIP"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PROF_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PROF_ID]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PROF_ID]"
+                      name="PROF_ID"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MARITAL_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[MARITAL_STATUS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MARITAL_STATUS]"
+                      name="MARITAL_STATUS"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RELIGION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[RELIGION]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RELIGION]"
+                      name="RELIGION"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RO_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[RO_CODE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RO_CODE]"
+                      name="RO_CODE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[FOUNDER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[FOUNDER]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[FOUNDER]"
+                      name="FOUNDER"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LAST_MAINTAINED_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[LAST_MAINTAINED_DATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LAST_MAINTAINED_DATE]"
+                      name="LAST_MAINTAINED_DATE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LBU_SEKTOR_EKONOMI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[LBU_SEKTOR_EKONOMI]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LBU_SEKTOR_EKONOMI]"
+                      name="LBU_SEKTOR_EKONOMI"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[NPWP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[NPWP]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[NPWP]"
+                      name="NPWP"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[OPEN_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[OPEN_DATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[OPEN_DATE]"
+                      name="OPEN_DATE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MOTHER_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[MOTHER_NAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[MOTHER_NAME]"
+                      name="MOTHER_NAME"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CURRENT_INCOME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CURRENT_INCOME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CURRENT_INCOME]"
+                      name="CURRENT_INCOME"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[SOURCE_INCOME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[SOURCE_INCOME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[SOURCE_INCOME]"
+                      name="SOURCE_INCOME"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PURPOSE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PURPOSE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PURPOSE]"
+                      name="PURPOSE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[EDUCATION]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[EDUCATION]"
+                      name="EDUCATION"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LBU_GOL_NASABAH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[LBU_GOL_NASABAH]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[LBU_GOL_NASABAH]"
+                      name="LBU_GOL_NASABAH"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PROFESSION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PROFESSION]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[PROFESSION]"
+                      name="PROFESSION"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[JABATAN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[JABATAN]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[JABATAN]"
+                      name="JABATAN"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[JENIS_USAHA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[JENIS_USAHA]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[JENIS_USAHA]"
+                      name="JENIS_USAHA"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUSTOMER_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_TYPE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[CUSTOMER_TYPE]"
+                      name="CUSTOMER_TYPE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RESIDENCE_COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[RESIDENCE_COUNTRY]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[RESIDENCE_COUNTRY]"
+                      name="RESIDENCE_COUNTRY"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_EXPIRED]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[ID_EXPIRED]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[ID_EXPIRED]"
+                      name="ID_EXPIRED"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[EMAIL]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[EMAIL]"
+                      name="EMAIL"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BUSINESS_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[BUSINESS_PHONE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[BUSINESS_PHONE]"
+                      name="BUSINESS_PHONE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[SOURCE_SYSTEM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[SOURCE_SYSTEM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].Columns[SOURCE_SYSTEM]"
+                      name="SOURCE_SYSTEM"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CUST_SHORT_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUST_SHORT_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CUST_FULL_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUST_FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HPOST_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HPOST_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HADDRESS5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="HADDRESS5" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[MOBILE_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOBILE_PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[HOME_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HOME_PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[FAX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FAX" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[GENDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GENDER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PLACE_OF_BIRTH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PLACE_OF_BIRTH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[BIRTH_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BIRTH_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[ID_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[ID_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PASSPORT_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PASSPORT_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CITIZENSHIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CITIZENSHIP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PROF_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PROF_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[MARITAL_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MARITAL_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[RELIGION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RELIGION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[RO_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RO_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[FOUNDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FOUNDER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[LAST_MAINTAINED_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAST_MAINTAINED_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[LBU_SEKTOR_EKONOMI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LBU_SEKTOR_EKONOMI" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[NPWP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NPWP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[OPEN_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OPEN_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[MOTHER_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOTHER_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CURRENT_INCOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CURRENT_INCOME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[SOURCE_INCOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SOURCE_INCOME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PURPOSE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PURPOSE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[EDUCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDUCATION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[LBU_GOL_NASABAH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LBU_GOL_NASABAH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[PROFESSION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PROFESSION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[JABATAN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="JABATAN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[JENIS_USAHA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="JENIS_USAHA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUSTOMER_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[RESIDENCE_COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RESIDENCE_COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[ID_EXPIRED]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_EXPIRED" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[BUSINESS_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSINESS_PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output].ExternalColumns[SOURCE_SYSTEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SOURCE_SYSTEM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Error Output]"
+              endId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Error Output"
+              startId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Error Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - STG_M_CIF.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - STG M CIF_txt.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{5B38C5BD-EF44-482F-8E18-94F2851ADE46}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCB65952-65C3-4C11-A13F-3BAC7EDC461B}"
+          SQLTask:SqlStatementSource="truncate table [STG_M_CIF]&#xA;truncate table [STG_M_CIF_Error]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{7FB05A79-7D15-47CA-AC6B-71AD440C49F5\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{7FB05A79-7D15-47CA-AC6B-71AD440C49F5}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{7FB05A79-7D15-47CA-AC6B-71AD440C49F5}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task 1"
+          TopLeft="20.8333333333334,108.166666666667" />
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Preparation SQL Task 1"
+          TopLeft="5.50000000000001,5.50000000000004" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{7FB05A79-7D15-47CA-AC6B-71AD440C49F5\}]"
+          TopLeft="102.166666666667,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task 1\Source - STG M CIF_txt"
+          TopLeft="10.1666666666667,5.50000000000004" />
+        <NodeLayout
+          Size="202.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task 1\Destination - STG_M_CIF"
+          TopLeft="5.50000000000001,108.166666666667" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="106.833333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000003"
+              Start="0,0"
+              End="0,52.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task 1\OLE DB Destination"
+          TopLeft="257.499996162951,77.5438611086936" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Error Output]"
+          TopLeft="137.722222222222,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="207.111107274062,29.3771944420269"
+              Start="0,0"
+              End="207.111107274062,21.8771944420269">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.89555342659367" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.89555342659367"
+                    Point2="0,11.8955534265937"
+                    Point3="4,11.8955534265937" />
+                  <mssgle:LineSegment
+                    End="203.111107274062,11.8955534265937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="203.111107274062,11.8955534265937"
+                    Point2="207.111107274062,11.8955534265937"
+                    Point3="207.111107274062,15.8955534265937" />
+                  <mssgle:LineSegment
+                    End="207.111107274062,21.8771944420269" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="39.9291669182811,16.8955534265937,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - STG_M_CIF">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1591 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RWADAL
+</name>
+</assembly>
+<members>
+<member name="T:RWADAL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:RWADAL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:RWADAL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratifDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_ApprovalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_ApprovalDetailDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_Approval_ViewDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.ListExcludedAdministratifLainnyaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.ListExcludedTRADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratifRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_ApprovalRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_ApprovalDetailRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_Approval_ViewRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.ListExcludedAdministratifLainnyaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.ListExcludedTRARow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratifRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_ApprovalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_ApprovalDetailRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.MsJenisTransaksiRekeningAdministratif_Approval_ViewRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.ListExcludedAdministratifLainnyaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratif.ListExcludedTRARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratifTableAdapters.MsJenisTransaksiRekeningAdministratifTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratifTableAdapters.MsJenisTransaksiRekeningAdministratif_ApprovalTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratifTableAdapters.MsJenisTransaksiRekeningAdministratif_ApprovalDetailTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratifTableAdapters.MsJenisTransaksiRekeningAdministratif_Approval_ViewTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratifTableAdapters.ListExcludedAdministratifLainnyaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.MsJenisTransaksiRekeningAdministratifTableAdapters.ListExcludedTRATableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsJenisTagihanReportDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsKategoriRincianPerhitunganATMRDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_AsetDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Aset_JaminanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_KewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_JaminanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_TRADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsJenisTransaksiRekeningAdministratifDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.JenisEksposurCounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Counterparty_SummaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Counterparty_PotentialFutureExposureDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.KriteriaPotentialFutureEksposurDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_CounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.JenisEksposurKewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_SekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsBobotResikoSekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ListExcludedAdministratifLainnyaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ListExcludedTRADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_SummaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurAsetDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanTRADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartySummaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartyPotentialFutureExposureDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanSummaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurSekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsJenisTagihanReportRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsKategoriRincianPerhitunganATMRRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_AsetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Aset_JaminanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_KewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_JaminanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_TRARow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsJenisTransaksiRekeningAdministratifRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.JenisEksposurCounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Counterparty_SummaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Counterparty_PotentialFutureExposureRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.KriteriaPotentialFutureEksposurRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_CounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.JenisEksposurKewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_SekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsBobotResikoSekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ListExcludedAdministratifLainnyaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ListExcludedTRARow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_SummaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurAsetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanTRARow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartySummaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartyPotentialFutureExposureRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanSummaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurSekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsJenisTagihanReportRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsKategoriRincianPerhitunganATMRRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_AsetRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Aset_JaminanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_KewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_JaminanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_TRARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsJenisTransaksiRekeningAdministratifRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.JenisEksposurCounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Counterparty_SummaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Counterparty_PotentialFutureExposureRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.KriteriaPotentialFutureEksposurRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_CounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.JenisEksposurKewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_SekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.MsBobotResikoSekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ListExcludedAdministratifLainnyaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ListExcludedTRARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.ReportBI_1B_Kewajiban_SummaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurAsetRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanTRARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartySummaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartyPotentialFutureExposureRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurCounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurKewajibanSummaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividual.EksposurSekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.MsJenisTagihanReportTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.MsKategoriRincianPerhitunganATMRTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_AsetTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_Aset_JaminanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_KewajibanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_Kewajiban_JaminanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_Kewajiban_TRATableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.MsJenisTransaksiRekeningAdministratifTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.JenisEksposurCounterpartyTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_Counterparty_SummaryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_Counterparty_PotentialFutureExposureTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.KriteriaPotentialFutureEksposurTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_CounterpartyTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.JenisEksposurKewajibanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_SekuritisasiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.MsBobotResikoSekuritisasiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ListExcludedAdministratifLainnyaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ListExcludedTRATableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualTableAdapters.ReportBI_1B_Kewajiban_SummaryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsJenisTagihanReportDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsKategoriRincianPerhitunganATMRDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_AsetDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Aset_JaminanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_KewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_JaminanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_TRADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsJenisTransaksiRekeningAdministratifDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.JenisEksposurCounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Counterparty_SummaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Counterparty_PotentialFutureExposureDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.KriteriaPotentialFutureEksposurDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_CounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_SummaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.JenisEksposurKewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_SekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsBobotResikoSekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurAsetDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanTRADataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartySummaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartyPotentialFutureExposureDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanSummaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurSekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsJenisTagihanReportRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsKategoriRincianPerhitunganATMRRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_AsetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Aset_JaminanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_KewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_JaminanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_TRARow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsJenisTransaksiRekeningAdministratifRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.JenisEksposurCounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Counterparty_SummaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Counterparty_PotentialFutureExposureRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.KriteriaPotentialFutureEksposurRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_CounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_SummaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.JenisEksposurKewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_SekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsBobotResikoSekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurAsetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanTRARow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartySummaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartyPotentialFutureExposureRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanSummaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurSekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsJenisTagihanReportRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsKategoriRincianPerhitunganATMRRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_AsetRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Aset_JaminanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_KewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_JaminanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_TRARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsJenisTransaksiRekeningAdministratifRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.JenisEksposurCounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Counterparty_SummaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Counterparty_PotentialFutureExposureRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.KriteriaPotentialFutureEksposurRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_CounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_Kewajiban_SummaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.JenisEksposurKewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.ReportBI_2B_SekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.MsBobotResikoSekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurAsetRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanTRARowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartySummaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartyPotentialFutureExposureRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurCounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurKewajibanSummaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasi.EksposurSekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.MsJenisTagihanReportTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.MsKategoriRincianPerhitunganATMRTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_AsetTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_Aset_JaminanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_KewajibanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_Kewajiban_JaminanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_Kewajiban_TRATableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.MsJenisTransaksiRekeningAdministratifTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.JenisEksposurCounterpartyTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_Counterparty_SummaryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_Counterparty_PotentialFutureExposureTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.KriteriaPotentialFutureEksposurTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_CounterpartyTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_Kewajiban_SummaryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.JenisEksposurKewajibanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.ReportBI_2B_SekuritisasiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualKonsolidasiTableAdapters.MsBobotResikoSekuritisasiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.MsJenisTagihanReportDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_AsetDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_KewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_CounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SettlementDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SyariahDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurAsetDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurKewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurCounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSettlementDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSyariahDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.MsJenisTagihanReportRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_AsetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_KewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_CounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SettlementRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SyariahRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurAsetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurKewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurCounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSettlementRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSyariahRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.MsJenisTagihanReportRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_AsetRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_KewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_CounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SettlementRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.ReportBI_1C_SyariahRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurAsetRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurKewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurCounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSettlementRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasi.EksposurSyariahRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiTableAdapters.MsJenisTagihanReportTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiTableAdapters.ReportBI_1C_AsetTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiTableAdapters.ReportBI_1C_KewajibanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiTableAdapters.ReportBI_1C_CounterpartyTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiTableAdapters.ReportBI_1C_SekuritisasiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiTableAdapters.ReportBI_1C_SettlementTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiTableAdapters.ReportBI_1C_SyariahTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.MsJenisTagihanReportDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_AsetDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_KewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_CounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SettlementDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SyariahDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurAsetDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurKewajibanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurCounterpartyDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSettlementDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSekuritisasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSyariahDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.MsJenisTagihanReportRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_AsetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_KewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_CounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SettlementRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SyariahRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurAsetRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurKewajibanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurCounterpartyRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSettlementRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSekuritisasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSyariahRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.MsJenisTagihanReportRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_AsetRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_KewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_CounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SettlementRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.ReportBI_2C_SyariahRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurAsetRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurKewajibanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurCounterpartyRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSettlementRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSekuritisasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasi.EksposurSyariahRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasiTableAdapters.MsJenisTagihanReportTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasiTableAdapters.ReportBI_2C_AsetTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasiTableAdapters.ReportBI_2C_KewajibanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasiTableAdapters.ReportBI_2C_CounterpartyTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasiTableAdapters.ReportBI_2C_SekuritisasiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasiTableAdapters.ReportBI_2C_SettlementTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RWADAL.ReportATMRPerIndividualRekapitulasiKonsolidasiTableAdapters.ReportBI_2C_SyariahTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,4605 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="report">
+	<xs:element name="report">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="rentity_id">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="rentity_branch" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="submission_code" type="submission_type"/>
+				<xs:element name="report_code" type="report_type"/>
+				<xs:element name="entity_reference" nillable="true" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="fiu_ref_number" nillable="true" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="submission_date" type="sql_date"/>
+				<xs:element name="currency_code_local" type="currency_type"/>
+				<xs:element name="reporting_person" type="t_person_registration_in_report" minOccurs="0"/>
+				<xs:element name="location" type="t_address" minOccurs="0"/>
+				<xs:element name="reason" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="4000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="action" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="4000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:choice>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="transaction">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="transactionnumber">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="50"/>
+												<xs:minLength value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="internal_ref_number" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="50"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="transaction_location" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="255"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="transaction_description" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="4000"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="date_transaction" type="sql_date"/>
+									<xs:element name="teller" nillable="true" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="50"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="authorized" nillable="true" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="50"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:sequence minOccurs="0">
+										<xs:element name="late_deposit">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:boolean"/>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="date_posting" type="sql_date" minOccurs="0"/>
+									</xs:sequence>
+									<xs:element name="value_date" type="sql_date" minOccurs="0"/>
+									<xs:element name="transmode_code" type="conduction_type"/>
+									<xs:element name="transmode_comment" nillable="true" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="50"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="amount_local">
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:minInclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:choice>
+										<xs:element name="involved_parties">
+											<xs:complexType>
+												<xs:sequence maxOccurs="unbounded">
+													<xs:element name="party" type="t_party"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:sequence>
+											<xs:choice>
+												<xs:element name="t_from_my_client">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="from_funds_code" type="funds_type"/>
+															<xs:element name="from_funds_comment" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="255"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="from_foreign_currency" type="t_foreign_currency" minOccurs="0"/>
+															<xs:element name="t_conductor" type="t_person_my_client" minOccurs="0"/>
+															<xs:choice>
+																<xs:element name="from_account" type="t_account_my_client"/>
+																<xs:element name="from_person" type="t_person_my_client"/>
+																<xs:element name="from_entity" type="t_entity_my_client"/>
+															</xs:choice>
+															<xs:element name="from_country" type="country_type"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="t_from">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="from_funds_code" type="funds_type"/>
+															<xs:element name="from_funds_comment" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="255"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="from_foreign_currency" type="t_foreign_currency" minOccurs="0"/>
+															<xs:element name="t_conductor" type="t_person" minOccurs="0"/>
+															<xs:choice>
+																<xs:element name="from_account" type="t_account"/>
+																<xs:element name="from_person" type="t_person"/>
+																<xs:element name="from_entity" type="t_entity"/>
+															</xs:choice>
+															<xs:element name="from_country" type="country_type"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+											<xs:choice>
+												<xs:element name="t_to_my_client">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="to_funds_code" type="funds_type"/>
+															<xs:element name="to_funds_comment" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="255"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="to_foreign_currency" type="t_foreign_currency" minOccurs="0"/>
+															<xs:choice>
+																<xs:element name="to_account" type="t_account_my_client"/>
+																<xs:element name="to_person" type="t_person_my_client"/>
+																<xs:element name="to_entity" type="t_entity_my_client"/>
+															</xs:choice>
+															<xs:element name="to_country" type="country_type"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="t_to">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="to_funds_code" type="funds_type"/>
+															<xs:element name="to_funds_comment" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="255"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="to_foreign_currency" type="t_foreign_currency" minOccurs="0"/>
+															<xs:choice>
+																<xs:element name="to_account" type="t_account"/>
+																<xs:element name="to_person" type="t_person"/>
+																<xs:element name="to_entity" type="t_entity"/>
+															</xs:choice>
+															<xs:element name="to_country" type="country_type"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:sequence>
+									</xs:choice>
+									<xs:element name="goods_services" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence maxOccurs="unbounded">
+												<xs:element name="item" type="t_trans_item"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="comments" minOccurs="0">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="4000"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:element name="activity">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="report_parties">
+									<xs:complexType>
+										<xs:sequence maxOccurs="unbounded">
+											<xs:element name="report_party" type="report_party_type"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="goods_services" minOccurs="0">
+									<xs:complexType>
+										<xs:sequence maxOccurs="unbounded">
+											<xs:element name="item" type="t_trans_item"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+				<xs:element name="report_indicators" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="indicator" type="report_indicator_type"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="t_account_my_client">
+		<xs:sequence>
+			<xs:element name="institution_name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="institution_code">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="50"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="swift">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="11"/>
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="non_bank_institution" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="branch">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="account">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="currency_code" type="currency_type"/>
+			<xs:element name="account_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="iban" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="34"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="client_number">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="personal_account_type" type="account_type"/>
+			<xs:element name="t_entity" type="t_entity_my_client" minOccurs="0"/>
+			<xs:element name="signatory" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="is_primary" fixed="1" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:boolean"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="t_person" type="t_person_my_client"/>
+						<xs:element name="role" type="account_person_role_type" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="opened" type="sql_date"/>
+			<xs:element name="closed" type="sql_date" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="balance" type="xs:decimal"/>
+				<xs:element name="date_balance" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="status_code" type="account_status_type"/>
+			<xs:element name="beneficiary" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="beneficiary_comment" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_account">
+		<xs:sequence>
+			<xs:element name="institution_name" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="institution_code">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="50"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="swift">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="11"/>
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="non_bank_institution" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="branch" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="account">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="currency_code" type="currency_type" minOccurs="0"/>
+			<xs:element name="account_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="iban" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="34"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="client_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="personal_account_type" type="account_type" minOccurs="0"/>
+			<xs:element name="t_entity" type="t_entity" minOccurs="0"/>
+			<xs:element name="signatory" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="is_primary" fixed="1" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:boolean"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="t_person" type="t_person"/>
+						<xs:element name="role" type="account_person_role_type" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="opened" type="sql_date" minOccurs="0"/>
+			<xs:element name="closed" type="sql_date" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="balance" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="date_balance" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="status_code" type="account_status_type" minOccurs="0"/>
+			<xs:element name="beneficiary" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="beneficiary_comment" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_entity_my_client">
+		<xs:sequence>
+			<xs:element name="name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="commercial_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_legal_form" type="legal_form_type" minOccurs="0"/>
+			<xs:element name="incorporation_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="business">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="phones" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addresses">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="email" type="email_address" minOccurs="0"/>
+			<xs:element name="url" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_state" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_country_code" type="country_type"/>
+			<xs:element name="director_id" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="t_person">
+							<xs:sequence minOccurs="0">
+								<xs:element name="role" type="entity_person_role_type"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="incorporation_date" type="sql_date" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="business_closed" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_business_closed" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_entity">
+		<xs:sequence>
+			<xs:element name="name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="commercial_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_legal_form" type="legal_form_type" minOccurs="0"/>
+			<xs:element name="incorporation_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="business" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="phones" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addresses" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="email" type="email_address" minOccurs="0"/>
+			<xs:element name="url" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_state" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_country_code" type="country_type" minOccurs="0"/>
+			<xs:element name="director_id" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="t_person">
+							<xs:sequence minOccurs="0">
+								<xs:element name="role" type="entity_person_role_type"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="incorporation_date" type="sql_date" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="business_closed" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_business_closed" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_person_my_client">
+		<xs:sequence>
+			<xs:element name="gender" type="gender_type"/>
+			<xs:element name="title" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="first_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="middle_name" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="prefix" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="last_name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="birthdate" type="sql_date"/>
+			<xs:element name="birth_place">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mothers_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="alias" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ssn" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{16}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:sequence minOccurs="0">
+				<xs:element name="passport_number">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="passport_country" type="country_type" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="id_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="nationality1" type="country_type"/>
+			<xs:element name="nationality2" type="country_type" minOccurs="0"/>
+			<xs:element name="nationality3" type="country_type" minOccurs="0"/>
+			<xs:element name="residence" type="country_type"/>
+			<xs:element name="phones">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addresses">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="email" type="email_address" nillable="true" minOccurs="0" maxOccurs="5"/>
+			<xs:element name="occupation">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="employer_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="employer_address_id" type="t_address" minOccurs="0"/>
+			<xs:element name="employer_phone_id" type="t_phone" minOccurs="0"/>
+			<xs:element name="identification" type="t_person_identification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="deceased" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_deceased" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[YT]{1}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="source_of_wealth">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_person">
+		<xs:sequence>
+			<xs:element name="gender" type="gender_type" minOccurs="0"/>
+			<xs:element name="title" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="first_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="middle_name" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="prefix" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="last_name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="birthdate" type="sql_date" minOccurs="0"/>
+			<xs:element name="birth_place" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mothers_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="alias" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ssn" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{16}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:sequence minOccurs="0">
+				<xs:element name="passport_number">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="passport_country" type="country_type" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="id_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="nationality1" type="country_type" minOccurs="0"/>
+			<xs:element name="nationality2" type="country_type" minOccurs="0"/>
+			<xs:element name="nationality3" type="country_type" minOccurs="0"/>
+			<xs:element name="residence" type="country_type" minOccurs="0"/>
+			<xs:element name="phones" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addresses" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="email" type="email_address" nillable="true" minOccurs="0" maxOccurs="5"/>
+			<xs:element name="occupation" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="employer_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="employer_address_id" type="t_address" minOccurs="0"/>
+			<xs:element name="employer_phone_id" type="t_phone" minOccurs="0"/>
+			<xs:element name="identification" type="t_person_identification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="deceased" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_deceased" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[YT]{1}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="source_of_wealth" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_person_identification">
+		<xs:sequence>
+			<xs:element name="type" type="identifier_type"/>
+			<xs:element name="number">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="issue_date" type="sql_date" minOccurs="0"/>
+			<xs:element name="expiry_date" type="sql_date" minOccurs="0"/>
+			<xs:element name="issued_by" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="issue_country" type="country_type"/>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_foreign_currency">
+		<xs:sequence>
+			<xs:element name="foreign_currency_code" type="currency_type"/>
+			<xs:element name="foreign_amount">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="foreign_exchange_rate">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_address">
+		<xs:sequence>
+			<xs:element name="address_type" type="contact_type"/>
+			<xs:element name="address">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="town" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="city">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="zip" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="country_code" type="country_type"/>
+			<xs:element name="state" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_phone">
+		<xs:sequence>
+			<xs:element name="tph_contact_type" type="contact_type"/>
+			<xs:element name="tph_communication_type" type="communication_type"/>
+			<xs:element name="tph_country_prefix" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4"/>
+						<xs:minLength value="1"/>
+						<xs:pattern value="([0-9])*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tph_number">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+						<xs:pattern value="([0-9])*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tph_extension" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+						<xs:pattern value="([0-9])*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_party">
+		<xs:sequence>
+			<xs:element name="role" type="party_role_type"/>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element name="person" type="t_person"/>
+					<xs:element name="person_my_client" type="t_person_my_client"/>
+					<xs:element name="account" type="t_account"/>
+					<xs:element name="account_my_client" type="t_account_my_client"/>
+					<xs:element name="entity" type="t_entity"/>
+					<xs:element name="entity_my_client" type="t_entity_my_client"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:element name="funds_code" type="funds_type" minOccurs="0"/>
+			<xs:element name="funds_comment" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="foreign_currency" type="t_foreign_currency" minOccurs="0"/>
+			<xs:element name="country" type="country_type"/>
+			<xs:element name="significance" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="report_party_type">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="person" type="t_person"/>
+				<xs:element name="account" type="t_account"/>
+				<xs:element name="entity" type="t_entity"/>
+			</xs:choice>
+			<xs:element name="significance" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="reason" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_trans_item">
+		<xs:sequence>
+			<xs:element name="item_type" type="trans_item_type"/>
+			<xs:element name="item_make" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="description" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="previously_registered_to" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="presently_registered_to" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="estimated_value" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="status_code" type="trans_item_status" minOccurs="0"/>
+			<xs:element name="status_comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="disposed_value" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="currency_code" type="currency_type" minOccurs="0"/>
+			<xs:element name="size" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="size_uom" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="250"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="address" type="t_address" minOccurs="0"/>
+			<xs:element name="registration_date" type="sql_date" minOccurs="0"/>
+			<xs:element name="registration_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="identification_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="submission_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="-">
+				<!--Tidak Diketahui-->
+			</xs:enumeration>
+			<xs:enumeration value="E">
+				<!--Elektronis-->
+			</xs:enumeration>
+			<xs:enumeration value="M">
+				<!--Manual-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="rentity_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RE"/>
+			<xs:enumeration value="SH"/>
+			<xs:enumeration value="FIU"/>
+			<xs:enumeration value="SUP"/>
+			<xs:enumeration value="IND"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="report_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HENTI">
+				<!--Penyampaian BA Penghentian Sementara Transaksi-->
+			</xs:enumeration>
+			<xs:enumeration value="LAPT">
+				<!--LTKM - Terkait Aktivitas Pendanaan Terorisme-->
+			</xs:enumeration>
+			<xs:enumeration value="LTKM">
+				<!--LTKM - Laporan Transaksi Keuangan Mencurigakan-->
+			</xs:enumeration>
+			<xs:enumeration value="LTKMH">
+				<!--LTKM - Sebagai Akibat Pemutusan Hubungan Usaha-->
+			</xs:enumeration>
+			<xs:enumeration value="LTKMP">
+				<!--LTKM - Atas Permintaan PPATK-->
+			</xs:enumeration>
+			<xs:enumeration value="LTKMT">
+				<!--LTKM - Terkait Transaksi Pendanaan Terorisme-->
+			</xs:enumeration>
+			<xs:enumeration value="LTKTK">
+				<!--LTKT -  Kas Keluar-->
+			</xs:enumeration>
+			<xs:enumeration value="LTKTM">
+				<!--LTKT -  Kas Masuk-->
+			</xs:enumeration>
+			<xs:enumeration value="PDTP">
+				<!--Penyampaian Data Transaksi Permintaan PPATK-->
+			</xs:enumeration>
+			<xs:enumeration value="PITP">
+				<!--Penyampaian Informasi Permintaan PPATK-->
+			</xs:enumeration>
+			<xs:enumeration value="TKLIB">
+				<!--LTKL - Incoming Bank-->
+			</xs:enumeration>
+			<xs:enumeration value="TKLIP">
+				<!--LTKL - Incoming PTD-->
+			</xs:enumeration>
+			<xs:enumeration value="TKLOB">
+				<!--LTKL - Outgoing Bank-->
+			</xs:enumeration>
+			<xs:enumeration value="TKLOP">
+				<!--LTKL - Outgoing PTD-->
+			</xs:enumeration>
+			<xs:enumeration value="TUNDA">
+				<!--Penyampaian BA Penundaan Transaksi-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="funds_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BD">
+				<!--Bank Draft-->
+			</xs:enumeration>
+			<xs:enumeration value="BG">
+				<!--Bilyet Giro-->
+			</xs:enumeration>
+			<xs:enumeration value="CEK">
+				<!--Cek-->
+			</xs:enumeration>
+			<xs:enumeration value="EFK">
+				<!--Rekening Efek-->
+			</xs:enumeration>
+			<xs:enumeration value="MAS">
+				<!--Emas-->
+			</xs:enumeration>
+			<xs:enumeration value="OBL">
+				<!--Obligasi-->
+			</xs:enumeration>
+			<xs:enumeration value="OTH">
+				<!--Lainnya-->
+			</xs:enumeration>
+			<xs:enumeration value="REK">
+				<!--Rekening-->
+			</xs:enumeration>
+			<xs:enumeration value="TCQ">
+				<!--Travellers Cheque-->
+			</xs:enumeration>
+			<xs:enumeration value="UE">
+				<!--Uang Elektronik-->
+			</xs:enumeration>
+			<xs:enumeration value="UT">
+				<!--Uang Tunai-->
+			</xs:enumeration>
+			<xs:enumeration value="VA">
+				<!--Virtual Aset-->
+			</xs:enumeration>
+			<xs:enumeration value="WSL">
+				<!--Wesel-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="account_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A">
+				<!--Business-->
+			</xs:enumeration>
+			<xs:enumeration value="ELA">
+				<!--Entitas Lainnya-->
+			</xs:enumeration>
+			<xs:enumeration value="GEN">
+				<!--Giro Entitas-->
+			</xs:enumeration>
+			<xs:enumeration value="GPE">
+				<!--Giro Perorangan-->
+			</xs:enumeration>
+			<xs:enumeration value="PLA">
+				<!--Lainnya Perorangan-->
+			</xs:enumeration>
+			<xs:enumeration value="TEN">
+				<!--Tabungan Entitas-->
+			</xs:enumeration>
+			<xs:enumeration value="TPE">
+				<!--Tabungan Perseorangan-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="account_status_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AKT">
+				<!--Aktif-->
+			</xs:enumeration>
+			<xs:enumeration value="BLK">
+				<!--Blokir-->
+			</xs:enumeration>
+			<xs:enumeration value="DOR">
+				<!--Dormant-->
+			</xs:enumeration>
+			<xs:enumeration value="TTP">
+				<!--Tutup-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="identifier_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KITAP">
+				<!--Kartu Izin Tinggal Tetap-->
+			</xs:enumeration>
+			<xs:enumeration value="KITAS">
+				<!--Kartu Izin Tinggal Terbatas-->
+			</xs:enumeration>
+			<xs:enumeration value="KTM">
+				<!--Kartu Pelajar/Mahasiswa-->
+			</xs:enumeration>
+			<xs:enumeration value="KTP">
+				<!--Kartu Tanda Penduduk-->
+			</xs:enumeration>
+			<xs:enumeration value="PAS">
+				<!--Paspor-->
+			</xs:enumeration>
+			<xs:enumeration value="SIM">
+				<!--Surat Izin Mengemudi-->
+			</xs:enumeration>
+			<xs:enumeration value="SUKET">
+				<!--Surat Keterangan Kependudukan-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="conduction_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BEFEK">
+				<!--Pembelian Efek-->
+			</xs:enumeration>
+			<xs:enumeration value="BKMDT">
+				<!--Pembelian Komoditi-->
+			</xs:enumeration>
+			<xs:enumeration value="BYPJM">
+				<!--Pembayaran Pinjaman-->
+			</xs:enumeration>
+			<xs:enumeration value="JEFEK">
+				<!--Penjualan Efek-->
+			</xs:enumeration>
+			<xs:enumeration value="JKMDT">
+				<!--Penjualan Komoditi-->
+			</xs:enumeration>
+			<xs:enumeration value="KRM">
+				<!--Pengiriman Uang-->
+			</xs:enumeration>
+			<xs:enumeration value="PBBRG">
+				<!--Pembelian Barang-->
+			</xs:enumeration>
+			<xs:enumeration value="PBK">
+				<!--Pemindahbukuan-->
+			</xs:enumeration>
+			<xs:enumeration value="PBVAL">
+				<!--Pembelian Valas-->
+			</xs:enumeration>
+			<xs:enumeration value="PJBRG">
+				<!--Penjualan Barang-->
+			</xs:enumeration>
+			<xs:enumeration value="PJVAL">
+				<!--Penjualan Valas-->
+			</xs:enumeration>
+			<xs:enumeration value="PNJM">
+				<!--Peminjaman-->
+			</xs:enumeration>
+			<xs:enumeration value="SETOR">
+				<!--Penyetoran Tunai-->
+			</xs:enumeration>
+			<xs:enumeration value="STRNT">
+				<!--Penyetoran Non Tunai-->
+			</xs:enumeration>
+			<xs:enumeration value="TARIK">
+				<!--Penarikan Tunai-->
+			</xs:enumeration>
+			<xs:enumeration value="TKDN">
+				<!--Transfer Keluar - DN-->
+			</xs:enumeration>
+			<xs:enumeration value="TKLN">
+				<!--Transfer Keluar - LN Swift-->
+			</xs:enumeration>
+			<xs:enumeration value="TKLNS">
+				<!--Transfer Keluar - LN Non Swift-->
+			</xs:enumeration>
+			<xs:enumeration value="TMDN">
+				<!--Transfer Masuk - DN-->
+			</xs:enumeration>
+			<xs:enumeration value="TMLN">
+				<!--Transfer Masuk - LN Swift-->
+			</xs:enumeration>
+			<xs:enumeration value="TMLNS">
+				<!--Transfer Masuk - LN Non Swift-->
+			</xs:enumeration>
+			<xs:enumeration value="TRM">
+				<!--Penerimaan Uang-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="currency_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="-">
+				<!--UNKNOWN-->
+			</xs:enumeration>
+			<xs:enumeration value="AED">
+				<!--United Arab Emirates Dirham-->
+			</xs:enumeration>
+			<xs:enumeration value="AFN">
+				<!--Afghan afghani-->
+			</xs:enumeration>
+			<xs:enumeration value="ALL">
+				<!--Lek-->
+			</xs:enumeration>
+			<xs:enumeration value="AMD">
+				<!--Dram-->
+			</xs:enumeration>
+			<xs:enumeration value="ANG">
+				<!--Netherlands Antilles Guilder-->
+			</xs:enumeration>
+			<xs:enumeration value="AOA">
+				<!--Angolan kwanza-->
+			</xs:enumeration>
+			<xs:enumeration value="AOK">
+				<!--Kwanza-->
+			</xs:enumeration>
+			<xs:enumeration value="ARS">
+				<!--Argentinean Nuevo Peso-->
+			</xs:enumeration>
+			<xs:enumeration value="ATS">
+				<!--Schilling (no longer in use)-->
+			</xs:enumeration>
+			<xs:enumeration value="AUD">
+				<!--Australian Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="AWG">
+				<!--Aruban Guilder-->
+			</xs:enumeration>
+			<xs:enumeration value="AZN">
+				<!--Azerbaijani manat-->
+			</xs:enumeration>
+			<xs:enumeration value="BAM">
+				<!--Convertible Mark-->
+			</xs:enumeration>
+			<xs:enumeration value="BBD">
+				<!--Barbados Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="BDT">
+				<!--Taka-->
+			</xs:enumeration>
+			<xs:enumeration value="BEC">
+				<!--Convertible Belgian Franc (no longer in use)-->
+			</xs:enumeration>
+			<xs:enumeration value="BEL">
+				<!--Financial Belgian Franc (no longer in use)-->
+			</xs:enumeration>
+			<xs:enumeration value="BGN">
+				<!--Bulgarian lev-->
+			</xs:enumeration>
+			<xs:enumeration value="BHD">
+				<!--Bahraini Dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="BIF">
+				<!--Burundi Franc-->
+			</xs:enumeration>
+			<xs:enumeration value="BMD">
+				<!--Bermudian Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="BND">
+				<!--Brunei Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="BOB">
+				<!--Boliviano-->
+			</xs:enumeration>
+			<xs:enumeration value="BRL">
+				<!--Real-->
+			</xs:enumeration>
+			<xs:enumeration value="BSD">
+				<!--Bahamian Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="BTN">
+				<!--Ngultrum-->
+			</xs:enumeration>
+			<xs:enumeration value="BUK">
+				<!--Replaced by MMK-->
+			</xs:enumeration>
+			<xs:enumeration value="BWP">
+				<!--Pula-->
+			</xs:enumeration>
+			<xs:enumeration value="BYR">
+				<!--Belarussian Rouble-->
+			</xs:enumeration>
+			<xs:enumeration value="BZD">
+				<!--Belize Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="CAD">
+				<!--Canadian Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="CDF">
+				<!--Congolese franc-->
+			</xs:enumeration>
+			<xs:enumeration value="CDZ">
+				<!--New Za?re-->
+			</xs:enumeration>
+			<xs:enumeration value="CHE">
+				<!--WIR Bank?(complementary currency)-->
+			</xs:enumeration>
+			<xs:enumeration value="CHF">
+				<!--Swiss Franc-->
+			</xs:enumeration>
+			<xs:enumeration value="CHW">
+				<!--WIR Bank?(complementary currency)-->
+			</xs:enumeration>
+			<xs:enumeration value="CLF">
+				<!--Unidades de Fomento-->
+			</xs:enumeration>
+			<xs:enumeration value="CLP">
+				<!--Chilean Peso-->
+			</xs:enumeration>
+			<xs:enumeration value="CNY">
+				<!--Yuan Renminbi-->
+			</xs:enumeration>
+			<xs:enumeration value="COP">
+				<!--Colombian Peso-->
+			</xs:enumeration>
+			<xs:enumeration value="COU">
+				<!--Unidad de Valor Real-->
+			</xs:enumeration>
+			<xs:enumeration value="CRC">
+				<!--Costa Rican Col?n-->
+			</xs:enumeration>
+			<xs:enumeration value="CUP">
+				<!--Cuban Peso-->
+			</xs:enumeration>
+			<xs:enumeration value="CVE">
+				<!--Escudo Caboverdiano-->
+			</xs:enumeration>
+			<xs:enumeration value="CZK">
+				<!--Czech Koruna-->
+			</xs:enumeration>
+			<xs:enumeration value="DJF">
+				<!--Djibouti Franc-->
+			</xs:enumeration>
+			<xs:enumeration value="DKK">
+				<!--Danish Krone-->
+			</xs:enumeration>
+			<xs:enumeration value="DOP">
+				<!--Dominican Republic Peso-->
+			</xs:enumeration>
+			<xs:enumeration value="DZD">
+				<!--Algerian Dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="EEK">
+				<!--Kroon-->
+			</xs:enumeration>
+			<xs:enumeration value="EGP">
+				<!--Egyptian Pound-->
+			</xs:enumeration>
+			<xs:enumeration value="ERN">
+				<!--Eritrean Nakfa-->
+			</xs:enumeration>
+			<xs:enumeration value="ETB">
+				<!--Ethiopian Birr-->
+			</xs:enumeration>
+			<xs:enumeration value="EUR">
+				<!--Euro (replacement name for the ECU)-->
+			</xs:enumeration>
+			<xs:enumeration value="FJD">
+				<!--Fiji Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="FKP">
+				<!--Falkland Pound-->
+			</xs:enumeration>
+			<xs:enumeration value="GBP">
+				<!--Pound Sterling (United Kingdom Pound)-->
+			</xs:enumeration>
+			<xs:enumeration value="GEL">
+				<!--Lari-->
+			</xs:enumeration>
+			<xs:enumeration value="GHS">
+				<!--Ghanaian cedi-->
+			</xs:enumeration>
+			<xs:enumeration value="GIP">
+				<!--Gibraltar Pound-->
+			</xs:enumeration>
+			<xs:enumeration value="GMD">
+				<!--Dalasi-->
+			</xs:enumeration>
+			<xs:enumeration value="GNF">
+				<!--Guinean franc-->
+			</xs:enumeration>
+			<xs:enumeration value="GNS">
+				<!--Syli (also known as Guinea Franc)-->
+			</xs:enumeration>
+			<xs:enumeration value="GTQ">
+				<!--Quetzal-->
+			</xs:enumeration>
+			<xs:enumeration value="GYD">
+				<!--Guyana Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="HKD">
+				<!--Hong Kong Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="HNL">
+				<!--Lempira-->
+			</xs:enumeration>
+			<xs:enumeration value="HRK">
+				<!--Croatian Kuna-->
+			</xs:enumeration>
+			<xs:enumeration value="HTG">
+				<!--Gourde-->
+			</xs:enumeration>
+			<xs:enumeration value="HUF">
+				<!--Forint-->
+			</xs:enumeration>
+			<xs:enumeration value="IDR">
+				<!--Rupiah-->
+			</xs:enumeration>
+			<xs:enumeration value="ILS">
+				<!--Shekel-->
+			</xs:enumeration>
+			<xs:enumeration value="INR">
+				<!--Indian Rupee-->
+			</xs:enumeration>
+			<xs:enumeration value="IQD">
+				<!--Iraqi Dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="IRR">
+				<!--Iranian Rial-->
+			</xs:enumeration>
+			<xs:enumeration value="ISK">
+				<!--Icelandic Kr?na-->
+			</xs:enumeration>
+			<xs:enumeration value="JMD">
+				<!--Jamaican Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="JOD">
+				<!--Jordanian Dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="JPY">
+				<!--Yen-->
+			</xs:enumeration>
+			<xs:enumeration value="KES">
+				<!--Kenyan Shilling-->
+			</xs:enumeration>
+			<xs:enumeration value="KGS">
+				<!--Kyrgyzstani Som-->
+			</xs:enumeration>
+			<xs:enumeration value="KHR">
+				<!--Riel-->
+			</xs:enumeration>
+			<xs:enumeration value="KMF">
+				<!--Comorian Franc-->
+			</xs:enumeration>
+			<xs:enumeration value="KPW">
+				<!--Democratic Peoples Republic of Korean Won-->
+			</xs:enumeration>
+			<xs:enumeration value="KRW">
+				<!--Republic of Korean Won-->
+			</xs:enumeration>
+			<xs:enumeration value="KWD">
+				<!--Kuwaiti Dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="KYD">
+				<!--Cayman Islands Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="KZT">
+				<!--Tenge-->
+			</xs:enumeration>
+			<xs:enumeration value="LAK">
+				<!--Kip-->
+			</xs:enumeration>
+			<xs:enumeration value="LBP">
+				<!--Lebanese Pound-->
+			</xs:enumeration>
+			<xs:enumeration value="LKR">
+				<!--Sri Lankan Rupee-->
+			</xs:enumeration>
+			<xs:enumeration value="LRD">
+				<!--Liberian Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="LSL">
+				<!--Loti-->
+			</xs:enumeration>
+			<xs:enumeration value="LSM">
+				<!--Maloti-->
+			</xs:enumeration>
+			<xs:enumeration value="LTL">
+				<!--Litas-->
+			</xs:enumeration>
+			<xs:enumeration value="LVL">
+				<!--Lats-->
+			</xs:enumeration>
+			<xs:enumeration value="LYD">
+				<!--Libyan Dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="MAD">
+				<!--Moroccan Dirham-->
+			</xs:enumeration>
+			<xs:enumeration value="MDL">
+				<!--Moldavian Leu-->
+			</xs:enumeration>
+			<xs:enumeration value="MGA">
+				<!--Malagasy ariary-->
+			</xs:enumeration>
+			<xs:enumeration value="MKD">
+				<!--Macedonian Dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="MMK">
+				<!--Kyat-->
+			</xs:enumeration>
+			<xs:enumeration value="MNT">
+				<!--Tugrik-->
+			</xs:enumeration>
+			<xs:enumeration value="MOP">
+				<!--Pataca-->
+			</xs:enumeration>
+			<xs:enumeration value="MRO">
+				<!--Ouguiya-->
+			</xs:enumeration>
+			<xs:enumeration value="MTP">
+				<!--Maltese Pound, replaced by Maltese Lira-->
+			</xs:enumeration>
+			<xs:enumeration value="MUR">
+				<!--Mauritius Rupee-->
+			</xs:enumeration>
+			<xs:enumeration value="MVR">
+				<!--Rufiyaa-->
+			</xs:enumeration>
+			<xs:enumeration value="MWK">
+				<!--Malawian Kwacha-->
+			</xs:enumeration>
+			<xs:enumeration value="MXN">
+				<!--Mexican New Peso (replacement for Mexican Peso)-->
+			</xs:enumeration>
+			<xs:enumeration value="MYR">
+				<!--Ringgit (also known as Malaysian Dollar)-->
+			</xs:enumeration>
+			<xs:enumeration value="MZN">
+				<!--Mozambican metical-->
+			</xs:enumeration>
+			<xs:enumeration value="NAD">
+				<!--Namibian Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="NGN">
+				<!--Naira-->
+			</xs:enumeration>
+			<xs:enumeration value="NIO">
+				<!--Cordoba oro-->
+			</xs:enumeration>
+			<xs:enumeration value="NOK">
+				<!--Norwegian Krone-->
+			</xs:enumeration>
+			<xs:enumeration value="NPR">
+				<!--Nepalese Rupee-->
+			</xs:enumeration>
+			<xs:enumeration value="NZD">
+				<!--New Zealand Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="OMR">
+				<!--Omani Rial-->
+			</xs:enumeration>
+			<xs:enumeration value="PAB">
+				<!--Balboa-->
+			</xs:enumeration>
+			<xs:enumeration value="PEN">
+				<!--New Sol-->
+			</xs:enumeration>
+			<xs:enumeration value="PES">
+				<!--Sol (replaced by New Sol [PEN])-->
+			</xs:enumeration>
+			<xs:enumeration value="PGK">
+				<!--Kina-->
+			</xs:enumeration>
+			<xs:enumeration value="PHP">
+				<!--Philippines Peso-->
+			</xs:enumeration>
+			<xs:enumeration value="PKR">
+				<!--Pakistani Rupee-->
+			</xs:enumeration>
+			<xs:enumeration value="PLN">
+				<!--New Zloty-->
+			</xs:enumeration>
+			<xs:enumeration value="PYG">
+				<!--Guarani-->
+			</xs:enumeration>
+			<xs:enumeration value="QAR">
+				<!--Qatari Riyal-->
+			</xs:enumeration>
+			<xs:enumeration value="RON">
+				<!--Romanian new leu-->
+			</xs:enumeration>
+			<xs:enumeration value="RSD">
+				<!--Serbian dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="RUB">
+				<!--Russian Federation Rouble (formerly RUR)-->
+			</xs:enumeration>
+			<xs:enumeration value="RWF">
+				<!--Rwandan Franc-->
+			</xs:enumeration>
+			<xs:enumeration value="SAR">
+				<!--Saudi Riyal-->
+			</xs:enumeration>
+			<xs:enumeration value="SBD">
+				<!--Solomon Islands Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="SCR">
+				<!--Seychelles Rupee-->
+			</xs:enumeration>
+			<xs:enumeration value="SDG">
+				<!--Sudanese pound-->
+			</xs:enumeration>
+			<xs:enumeration value="SEK">
+				<!--Swedish Krona-->
+			</xs:enumeration>
+			<xs:enumeration value="SGD">
+				<!--Singapore Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="SHP">
+				<!--St Helena Pound-->
+			</xs:enumeration>
+			<xs:enumeration value="SLL">
+				<!--Leone-->
+			</xs:enumeration>
+			<xs:enumeration value="SOS">
+				<!--Somali Shilling-->
+			</xs:enumeration>
+			<xs:enumeration value="SRD">
+				<!--Surinamese dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="SSP">
+				<!--South Sudanese Pound-->
+			</xs:enumeration>
+			<xs:enumeration value="STD">
+				<!--Dobra-->
+			</xs:enumeration>
+			<xs:enumeration value="SYP">
+				<!--Syrian Pound-->
+			</xs:enumeration>
+			<xs:enumeration value="SZL">
+				<!--Lilangeni-->
+			</xs:enumeration>
+			<xs:enumeration value="THB">
+				<!--Baht-->
+			</xs:enumeration>
+			<xs:enumeration value="TJS">
+				<!--Tajikistani somoni-->
+			</xs:enumeration>
+			<xs:enumeration value="TMT">
+				<!--Turkmenistani manat-->
+			</xs:enumeration>
+			<xs:enumeration value="TND">
+				<!--Tunisian Dinar-->
+			</xs:enumeration>
+			<xs:enumeration value="TOP">
+				<!--Paanga-->
+			</xs:enumeration>
+			<xs:enumeration value="TPE">
+				<!--Timorian Escudo-->
+			</xs:enumeration>
+			<xs:enumeration value="TRY">
+				<!--Turkish lira-->
+			</xs:enumeration>
+			<xs:enumeration value="TTD">
+				<!--Trinidad and Tobago Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="TWD">
+				<!--Taiwan Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="TZS">
+				<!--Tanzanian Shilling-->
+			</xs:enumeration>
+			<xs:enumeration value="UAH">
+				<!--Hryvna-->
+			</xs:enumeration>
+			<xs:enumeration value="UGX">
+				<!--Ugandan shilling-->
+			</xs:enumeration>
+			<xs:enumeration value="UKP">
+				<!--Incorrectly used for GBP-->
+			</xs:enumeration>
+			<xs:enumeration value="USD">
+				<!--United States Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="USN">
+				<!--United States Dollar (Next day)-->
+			</xs:enumeration>
+			<xs:enumeration value="USS">
+				<!--United States Dollar (Same day)-->
+			</xs:enumeration>
+			<xs:enumeration value="UYP">
+				<!--Uruguayan Peso, replaced by Uruguayan New Peso (UYU)-->
+			</xs:enumeration>
+			<xs:enumeration value="UYU">
+				<!--Uruguayan New Peso-->
+			</xs:enumeration>
+			<xs:enumeration value="UZS">
+				<!--Uzbekistani Som-->
+			</xs:enumeration>
+			<xs:enumeration value="VEF">
+				<!--Venezuelan bol?var fuerte-->
+			</xs:enumeration>
+			<xs:enumeration value="VND">
+				<!--Viet Nam D?ng-->
+			</xs:enumeration>
+			<xs:enumeration value="VUV">
+				<!--Vatu-->
+			</xs:enumeration>
+			<xs:enumeration value="WST">
+				<!--Tala-->
+			</xs:enumeration>
+			<xs:enumeration value="XAF">
+				<!--Franc de la Communaut? financi?re africaine-->
+			</xs:enumeration>
+			<xs:enumeration value="XAG">
+				<!--Silver?(one?troy ounce)-->
+			</xs:enumeration>
+			<xs:enumeration value="XAU">
+				<!--Gold-->
+			</xs:enumeration>
+			<xs:enumeration value="XBA">
+				<!--European Composite Unit-->
+			</xs:enumeration>
+			<xs:enumeration value="XBB">
+				<!--European Monetary Unit-->
+			</xs:enumeration>
+			<xs:enumeration value="XBC">
+				<!--European Unit of Account 9-->
+			</xs:enumeration>
+			<xs:enumeration value="XBD">
+				<!--European Unit of Account 17-->
+			</xs:enumeration>
+			<xs:enumeration value="XCD">
+				<!--East Caribbean Dollar-->
+			</xs:enumeration>
+			<xs:enumeration value="XDR">
+				<!--International Monetary Fund Special Drawing Rights-->
+			</xs:enumeration>
+			<xs:enumeration value="XFU">
+				<!--UIC franc?(special settlement currency)-->
+			</xs:enumeration>
+			<xs:enumeration value="XOF">
+				<!--West African Franc-->
+			</xs:enumeration>
+			<xs:enumeration value="XPD">
+				<!--Palladium?(one?troy ounce)-->
+			</xs:enumeration>
+			<xs:enumeration value="XPF">
+				<!--Franc des Comptoirs fran?ais du Pacifique-->
+			</xs:enumeration>
+			<xs:enumeration value="XPT">
+				<!--Platinum?(one?troy ounce)-->
+			</xs:enumeration>
+			<xs:enumeration value="XTS">
+				<!--Code reserved for testing purposes-->
+			</xs:enumeration>
+			<xs:enumeration value="XXX">
+				<!--No currency-->
+			</xs:enumeration>
+			<xs:enumeration value="YER">
+				<!--Yemeni Riyal-->
+			</xs:enumeration>
+			<xs:enumeration value="ZAR">
+				<!--Rand-->
+			</xs:enumeration>
+			<xs:enumeration value="ZMK">
+				<!--Zambian Kwacha (obsolete)-->
+			</xs:enumeration>
+			<xs:enumeration value="ZMW">
+				<!--Zambian Kwacha-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="country_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="-">
+				<!--UNKNOWN-->
+			</xs:enumeration>
+			<xs:enumeration value="AD">
+				<!--ANDORRA-->
+			</xs:enumeration>
+			<xs:enumeration value="AE">
+				<!--UNITED ARAB EMIRATES-->
+			</xs:enumeration>
+			<xs:enumeration value="AF">
+				<!--AFGHANISTAN-->
+			</xs:enumeration>
+			<xs:enumeration value="AG">
+				<!--ANTIGUA AND BARBUDA-->
+			</xs:enumeration>
+			<xs:enumeration value="AI">
+				<!--ANGUILLA-->
+			</xs:enumeration>
+			<xs:enumeration value="AL">
+				<!--ALBANIA-->
+			</xs:enumeration>
+			<xs:enumeration value="AM">
+				<!--ARMENIA-->
+			</xs:enumeration>
+			<xs:enumeration value="AN">
+				<!--NETHERLANDS ANTILLES-->
+			</xs:enumeration>
+			<xs:enumeration value="AO">
+				<!--ANGOLA-->
+			</xs:enumeration>
+			<xs:enumeration value="AQ">
+				<!--ANTARCTICA-->
+			</xs:enumeration>
+			<xs:enumeration value="AR">
+				<!--ARGENTINA-->
+			</xs:enumeration>
+			<xs:enumeration value="AS">
+				<!--AMERICAN SAMOA-->
+			</xs:enumeration>
+			<xs:enumeration value="AT">
+				<!--AUSTRIA-->
+			</xs:enumeration>
+			<xs:enumeration value="AU">
+				<!--AUSTRALIA-->
+			</xs:enumeration>
+			<xs:enumeration value="AW">
+				<!--ARUBA-->
+			</xs:enumeration>
+			<xs:enumeration value="AX">
+				<!--?LAND ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="AZ">
+				<!--AZERBAIJAN-->
+			</xs:enumeration>
+			<xs:enumeration value="BA">
+				<!--BOSNIA AND HERZEGOVINA-->
+			</xs:enumeration>
+			<xs:enumeration value="BB">
+				<!--BARBADOS-->
+			</xs:enumeration>
+			<xs:enumeration value="BD">
+				<!--BANGLADESH-->
+			</xs:enumeration>
+			<xs:enumeration value="BE">
+				<!--BELGIUM-->
+			</xs:enumeration>
+			<xs:enumeration value="BF">
+				<!--BURKINA FASO-->
+			</xs:enumeration>
+			<xs:enumeration value="BG">
+				<!--BULGARIA-->
+			</xs:enumeration>
+			<xs:enumeration value="BH">
+				<!--BAHRAIN-->
+			</xs:enumeration>
+			<xs:enumeration value="BI">
+				<!--BURUNDI-->
+			</xs:enumeration>
+			<xs:enumeration value="BJ">
+				<!--BENIN-->
+			</xs:enumeration>
+			<xs:enumeration value="BL">
+				<!--SAINT BARTH?LEMY-->
+			</xs:enumeration>
+			<xs:enumeration value="BM">
+				<!--BERMUDA-->
+			</xs:enumeration>
+			<xs:enumeration value="BN">
+				<!--BRUNEI DARUSSALAM-->
+			</xs:enumeration>
+			<xs:enumeration value="BO">
+				<!--BOLIVIA-->
+			</xs:enumeration>
+			<xs:enumeration value="BQ">
+				<!--Bonaire,  Saint Eustatius and Saba-->
+			</xs:enumeration>
+			<xs:enumeration value="BR">
+				<!--BRAZIL-->
+			</xs:enumeration>
+			<xs:enumeration value="BS">
+				<!--BAHAMAS-->
+			</xs:enumeration>
+			<xs:enumeration value="BT">
+				<!--BHUTAN-->
+			</xs:enumeration>
+			<xs:enumeration value="BV">
+				<!--BOUVET ISLAND-->
+			</xs:enumeration>
+			<xs:enumeration value="BW">
+				<!--BOTSWANA-->
+			</xs:enumeration>
+			<xs:enumeration value="BY">
+				<!--BELARUS-->
+			</xs:enumeration>
+			<xs:enumeration value="BZ">
+				<!--BELIZE-->
+			</xs:enumeration>
+			<xs:enumeration value="CA">
+				<!--CANADA-->
+			</xs:enumeration>
+			<xs:enumeration value="CC">
+				<!--COCOS (KEELING) ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="CD">
+				<!--CONGO, THE DEMOCRATIC REPUBLIC OF THE-->
+			</xs:enumeration>
+			<xs:enumeration value="CF">
+				<!--CENTRAL AFRICAN REPUBLIC-->
+			</xs:enumeration>
+			<xs:enumeration value="CG">
+				<!--CONGO-->
+			</xs:enumeration>
+			<xs:enumeration value="CH">
+				<!--SWITZERLAND-->
+			</xs:enumeration>
+			<xs:enumeration value="CI">
+				<!--COTE DIVOIRE-->
+			</xs:enumeration>
+			<xs:enumeration value="CK">
+				<!--COOK ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="CL">
+				<!--CHILE-->
+			</xs:enumeration>
+			<xs:enumeration value="CM">
+				<!--CAMEROON-->
+			</xs:enumeration>
+			<xs:enumeration value="CN">
+				<!--CHINA-->
+			</xs:enumeration>
+			<xs:enumeration value="CO">
+				<!--COLOMBIA-->
+			</xs:enumeration>
+			<xs:enumeration value="CR">
+				<!--COSTA RICA-->
+			</xs:enumeration>
+			<xs:enumeration value="CU">
+				<!--CUBA-->
+			</xs:enumeration>
+			<xs:enumeration value="CV">
+				<!--CAPE VERDE-->
+			</xs:enumeration>
+			<xs:enumeration value="CW">
+				<!--Cura?ao-->
+			</xs:enumeration>
+			<xs:enumeration value="CX">
+				<!--CHRISTMAS ISLAND-->
+			</xs:enumeration>
+			<xs:enumeration value="CY">
+				<!--CYPRUS-->
+			</xs:enumeration>
+			<xs:enumeration value="CZ">
+				<!--CZECH REPUBLIC-->
+			</xs:enumeration>
+			<xs:enumeration value="DE">
+				<!--GERMANY-->
+			</xs:enumeration>
+			<xs:enumeration value="DJ">
+				<!--DJIBOUTI-->
+			</xs:enumeration>
+			<xs:enumeration value="DK">
+				<!--DENMARK-->
+			</xs:enumeration>
+			<xs:enumeration value="DM">
+				<!--DOMINICA-->
+			</xs:enumeration>
+			<xs:enumeration value="DO">
+				<!--DOMINICAN REPUBLIC-->
+			</xs:enumeration>
+			<xs:enumeration value="DZ">
+				<!--ALGERIA-->
+			</xs:enumeration>
+			<xs:enumeration value="EC">
+				<!--ECUADOR-->
+			</xs:enumeration>
+			<xs:enumeration value="EE">
+				<!--ESTONIA-->
+			</xs:enumeration>
+			<xs:enumeration value="EG">
+				<!--EGYPT-->
+			</xs:enumeration>
+			<xs:enumeration value="EH">
+				<!--WESTERN SAHARA-->
+			</xs:enumeration>
+			<xs:enumeration value="ER">
+				<!--ERITREA-->
+			</xs:enumeration>
+			<xs:enumeration value="ES">
+				<!--SPAIN-->
+			</xs:enumeration>
+			<xs:enumeration value="ET">
+				<!--ETHIOPIA-->
+			</xs:enumeration>
+			<xs:enumeration value="FI">
+				<!--FINLAND-->
+			</xs:enumeration>
+			<xs:enumeration value="FJ">
+				<!--FIJI-->
+			</xs:enumeration>
+			<xs:enumeration value="FK">
+				<!--FALKLAND ISLANDS (MALVINAS)-->
+			</xs:enumeration>
+			<xs:enumeration value="FM">
+				<!--MICRONESIA, FEDERATED STATES OF-->
+			</xs:enumeration>
+			<xs:enumeration value="FO">
+				<!--FAROE ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="FR">
+				<!--FRANCE-->
+			</xs:enumeration>
+			<xs:enumeration value="GA">
+				<!--GABON-->
+			</xs:enumeration>
+			<xs:enumeration value="GB">
+				<!--UNITED KINGDOM-->
+			</xs:enumeration>
+			<xs:enumeration value="GD">
+				<!--GRENADA-->
+			</xs:enumeration>
+			<xs:enumeration value="GE">
+				<!--GEORGIA-->
+			</xs:enumeration>
+			<xs:enumeration value="GF">
+				<!--FRENCH GUIANA-->
+			</xs:enumeration>
+			<xs:enumeration value="GG">
+				<!--GUERNSEY-->
+			</xs:enumeration>
+			<xs:enumeration value="GH">
+				<!--GHANA-->
+			</xs:enumeration>
+			<xs:enumeration value="GI">
+				<!--GIBRALTAR-->
+			</xs:enumeration>
+			<xs:enumeration value="GL">
+				<!--GREENLAND-->
+			</xs:enumeration>
+			<xs:enumeration value="GM">
+				<!--GAMBIA-->
+			</xs:enumeration>
+			<xs:enumeration value="GN">
+				<!--GUINEA-->
+			</xs:enumeration>
+			<xs:enumeration value="GP">
+				<!--GUADELOUPE-->
+			</xs:enumeration>
+			<xs:enumeration value="GQ">
+				<!--EQUATORIAL GUINEA-->
+			</xs:enumeration>
+			<xs:enumeration value="GR">
+				<!--GREECE-->
+			</xs:enumeration>
+			<xs:enumeration value="GS">
+				<!--SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="GT">
+				<!--GUATEMALA-->
+			</xs:enumeration>
+			<xs:enumeration value="GU">
+				<!--GUAM-->
+			</xs:enumeration>
+			<xs:enumeration value="GW">
+				<!--GUINEA-BISSAU-->
+			</xs:enumeration>
+			<xs:enumeration value="GY">
+				<!--GUYANA-->
+			</xs:enumeration>
+			<xs:enumeration value="HK">
+				<!--HONG KONG-->
+			</xs:enumeration>
+			<xs:enumeration value="HM">
+				<!--HEARD ISLAND AND MCDONALD ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="HN">
+				<!--HONDURAS-->
+			</xs:enumeration>
+			<xs:enumeration value="HR">
+				<!--CROATIA-->
+			</xs:enumeration>
+			<xs:enumeration value="HT">
+				<!--HAITI-->
+			</xs:enumeration>
+			<xs:enumeration value="HU">
+				<!--HUNGARY-->
+			</xs:enumeration>
+			<xs:enumeration value="ID">
+				<!--INDONESIA-->
+			</xs:enumeration>
+			<xs:enumeration value="IE">
+				<!--IRELAND-->
+			</xs:enumeration>
+			<xs:enumeration value="IL">
+				<!--ISRAEL-->
+			</xs:enumeration>
+			<xs:enumeration value="IM">
+				<!--ISLE OF MAN-->
+			</xs:enumeration>
+			<xs:enumeration value="IN">
+				<!--INDIA-->
+			</xs:enumeration>
+			<xs:enumeration value="IO">
+				<!--BRITISH INDIAN OCEAN TERRITORY-->
+			</xs:enumeration>
+			<xs:enumeration value="IQ">
+				<!--IRAQ-->
+			</xs:enumeration>
+			<xs:enumeration value="IR">
+				<!--IRAN, ISLAMIC REPUBLIC OF-->
+			</xs:enumeration>
+			<xs:enumeration value="IS">
+				<!--ICELAND-->
+			</xs:enumeration>
+			<xs:enumeration value="IT">
+				<!--ITALY-->
+			</xs:enumeration>
+			<xs:enumeration value="JE">
+				<!--JERSEY-->
+			</xs:enumeration>
+			<xs:enumeration value="JM">
+				<!--JAMAICA-->
+			</xs:enumeration>
+			<xs:enumeration value="JO">
+				<!--JORDAN-->
+			</xs:enumeration>
+			<xs:enumeration value="JP">
+				<!--JAPAN-->
+			</xs:enumeration>
+			<xs:enumeration value="KE">
+				<!--KENYA-->
+			</xs:enumeration>
+			<xs:enumeration value="KG">
+				<!--KYRGYZSTAN-->
+			</xs:enumeration>
+			<xs:enumeration value="KH">
+				<!--CAMBODIA-->
+			</xs:enumeration>
+			<xs:enumeration value="KI">
+				<!--KIRIBATI-->
+			</xs:enumeration>
+			<xs:enumeration value="KM">
+				<!--COMOROS-->
+			</xs:enumeration>
+			<xs:enumeration value="KN">
+				<!--SAINT KITTS AND NEVIS-->
+			</xs:enumeration>
+			<xs:enumeration value="KP">
+				<!--KOREA, DEMOCRATIC PEOPLES REPUBLIC OF-->
+			</xs:enumeration>
+			<xs:enumeration value="KR">
+				<!--KOREA, REPUBLIC OF-->
+			</xs:enumeration>
+			<xs:enumeration value="KS">
+				<!--KOSOVO (Old - KS)-->
+			</xs:enumeration>
+			<xs:enumeration value="KW">
+				<!--KUWAIT-->
+			</xs:enumeration>
+			<xs:enumeration value="KY">
+				<!--CAYMAN ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="KZ">
+				<!--KAZAKHSTAN-->
+			</xs:enumeration>
+			<xs:enumeration value="LA">
+				<!--LAO PEOPLES DEMOCRATIC REPUBLIC-->
+			</xs:enumeration>
+			<xs:enumeration value="LB">
+				<!--LEBANON-->
+			</xs:enumeration>
+			<xs:enumeration value="LC">
+				<!--SAINT LUCIA-->
+			</xs:enumeration>
+			<xs:enumeration value="LI">
+				<!--LIECHTENSTEIN-->
+			</xs:enumeration>
+			<xs:enumeration value="LK">
+				<!--SRI LANKA-->
+			</xs:enumeration>
+			<xs:enumeration value="LR">
+				<!--LIBERIA-->
+			</xs:enumeration>
+			<xs:enumeration value="LS">
+				<!--LESOTHO-->
+			</xs:enumeration>
+			<xs:enumeration value="LT">
+				<!--LITHUANIA-->
+			</xs:enumeration>
+			<xs:enumeration value="LU">
+				<!--LUXEMBOURG-->
+			</xs:enumeration>
+			<xs:enumeration value="LV">
+				<!--LATVIA-->
+			</xs:enumeration>
+			<xs:enumeration value="LY">
+				<!--LIBYAN ARAB JAMAHIRIYA-->
+			</xs:enumeration>
+			<xs:enumeration value="MA">
+				<!--MOROCCO-->
+			</xs:enumeration>
+			<xs:enumeration value="MC">
+				<!--MONACO-->
+			</xs:enumeration>
+			<xs:enumeration value="MD">
+				<!--MOLDOVA, REPUBLIC OF-->
+			</xs:enumeration>
+			<xs:enumeration value="ME">
+				<!--Montenegro-->
+			</xs:enumeration>
+			<xs:enumeration value="MF">
+				<!--SAINT MARTIN (FRENCH PART)-->
+			</xs:enumeration>
+			<xs:enumeration value="MG">
+				<!--MADAGASCAR-->
+			</xs:enumeration>
+			<xs:enumeration value="MH">
+				<!--MARSHALL ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="MK">
+				<!--MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF-->
+			</xs:enumeration>
+			<xs:enumeration value="ML">
+				<!--MALI-->
+			</xs:enumeration>
+			<xs:enumeration value="MM">
+				<!--MYANMAR-->
+			</xs:enumeration>
+			<xs:enumeration value="MN">
+				<!--MONGOLIA-->
+			</xs:enumeration>
+			<xs:enumeration value="MO">
+				<!--MACAO-->
+			</xs:enumeration>
+			<xs:enumeration value="MP">
+				<!--NORTHERN MARIANA ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="MQ">
+				<!--MARTINIQUE-->
+			</xs:enumeration>
+			<xs:enumeration value="MR">
+				<!--MAURITANIA-->
+			</xs:enumeration>
+			<xs:enumeration value="MS">
+				<!--MONTSERRAT-->
+			</xs:enumeration>
+			<xs:enumeration value="MT">
+				<!--MALTA-->
+			</xs:enumeration>
+			<xs:enumeration value="MU">
+				<!--MAURITIUS-->
+			</xs:enumeration>
+			<xs:enumeration value="MV">
+				<!--MALDIVES-->
+			</xs:enumeration>
+			<xs:enumeration value="MW">
+				<!--MALAWI-->
+			</xs:enumeration>
+			<xs:enumeration value="MX">
+				<!--MEXICO-->
+			</xs:enumeration>
+			<xs:enumeration value="MY">
+				<!--MALAYSIA-->
+			</xs:enumeration>
+			<xs:enumeration value="MZ">
+				<!--MOZAMBIQUE-->
+			</xs:enumeration>
+			<xs:enumeration value="NA">
+				<!--NAMIBIA-->
+			</xs:enumeration>
+			<xs:enumeration value="NC">
+				<!--NEW CALEDONIA-->
+			</xs:enumeration>
+			<xs:enumeration value="NE">
+				<!--NIGER-->
+			</xs:enumeration>
+			<xs:enumeration value="NF">
+				<!--NORFOLK ISLAND-->
+			</xs:enumeration>
+			<xs:enumeration value="NG">
+				<!--NIGERIA-->
+			</xs:enumeration>
+			<xs:enumeration value="NI">
+				<!--NICARAGUA-->
+			</xs:enumeration>
+			<xs:enumeration value="NL">
+				<!--NETHERLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="NO">
+				<!--NORWAY-->
+			</xs:enumeration>
+			<xs:enumeration value="NP">
+				<!--NEPAL-->
+			</xs:enumeration>
+			<xs:enumeration value="NR">
+				<!--NAURU-->
+			</xs:enumeration>
+			<xs:enumeration value="NU">
+				<!--NIUE-->
+			</xs:enumeration>
+			<xs:enumeration value="NZ">
+				<!--NEW ZEALAND-->
+			</xs:enumeration>
+			<xs:enumeration value="OM">
+				<!--OMAN-->
+			</xs:enumeration>
+			<xs:enumeration value="PA">
+				<!--PANAMA-->
+			</xs:enumeration>
+			<xs:enumeration value="PE">
+				<!--PERU-->
+			</xs:enumeration>
+			<xs:enumeration value="PF">
+				<!--FRENCH POLYNESIA-->
+			</xs:enumeration>
+			<xs:enumeration value="PG">
+				<!--PAPUA NEW GUINEA-->
+			</xs:enumeration>
+			<xs:enumeration value="PH">
+				<!--PHILIPPINES-->
+			</xs:enumeration>
+			<xs:enumeration value="PK">
+				<!--PAKISTAN-->
+			</xs:enumeration>
+			<xs:enumeration value="PL">
+				<!--POLAND-->
+			</xs:enumeration>
+			<xs:enumeration value="PM">
+				<!--SAINT PIERRE AND MIQUELON-->
+			</xs:enumeration>
+			<xs:enumeration value="PN">
+				<!--PITCAIRN-->
+			</xs:enumeration>
+			<xs:enumeration value="PR">
+				<!--PUERTO RICO-->
+			</xs:enumeration>
+			<xs:enumeration value="PS">
+				<!--PALESTINIAN TERRITORY, OCCUPIED-->
+			</xs:enumeration>
+			<xs:enumeration value="PT">
+				<!--PORTUGAL-->
+			</xs:enumeration>
+			<xs:enumeration value="PW">
+				<!--PALAU-->
+			</xs:enumeration>
+			<xs:enumeration value="PY">
+				<!--PARAGUAY-->
+			</xs:enumeration>
+			<xs:enumeration value="QA">
+				<!--QATAR-->
+			</xs:enumeration>
+			<xs:enumeration value="RE">
+				<!--REUNION-->
+			</xs:enumeration>
+			<xs:enumeration value="RO">
+				<!--ROMANIA-->
+			</xs:enumeration>
+			<xs:enumeration value="RS">
+				<!--Serbia-->
+			</xs:enumeration>
+			<xs:enumeration value="RU">
+				<!--RUSSIAN FEDERATION-->
+			</xs:enumeration>
+			<xs:enumeration value="RW">
+				<!--RWANDA-->
+			</xs:enumeration>
+			<xs:enumeration value="SA">
+				<!--SAUDI ARABIA-->
+			</xs:enumeration>
+			<xs:enumeration value="SB">
+				<!--SOLOMON ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="SC">
+				<!--SEYCHELLES-->
+			</xs:enumeration>
+			<xs:enumeration value="SD">
+				<!--SUDAN-->
+			</xs:enumeration>
+			<xs:enumeration value="SE">
+				<!--SWEDEN-->
+			</xs:enumeration>
+			<xs:enumeration value="SG">
+				<!--SINGAPORE-->
+			</xs:enumeration>
+			<xs:enumeration value="SH">
+				<!--SAINT HELENA-->
+			</xs:enumeration>
+			<xs:enumeration value="SI">
+				<!--SLOVENIA-->
+			</xs:enumeration>
+			<xs:enumeration value="SJ">
+				<!--SVALBARD AND JAN MAYEN-->
+			</xs:enumeration>
+			<xs:enumeration value="SK">
+				<!--SLOVAKIA-->
+			</xs:enumeration>
+			<xs:enumeration value="SL">
+				<!--SIERRA LEONE-->
+			</xs:enumeration>
+			<xs:enumeration value="SM">
+				<!--SAN MARINO-->
+			</xs:enumeration>
+			<xs:enumeration value="SN">
+				<!--SENEGAL-->
+			</xs:enumeration>
+			<xs:enumeration value="SO">
+				<!--SOMALIA-->
+			</xs:enumeration>
+			<xs:enumeration value="SR">
+				<!--SURINAME-->
+			</xs:enumeration>
+			<xs:enumeration value="SS">
+				<!--South Sudan-->
+			</xs:enumeration>
+			<xs:enumeration value="ST">
+				<!--SAO TOME AND PRINCIPE-->
+			</xs:enumeration>
+			<xs:enumeration value="SV">
+				<!--EL SALVADOR-->
+			</xs:enumeration>
+			<xs:enumeration value="SX">
+				<!--Sint  Maarten (Dutch part)-->
+			</xs:enumeration>
+			<xs:enumeration value="SY">
+				<!--SYRIAN ARAB REPUBLIC-->
+			</xs:enumeration>
+			<xs:enumeration value="SZ">
+				<!--SWAZILAND-->
+			</xs:enumeration>
+			<xs:enumeration value="TC">
+				<!--TURKS AND CAICOS ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="TD">
+				<!--CHAD-->
+			</xs:enumeration>
+			<xs:enumeration value="TF">
+				<!--FRENCH SOUTHERN TERRITORIES-->
+			</xs:enumeration>
+			<xs:enumeration value="TG">
+				<!--TOGO-->
+			</xs:enumeration>
+			<xs:enumeration value="TH">
+				<!--THAILAND-->
+			</xs:enumeration>
+			<xs:enumeration value="TJ">
+				<!--TAJIKISTAN-->
+			</xs:enumeration>
+			<xs:enumeration value="TK">
+				<!--TOKELAU-->
+			</xs:enumeration>
+			<xs:enumeration value="TL">
+				<!--TIMOR-LESTE-->
+			</xs:enumeration>
+			<xs:enumeration value="TM">
+				<!--TURKMENISTAN-->
+			</xs:enumeration>
+			<xs:enumeration value="TN">
+				<!--TUNISIA-->
+			</xs:enumeration>
+			<xs:enumeration value="TO">
+				<!--TONGA-->
+			</xs:enumeration>
+			<xs:enumeration value="TR">
+				<!--TURKEY-->
+			</xs:enumeration>
+			<xs:enumeration value="TT">
+				<!--TRINIDAD AND TOBAGO-->
+			</xs:enumeration>
+			<xs:enumeration value="TV">
+				<!--TUVALU-->
+			</xs:enumeration>
+			<xs:enumeration value="TW">
+				<!--TAIWAN, PROVINCE OF CHINA-->
+			</xs:enumeration>
+			<xs:enumeration value="TZ">
+				<!--TANZANIA, UNITED REPUBLIC OF-->
+			</xs:enumeration>
+			<xs:enumeration value="UA">
+				<!--UKRAINE-->
+			</xs:enumeration>
+			<xs:enumeration value="UG">
+				<!--UGANDA-->
+			</xs:enumeration>
+			<xs:enumeration value="UM">
+				<!--UNITED STATES MINOR OUTLYING ISLANDS-->
+			</xs:enumeration>
+			<xs:enumeration value="US">
+				<!--UNITED STATES-->
+			</xs:enumeration>
+			<xs:enumeration value="UY">
+				<!--URUGUAY-->
+			</xs:enumeration>
+			<xs:enumeration value="UZ">
+				<!--UZBEKISTAN-->
+			</xs:enumeration>
+			<xs:enumeration value="VA">
+				<!--HOLY SEE (VATICAN CITY STATE)-->
+			</xs:enumeration>
+			<xs:enumeration value="VC">
+				<!--SAINT VINCENT AND THE GRENADINES-->
+			</xs:enumeration>
+			<xs:enumeration value="VE">
+				<!--VENEZUELA-->
+			</xs:enumeration>
+			<xs:enumeration value="VG">
+				<!--VIRGIN ISLANDS, BRITISH-->
+			</xs:enumeration>
+			<xs:enumeration value="VI">
+				<!--VIRGIN ISLANDS, U.S.-->
+			</xs:enumeration>
+			<xs:enumeration value="VN">
+				<!--VIET NAM-->
+			</xs:enumeration>
+			<xs:enumeration value="VU">
+				<!--VANUATU-->
+			</xs:enumeration>
+			<xs:enumeration value="WF">
+				<!--WALLIS AND FUTUNA-->
+			</xs:enumeration>
+			<xs:enumeration value="WS">
+				<!--SAMOA-->
+			</xs:enumeration>
+			<xs:enumeration value="XK">
+				<!--KOSOVO-->
+			</xs:enumeration>
+			<xs:enumeration value="YE">
+				<!--YEMEN-->
+			</xs:enumeration>
+			<xs:enumeration value="YT">
+				<!--MAYOTTE-->
+			</xs:enumeration>
+			<xs:enumeration value="ZA">
+				<!--SOUTH AFRICA-->
+			</xs:enumeration>
+			<xs:enumeration value="ZM">
+				<!--ZAMBIA-->
+			</xs:enumeration>
+			<xs:enumeration value="ZW">
+				<!--ZIMBABWE-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="trans_item_status">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="-">
+				<!--Tidak Diketahui-->
+			</xs:enumeration>
+			<xs:enumeration value="HIB">
+				<!--Hibah-->
+			</xs:enumeration>
+			<xs:enumeration value="JUAL">
+				<!--Penjualan-->
+			</xs:enumeration>
+			<xs:enumeration value="KSY">
+				<!--Konsinyasi-->
+			</xs:enumeration>
+			<xs:enumeration value="LLG">
+				<!--Lelang-->
+			</xs:enumeration>
+			<xs:enumeration value="LM">
+				<!--Pengolahan dan Pemurnian Logam Mulia (Refining)-->
+			</xs:enumeration>
+			<xs:enumeration value="PBL">
+				<!--Pembelian-->
+			</xs:enumeration>
+			<xs:enumeration value="SEWA">
+				<!--Sewa Menyewa-->
+			</xs:enumeration>
+			<xs:enumeration value="TAM">
+				<!--Tukar Tambah-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="email_address">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+			<xs:pattern value="[_a-zA-Z0-9-+]+(\.[_a-zA-Z0-9-\+]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sql_date">
+		<xs:restriction base="xs:dateTime">
+			<xs:minInclusive value="1900-01-01T00:00:00"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gender_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="-">
+				<!--Tidak Diketahui-->
+			</xs:enumeration>
+			<xs:enumeration value="F">
+				<!--Perempuan-->
+			</xs:enumeration>
+			<xs:enumeration value="M">
+				<!--Laki-laki-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="trans_item_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BAS">
+				<!--Barang Antik atau Seni-->
+			</xs:enumeration>
+			<xs:enumeration value="BL">
+				<!--Barang Lelang-->
+			</xs:enumeration>
+			<xs:enumeration value="P">
+				<!--Properti-->
+			</xs:enumeration>
+			<xs:enumeration value="PPL">
+				<!--Permata, Perhiasan, Logam Mulia-->
+			</xs:enumeration>
+			<xs:enumeration value="V">
+				<!--Kendaraan Bermotor-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="contact_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="D">
+				<!--Domisili-->
+			</xs:enumeration>
+			<xs:enumeration value="K">
+				<!--Kantor-->
+			</xs:enumeration>
+			<xs:enumeration value="R">
+				<!--Rumah-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="communication_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FAX">
+				<!--Fax-->
+			</xs:enumeration>
+			<xs:enumeration value="MOB">
+				<!--Mobile-->
+			</xs:enumeration>
+			<xs:enumeration value="PSTN">
+				<!--PSTN-->
+			</xs:enumeration>
+			<xs:enumeration value="SAT">
+				<!--Satelit-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="legal_form_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BHA">
+				<!--Badan Hukum Asing-->
+			</xs:enumeration>
+			<xs:enumeration value="CV">
+				<!--Persekutuan Komanditer-->
+			</xs:enumeration>
+			<xs:enumeration value="FTR">
+				<!--Foreign Trust-->
+			</xs:enumeration>
+			<xs:enumeration value="KOP">
+				<!--Koperasi-->
+			</xs:enumeration>
+			<xs:enumeration value="LP">
+				<!--Lembaga Pemerintah-->
+			</xs:enumeration>
+			<xs:enumeration value="ORM">
+				<!--Organisasi Masyarakat-->
+			</xs:enumeration>
+			<xs:enumeration value="OTH">
+				<!--Lainnya-->
+			</xs:enumeration>
+			<xs:enumeration value="PD">
+				<!--Perusahaan Daerah-->
+			</xs:enumeration>
+			<xs:enumeration value="PDG">
+				<!--Perusahaan Dagang atau Usaha Dagang-->
+			</xs:enumeration>
+			<xs:enumeration value="PFI">
+				<!--Persekutuan Firma-->
+			</xs:enumeration>
+			<xs:enumeration value="PKP">
+				<!--Perkumpulan-->
+			</xs:enumeration>
+			<xs:enumeration value="PT">
+				<!--Perseroan Terbatas-->
+			</xs:enumeration>
+			<xs:enumeration value="YAY">
+				<!--Yayasan-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="entity_person_role_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AKU">
+				<!--Akuntan-->
+			</xs:enumeration>
+			<xs:enumeration value="AUD">
+				<!--Auditor-->
+			</xs:enumeration>
+			<xs:enumeration value="DIR">
+				<!--Direksi-->
+			</xs:enumeration>
+			<xs:enumeration value="KHU">
+				<!--Kuasa Hukum-->
+			</xs:enumeration>
+			<xs:enumeration value="KOM">
+				<!--Komisaris-->
+			</xs:enumeration>
+			<xs:enumeration value="MAN">
+				<!--Manager-->
+			</xs:enumeration>
+			<xs:enumeration value="OTH">
+				<!--Lainnya-->
+			</xs:enumeration>
+			<xs:enumeration value="PGR">
+				<!--Pengurus-->
+			</xs:enumeration>
+			<xs:enumeration value="PSH">
+				<!--Pemilik atau Pemegang Saham-->
+			</xs:enumeration>
+			<xs:enumeration value="UBO">
+				<!--Ultimate Beneficial Owner-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="account_person_role_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BO">
+				<!--Beneficial Owner-->
+			</xs:enumeration>
+			<xs:enumeration value="CHO">
+				<!--Pemegang Kartu-->
+			</xs:enumeration>
+			<xs:enumeration value="PKR">
+				<!--Pemegang Kuasa Rekening (untuk korporasi)-->
+			</xs:enumeration>
+			<xs:enumeration value="PPO">
+				<!--Pemegang Polis-->
+			</xs:enumeration>
+			<xs:enumeration value="PPR">
+				<!--Pembayar Premi-->
+			</xs:enumeration>
+			<xs:enumeration value="PR">
+				<!--Pemilik Rekening-->
+			</xs:enumeration>
+			<xs:enumeration value="TRU">
+				<!--Pengelola Rekening -->
+			</xs:enumeration>
+			<xs:enumeration value="TTG">
+				<!--Tertanggung-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="party_role_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BRO">
+				<!--Perantara-->
+			</xs:enumeration>
+			<xs:enumeration value="OTH">
+				<!--Lainnya-->
+			</xs:enumeration>
+			<xs:enumeration value="PBL">
+				<!--Pembeli-->
+			</xs:enumeration>
+			<xs:enumeration value="PBY">
+				<!--Pembayar-->
+			</xs:enumeration>
+			<xs:enumeration value="PJL">
+				<!--Penjual-->
+			</xs:enumeration>
+			<xs:enumeration value="PJS">
+				<!--Pengguna Jasa-->
+			</xs:enumeration>
+			<xs:enumeration value="PMF">
+				<!--Penerima Manfaat-->
+			</xs:enumeration>
+			<xs:enumeration value="PPO">
+				<!--Pemegang Polis-->
+			</xs:enumeration>
+			<xs:enumeration value="REK">
+				<!--Rekening Terkait-->
+			</xs:enumeration>
+			<xs:enumeration value="TTG">
+				<!--Tertanggung-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="report_indicator_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AAA001">
+				<!--Korupsi-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA002">
+				<!--Penyuapan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA003">
+				<!--Narkotika-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA004">
+				<!--Psikotropika-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA005">
+				<!--Penyelundupan Tenaga Kerja-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA006">
+				<!--Penyelundupan Migran-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA007">
+				<!--Di Bidang Perbankan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA008">
+				<!--Di Bidang Pasar Modal-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA009">
+				<!--Di Bidang Perasuransian-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA010">
+				<!--Kepabeanan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA011">
+				<!--Cukai-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA012">
+				<!--Perdagangan Orang-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA013">
+				<!--Perdagangan Senjata Gelap-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA014">
+				<!--Terorisme-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA015">
+				<!--Penculikan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA016">
+				<!--Pencurian-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA017">
+				<!--Penggelapan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA018">
+				<!--Penipuan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA019">
+				<!--Pemalsuan Uang-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA020">
+				<!--Perjudian-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA021">
+				<!--Prostitusi-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA022">
+				<!--Di Bidang Perpajakan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA023">
+				<!--Di Bidang Kehutanan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA024">
+				<!--Di Bidang Lingkungan Hidup-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA025">
+				<!--Di Bidang Kelautan dan Perikanan-->
+			</xs:enumeration>
+			<xs:enumeration value="AAA026">
+				<!--Tindak Pidana lain yang diancam pidana 4 tahun-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB001">
+				<!--Transaksi yang dilakukan oleh PEP-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB002">
+				<!--Adanya peningkatan aliran dana masuk dan/atau transaksi yang tidak dapat dijelaskan sumber asal dananya-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB003">
+				<!--Transaksi tampak tidak sesuai atau tidak konsisten dengan aktivitas atau kegiatan Pengguna Jasa-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB004">
+				<!--Transaksi yang dilakukan secara tunai dalam jumlah di luar kebiasaan yang dilakukan Pengguna Jasa-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB005">
+				<!--Pertukaran atau pembelian mata uang asing dalam jumlah relatif besar-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB006">
+				<!--Transaksi yang dilakukan bertentangan dengan latar belakang kondisi ekonomi pengguna jasa-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB007">
+				<!--Rekening tidak aktif bertransaksi kemudian menerima dana masuk dalam jumlah nominal besar-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB008">
+				<!--Rekening Pengguna Jasa menerima setoran/transfer masuk dengan frekuensi tinggi dari pihak ketiga yang tidak memiliki hubungan dengan Pengguna Jasa-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB009">
+				<!--Penggunaan akun nominee baik oleh Pengguna Jasa perorangan ataupun Pengguna Jasa perusahaan, dimana konfirmasi atas transaksi ditujukan kepada pihak lain.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB010">
+				<!--Transaksi pelunasan dipercepat pada kredit/pembiayaan dalam jumlah relatif besar-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB011">
+				<!--Pengguna Jasa menggunakan uang muka (down payment) dengan nilai yang hampir mencapai nilai objek pembiayaan sehingga tidak sesuai dengan tujuan menggunakan fasilitas pembiayaan-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB012">
+				<!--Pembayaran angsuran atau uang muka (down payment) dilakukan oleh pihak lain yang tidak memiliki hubungan yang jelas dengan Pengguna Jasa-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB013">
+				<!--Pembayaran uang muka (down payment)  dalam jumlah besar secara tunai yang tidak sesuai dengan profil nasabah-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB014">
+				<!--Pembayaran premi tambahan (top up) asuransi dari rekening pihak lain yang tidak tercantum dalam polis.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB015">
+				<!--Pembelian beberapa produk asuransi secara tunai  dalam jangka waktu berdekatan atau bersamaan dengan pembayaran premi sekaligus dalam jumlah besar yang kemudian diikuti pencairan polis sebelum jatuh tempo-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB016">
+				<!--Pencairan premi asuransi dan pembayaran klaim ditransfer ke rekening milik orang lain di luar pihak-pihak yang tercantum dalam polis-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB017">
+				<!--Pengguna Jasa yang melakukan pencairan dini (early termination) atas produk unit link yang baru saja dibeli.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB018">
+				<!--Pengguna Jasa melakukan redemption unit penyertaan yang baru saja dibeli tanpa memperhatikan kerugian atau tidak mempunyai tujuan yang jelas atas redemption tersebut.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB019">
+				<!--Pencairan premi unit link dengan memanfaatkan masa percobaan (free look period). -->
+			</xs:enumeration>
+			<xs:enumeration value="BBB020">
+				<!--Pembayaran premi asuransi dalam nominal besar dari beberapa rekening bank.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB021">
+				<!--Transaksi efek dengan menggunakan uang tunai, transfer, atau cek atas nama orang lain tanpa memberitahukan kepada perusahaan efek-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB022">
+				<!--Pengguna Jasa yang aktif melakukan transaksi pada satu jenis saham terutama saham-saham yang berkapitalisasi kecil atau tidak likuid-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB023">
+				<!--Transaksi dana masuk ke Rekening Dana Investor (RDI) dari pihak ketiga yang bukan pemilik Rekening Dana Investor (RDI)-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB024">
+				<!--Transaksi perpindahan saham dari pihak ketiga yang tidak jelas hubungannya-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB025">
+				<!--Transaksi di pasar negosiasi pada saham-saham yang tidak umum (saham memiliki indikasi Unusual Market Activity/UMA)-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB026">
+				<!--Pengguna Jasa yang aktif melakukan transaksi pada satu jenis saham terutama saham-saham yang berkapitalisasi kecil atau tidak likuid-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB027">
+				<!--Transaksi tutup sendiri (crossing) yang pembayarannya dilakukan langsung antara buyer dan seller-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB028">
+				<!--Pengguna Jasa/calon Pengguna Jasa menggunakan dokumen identitas yang diragukan kebenarannya atau diduga palsu-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB029">
+				<!--Pengguna Jasa cenderung menyimpan dana tunai pada rekening dana investor yang dikelola oleh perusahaan efek dalam waktu relatif lama tanpa melakukan transaksi-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB030">
+				<!--Pengguna Jasa sering melakukan transaksi atas saham-saham yang tidak aktif dengan tidak memperhatikan keuntungan/ kerugiannya-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB031">
+				<!--Transaksi pemindahan atau penerimaan efek dari atau ke beberapa sekuritas dalam waktu yang simultan atau berdekatan-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB032">
+				<!--Rekening efek yang pasif atau tidak sering melakukan transaksi efek namun sering digunakan untuk melakukan pengiriman dana. -->
+			</xs:enumeration>
+			<xs:enumeration value="BBB033">
+				<!--Pengguna Jasa menyetorkan dana yang jauh lebih besar dari pembayaran nilai transaksinya-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB034">
+				<!--Pengguna Jasa meminta pembayaran hasil penjualan/pembelian valuta asing ditransfer ke rekening bank yang bersangkutan atau pihak lain-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB035">
+				<!--Pengguna Jasa meminta pembayaran hasil penjualan valuta asing dengan menggunakan cek.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB036">
+				<!--Transaksi deposit payment Alat Pembayaran Menggunakan Kartu (APMK) dalam jumlah besar.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB037">
+				<!--Penyetoran (pelunasan tagihan) APMK dilakukan oleh pihak lain (bukan Pemegang Kartu). -->
+			</xs:enumeration>
+			<xs:enumeration value="BBB038">
+				<!--Pembayaran iuran koperasi oleh pihak lain yang tidak ada hubungannya dengan Pengguna Jasa-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB039">
+				<!--Pembayaran pinjaman pada koperasi oleh pihak lain di luar anggota -->
+			</xs:enumeration>
+			<xs:enumeration value="BBB040">
+				<!--Pencairan dana iuran koperasi yang dikirimkan ke pihak lain-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB041">
+				<!--Pelunasan pinjaman dipercepat pada koperasi sebelum jatuh tempo.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB042">
+				<!--Pengguna Jasa melakukan percepatan pelunasan barang gadai dengan uang dalam jumlah besar-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB043">
+				<!--Pengguna Jasa tidak merasa khawatir barang gadainya akan disita oleh pihak Pegadaian.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB044">
+				<!--Pelunasan barang gadai dilakukan oleh pihak lain yang tidak jelas hubungannya dengan Pengguna Jasa.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB045">
+				<!--Penyetoran dana pada rekening komoditi atas nama orang lain.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB046">
+				<!--Penyetoran yang dipecah melalui beberapa bank dan disetor ke rekening segregate account pialang komoditi.-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB047">
+				<!--Tidak terdapat hubungan yang jelas antara Pengguna Jasa dengan pemegang Bukti Kepemilikan Kendaraan Bermotor-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB048">
+				<!--Besaran jumlah uang tunai dan/atau nilai instrumen pembayaran lain paling sedikit Rp1,000,000,000 (satu miliar rupiah) atau dengan mata uang asing yang nilainya setara dilakukan oleh pihak yang tidak memiliki ijin dari otoritas-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB049">
+				<!--Pembawaan uang tunai berulang dalam 1 (satu) hari-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB050">
+				<!--Pembawaan uang tunai berulang yang terpola dalam periode tertentu-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB051">
+				<!--Profil dan perilaku pembawa uang tunai memiliki hubungan dengan negara atau yuridiksi berisiko tinggi-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB052">
+				<!--Profil dan perilaku pembawa uang tunai memiliki hubungan dengan pembawaan barang impor/ekspor yang tidak wajar,  yang berisiko tinnggi atau yang pernah ditegah sebelumnya-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB053">
+				<!--Profil dan perilaku pembawaan uang tunai memilki riwayat catatan kriminal, riwayat kehilangan dokumen perjalanan yang tidak wajar-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB054">
+				<!--Pembawaan uang tunai dan/atau instrumen pembayaran lain yang ditempatkan secara tidak wajar atau tidak diberitahukan-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB055">
+				<!--Transaksi untuk kepentingan atau untuk dan atas nama pengguna jasa dalam pembelian dan penjualan properti -->
+			</xs:enumeration>
+			<xs:enumeration value="BBB056">
+				<!--Transaksi untuk kepentingan atau untuk dan atas nama pengguna jasa dalam pengelolaan terhadap uang, efek, dan/atau prooduk jasa keuangan lainnya-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB057">
+				<!--Transaksi untuk kepentingan atau untuk dan atas nama pengguna jasa dalam pengelolaan rekening giro, rekening tabungan, rekening deposito dan/atau rekening efek-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB058">
+				<!--Transaksi untuk kepentingan atau untuk dan atas nama pengguna jasa dalam pengoperasian dan pengelolaan perusahaan-->
+			</xs:enumeration>
+			<xs:enumeration value="BBB059">
+				<!--Transaksi untuk kepentingan atau untuk dan atas nama pengguna jasa dalam pendirian, pembelian dan penjualan badan hukum-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC001">
+				<!--Transaksi yang dilakukan dalam jumlah relatif kecil namun dengan frekuensi yang tinggi (structuring)-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC002">
+				<!--Transaksi dilakukan dengan menggunakan beberapa rekening atas nama individu yang berbeda-beda untuk kepentingan satu orang tertentu (smurfing)-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC003">
+				<!--Pengguna Jasa atau kuasanya mencoba mempengaruhi petugas PJK untuk tidak melaporkan sebagai Transaksi Keuangan Mencurigakan  dengan berbagai cara.-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC004">
+				<!--Pengguna Jasa melakukan transaksi di berbagai daerah yang berbeda untuk menghindari deteksi-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC005">
+				<!--Pengguna jasa bertindak sebagai pihak ketiga-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC006">
+				<!--Pengguna Jasa menunjukkan keingintahuan yang tidak biasa tentang sistem internal, pengawasan, dan kebijakan-kebijakan yang berlaku-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC007">
+				<!--Ditemukan ketidakkonsistenan data pengguna jasa saat proses  identifikasi atau verifikasi dan tidak dapat dijelaskan-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC008">
+				<!--Membuka rekening dengan nama yang sangat mirip dengan nama orang/entitas bisnis yang sudah dikenal publik-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC009">
+				<!--Pengguna Jasa melakukan transaksi tunai dalam beberapa hari berturut-turut dengan nominal transaksi kurang dari Rp500.000.000,00 per harinya (upaya untuk menghindari threshold transaksi tunai per hari)-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC010">
+				<!--Beberapa transaksi dilakukan pada hari yang sama di cabang yang sama tetapi dengan menggunakan teller yang berbeda.-->
+			</xs:enumeration>
+			<xs:enumeration value="CCC011">
+				<!--Penolakan atau menyamarkan dari pengungkapan pemilik manfaat (beneficiary ownership)-->
+			</xs:enumeration>
+			<xs:enumeration value="DDD001">
+				<!--Pengguna Jasa merupakan subyek dari pencucian uang atau penyelidikan/penyidikan terorisme dan pendanaan terorisme-->
+			</xs:enumeration>
+			<xs:enumeration value="DDD002">
+				<!--Adanya informasi dari sumber yang dapat dipercaya (PPATK, Lembaga Pengawas dan Pengatur, aparat penegak hukum, media massa, atau sumber lainnya) bahwa Pengguna Jasa diduga terlibat dalam aktivitas ilegal dan/atau memiliki latar belakang tindak kriminal.-->
+			</xs:enumeration>
+			<xs:enumeration value="DDD003">
+				<!--Pengguna Jasa mengubah atau membatalkan transaksi setelah Penyedia Jasa meminta dokumen identitas Pengguna Jasa-->
+			</xs:enumeration>
+			<xs:enumeration value="DDD004">
+				<!--Transaksi yang melibatkan negara high risk country  pencucian uang dan pendanaan terorisme-->
+			</xs:enumeration>
+			<xs:enumeration value="DDD005">
+				<!--Transaksi melibatkan perusahaan fiktif atau paper company-->
+			</xs:enumeration>
+			<xs:enumeration value="EEE001">
+				<!--Transaksi Keuangan yang diminta oleh PPATK karena Pengguna Jasa telah ditetapkan sebagai tersangka/terdakwa dalam kasus tindak pidana.-->
+			</xs:enumeration>
+			<xs:enumeration value="EEE002">
+				<!--Transaksi Keuangan yang diminta oleh PPATK karena keterkaitannya dengan Transaksi lain yang sedang dalam proses analisis maupun pemeriksaan oleh PPATK.-->
+			</xs:enumeration>
+			<xs:enumeration value="EEE003">
+				<!--Transaksi Keuangan yang diminta oleh PPATK atas dasar penyelidikan atau penyidikan yang sedang dilakukan oleh aparat penegak hukum.-->
+			</xs:enumeration>
+			<xs:enumeration value="EEE004">
+				<!--Transaksi Keuangan melibatkan pengguna jasa yang terkena Sanction List-->
+			</xs:enumeration>
+			<xs:enumeration value="EEE005">
+				<!--Transaksi Keuangan melibatkan pengguna jasa yang masuk kedalam  Daftar Hitam Nasional  atau Daftar Pencarian Orang (DPO) atau Office of Foreign Asset Control (OFAC  List). -->
+			</xs:enumeration>
+			<xs:enumeration value="FFF001">
+				<!--Pengguna Jasa/calon Pengguna Jasa memberikan informasi yang tidak benar mengenai hal-hal yang berkaitan dengan identitas, sumber penghasilan atau usahanya.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF002">
+				<!--Pengguna Jasa/calon Pengguna Jasa menggunakan dokumen identitas yang diragukan kebenarannya atau diduga palsu seperti tanda tangan yang berbeda atau foto yang tidak sama.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF003">
+				<!--Pengguna Jasa/calon Pengguna Jasa enggan atau menolak untuk memberikan informasi/dokumen yang diminta oleh petugas PJK tanpa alasan yang jelas.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF004">
+				<!--Pengguna Jasa tidak bersedia memberikan informasi yang benar atau segera memutuskan hubungan usaha/menutup rekening pada saat petugas PJK meminta informasi atas transaksi yang dilakukannya.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF005">
+				<!--Pengguna Jasa enggan memberikan informasi sumber dana dan tujuan transaksi secara lengkap kepada PJK.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF006">
+				<!--Pengguna Jasa menggunakan nama yang berbeda (ejaan yang berbeda) dari satu transaksi ke transaksi yang lain.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF007">
+				<!--Transaksi melibatkan perusahaan fiktif dengan indikasi menggunakan dokumen palsu. -->
+			</xs:enumeration>
+			<xs:enumeration value="FFF008">
+				<!--Pengguna Jasa berupaya untuk meyakinkan pegawai PJK untuk tidak melengkapi dokumentasi apapun yang diperlukan untuk melakukan transaksi.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF009">
+				<!--Pengguna Jasa memberikan informasi yang diragukan atau tidak jelas.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF010">
+				<!--Pengguna Jasa menolak untuk memberikan dokumen identitas pribadi.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF011">
+				<!--Semua identitas yang disajikan tidak dapat diperiksa kebenarannya karena alasan tertentu.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF012">
+				<!--Pengguna Jasa menyajikan dokumen identitas yang berbeda setiap kali transaksi dilakukan.-->
+			</xs:enumeration>
+			<xs:enumeration value="FFF013">
+				<!--Pengguna Jasa diduga terkait dengan pendanaan terorisme berdasarkan analisis yang dilakukan oleh PJK terhadap potensi risiko dari hubungan usaha dengan Pengguna Jasa.-->
+			</xs:enumeration>
+			<xs:enumeration value="GGG001">
+				<!--Penundaan transaksi yang dilakukan atas inisiatif PJK-->
+			</xs:enumeration>
+			<xs:enumeration value="GGG002">
+				<!--Penundaan transaksi berdasarkan perintah penyidik, penuntut umum, atau hakim-->
+			</xs:enumeration>
+			<xs:enumeration value="GGG003">
+				<!--Penghentian sementara berdasarkan permintaan PPATK-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH001">
+				<!--Transaksi keuangan dengan maksud untuk digunakan dan/atau yang diketahui akan digunakan untuk melakukan tindak pidana terorisme;-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH002">
+				<!--Transkasi keuangan yang melibatkan para pihak yang diduga terlibat atau terkait dengan kegiatan terorisme berdasarkan Daftar Terduga Terorisme dan Organisasi Terorisme (DTTOT)-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH003">
+				<!--Bendahara atau karyawan NPO menarik uang dari rekening NPO dan memasukannya ke rekening pribadi yang bersangkutan, kemudian mengirimkan sebagian dananya ke rekening tersangka teroris-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH004">
+				<!--NPO dilaporan dalam berita/media karena terkait dengan organisasi teroris atau entitas yang diduga melakukan aksi terorisme.-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH005">
+				<!--Terdapat pihak terkait transaksi NPO (misalnya: pemilik rekening, pengirim, penerima atau pemilik manfaat) berasal dari negara yang dikenal sebagai negara yang mendukung kegiatan teroris atau organisasi teroris-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH006">
+				<!--Terdapat aliran dana dari kantor utama NPO asing yang berada di negara berisiko tinggi kasus terorisme, kepada cabang NPO asing yang berada di Indonesia kemudian dana tersebut masuk ke rekening NPO lokal yang berlokasi di daerah konflik di Indonesia.-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH007">
+				<!--Adanya instruksi transaksi yang tidak wajar dan mengandung kata/istilah yang berkaitan dengan ekstrimisme dan ideologi teroris serta indikasi tindak pidana lainnya-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH008">
+				<!--NPO tidak dapat menjelaskan dan/atau minim dokumen pendukung ketika pihak bank menanyakan alasan/tujuan NPO tersebut mentransferkan dananya ke wilayah atau kepada pihak berisiko tinggi terorisme-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH009">
+				<!--Terdapat penggunaan rekening NPO untuk menampung dana milik terduga teroris dan asosiasinya-->
+			</xs:enumeration>
+			<xs:enumeration value="HHH010">
+				<!--Transaksi yang melibatkan Setiap Orang yang terindikasi proliferasi-->
+			</xs:enumeration>
+			<xs:enumeration value="III001">
+				<!--Laporan Transaksi yang dilakukan oleh Pengguna Jasa dengan mata uang rupiah dan/atau mata uang asing yang nilainya paling sedikit atau setara dengan Rp500.000.000,00 (lima ratus juta rupiah) dengan pembelian tunai bertahap.-->
+			</xs:enumeration>
+			<xs:enumeration value="III002">
+				<!--Laporan Transaksi yang dilakukan oleh Pengguna Jasa dengan mata uang rupiah dan/atau mata uang asing yang nilainya paling sedikit atau setara dengan Rp 500.000.000,00 (lima ratus juta rupiah) dengan menggunakan uang tunai, cek atau giro maupun pentransfer-->
+			</xs:enumeration>
+			<xs:enumeration value="III003">
+				<!--Laporan Transaksi yang dilakukan oleh Pengguna Jasa yang menggantikan kedudukan Pengguna Jasa lain yang telah dilaporkan sebelumnya dengan nilai paling sedikit Rp 500.000.000,00 (lima ratus juta rupiah) atau dengan mata uang asing yang nilainya setara.-->
+			</xs:enumeration>
+			<xs:enumeration value="III004">
+				<!--Laporan Transaksi hibah oleh Pengguna Jasa dengan nilai paling sedikit Rp 500.000.000,00 (lima ratus juta rupiah).-->
+			</xs:enumeration>
+			<xs:enumeration value="JJJ001">
+				<!--Hasil Audit Kepatuhan dan Audit Khusus yang Dilakukan oleh PPATK-->
+			</xs:enumeration>
+			<xs:enumeration value="JJJ002">
+				<!--Hasil Audit Kepatuhan yang dilakukan oleh LPP-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK001">
+				<!--Penanganan perkara tindak pidana pencucian uang-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK002">
+				<!--Penanganan perkara tindak pidana pendanaan terorisme-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK003">
+				<!--Pemenuhan bantuan hukum timbal balik dalam masalah pidana-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK004">
+				<!--Penelusuran aset, dalam rangka pemulihan aset-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK005">
+				<!--Pemeriksaan Laporan Harta Kekayaan Penyelenggara Negara -->
+			</xs:enumeration>
+			<xs:enumeration value="KKK006">
+				<!--Optimalisasi penerimaan negara dari sektor perpajakan-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK007">
+				<!--Pengawasan kepatuhan penyedia jasa keuangan dalam penerapan prinsip mengenali pengguna jasa dan pelaksanaan kewajiban pelaporan ke PPATK-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK008">
+				<!--Pemeriksaan investigatif guna mengungkap adanya indikasi kerugian negara/daerah dan/atau unsur pidana (khusus BPK RI) -->
+			</xs:enumeration>
+			<xs:enumeration value="KKK009">
+				<!--Seleksi pengangkatan pejabat strategis-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK010">
+				<!--Penanganan tindak pidana oleh selain penyidik tindak pidana pencucian uang -->
+			</xs:enumeration>
+			<xs:enumeration value="KKK011">
+				<!--Audit investigasi  (Itjen, BPKP, audit internal dsb)-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK012">
+				<!--Membahayakan keamanan nasional-->
+			</xs:enumeration>
+			<xs:enumeration value="KKK013">
+				<!--Organisasi atau lembaga internasional di bidang pencegahan dan pemberantasan tindak pidana pencucian uang atau tindak pidana lain terkait dengan tindak pidana pencucian uang.-->
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="t_person_registration">
+		<xs:sequence>
+			<xs:element name="ID">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Password">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+						<xs:minLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="user_code">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="4"/>
+						<xs:pattern value="[\._a-zA-Z0-9-]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RE_ID" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10000000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="title" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="prefix" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="first_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="last_name" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="middle_name" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="gender" type="gender_type" minOccurs="0"/>
+			<xs:element name="birthdate" type="sql_date"/>
+			<xs:element name="birth_place" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mothers_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="alias" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ssn" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{16}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:sequence minOccurs="0">
+				<xs:element name="passport_number">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="passport_country" type="country_type" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="id_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="nationality1" type="country_type"/>
+			<xs:element name="nationality2" type="country_type" minOccurs="0"/>
+			<xs:element name="nationality3" type="country_type" minOccurs="0"/>
+			<xs:element name="residence" type="country_type" minOccurs="0"/>
+			<xs:element name="phones" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addresses" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="email" type="email_address" nillable="true" minOccurs="1" maxOccurs="5"/>
+			<xs:element name="occupation" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="employer_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="identification" type="t_person_identification" minOccurs="0" maxOccurs="1"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="deceased" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_deceased" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="source_of_wealth" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="reject_comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_entity_registration_RE">
+		<xs:sequence>
+			<xs:element name="ID">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rentity_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10000000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="entity_type_code" type="rentity_type"/>
+			<xs:element name="agency_business_type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="5"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="entity_name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="acronym">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="swift_bic">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="11"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="contact_person" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="name_of_holding_company" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="1000"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="delegate_REID" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10000000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="commercial_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_legal_form" type="legal_form_type" minOccurs="0"/>
+			<xs:element name="incorporation_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="business" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="is_financial" fixed="1" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:boolean"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="email" type="email_address" minOccurs="1"/>
+			<xs:element name="url" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="addresses" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="phones" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="incorporation_city" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_state" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_country_code" type="country_type" minOccurs="0"/>
+			<xs:element name="incorporation_date" type="sql_date" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="business_closed" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_business_closed" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="reporting_obligations" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="obligation">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="25"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="reject_comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_entity_registration_SH">
+		<xs:sequence>
+			<xs:element name="ID">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rentity_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10000000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="entity_type_code" type="rentity_type"/>
+			<xs:element name="agency_business_type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="5"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="entity_name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="acronym">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="swift_bic" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="11"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="contact_person" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="name_of_holding_company" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="1000"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="delegate_REID" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10000000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="commercial_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_legal_form" type="legal_form_type" minOccurs="0"/>
+			<xs:element name="incorporation_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="business" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="is_financial" fixed="1" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:boolean"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="email" type="email_address" minOccurs="1"/>
+			<xs:element name="url" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="addresses" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="phones" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="incorporation_city" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_state" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_country_code" type="country_type" minOccurs="0"/>
+			<xs:element name="incorporation_date" type="sql_date" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="business_closed" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_business_closed" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="reporting_obligations" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="obligation">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="25"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="reject_comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_entity_registration_SUP">
+		<xs:sequence>
+			<xs:element name="ID">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rentity_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10000000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="entity_type_code" type="rentity_type"/>
+			<xs:element name="agency_business_type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="5"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="entity_name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="acronym">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="swift_bic" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="11"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="contact_person" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="name_of_holding_company" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="1000"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="delegate_REID" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="10000000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="commercial_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_legal_form" type="legal_form_type" minOccurs="0"/>
+			<xs:element name="incorporation_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="business" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="is_financial" fixed="1" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:boolean"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="email" type="email_address" minOccurs="1"/>
+			<xs:element name="url" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="addresses" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="phones" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="incorporation_city" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_state" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="incorporation_country_code" type="country_type" minOccurs="0"/>
+			<xs:element name="incorporation_date" type="sql_date" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="business_closed" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_business_closed" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="reporting_obligations" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="obligation">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="25"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="reject_comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="t_person_registration_in_report">
+		<xs:sequence>
+			<xs:element name="gender" type="gender_type" minOccurs="0"/>
+			<xs:element name="title" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="first_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="middle_name" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="prefix" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="last_name">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="birthdate" type="sql_date" minOccurs="0"/>
+			<xs:element name="birth_place" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mothers_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="alias" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ssn" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{16}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:sequence minOccurs="0">
+				<xs:element name="passport_number">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="passport_country" type="country_type" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="id_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="nationality1" type="country_type" minOccurs="0"/>
+			<xs:element name="nationality2" type="country_type" minOccurs="0"/>
+			<xs:element name="nationality3" type="country_type" minOccurs="0"/>
+			<xs:element name="residence" type="country_type" minOccurs="0"/>
+			<xs:element name="phones" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="phone" type="t_phone" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addresses" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="address" type="t_address" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="email" type="email_address" nillable="true" minOccurs="0" maxOccurs="5"/>
+			<xs:element name="occupation" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="employer_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="employer_address_id" type="t_address" minOccurs="0"/>
+			<xs:element name="employer_phone_id" type="t_phone" minOccurs="0"/>
+			<xs:element name="identification" type="t_person_identification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:sequence minOccurs="0">
+				<xs:element name="deceased" fixed="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:boolean"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="date_deceased" type="sql_date" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="tax_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tax_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="source_of_wealth" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,466 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="MasterOther.Master.vb" Inherits="MasterOther" %>
+
+<%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
+
+<!DOCTYPE html>
+
+<html style="width: 100%; height: 100%;">
+
+<head runat="server">
+    <title></title>
+
+    <link href="<%= Page.ResolveClientUrl("~/Styles/Site.Master.css") %>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/Form.Master.js") %>"></script>
+    <link rel="stylesheet" href="styles/ionicons-2.0.1/css/ionicons.min.css">
+
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+
+            Ext.Ajax.timeout = 3600000;
+            Ext.net.DirectEvent.timeout = 3600000;
+            Ext.override(Ext.form.Basic, { timeout: Ext.Ajax.timeout / 1000 });
+            Ext.override(Ext.data.proxy.Server, { timeout: Ext.Ajax.timeout });
+            Ext.override(Ext.data.Connection, { timeout: Ext.Ajax.timeout });
+        });
+
+        //var hidemenu = function () {
+
+        //    //App.MenuPanel1.exp;
+
+
+        //    if (document.getElementById("MenuPanel1").style.display == "none") {
+        //        alert(document.getElementById("MenuPanel1").style.display);
+        //        document.getElementById("MenuPanel1").style.display = "block";
+
+        //    }
+        //    else {
+        //        document.getElementById("MenuPanel1").style.display = "block";
+        //    }
+
+        //};
+
+
+        var nodeLoad = function (store, operation, options) {
+            var node = operation.node;
+
+
+            NawadataDirect.AddSubMenu(node.getId(), {
+                success: function (result) {
+                    node.set('loading', false);
+                    node.set('loaded', true);
+                    var data = Ext.decode(result);
+                    node.appendChild(data, undefined, true);
+                    node.expand();
+                },
+
+                failure: function (errorMsg) {
+                    Ext.Msg.alert('Failure', errorMsg);
+                }
+            });
+
+            return false;
+        };
+
+        var filterTree = function (tf, e) {
+            var tree = App.MenuPanel1,
+                store = tree.store,
+                logic = tree,
+                text = tf.getRawValue();
+
+            logic.clearFilter();
+
+            if (Ext.isEmpty(text, false)) {
+                clearFilter(tf);
+                return;
+            }
+
+            if (e.getKey() === e.ESC) {
+                clearFilter();
+            } else {
+                var re = new RegExp(".*" + text + ".*", "i");
+
+                //logic.filterBy(function (node) {
+                //    return re.test(node.data.text);
+                //});
+                tree.clearFilter(true);
+
+                tree.filterBy(function (node) {
+                    var tags = node.data.text,
+                        hasTags = Ext.isArray(node.data.text) && node.data.text.length > 0,
+                        match = false,
+                        pn = node.parentNode,
+                        pnIsFixed = false,
+                        i, len;
+
+                    match = re.test(node.data.text);
+
+                    if (match && node.isLeaf()) {
+                        pn.hasMatchNode = true;
+                    }
+
+                    if (pn) {
+                        node.bubble(function (n) {
+                            if (node != n) {
+                                pnIsFixed = re.test(n.data.text);
+
+                                return !pnIsFixed;
+                            }
+                        });
+                    }
+
+                    if (pn != null && pnIsFixed) {
+                        return true;
+                    }
+
+                    if (node.isLeaf() === false) {
+                        return match;
+                    }
+
+                    return pnIsFixed || match;
+                }, { expandNodes: true });
+
+            }
+        };
+
+        var clearFilter = function () {
+            var field = App.TriggerField1,
+                tree = App.MenuPanel1,
+                store = tree.store,
+                logic = tree;
+
+
+            field.setValue("");
+            logic.clearFilter(true);
+            tree.clearFilter(true);
+            field.focus(false, 100);
+        };
+    </script>
+
+    <script>
+
+        function loadPageInButton(tabPanel, ID, urldata, modulename, menupanel, btnmenu) {
+            var tab = tabPanel.getComponent("node" + ID);
+
+            if (urldata != '') {
+
+                tabPanel.removeAll()
+
+                tab = tabPanel.add({
+                    id: "node" + ID,
+                    title: "",
+                    closable: false,
+                    loader: {
+                        url: urldata,
+                        renderer: "frame",
+                        loadMask: {
+                            showMask: true,
+                            msg: "Loading " + modulename + "..."
+                        }
+                    }
+                    //autoScroll: true
+                });
+
+                if (!btnmenu.hidden) {
+                    menupanel.hide();
+                    NawadataDirect.SetSessionShowFalse();
+
+                }
+
+            }
+
+        };
+
+        var loadPage = function (tabPanel, record,menupanel,btnmenu) {
+            var tab = tabPanel.getComponent("node" + record.data.nodeid);
+           
+            if (record.data.qtip != '') {
+
+                tabPanel.removeAll()
+
+                tab = tabPanel.add({
+                    id: "node" + record.data.nodeid,
+                    title: "",
+                    closable: false,
+                    loader: {
+                        url: record.data.qtip,
+                        renderer: "frame",
+                        loadMask: {
+                            showMask: true,
+                            msg: "Loading " + record.data.text + "..."
+                        }
+                    }
+                    //autoScroll: true
+                });
+
+                if (!btnmenu.hidden) {
+                    menupanel.hide();
+                    NawadataDirect.SetSessionShowFalse();
+
+                }
+
+            }
+
+        };
+
+        var addTab = function (tabPanel, id, url, menuItem, title) {
+            var tab = tabPanel.getComponent(id);
+
+            if (url != '') {
+
+                tabPanel.removeAll()
+                tab = tabPanel.add({
+                    id: id,
+                    title: "",
+                    closable: false,
+                    menuItem: menuItem,
+
+                    loader: {
+                        url: url,
+                        renderer: "frame",
+                        loadMask: {
+                            showMask: true,
+                            msg: "Loading " + title + "..."
+                        }
+                    }
+                });
+
+            }
+
+        }
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div>
+
+            <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Crisp" DirectMethodNamespace="NawadataDirect" ShowWarningOnAjaxFailure="false">
+            </ext:ResourceManager>
+
+            <ext:Window ID="windowSetting" Title="Setting Branch & Period" runat="server" ButtonAlign="Right" Width="500" Hidden="true" Layout="AnchorLayout" Modal="true">
+                <Items>
+                    <ext:FormPanel ID="FormPanel1" runat="server" BodyPadding="15">
+                        <Items>
+                            <ext:ComboBox ID="cboKantorCabang" ClientIDMode="Static" runat="server" FieldLabel="Branch" AnchorHorizontal="95%" LabelWidth="120" DisplayField="NamaCabang" ValueField="Kode" 
+                                MinChars="0" EmptyText="[Select Branch]" ForceSelection="true" AllowBlank="false" TriggerAction="Query"> 
+                                <Store>
+                                    <ext:Store ID="StoreBranch" runat="server" OnReadData="StoreBranch_ReadData" IsPagingStore="true">
+                                        <Model>
+                                            <ext:Model ID="ModelBranch" runat="server">
+                                                <Fields>
+                                                    <ext:ModelField Name="Kode" Type="String"></ext:ModelField>
+                                                    <ext:ModelField Name="NamaCabang" Type="String"></ext:ModelField>
+                                                </Fields>
+                                            </ext:Model>
+                                        </Model>
+                                        <Proxy>
+                                            <ext:PageProxy>
+                                            </ext:PageProxy>
+                                        </Proxy>
+                                    </ext:Store>
+                                </Store>
+                                <Triggers>
+                                    <ext:FieldTrigger Icon="Clear" Weight="-1" />
+                                </Triggers>
+                                <Listeners>
+                                    <Select Handler="this.getTrigger(0).show();" />
+                                    <TriggerClick Handler="if (index == 0) { 
+                                           this.clearValue(); 
+                                           this.getTrigger(0).hide();
+                                       }" />
+                                </Listeners>
+                            </ext:ComboBox>
+                            <ext:DateField ID="txtPeriod" runat="server" FieldLabel="Report Period"  LabelWidth="120" AllowBlank="false">
+                            </ext:DateField>
+                        </Items>
+                        <Buttons>
+                            <ext:Button ID="BtnSaveSLIK" runat="server" Icon="Disk" Text="Save">
+                                <Listeners>
+                                    <Click Handler="if (!#{FormPanel1}.getForm().isValid()) return false; else addTab(#{Panel9},'xx','Default2.aspx',this,'Default'); "></Click>
+                                </Listeners>
+                                <DirectEvents>
+                                    <Click OnEvent="BtnSaveSLIK_DirectEvent">
+                                        <EventMask ShowMask="true" Msg="Saving Parameter..." MinDelay="500"></EventMask>
+                                    </Click>
+                                </DirectEvents>
+                            </ext:Button>
+                        </Buttons>
+                    </ext:FormPanel>
+                </Items>
+                <Listeners>
+                    <Resize Handler="#{windowSetting}.center()" />
+                </Listeners>
+            </ext:Window>
+            <ext:Viewport ID="Viewport1" runat="server" Layout="border" EnableTheming="true">
+                <Items>
+                    <ext:Panel ID="TopPanel" runat="server" Height="100" Region="North" Split="True" Title="Logo" DefaultAlign="right" Collapsible="true">
+                        <LayoutConfig>
+                            <ext:HBoxLayoutConfig Align="Middle" />
+                        </LayoutConfig>
+                        <Items>
+
+                            <ext:Panel runat="server" Layout="ColumnLayout">
+
+                                <TopBar>
+                                </TopBar>
+                                <Items>
+                                    <ext:Toolbar runat="server">
+                                        <Items>
+                                            <ext:Button ID="BtnMenu" runat="server" IconCls="ion-navicon-round">
+                                                <%-- <Listeners>
+                                            <Click Handler="hidemenu()"></Click>
+                                        </Listeners>--%>
+                                                <DirectEvents>
+                                                    <Click OnEvent="BtnMenu_Click">
+                                                    </Click>
+                                                </DirectEvents>
+                                                <ResponsiveConfig>
+                                                    <ext:ResponsiveRule Rule="wide">
+
+                                                        <Config>
+                                                            <ext:Button ID="Button2" runat="server" IconCls="ion-navicon-round" Hidden="true">
+                                                            </ext:Button>
+                                                        </Config>
+                                                    </ext:ResponsiveRule>
+
+                                                    <ext:ResponsiveRule Rule="tall">
+                                                        <Config>
+
+                                                            <ext:Button ID="Button3" runat="server" IconCls="ion-navicon-round" Hidden="false">
+                                                            </ext:Button>
+                                                        </Config>
+                                                    </ext:ResponsiveRule>
+                                                </ResponsiveConfig>
+                                            </ext:Button>
+                                        </Items>
+                                    </ext:Toolbar>
+
+                                    <ext:Image ID="Image1" runat="server" ImageUrl="images\nawa323.jpg" Width="150" Height="25">
+                                    </ext:Image>
+                                </Items>
+                            </ext:Panel>
+
+                            <ext:Panel ID="Panel1" runat="server" Flex="1">
+                                <TopBar>
+                                    <ext:StatusBar runat="server" EnableOverflow="true">
+                                        <Items>
+                                            <ext:ToolbarTextItem ID="barUserID" runat="server" Text="User ID:" />
+                                            <ext:ToolbarSeparator runat="server" />
+                                            <ext:ToolbarTextItem ID="barGroup" runat="server" Text="Group Menu:" />
+                                            <ext:ToolbarSeparator runat="server" />
+                                            <ext:ToolbarTextItem ID="barLastSuccessLogin" runat="server" Text="Last Success Login:" />
+                                            <ext:ToolbarSeparator runat="server" />
+                                            <ext:ToolbarTextItem ID="barLastFailLogin" runat="server" Text="Last Failed Login:" />
+                                        </Items>
+                                    </ext:StatusBar>
+                                </TopBar>
+                                <BottomBar>
+                                    <ext:StatusBar ID="StatusBar1" runat="server" EnableOverflow="true" PaddingSpec="2 0 6">
+                                        <Items>
+
+                                            <%--<%--<ext:ToolbarFill ID="ToolbarFill1" runat="server" />
+                                            <ext:Button ID="btnnotification" runat="server" Icon="Email" ToolTip="Notification" Handler="NawadataDirect.btnnotification_DirectClick()">
+                                            </ext:Button>--%>
+                                            <%--<ext:ToolbarSeparator ID="ToolbarSeparator3" runat="server" />
+                                            <ext:Button ID="btntaskList" runat="server" Icon="BookGo" ToolTip="Task List" ClientIDMode="Static" Handler="NawadataDirect.btntaskList_DirectClick()">
+                                            </ext:Button>--%>
+                                            <%--<ext:ToolbarSeparator ID="ToolbarSeparator4" runat="server" />--%>
+                                            
+                                            <ext:ToolbarTextItem ID="barSLIKParameter" runat="server" Text="SLIK Parameter:" />
+
+                                            <ext:ToolbarSeparator ID="ToolbarSeparator6" runat="server" />
+                                            <ext:Button ID="BtnSettingBranchAndPeriod" runat="server" Text="Setting Branch & Period" Handler="NawadataDirect.BtnSettingBranchAndPeriod_DirectClick()">
+                                            </ext:Button>
+                                            <ext:ToolbarSeparator ID="ToolbarSeparator5" runat="server" />
+                                            <ext:Button ID="BtnChangePassword" runat="server" Text="Change Password" Handler="NawadataDirect.BtnChangePassword_DirectClick()">
+                                            </ext:Button>
+                                            <%--<ext:HyperlinkButton ID="hChangePassword" runat="server" Text="Change Password" HrefTarget="_self" />--%>
+                                            <ext:ToolbarSeparator ID="ToolbarSeparator2" runat="server" />
+                                            <ext:Button ID="btnLogout" runat="server" Text="Logout" Handler="NawadataDirect.btnLogout_DirectClick()"></ext:Button>
+                                            <%--<ext:HyperlinkButton ID="hLogout" runat="server" Text="Logout" HrefTarget="_self" />--%>
+                                        </Items>
+                                    </ext:StatusBar>
+                                </BottomBar>
+                            </ext:Panel>
+                        </Items>
+                    </ext:Panel>
+
+                    <ext:TreePanel ID="MenuPanel1" runat="server" ClientIDMode="Static" Collapsible="true" Region="West" Split="true" Width="250" AnimCollapse="false">
+                        <TopBar>
+                            <ext:Toolbar runat="server">
+                                <Items>
+                                    <ext:ToolbarTextItem runat="server" Text="Filter:" />
+                                    <ext:ToolbarSpacer />
+                                    <ext:TextField
+                                        ID="TriggerField1"
+                                        runat="server"
+                                        EnableKeyEvents="true" Width="160">
+                                        <Triggers>
+                                            <ext:FieldTrigger Icon="Clear" />
+                                        </Triggers>
+                                        <Listeners>
+                                            <KeyUp Fn="filterTree" Buffer="250" />
+                                            <TriggerClick Handler="clearFilter();" />
+                                        </Listeners>
+                                    </ext:TextField>
+                                    <ext:ToolbarSpacer />
+                                </Items>
+                            </ext:Toolbar>
+                        </TopBar>
+                        <Listeners>
+                            <ItemClick Handler="if (record.data.qtip) { loadPage(#{Panel9}, record,#{MenuPanel1},#{BtnMenu}); }
+
+                if (!#{BtnMenu}.hidden)
+                {
+
+                };
+                                 return false;
+
+                                " />
+                        </Listeners>
+
+                        <ResponsiveConfig>
+                            <ext:ResponsiveRule Rule="wide">
+
+                                <Config>
+
+                                    <ext:TreePanel runat="server" Collapsible="true" Region="West" Split="true" Hidden="false"></ext:TreePanel>
+                                </Config>
+                            </ext:ResponsiveRule>
+
+                            <ext:ResponsiveRule Rule="tall">
+                                <Config>
+                                    <ext:TreePanel runat="server" Collapsible="true" Region="West" Split="true" Hidden="true">
+                                    </ext:TreePanel>
+                                </Config>
+                            </ext:ResponsiveRule>
+                        </ResponsiveConfig>
+                    </ext:TreePanel>
+                    <ext:Panel ID="Panel9" runat="server" Layout="FitLayout" Region="Center" Maximizable="true" ClientIDMode="Static">
+
+                        <Content>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </Content>
+                    </ext:Panel>
+                </Items>
+            </ext:Viewport>
+
+            <%--   <ext:TaskManager ID="TaskManager1" runat="server">
+                <Tasks>
+                    <ext:Task TaskID="ServerTime" Interval="10000">
+                        <DirectEvents>
+                            <Update OnEvent="UpdateTaskNotification"></Update>
+                        </DirectEvents>
+                    </ext:Task>
+                </Tasks>
+            </ext:TaskManager>--%>
+        </div>
+    </form>
+</body>
+</html>

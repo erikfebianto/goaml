@@ -1,0 +1,73 @@
+﻿<%@ WebHandler Language="VB" Class="SaveArea" %>
+
+Imports System
+Imports System.Web
+Imports System.Web.Script.Serialization
+Imports System.IO
+Imports SqlConnection
+Public Class SaveArea : Implements IHttpHandler
+
+    Public Sub ProcessRequest(ByVal context As HttpContext) Implements IHttpHandler.ProcessRequest
+        context.Response.ContentType = "text/json"
+        Try
+            Dim strJson As String
+            strJson = New StreamReader(context.Request.InputStream).ReadToEnd()
+            Dim jss As New JavaScriptSerializer()
+            Dim Obj As AreaObject = jss.Deserialize(Of AreaObject)(strJson)
+            Dim eCoordinate, eName, eInfo, eAreaTypeID, eBgColor As String
+
+            If IsNothing(Obj) = False Then
+                Dim Name As String = Obj.AreaName
+                Dim Coordinate As String = Obj.Coordinate
+                Dim InfoArea As String = Obj.InfoArea
+                Dim AreaTypeID As Integer = Obj.AreaTypeID
+                Dim BgColor As String = Obj.BgColor
+
+                Dim ExecSql As New SqlConnection
+                context.Response.Write(jss.Serialize(strJson))
+
+                If IsNothing(Name) = True Then
+                    eName = "NULL"
+                Else
+                    eName = "'" & Name & "'"
+                End If
+
+                If IsNothing(Coordinate) = True Then
+                    eCoordinate = "NULL"
+                Else
+                    eCoordinate = "'" & Coordinate & "'"
+                End If
+
+                If IsNothing(InfoArea) = True Then
+                    eInfo = "NULL"
+                Else
+                    eInfo = "'" & InfoArea & "'"
+                End If
+
+                If IsNothing(AreaTypeID) = True Then
+                    eAreaTypeID = "NULL"
+                Else
+                    eAreaTypeID = AreaTypeID
+                End If
+
+                If IsNothing(BgColor) = True Then
+                    eBgColor = "NULL"
+                Else
+                    eBgColor = "'" & BgColor & "'"
+                End If
+                query = "Insert into Area (Name,Coordinates,Info,AreaTypeID,BgColor) values (" & eName & "," & eCoordinate & "," & eInfo & "," & eAreaTypeID & "," & eBgColor & ")"
+                ExecSql.execnonquery(query)
+
+            End If
+        Catch ex As Exception
+            context.Response.Write("Error :" + ex.Message)
+        End Try
+    End Sub
+
+    Public ReadOnly Property IsReusable() As Boolean Implements IHttpHandler.IsReusable
+        Get
+            Return False
+        End Get
+    End Property
+
+End Class

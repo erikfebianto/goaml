@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec6e5c94031541d294d29598a122973e" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="NawaDevDAL.AuditTrail_UserAccess" Width="1.5" PointX="6.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.AuditTrail_UserLogin" Width="1.5" PointX="5.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.AuditTrailStatu" Width="1.5" PointX="7.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ELMAH_Error" Width="1.5" PointX="13.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EmailStatu" Width="1.5" PointX="11.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EODScheduler" Width="1.5" PointX="2.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EODSchedulerDetail" Width="1.5" PointX="4.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EODSchedulerLog" Width="1.5" PointX="6.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EODTask" Width="1.5" PointX="15.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EODTaskDetail" Width="1.5" PointX="15.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EODTaskDetailLog" Width="1.5" PointX="11.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EODTaskDetailType" Width="1.5" PointX="17.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.EODTaskLog" Width="1.5" PointX="17.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.FileSecurity" Width="1.5" PointX="16" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.LogConsoleService" Width="1.5" PointX="13.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MenuTemplate" Width="1.5" PointX="15.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MExtType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MFieldType" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MGroupMenuAccess" Width="1.5" PointX="18.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MGroupMenuSettting" Width="1.5" PointX="18.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.Module" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ModuleAction" Width="1.5" PointX="3.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ModuleApproval" Width="1.5" PointX="0.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ModuleField" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ModuleFieldDefault" Width="1.5" PointX="2.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ModuleFieldRegex" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ModuleTime" Width="1.5" PointX="3.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ModuleValidation" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MRole" Width="1.5" PointX="8.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MRole_Upload" Width="1.5" PointX="4.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MsEODPeriod" Width="1.5" PointX="19.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MsEODStatu" Width="1.5" PointX="19.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.MUserHistoryPassword" Width="1.5" PointX="19.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.ReportQuery" Width="1.5" PointX="20.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.SystemParameter" Width="1.5" PointX="20.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDevDAL.SystemParameterGroup" Width="1.5" PointX="12.75" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="NawaDevDAL.FK_ModuleField_MExtType" ManuallyRouted="false" />
+        <AssociationConnector Association="NawaDevDAL.FK_ModuleField_MFieldType" ManuallyRouted="false" />
+        <AssociationConnector Association="NawaDevDAL.FK_ModuleField_Module" ManuallyRouted="false" />
+        <AssociationConnector Association="NawaDevDAL.FK_ModuleValidation_Module" ManuallyRouted="false" />
+        <AssociationConnector Association="NawaDevDAL.FK_ModuleValidation_ModuleAction" ManuallyRouted="false" />
+        <AssociationConnector Association="NawaDevDAL.FK_ModuleFieldRegex_ModuleFieldRegex" ManuallyRouted="false" />
+        <AssociationConnector Association="NawaDevDAL.FK_ModuleValidation_ModuleTime" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NawaDevDAL.MonitoringDuration" Width="1.5" PointX="3.1399670388270016" PointY="28.756476847807168" />
+        <AssociationConnector Association="NawaDevDAL.FK_MonitoringDuration_MonitoringDuration" />
+        <EntityTypeShape EntityType="NawaDevDAL.EmailTemplateDetail" Width="1.5" PointX="7.5" PointY="21.5" />
+        <EntityTypeShape EntityType="NawaDevDAL.EmailTemplate" Width="1.5" PointX="5.375" PointY="27.375" />
+        <AssociationConnector Association="NawaDevDAL.FK_EmailTemplate_MonitoringDuration" />
+        <EntityTypeShape EntityType="NawaDevDAL.EmailTemplateScheduler" Width="1.5" PointX="21.375" PointY="22.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.MGroupMenu" Width="1.5" PointX="13.75" PointY="2.375" />
+        <AssociationConnector Association="NawaDevDAL.FK_FileSecurity_MGroupMenu" />
+        <EntityTypeShape EntityType="NawaDevDAL.EmailTemplateSchedulerDetail" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.MUser" Width="1.5" PointX="24.375" PointY="15.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.AuditTrailDetail" Width="1.5" PointX="27.625" PointY="1.125" />
+        <EntityTypeShape EntityType="NawaDevDAL.AuditTrailHeader" Width="1.5" PointX="25.375" PointY="1" />
+        <AssociationConnector Association="NawaDevDAL.FK_AuditTrailDetail_AuditTrailHeader" />
+        <EntityTypeShape EntityType="NawaDevDAL.GenerateFileTemplateDetail" Width="1.5" PointX="18.375" PointY="19.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.SLIKParameter" Width="1.5" PointX="0.75" PointY="28.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.GeneratedFileList" Width="1.5" PointX="21.375" PointY="26.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.GenerateFileTemplate" Width="1.5" PointX="28.375" PointY="4.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Vw_GeneratedFileList" Width="1.5" PointX="27.375" PointY="20.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Web_ValidationReport_RowComplate" Width="1.5" PointX="8.375" PointY="5.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_ValidationReport" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_TextFileTemporaryTable" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.TextFileTemporaryTable" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.TextFileTemporaryTableDetail" Width="1.5" PointX="14.625" PointY="0.75" />
+        <AssociationConnector Association="NawaDevDAL.FK_TextFileTemporaryTableDetail_TextFileTemporaryTable" />
+        <EntityTypeShape EntityType="NawaDevDAL.Web_ValidationReport_Row" Width="1.5" PointX="22.375" PointY="9.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.ValidationSummary" Width="1.5" PointX="20.375" PointY="19.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.SettingPersonal" Width="1.5" PointX="15.375" PointY="22.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.GenerateFileTemplateAdditional" Width="1.5" PointX="17.375" PointY="22.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Vw_validationReport_List" Width="1.5" PointX="9.375" PointY="24.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.CleansingReport" Width="1.5" PointX="11.375" PointY="24.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.ORS_FormInfo" Width="1.5" PointX="23.375" PointY="25.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.ORS_ValidationKey" Width="1.5" PointX="25.375" PointY="4.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Ref_KategoriValidasi" Width="1.5" PointX="14.375" PointY="6.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.ValidationType" Width="1.5" PointX="13.375" PointY="26.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Ref_DataSet" Width="1.5" PointX="26.75" PointY="15.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.LastLogin" Width="1.5" PointX="0.75" PointY="25.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.ReportofDisableName" Width="1.5" PointX="15.75" PointY="26.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_AuditTrail_UserAccess" Width="1.5" PointX="27.75" PointY="26.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Vw_KelompokInformasiRelation" Width="1.5" PointX="29.75" PointY="19.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_KodeCabangActive" Width="1.5" PointX="29.75" PointY="22.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Vw_ListAllCabang" Width="1.5" PointX="29.75" PointY="25.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_MappingCounterparty" Width="1.5" PointX="27.75" PointY="29.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_Menuall" Width="1.5" PointX="29.75" PointY="28.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_Ref_SandiBankAlias" Width="1.5" PointX="30.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_Ref_SandiNasabahLainDalamNegeriAlias" Width="1.5" PointX="30.75" PointY="4.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Vw_SettingPersonal" Width="1.5" PointX="32.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Vw_ValidationReportSummary" Width="1.5" PointX="32.75" PointY="3.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.Prefix_Module_Generator" Width="1.5" PointX="18.375" PointY="26.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.ValidationParameter" Width="1.5" PointX="7.375" PointY="29.75" />
+        <EntityTypeShape EntityType="NawaDevDAL.vw_EODLog" Width="1.5" PointX="26.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NawaDevDALStoreContainer" CdmEntityContainer="NawaDatadevEntities">
+    <EntitySetMapping Name="AuditTrail_UserAccess">
+      <EntityTypeMapping TypeName="NawaDevDAL.AuditTrail_UserAccess">
+        <MappingFragment StoreEntitySet="AuditTrail_UserAccess">
+          <ScalarProperty Name="PK_UserAccessID" ColumnName="PK_UserAccessID" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="ActionDate" ColumnName="ActionDate" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditTrail_UserLogin">
+      <EntityTypeMapping TypeName="NawaDevDAL.AuditTrail_UserLogin">
+        <MappingFragment StoreEntitySet="AuditTrail_UserLogin">
+          <ScalarProperty Name="UserLoginDescription" ColumnName="UserLoginDescription" />
+          <ScalarProperty Name="UserLoginID" ColumnName="UserLoginID" />
+          <ScalarProperty Name="UserLoginUserid" ColumnName="UserLoginUserid" />
+          <ScalarProperty Name="UserLoginActionDate" ColumnName="UserLoginActionDate" />
+          <ScalarProperty Name="UserLoginAction" ColumnName="UserLoginAction" />
+          <ScalarProperty Name="UserLoginIPAddress" ColumnName="UserLoginIPAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditTrailStatus">
+      <EntityTypeMapping TypeName="NawaDevDAL.AuditTrailStatu">
+        <MappingFragment StoreEntitySet="AuditTrailStatus">
+          <ScalarProperty Name="Pk_AuditTrailStatus_ID" ColumnName="Pk_AuditTrailStatus_ID" />
+          <ScalarProperty Name="AuditTrailStatusName" ColumnName="AuditTrailStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELMAH_Error">
+      <EntityTypeMapping TypeName="NawaDevDAL.ELMAH_Error">
+        <MappingFragment StoreEntitySet="ELMAH_Error">
+          <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+          <ScalarProperty Name="Application" ColumnName="Application" />
+          <ScalarProperty Name="Host" ColumnName="Host" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="TimeUtc" ColumnName="TimeUtc" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="AllXml" ColumnName="AllXml" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailStatus">
+      <EntityTypeMapping TypeName="NawaDevDAL.EmailStatu">
+        <MappingFragment StoreEntitySet="EmailStatus">
+          <ScalarProperty Name="PK_EmailStatus_ID" ColumnName="PK_EmailStatus_ID" />
+          <ScalarProperty Name="EmailStatusName" ColumnName="EmailStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODSchedulers">
+      <EntityTypeMapping TypeName="NawaDevDAL.EODScheduler">
+        <MappingFragment StoreEntitySet="EODScheduler">
+          <ScalarProperty Name="HasPeriodikScheduler" ColumnName="HasPeriodikScheduler" />
+          <ScalarProperty Name="PK_EODScheduler_ID" ColumnName="PK_EODScheduler_ID" />
+          <ScalarProperty Name="EODSchedulerName" ColumnName="EODSchedulerName" />
+          <ScalarProperty Name="EODSchedulerDescription" ColumnName="EODSchedulerDescription" />
+          <ScalarProperty Name="EODPeriod" ColumnName="EODPeriod" />
+          <ScalarProperty Name="FK_MsEODPeriod" ColumnName="FK_MsEODPeriod" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODSchedulerDetails">
+      <EntityTypeMapping TypeName="NawaDevDAL.EODSchedulerDetail">
+        <MappingFragment StoreEntitySet="EODSchedulerDetail">
+          <ScalarProperty Name="PK_EODSchedulerDetail_ID" ColumnName="PK_EODSchedulerDetail_ID" />
+          <ScalarProperty Name="FK_EODSCheduler_ID" ColumnName="FK_EODSCheduler_ID" />
+          <ScalarProperty Name="FK_EODTask_ID" ColumnName="FK_EODTask_ID" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODSchedulerLogs">
+      <EntityTypeMapping TypeName="NawaDevDAL.EODSchedulerLog">
+        <MappingFragment StoreEntitySet="EODSchedulerLog">
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="PK_EODSchedulerLog_ID" ColumnName="PK_EODSchedulerLog_ID" />
+          <ScalarProperty Name="FK_EODSchedulerID" ColumnName="FK_EODSchedulerID" />
+          <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTasks">
+      <EntityTypeMapping TypeName="NawaDevDAL.EODTask">
+        <MappingFragment StoreEntitySet="EODTask">
+          <ScalarProperty Name="PK_EODTask_ID" ColumnName="PK_EODTask_ID" />
+          <ScalarProperty Name="EODTaskName" ColumnName="EODTaskName" />
+          <ScalarProperty Name="EODTaskDescription" ColumnName="EODTaskDescription" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTaskDetails">
+      <EntityTypeMapping TypeName="NawaDevDAL.EODTaskDetail">
+        <MappingFragment StoreEntitySet="EODTaskDetail">
+          <ScalarProperty Name="IsUseParameterBranch" ColumnName="IsUseParameterBranch" />
+          <ScalarProperty Name="PK_EODTaskDetail_ID" ColumnName="PK_EODTaskDetail_ID" />
+          <ScalarProperty Name="FK_EODTask_ID" ColumnName="FK_EODTask_ID" />
+          <ScalarProperty Name="FK_EODTaskDetailType_ID" ColumnName="FK_EODTaskDetailType_ID" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="SSISName" ColumnName="SSISName" />
+          <ScalarProperty Name="SSISFIle" ColumnName="SSISFIle" />
+          <ScalarProperty Name="StoreProcedureName" ColumnName="StoreProcedureName" />
+          <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+          <ScalarProperty Name="IsUseParameterProcessDate" ColumnName="IsUseParameterProcessDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTaskDetailLogs">
+      <EntityTypeMapping TypeName="NawaDevDAL.EODTaskDetailLog">
+        <MappingFragment StoreEntitySet="EODTaskDetailLog">
+          <ScalarProperty Name="executionID" ColumnName="executionID" />
+          <ScalarProperty Name="PK_EODTaskDetailLog_ID" ColumnName="PK_EODTaskDetailLog_ID" />
+          <ScalarProperty Name="EODSchedulerLogID" ColumnName="EODSchedulerLogID" />
+          <ScalarProperty Name="EODTaskLogID" ColumnName="EODTaskLogID" />
+          <ScalarProperty Name="FK_EODTAskDetail_ID" ColumnName="FK_EODTAskDetail_ID" />
+          <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTaskDetailTypes">
+      <EntityTypeMapping TypeName="NawaDevDAL.EODTaskDetailType">
+        <MappingFragment StoreEntitySet="EODTaskDetailType">
+          <ScalarProperty Name="PK_EODTaskDetailType_ID" ColumnName="PK_EODTaskDetailType_ID" />
+          <ScalarProperty Name="EODTaskDetailType1" ColumnName="EODTaskDetailType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTaskLogs">
+      <EntityTypeMapping TypeName="NawaDevDAL.EODTaskLog">
+        <MappingFragment StoreEntitySet="EODTaskLog">
+          <ScalarProperty Name="PK_EODTaskLog_ID" ColumnName="PK_EODTaskLog_ID" />
+          <ScalarProperty Name="EODSchedulerLogID" ColumnName="EODSchedulerLogID" />
+          <ScalarProperty Name="FK_EODTaskID" ColumnName="FK_EODTaskID" />
+          <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileSecurities">
+      <EntityTypeMapping TypeName="NawaDevDAL.FileSecurity">
+        <MappingFragment StoreEntitySet="FileSecurity">
+          <ScalarProperty Name="FileSecurityID" ColumnName="FileSecurityID" />
+          <ScalarProperty Name="FileSecurityGroupId" ColumnName="FileSecurityGroupId" />
+          <ScalarProperty Name="FileSecurityFileName" ColumnName="FileSecurityFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogConsoleServices">
+      <EntityTypeMapping TypeName="NawaDevDAL.LogConsoleService">
+        <MappingFragment StoreEntitySet="LogConsoleService">
+          <ScalarProperty Name="Pk_LogConsoleService_Id" ColumnName="Pk_LogConsoleService_Id" />
+          <ScalarProperty Name="LogCreatedDate" ColumnName="LogCreatedDate" />
+          <ScalarProperty Name="LogStatus" ColumnName="LogStatus" />
+          <ScalarProperty Name="LogInfo" ColumnName="LogInfo" />
+          <ScalarProperty Name="LogDescription" ColumnName="LogDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuTemplates">
+      <EntityTypeMapping TypeName="NawaDevDAL.MenuTemplate">
+        <MappingFragment StoreEntitySet="MenuTemplate">
+          <ScalarProperty Name="mMenuID" ColumnName="mMenuID" />
+          <ScalarProperty Name="mMenuLabel" ColumnName="mMenuLabel" />
+          <ScalarProperty Name="mMenuParentID" ColumnName="mMenuParentID" />
+          <ScalarProperty Name="mMenuURL" ColumnName="mMenuURL" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="FK_Action_ID" ColumnName="FK_Action_ID" />
+          <ScalarProperty Name="urutan" ColumnName="urutan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MExtTypes">
+      <EntityTypeMapping TypeName="NawaDevDAL.MExtType">
+        <MappingFragment StoreEntitySet="MExtType">
+          <ScalarProperty Name="PK_ExtType_ID" ColumnName="PK_ExtType_ID" />
+          <ScalarProperty Name="ExtTypeName" ColumnName="ExtTypeName" />
+          <ScalarProperty Name="ExtTypeDesc" ColumnName="ExtTypeDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MFieldTypes">
+      <EntityTypeMapping TypeName="NawaDevDAL.MFieldType">
+        <MappingFragment StoreEntitySet="MFieldType">
+          <ScalarProperty Name="CodeEffectNETType" ColumnName="CodeEffectNETType" />
+          <ScalarProperty Name="CodeEffecttype" ColumnName="CodeEffecttype" />
+          <ScalarProperty Name="PK_FieldType_ID" ColumnName="PK_FieldType_ID" />
+          <ScalarProperty Name="FieldTypeCaption" ColumnName="FieldTypeCaption" />
+          <ScalarProperty Name="FieldTypeDescription" ColumnName="FieldTypeDescription" />
+          <ScalarProperty Name="FieldTypeSQLName" ColumnName="FieldTypeSQLName" />
+          <ScalarProperty Name="FieldTypeNetName" ColumnName="FieldTypeNetName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MGroupMenuAccesses">
+      <EntityTypeMapping TypeName="NawaDevDAL.MGroupMenuAccess">
+        <MappingFragment StoreEntitySet="MGroupMenuAccess">
+          <ScalarProperty Name="PK_MGroupMenuAcess_ID" ColumnName="PK_MGroupMenuAcess_ID" />
+          <ScalarProperty Name="FK_GroupMenu_ID" ColumnName="FK_GroupMenu_ID" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="bAdd" ColumnName="bAdd" />
+          <ScalarProperty Name="bEdit" ColumnName="bEdit" />
+          <ScalarProperty Name="bDelete" ColumnName="bDelete" />
+          <ScalarProperty Name="bActivation" ColumnName="bActivation" />
+          <ScalarProperty Name="bView" ColumnName="bView" />
+          <ScalarProperty Name="bApproval" ColumnName="bApproval" />
+          <ScalarProperty Name="bUpload" ColumnName="bUpload" />
+          <ScalarProperty Name="bDetail" ColumnName="bDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MGroupMenuSetttings">
+      <EntityTypeMapping TypeName="NawaDevDAL.MGroupMenuSettting">
+        <MappingFragment StoreEntitySet="MGroupMenuSettting">
+          <ScalarProperty Name="PK_MGroupMenuSettting_ID" ColumnName="PK_MGroupMenuSettting_ID" />
+          <ScalarProperty Name="FK_MGroupMenu_ID" ColumnName="FK_MGroupMenu_ID" />
+          <ScalarProperty Name="mMenuID" ColumnName="mMenuID" />
+          <ScalarProperty Name="mMenuLabel" ColumnName="mMenuLabel" />
+          <ScalarProperty Name="mMenuParentID" ColumnName="mMenuParentID" />
+          <ScalarProperty Name="mMenuURL" ColumnName="mMenuURL" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="FK_Action_ID" ColumnName="FK_Action_ID" />
+          <ScalarProperty Name="urutan" ColumnName="urutan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modules">
+      <EntityTypeMapping TypeName="NawaDevDAL.Module">
+        <MappingFragment StoreEntitySet="Module">
+          <ScalarProperty Name="PK_Module_ID" ColumnName="PK_Module_ID" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleLabel" ColumnName="ModuleLabel" />
+          <ScalarProperty Name="ModuleDescription" ColumnName="ModuleDescription" />
+          <ScalarProperty Name="IsUseDesigner" ColumnName="IsUseDesigner" />
+          <ScalarProperty Name="IsUseApproval" ColumnName="IsUseApproval" />
+          <ScalarProperty Name="IsSupportAdd" ColumnName="IsSupportAdd" />
+          <ScalarProperty Name="IsSupportEdit" ColumnName="IsSupportEdit" />
+          <ScalarProperty Name="IsSupportDelete" ColumnName="IsSupportDelete" />
+          <ScalarProperty Name="IsSupportActivation" ColumnName="IsSupportActivation" />
+          <ScalarProperty Name="IsSupportView" ColumnName="IsSupportView" />
+          <ScalarProperty Name="IsSupportUpload" ColumnName="IsSupportUpload" />
+          <ScalarProperty Name="IsSupportDetail" ColumnName="IsSupportDetail" />
+          <ScalarProperty Name="UrlAdd" ColumnName="UrlAdd" />
+          <ScalarProperty Name="UrlEdit" ColumnName="UrlEdit" />
+          <ScalarProperty Name="UrlDelete" ColumnName="UrlDelete" />
+          <ScalarProperty Name="UrlActivation" ColumnName="UrlActivation" />
+          <ScalarProperty Name="UrlView" ColumnName="UrlView" />
+          <ScalarProperty Name="UrlUpload" ColumnName="UrlUpload" />
+          <ScalarProperty Name="UrlApproval" ColumnName="UrlApproval" />
+          <ScalarProperty Name="UrlApprovalDetail" ColumnName="UrlApprovalDetail" />
+          <ScalarProperty Name="UrlDetail" ColumnName="UrlDetail" />
+          <ScalarProperty Name="IsUseStoreProcedureValidation" ColumnName="IsUseStoreProcedureValidation" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleActions">
+      <EntityTypeMapping TypeName="NawaDevDAL.ModuleAction">
+        <MappingFragment StoreEntitySet="ModuleAction">
+          <ScalarProperty Name="PK_ModuleAction_ID" ColumnName="PK_ModuleAction_ID" />
+          <ScalarProperty Name="ModuleActionName" ColumnName="ModuleActionName" />
+          <ScalarProperty Name="ModuleActionDescription" ColumnName="ModuleActionDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleApprovals">
+      <EntityTypeMapping TypeName="NawaDevDAL.ModuleApproval">
+        <MappingFragment StoreEntitySet="ModuleApproval">
+          <ScalarProperty Name="PK_ModuleApproval_ID" ColumnName="PK_ModuleApproval_ID" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleKey" ColumnName="ModuleKey" />
+          <ScalarProperty Name="ModuleField" ColumnName="ModuleField" />
+          <ScalarProperty Name="ModuleFieldBefore" ColumnName="ModuleFieldBefore" />
+          <ScalarProperty Name="PK_ModuleAction_ID" ColumnName="PK_ModuleAction_ID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleFields">
+      <EntityTypeMapping TypeName="NawaDevDAL.ModuleField">
+        <MappingFragment StoreEntitySet="ModuleField">
+          <ScalarProperty Name="FilterCascade" ColumnName="FilterCascade" />
+          <ScalarProperty Name="FieldNameParent" ColumnName="FieldNameParent" />
+          <ScalarProperty Name="BCasCade" ColumnName="BCasCade" />
+          <ScalarProperty Name="TableReferenceAdditonalJoin" ColumnName="TableReferenceAdditonalJoin" />
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+          <ScalarProperty Name="IsShowInForm" ColumnName="IsShowInForm" />
+          <ScalarProperty Name="TabelReferenceNameAlias" ColumnName="TabelReferenceNameAlias" />
+          <ScalarProperty Name="PK_ModuleField_ID" ColumnName="PK_ModuleField_ID" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FieldLabel" ColumnName="FieldLabel" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+          <ScalarProperty Name="IsPrimaryKey" ColumnName="IsPrimaryKey" />
+          <ScalarProperty Name="IsUnik" ColumnName="IsUnik" />
+          <ScalarProperty Name="IsShowInView" ColumnName="IsShowInView" />
+          <ScalarProperty Name="FK_FieldType_ID" ColumnName="FK_FieldType_ID" />
+          <ScalarProperty Name="SizeField" ColumnName="SizeField" />
+          <ScalarProperty Name="FK_ExtType_ID" ColumnName="FK_ExtType_ID" />
+          <ScalarProperty Name="TabelReferenceName" ColumnName="TabelReferenceName" />
+          <ScalarProperty Name="TableReferenceFieldKey" ColumnName="TableReferenceFieldKey" />
+          <ScalarProperty Name="TableReferenceFieldDisplayName" ColumnName="TableReferenceFieldDisplayName" />
+          <ScalarProperty Name="TableReferenceFilter" ColumnName="TableReferenceFilter" />
+          <ScalarProperty Name="IsUseRegexValidation" ColumnName="IsUseRegexValidation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleFieldDefaults">
+      <EntityTypeMapping TypeName="NawaDevDAL.ModuleFieldDefault">
+        <MappingFragment StoreEntitySet="ModuleFieldDefault">
+          <ScalarProperty Name="PK_ModuleField_ID" ColumnName="PK_ModuleField_ID" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FieldLabel" ColumnName="FieldLabel" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+          <ScalarProperty Name="IsPrimaryKey" ColumnName="IsPrimaryKey" />
+          <ScalarProperty Name="IsUnik" ColumnName="IsUnik" />
+          <ScalarProperty Name="FK_FieldType_ID" ColumnName="FK_FieldType_ID" />
+          <ScalarProperty Name="SizeField" ColumnName="SizeField" />
+          <ScalarProperty Name="FK_ExtType_ID" ColumnName="FK_ExtType_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleFieldRegexes">
+      <EntityTypeMapping TypeName="NawaDevDAL.ModuleFieldRegex">
+        <MappingFragment StoreEntitySet="ModuleFieldRegex">
+          <ScalarProperty Name="PK_ModuleFieldRegex" ColumnName="PK_ModuleFieldRegex" />
+          <ScalarProperty Name="FK_ModuleField_ID" ColumnName="FK_ModuleField_ID" />
+          <ScalarProperty Name="Regex" ColumnName="Regex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleTimes">
+      <EntityTypeMapping TypeName="NawaDevDAL.ModuleTime">
+        <MappingFragment StoreEntitySet="ModuleTime">
+          <ScalarProperty Name="PK_ModuleTime_ID" ColumnName="PK_ModuleTime_ID" />
+          <ScalarProperty Name="ModuleTimeName" ColumnName="ModuleTimeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleValidations">
+      <EntityTypeMapping TypeName="NawaDevDAL.ModuleValidation">
+        <MappingFragment StoreEntitySet="ModuleValidation">
+          <ScalarProperty Name="PK_ModuleValidation_ID" ColumnName="PK_ModuleValidation_ID" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="FK_ModuleAction_ID" ColumnName="FK_ModuleAction_ID" />
+          <ScalarProperty Name="FK_ModuleTime_ID" ColumnName="FK_ModuleTime_ID" />
+          <ScalarProperty Name="StoreProcedureName" ColumnName="StoreProcedureName" />
+          <ScalarProperty Name="StoreProcedureParameter" ColumnName="StoreProcedureParameter" />
+          <ScalarProperty Name="StoreProcedureParameterValueFieldSequence" ColumnName="StoreProcedureParameterValueFieldSequence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRoles">
+      <EntityTypeMapping TypeName="NawaDevDAL.MRole">
+        <MappingFragment StoreEntitySet="MRole">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="PK_MRole_ID" ColumnName="PK_MRole_ID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRole_Upload">
+      <EntityTypeMapping TypeName="NawaDevDAL.MRole_Upload">
+        <MappingFragment StoreEntitySet="MRole_Upload">
+          <ScalarProperty Name="PK_upload_ID" ColumnName="PK_upload_ID" />
+          <ScalarProperty Name="nawa_userid" ColumnName="nawa_userid" />
+          <ScalarProperty Name="nawa_recordnumber" ColumnName="nawa_recordnumber" />
+          <ScalarProperty Name="KeteranganError" ColumnName="KeteranganError" />
+          <ScalarProperty Name="nawa_Action" ColumnName="nawa_Action" />
+          <ScalarProperty Name="PK_MRole_ID" ColumnName="PK_MRole_ID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsEODPeriods">
+      <EntityTypeMapping TypeName="NawaDevDAL.MsEODPeriod">
+        <MappingFragment StoreEntitySet="MsEODPeriod">
+          <ScalarProperty Name="PK_MsEODPeriod_Id" ColumnName="PK_MsEODPeriod_Id" />
+          <ScalarProperty Name="MsEODPeriodName" ColumnName="MsEODPeriodName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsEODStatus">
+      <EntityTypeMapping TypeName="NawaDevDAL.MsEODStatu">
+        <MappingFragment StoreEntitySet="MsEODStatus">
+          <ScalarProperty Name="PK_MsEODStatus_ID" ColumnName="PK_MsEODStatus_ID" />
+          <ScalarProperty Name="MsEODStatusName" ColumnName="MsEODStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUserHistoryPasswords">
+      <EntityTypeMapping TypeName="NawaDevDAL.MUserHistoryPassword">
+        <MappingFragment StoreEntitySet="MUserHistoryPassword">
+          <ScalarProperty Name="PK_MUser_HistoryPassword_ID" ColumnName="PK_MUser_HistoryPassword_ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="HistoryPassword" ColumnName="HistoryPassword" />
+          <ScalarProperty Name="HistoryPasswordDate" ColumnName="HistoryPasswordDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportQueries">
+      <EntityTypeMapping TypeName="NawaDevDAL.ReportQuery">
+        <MappingFragment StoreEntitySet="ReportQuery">
+          <ScalarProperty Name="QueryObjectDesigner" ColumnName="QueryObjectDesigner" />
+          <ScalarProperty Name="IsUseDesigner" ColumnName="IsUseDesigner" />
+          <ScalarProperty Name="PK_ReportQuery_ID" ColumnName="PK_ReportQuery_ID" />
+          <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+          <ScalarProperty Name="ReportDescription" ColumnName="ReportDescription" />
+          <ScalarProperty Name="QueryData" ColumnName="QueryData" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemParameters">
+      <EntityTypeMapping TypeName="NawaDevDAL.SystemParameter">
+        <MappingFragment StoreEntitySet="SystemParameter">
+          <ScalarProperty Name="EncriptionKey" ColumnName="EncriptionKey" />
+          <ScalarProperty Name="IsEncript" ColumnName="IsEncript" />
+          <ScalarProperty Name="fk_MFieldType_ID" ColumnName="fk_MFieldType_ID" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="PK_SystemParameter_ID" ColumnName="PK_SystemParameter_ID" />
+          <ScalarProperty Name="FK_SystemParameterGroup_ID" ColumnName="FK_SystemParameterGroup_ID" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemParameterGroups">
+      <EntityTypeMapping TypeName="NawaDevDAL.SystemParameterGroup">
+        <MappingFragment StoreEntitySet="SystemParameterGroup">
+          <ScalarProperty Name="PK_SystemParameterGroup_ID" ColumnName="PK_SystemParameterGroup_ID" />
+          <ScalarProperty Name="SystemParameterGroup1" ColumnName="SystemParameterGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonitoringDurations">
+      <EntityTypeMapping TypeName="NawaDevDAL.MonitoringDuration">
+        <MappingFragment StoreEntitySet="MonitoringDuration">
+          <ScalarProperty Name="MonitoringDurationName" ColumnName="MonitoringDurationName" />
+          <ScalarProperty Name="PK_MonitoringDuration_Id" ColumnName="PK_MonitoringDuration_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplateDetails">
+      <EntityTypeMapping TypeName="NawaDevDAL.EmailTemplateDetail">
+        <MappingFragment StoreEntitySet="EmailTemplateDetail">
+          <ScalarProperty Name="FieldReplacer" ColumnName="FieldReplacer" />
+          <ScalarProperty Name="Replacer" ColumnName="Replacer" />
+          <ScalarProperty Name="FK_EmailTemplate_ID" ColumnName="FK_EmailTemplate_ID" />
+          <ScalarProperty Name="PK_EmailTemplateDetail_ID" ColumnName="PK_EmailTemplateDetail_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplates">
+      <EntityTypeMapping TypeName="NawaDevDAL.EmailTemplate">
+        <MappingFragment StoreEntitySet="EmailTemplate">
+          <ScalarProperty Name="IsSupportNotification" ColumnName="IsSupportNotification" />
+          <ScalarProperty Name="IsSupportEmail" ColumnName="IsSupportEmail" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ExcludeHoliday" ColumnName="ExcludeHoliday" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FK_Monitoringduration_ID" ColumnName="FK_Monitoringduration_ID" />
+          <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="EmailBCC" ColumnName="EmailBCC" />
+          <ScalarProperty Name="EmailCC" ColumnName="EmailCC" />
+          <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
+          <ScalarProperty Name="EmailTemplateName" ColumnName="EmailTemplateName" />
+          <ScalarProperty Name="PK_EmailTemplate_ID" ColumnName="PK_EmailTemplate_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplateSchedulers">
+      <EntityTypeMapping TypeName="NawaDevDAL.EmailTemplateScheduler">
+        <MappingFragment StoreEntitySet="EmailTemplateScheduler">
+          <ScalarProperty Name="FK_EmailStatus_ID" ColumnName="FK_EmailStatus_ID" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="PK_EmailTemplate_ID" ColumnName="PK_EmailTemplate_ID" />
+          <ScalarProperty Name="PK_EmailTemplateScheduler_ID" ColumnName="PK_EmailTemplateScheduler_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MGroupMenus">
+      <EntityTypeMapping TypeName="NawaDevDAL.MGroupMenu">
+        <MappingFragment StoreEntitySet="MGroupMenu">
+          <ScalarProperty Name="DataMenu" ColumnName="DataMenu" />
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GroupMenuDesciption" ColumnName="GroupMenuDesciption" />
+          <ScalarProperty Name="GroupMenuName" ColumnName="GroupMenuName" />
+          <ScalarProperty Name="PK_MGroupMenu_ID" ColumnName="PK_MGroupMenu_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplateSchedulerDetails">
+      <EntityTypeMapping TypeName="NawaDevDAL.EmailTemplateSchedulerDetail">
+        <MappingFragment StoreEntitySet="EmailTemplateSchedulerDetail">
+          <ScalarProperty Name="EmailIDReference" ColumnName="EmailIDReference" />
+          <ScalarProperty Name="resendByUserCount" ColumnName="resendByUserCount" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="retrycount" ColumnName="retrycount" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FK_EmailStatus_ID" ColumnName="FK_EmailStatus_ID" />
+          <ScalarProperty Name="SendEmailDate" ColumnName="SendEmailDate" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="EmailBCC" ColumnName="EmailBCC" />
+          <ScalarProperty Name="EmailCC" ColumnName="EmailCC" />
+          <ScalarProperty Name="EmailTo" ColumnName="EmailTo" />
+          <ScalarProperty Name="UnikFieldTablePrimary" ColumnName="UnikFieldTablePrimary" />
+          <ScalarProperty Name="FK_EmailTEmplateScheduler_ID" ColumnName="FK_EmailTEmplateScheduler_ID" />
+          <ScalarProperty Name="PK_EmailTemplateSchedulerDetail_ID" ColumnName="PK_EmailTemplateSchedulerDetail_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUsers">
+      <EntityTypeMapping TypeName="NawaDevDAL.MUser">
+        <MappingFragment StoreEntitySet="MUser">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="LastChangePassword" ColumnName="LastChangePassword" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="IsDisabled" ColumnName="IsDisabled" />
+          <ScalarProperty Name="InUsed" ColumnName="InUsed" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UserEmailAddress" ColumnName="UserEmailAddress" />
+          <ScalarProperty Name="UserPasswordSalt" ColumnName="UserPasswordSalt" />
+          <ScalarProperty Name="UserPasword" ColumnName="UserPasword" />
+          <ScalarProperty Name="FK_MGroupMenu_ID" ColumnName="FK_MGroupMenu_ID" />
+          <ScalarProperty Name="FK_MRole_ID" ColumnName="FK_MRole_ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PK_MUser_ID" ColumnName="PK_MUser_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditTrailDetails">
+      <EntityTypeMapping TypeName="NawaDevDAL.AuditTrailDetail">
+        <MappingFragment StoreEntitySet="AuditTrailDetail">
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FK_AuditTrailHeader_ID" ColumnName="FK_AuditTrailHeader_ID" />
+          <ScalarProperty Name="PK_AuditTrailDetail_id" ColumnName="PK_AuditTrailDetail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditTrailHeaders">
+      <EntityTypeMapping TypeName="NawaDevDAL.AuditTrailHeader">
+        <MappingFragment StoreEntitySet="AuditTrailHeader">
+          <ScalarProperty Name="PK_ModuleApproval_ID" ColumnName="PK_ModuleApproval_ID" />
+          <ScalarProperty Name="FK_AuditTrailStatus_ID" ColumnName="FK_AuditTrailStatus_ID" />
+          <ScalarProperty Name="FK_ModuleAction_ID" ColumnName="FK_ModuleAction_ID" />
+          <ScalarProperty Name="ModuleLabel" ColumnName="ModuleLabel" />
+          <ScalarProperty Name="ApproveBy" ColumnName="ApproveBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="PK_AuditTrail_ID" ColumnName="PK_AuditTrail_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenerateFileTemplateDetails">
+      <EntityTypeMapping TypeName="NawaDevDAL.GenerateFileTemplateDetail">
+        <MappingFragment StoreEntitySet="GenerateFileTemplateDetail">
+          <ScalarProperty Name="FieldReplacer" ColumnName="FieldReplacer" />
+          <ScalarProperty Name="Replacer" ColumnName="Replacer" />
+          <ScalarProperty Name="FK_GenerationFileTemplate_ID" ColumnName="FK_GenerationFileTemplate_ID" />
+          <ScalarProperty Name="PK_GenerateFileTemplateDetail_ID" ColumnName="PK_GenerateFileTemplateDetail_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SLIKParameters">
+      <EntityTypeMapping TypeName="NawaDevDAL.SLIKParameter">
+        <MappingFragment StoreEntitySet="SLIKParameter">
+          <ScalarProperty Name="Tahun" ColumnName="Tahun" />
+          <ScalarProperty Name="Bulan" ColumnName="Bulan" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="OJK_KodeLJK" ColumnName="OJK_KodeLJK" />
+          <ScalarProperty Name="OJK_KodeJenisLJK" ColumnName="OJK_KodeJenisLJK" />
+          <ScalarProperty Name="PK_SLIKParameter_ID" ColumnName="PK_SLIKParameter_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeneratedFileLists">
+      <EntityTypeMapping TypeName="NawaDevDAL.GeneratedFileList">
+        <MappingFragment StoreEntitySet="GeneratedFileList">
+          <ScalarProperty Name="Request_ID" ColumnName="Request_ID" />
+          <ScalarProperty Name="FK_Template_ID" ColumnName="FK_Template_ID" />
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="SubmitNote" ColumnName="SubmitNote" />
+          <ScalarProperty Name="TotalData" ColumnName="TotalData" />
+          <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+          <ScalarProperty Name="GenerationStatus" ColumnName="GenerationStatus" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ErrorMsg" ColumnName="ErrorMsg" />
+          <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FileBin" ColumnName="FileBin" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FK_LHBU_FormInfo_ID" ColumnName="FK_LHBU_FormInfo_ID" />
+          <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+          <ScalarProperty Name="PK_GeneratedFileList_ID" ColumnName="PK_GeneratedFileList_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenerateFileTemplates">
+      <EntityTypeMapping TypeName="NawaDevDAL.GenerateFileTemplate">
+        <MappingFragment StoreEntitySet="GenerateFileTemplate">
+          <ScalarProperty Name="FK_DelivMethod_ID" ColumnName="FK_DelivMethod_ID" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LHBUFormName" ColumnName="LHBUFormName" />
+          <ScalarProperty Name="OutputFormat" ColumnName="OutputFormat" />
+          <ScalarProperty Name="FileNameFormat" ColumnName="FileNameFormat" />
+          <ScalarProperty Name="GenerateFileTemplateName" ColumnName="GenerateFileTemplateName" />
+          <ScalarProperty Name="PK_GenerationFileTemplate_ID" ColumnName="PK_GenerationFileTemplate_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_GeneratedFileList">
+      <EntityTypeMapping TypeName="NawaDevDAL.Vw_GeneratedFileList">
+        <MappingFragment StoreEntitySet="Vw_GeneratedFileList">
+          <ScalarProperty Name="GenerateFileTemplateName" ColumnName="GenerateFileTemplateName" />
+          <ScalarProperty Name="Request_ID" ColumnName="Request_ID" />
+          <ScalarProperty Name="FK_Template_ID" ColumnName="FK_Template_ID" />
+          <ScalarProperty Name="FormInfo" ColumnName="FormInfo" />
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="TotalData" ColumnName="TotalData" />
+          <ScalarProperty Name="SubmitNote" ColumnName="SubmitNote" />
+          <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+          <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+          <ScalarProperty Name="GenerationStatus" ColumnName="GenerationStatus" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ErrorMsg" ColumnName="ErrorMsg" />
+          <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FK_LHBU_FormInfo_ID" ColumnName="FK_LHBU_FormInfo_ID" />
+          <ScalarProperty Name="PK_GeneratedFileList_ID" ColumnName="PK_GeneratedFileList_ID" />
+          <ScalarProperty Name="PeriodeLaporan" ColumnName="PeriodeLaporan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Web_ValidationReport_RowComplate">
+      <EntityTypeMapping TypeName="NawaDevDAL.Web_ValidationReport_RowComplate">
+        <MappingFragment StoreEntitySet="Web_ValidationReport_RowComplate">
+          <ScalarProperty Name="ReferenceValue" ColumnName="ReferenceValue" />
+          <ScalarProperty Name="ReferenceField" ColumnName="ReferenceField" />
+          <ScalarProperty Name="MessageDetailView" ColumnName="MessageDetailView" />
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="Edited" ColumnName="Edited" />
+          <ScalarProperty Name="Messagedetail" ColumnName="Messagedetail" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+          <ScalarProperty Name="KeyFieldValue" ColumnName="KeyFieldValue" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="ModuleURL" ColumnName="ModuleURL" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="SegmentData" ColumnName="SegmentData" />
+          <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+          <ScalarProperty Name="PK_ID" ColumnName="PK_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ValidationReport">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_ValidationReport">
+        <MappingFragment StoreEntitySet="vw_ValidationReport">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ValidationType" ColumnName="ValidationType" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="ModuleURL" ColumnName="ModuleURL" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+          <ScalarProperty Name="KeyFieldValue" ColumnName="KeyFieldValue" />
+          <ScalarProperty Name="ValidationMessage" ColumnName="ValidationMessage" />
+          <ScalarProperty Name="NamaField" ColumnName="NamaField" />
+          <ScalarProperty Name="SegmentData" ColumnName="SegmentData" />
+          <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_TextFileTemporaryTable">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_TextFileTemporaryTable">
+        <MappingFragment StoreEntitySet="vw_TextFileTemporaryTable">
+          <ScalarProperty Name="StatusUpload" ColumnName="StatusUpload" />
+          <ScalarProperty Name="Report_Date" ColumnName="Report_Date" />
+          <ScalarProperty Name="ModuleLabel" ColumnName="ModuleLabel" />
+          <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+          <ScalarProperty Name="Pk_ORS_TextFileTemporaryTable_ID" ColumnName="Pk_ORS_TextFileTemporaryTable_ID" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="TotalRecord" ColumnName="TotalRecord" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TextFileTemporaryTables">
+      <EntityTypeMapping TypeName="NawaDevDAL.TextFileTemporaryTable">
+        <MappingFragment StoreEntitySet="TextFileTemporaryTable">
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="TotalRecord" ColumnName="TotalRecord" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+          <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+          <ScalarProperty Name="FK_FormInfo_ID" ColumnName="FK_FormInfo_ID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Pk_TextFileTemporaryTable_ID" ColumnName="Pk_TextFileTemporaryTable_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TextFileTemporaryTableDetails">
+      <EntityTypeMapping TypeName="NawaDevDAL.TextFileTemporaryTableDetail">
+        <MappingFragment StoreEntitySet="TextFileTemporaryTableDetail">
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Line" ColumnName="Line" />
+          <ScalarProperty Name="FK_TextFileTemporaryTable_ID" ColumnName="FK_TextFileTemporaryTable_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Web_ValidationReport_Row">
+      <EntityTypeMapping TypeName="NawaDevDAL.Web_ValidationReport_Row">
+        <MappingFragment StoreEntitySet="Web_ValidationReport_Row">
+          <ScalarProperty Name="ReferenceValue" ColumnName="ReferenceValue" />
+          <ScalarProperty Name="ReferenceField" ColumnName="ReferenceField" />
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+          <ScalarProperty Name="KeyFieldValue" ColumnName="KeyFieldValue" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="ModuleURL" ColumnName="ModuleURL" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="SegmentData" ColumnName="SegmentData" />
+          <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValidationSummaries">
+      <EntityTypeMapping TypeName="NawaDevDAL.ValidationSummary">
+        <MappingFragment StoreEntitySet="ValidationSummary">
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="ModuleURL" ColumnName="ModuleURL" />
+          <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SegmentData" ColumnName="SegmentData" />
+          <ScalarProperty Name="PK_Record_ID" ColumnName="PK_Record_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettingPersonals">
+      <EntityTypeMapping TypeName="NawaDevDAL.SettingPersonal">
+        <MappingFragment StoreEntitySet="SettingPersonal">
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PK_SettingPersonal_ID" ColumnName="PK_SettingPersonal_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenerateFileTemplateAdditionals">
+      <EntityTypeMapping TypeName="NawaDevDAL.GenerateFileTemplateAdditional">
+        <MappingFragment StoreEntitySet="GenerateFileTemplateAdditional">
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+          <ScalarProperty Name="TableSource" ColumnName="TableSource" />
+          <ScalarProperty Name="OutputFormat" ColumnName="OutputFormat" />
+          <ScalarProperty Name="UnikField" ColumnName="UnikField" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="SQLQuery" ColumnName="SQLQuery" />
+          <ScalarProperty Name="FK_GenerationFileTemplate_ID" ColumnName="FK_GenerationFileTemplate_ID" />
+          <ScalarProperty Name="PK_GenerateFileTemplateAdditional_ID" ColumnName="PK_GenerateFileTemplateAdditional_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_validationReport_List">
+      <EntityTypeMapping TypeName="NawaDevDAL.Vw_validationReport_List">
+        <MappingFragment StoreEntitySet="Vw_validationReport_List">
+          <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+          <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+          <ScalarProperty Name="FieldValue" ColumnName="FieldValue" />
+          <ScalarProperty Name="ErrorType" ColumnName="ErrorType" />
+          <ScalarProperty Name="Edited" ColumnName="Edited" />
+          <ScalarProperty Name="FK_ValidationType" ColumnName="FK_ValidationType" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="ModuleURL" ColumnName="ModuleURL" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+          <ScalarProperty Name="KeyFieldValue" ColumnName="KeyFieldValue" />
+          <ScalarProperty Name="ValidationMessage" ColumnName="ValidationMessage" />
+          <ScalarProperty Name="NamaField" ColumnName="NamaField" />
+          <ScalarProperty Name="SegmentData" ColumnName="SegmentData" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CleansingReports">
+      <EntityTypeMapping TypeName="NawaDevDAL.CleansingReport">
+        <MappingFragment StoreEntitySet="CleansingReport">
+          <ScalarProperty Name="CleansingRules" ColumnName="CleansingRules" />
+          <ScalarProperty Name="Kode_Cabang_BI" ColumnName="Kode_Cabang_BI" />
+          <ScalarProperty Name="Report_Date" ColumnName="Report_Date" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="Keep" ColumnName="Keep" />
+          <ScalarProperty Name="Clean" ColumnName="Clean" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="UniqueValue" ColumnName="UniqueValue" />
+          <ScalarProperty Name="UniqueField" ColumnName="UniqueField" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CleanedValue" ColumnName="CleanedValue" />
+          <ScalarProperty Name="OriginalValue" ColumnName="OriginalValue" />
+          <ScalarProperty Name="NamaField" ColumnName="NamaField" />
+          <ScalarProperty Name="KeyFieldValue" ColumnName="KeyFieldValue" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+          <ScalarProperty Name="SegmentData" ColumnName="SegmentData" />
+          <ScalarProperty Name="PK_Record_ID" ColumnName="PK_Record_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORS_FormInfo">
+      <EntityTypeMapping TypeName="NawaDevDAL.ORS_FormInfo">
+        <MappingFragment StoreEntitySet="ORS_FormInfo">
+          <ScalarProperty Name="JamKeterlambatanAkhir" ColumnName="JamKeterlambatanAkhir" />
+          <ScalarProperty Name="TanggalKeterlambatanAkhir" ColumnName="TanggalKeterlambatanAkhir" />
+          <ScalarProperty Name="JamKoreksiAkhir" ColumnName="JamKoreksiAkhir" />
+          <ScalarProperty Name="TanggalKoreksiAkhir" ColumnName="TanggalKoreksiAkhir" />
+          <ScalarProperty Name="JamTepatWaktuAkhir" ColumnName="JamTepatWaktuAkhir" />
+          <ScalarProperty Name="TanggalTepatWaktuAkhir" ColumnName="TanggalTepatWaktuAkhir" />
+          <ScalarProperty Name="FK_GenerateType" ColumnName="FK_GenerateType" />
+          <ScalarProperty Name="DataDateDiffH" ColumnName="DataDateDiffH" />
+          <ScalarProperty Name="PeriodePelaporan" ColumnName="PeriodePelaporan" />
+          <ScalarProperty Name="InformationID" ColumnName="InformationID" />
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="NoUrut" ColumnName="NoUrut" />
+          <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+          <ScalarProperty Name="FK_KelompokInformasi" ColumnName="FK_KelompokInformasi" />
+          <ScalarProperty Name="FK_DataSet" ColumnName="FK_DataSet" />
+          <ScalarProperty Name="DisplayField" ColumnName="DisplayField" />
+          <ScalarProperty Name="Periode" ColumnName="Periode" />
+          <ScalarProperty Name="KeyValue" ColumnName="KeyValue" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="Kode" ColumnName="Kode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORS_ValidationKey">
+      <EntityTypeMapping TypeName="NawaDevDAL.ORS_ValidationKey">
+        <MappingFragment StoreEntitySet="ORS_ValidationKey">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="KeyValue" ColumnName="KeyValue" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="Pk_LHBU_ValidationKey_ID" ColumnName="Pk_LHBU_ValidationKey_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_KategoriValidasi">
+      <EntityTypeMapping TypeName="NawaDevDAL.Ref_KategoriValidasi">
+        <MappingFragment StoreEntitySet="Ref_KategoriValidasi">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ref_KategoriValidasiName" ColumnName="Ref_KategoriValidasiName" />
+          <ScalarProperty Name="Pk_Ref_KategoriValidasi_Id" ColumnName="Pk_Ref_KategoriValidasi_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValidationTypes">
+      <EntityTypeMapping TypeName="NawaDevDAL.ValidationType">
+        <MappingFragment StoreEntitySet="ValidationType">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ValidationType1" ColumnName="ValidationType" />
+          <ScalarProperty Name="PK_ValidationType_ID" ColumnName="PK_ValidationType_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_DataSet">
+      <EntityTypeMapping TypeName="NawaDevDAL.Ref_DataSet">
+        <MappingFragment StoreEntitySet="Ref_DataSet">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ref_DataSetName" ColumnName="Ref_DataSetName" />
+          <ScalarProperty Name="Pk_Ref_DataSet_Id" ColumnName="Pk_Ref_DataSet_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LastLogins">
+      <EntityTypeMapping TypeName="NawaDevDAL.LastLogin">
+        <MappingFragment StoreEntitySet="LastLogin">
+          <ScalarProperty Name="LastLoginInDays" ColumnName="LastLoginInDays" />
+          <ScalarProperty Name="LastLogin1" ColumnName="LastLogin" />
+          <ScalarProperty Name="UserEmailAddress" ColumnName="UserEmailAddress" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportofDisableNames">
+      <EntityTypeMapping TypeName="NawaDevDAL.ReportofDisableName">
+        <MappingFragment StoreEntitySet="ReportofDisableName">
+          <ScalarProperty Name="LastLoginInDays" ColumnName="LastLoginInDays" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="UserEmailAddress" ColumnName="UserEmailAddress" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_AuditTrail_UserAccess">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_AuditTrail_UserAccess">
+        <MappingFragment StoreEntitySet="vw_AuditTrail_UserAccess">
+          <ScalarProperty Name="GroupMenuName" ColumnName="GroupMenuName" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="ActionDate" ColumnName="ActionDate" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="PK_UserAccessID" ColumnName="PK_UserAccessID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_KelompokInformasiRelation">
+      <EntityTypeMapping TypeName="NawaDevDAL.Vw_KelompokInformasiRelation">
+        <MappingFragment StoreEntitySet="Vw_KelompokInformasiRelation">
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="JenisLaporanInformasi" ColumnName="JenisLaporanInformasi" />
+          <ScalarProperty Name="SandiJenisLaporanInformasi" ColumnName="SandiJenisLaporanInformasi" />
+          <ScalarProperty Name="KelompokInformasi" ColumnName="KelompokInformasi" />
+          <ScalarProperty Name="SandiKelompokInformasi" ColumnName="SandiKelompokInformasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_KodeCabangActive">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_KodeCabangActive">
+        <MappingFragment StoreEntitySet="vw_KodeCabangActive">
+          <ScalarProperty Name="NamaCabang" ColumnName="NamaCabang" />
+          <ScalarProperty Name="Kode" ColumnName="Kode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_ListAllCabang">
+      <EntityTypeMapping TypeName="NawaDevDAL.Vw_ListAllCabang">
+        <MappingFragment StoreEntitySet="Vw_ListAllCabang">
+          <ScalarProperty Name="FileSequence" ColumnName="FileSequence" />
+          <ScalarProperty Name="OJK_Kode" ColumnName="OJK_Kode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_MappingCounterparty">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_MappingCounterparty">
+        <MappingFragment StoreEntitySet="vw_MappingCounterparty">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="PihakTerkait" ColumnName="PihakTerkait" />
+          <ScalarProperty Name="PergerakanDana" ColumnName="PergerakanDana" />
+          <ScalarProperty Name="CounterpartyName" ColumnName="CounterpartyName" />
+          <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+          <ScalarProperty Name="PK_MappingCounterparty_ID" ColumnName="PK_MappingCounterparty_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Menuall">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_Menuall">
+        <MappingFragment StoreEntitySet="vw_Menuall">
+          <ScalarProperty Name="urutan" ColumnName="urutan" />
+          <ScalarProperty Name="FK_Action_ID" ColumnName="FK_Action_ID" />
+          <ScalarProperty Name="FK_Module_ID" ColumnName="FK_Module_ID" />
+          <ScalarProperty Name="mMenuURL" ColumnName="mMenuURL" />
+          <ScalarProperty Name="mMenuParentID" ColumnName="mMenuParentID" />
+          <ScalarProperty Name="mMenuLabel" ColumnName="mMenuLabel" />
+          <ScalarProperty Name="mMenuID" ColumnName="mMenuID" />
+          <ScalarProperty Name="FK_MGroupMenu_ID" ColumnName="FK_MGroupMenu_ID" />
+          <ScalarProperty Name="PK_MGroupMenuSettting_ID" ColumnName="PK_MGroupMenuSettting_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Ref_SandiBankAlias">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_Ref_SandiBankAlias">
+        <MappingFragment StoreEntitySet="vw_Ref_SandiBankAlias">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="NamaAlias" ColumnName="NamaAlias" />
+          <ScalarProperty Name="KodeSandiBankAlias" ColumnName="KodeSandiBankAlias" />
+          <ScalarProperty Name="PK_SandiBankAlias_ID" ColumnName="PK_SandiBankAlias_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Ref_SandiNasabahLainDalamNegeriAlias">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_Ref_SandiNasabahLainDalamNegeriAlias">
+        <MappingFragment StoreEntitySet="vw_Ref_SandiNasabahLainDalamNegeriAlias">
+          <ScalarProperty Name="LabelNasabahLainDalamNegeriAlias" ColumnName="LabelNasabahLainDalamNegeriAlias" />
+          <ScalarProperty Name="NamaNasabahLainDalamNegeriAlias" ColumnName="NamaNasabahLainDalamNegeriAlias" />
+          <ScalarProperty Name="KodeNasabahLainDalamNegeriAlias" ColumnName="KodeNasabahLainDalamNegeriAlias" />
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="PK_SandiNasabahLainDalamNegeriAlias_ID" ColumnName="PK_SandiNasabahLainDalamNegeriAlias_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_SettingPersonal">
+      <EntityTypeMapping TypeName="NawaDevDAL.Vw_SettingPersonal">
+        <MappingFragment StoreEntitySet="Vw_SettingPersonal">
+          <ScalarProperty Name="KdCabang" ColumnName="KdCabang" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PK_SettingPersonal_ID" ColumnName="PK_SettingPersonal_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_ValidationReportSummary">
+      <EntityTypeMapping TypeName="NawaDevDAL.Vw_ValidationReportSummary">
+        <MappingFragment StoreEntitySet="Vw_ValidationReportSummary">
+          <ScalarProperty Name="Jumlah" ColumnName="Jumlah" />
+          <ScalarProperty Name="ValidationMessage" ColumnName="ValidationMessage" />
+          <ScalarProperty Name="NamaField" ColumnName="NamaField" />
+          <ScalarProperty Name="SegmentData" ColumnName="SegmentData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prefix_Module_Generator">
+      <EntityTypeMapping TypeName="NawaDevDAL.Prefix_Module_Generator">
+        <MappingFragment StoreEntitySet="Prefix_Module_Generator">
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="PK_Prefix_ID" ColumnName="PK_Prefix_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValidationParameters">
+      <EntityTypeMapping TypeName="NawaDevDAL.ValidationParameter">
+        <MappingFragment StoreEntitySet="ValidationParameter">
+          <ScalarProperty Name="Fk_Ref_KategoriValidasi_Id" ColumnName="Fk_Ref_KategoriValidasi_Id" />
+          <ScalarProperty Name="Fk_Ref_DataSet_Id" ColumnName="Fk_Ref_DataSet_Id" />
+          <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ErrorType" ColumnName="ErrorType" />
+          <ScalarProperty Name="ValidationType" ColumnName="ValidationType" />
+          <ScalarProperty Name="ValidationMessage" ColumnName="ValidationMessage" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ValidationExpression" ColumnName="ValidationExpression" />
+          <ScalarProperty Name="ExpressionType" ColumnName="ExpressionType" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="PK_ValidationParameter" ColumnName="PK_ValidationParameter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_EODLog">
+      <EntityTypeMapping TypeName="NawaDevDAL.vw_EODLog">
+        <MappingFragment StoreEntitySet="vw_EODLog">
+          <ScalarProperty Name="FK_EODSchedulerID" ColumnName="FK_EODSchedulerID" />
+          <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+          <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+          <ScalarProperty Name="MsEODStatusName" ColumnName="MsEODStatusName" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EODTaskDetailType" ColumnName="EODTaskDetailType" />
+          <ScalarProperty Name="EODTaskName" ColumnName="EODTaskName" />
+          <ScalarProperty Name="EODSchedulerName" ColumnName="EODSchedulerName" />
+          <ScalarProperty Name="PK_EODTaskDetailLog_ID" ColumnName="PK_EODTaskDetailLog_ID" />
+          <ScalarProperty Name="PK_EODTaskLog_ID" ColumnName="PK_EODTaskLog_ID" />
+          <ScalarProperty Name="PK_EODSchedulerLog_ID" ColumnName="PK_EODSchedulerLog_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

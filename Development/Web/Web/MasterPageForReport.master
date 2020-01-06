@@ -1,0 +1,60 @@
+<%@ Master Language="VB" CodeFile="MasterPageForReport.master.vb" Inherits="MasterPageForReport" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>:: Niaga CRISTA ::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link href="theme/crista.css" rel="stylesheet" type="text/css">
+	<script src="script/default_crypt.js"></script>
+	<script src="script/stm31_crypt.js"></script>
+	<script src="script/popcalendar_crypt.js"></script>
+	<link href="theme/popcalendar.css" type="text/css" rel="stylesheet">
+    <style>html,body,form {height:100%}</style>
+</head>
+
+<body leftmargin="0" topmargin="0" scroll="yes" background="images/page-bg.gif">
+<form id="form1" runat="server">
+<table width="75%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+  	<td colspan="2" id="header"><table height="89" width="100%" cellpadding="0" cellspacing="0" border="0">
+  	    <tr>
+            <td width="274" background="Images/main-header-bg-left.gif"><img src="Images/title.gif" /></td>
+  	        <td width="99%" background="Images/main-header-bg-left.gif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  	        <td align="right" valign="top" class="toprightmenu"><table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+				<tr>
+					<td><img src="Images/menu-bar-left.gif" /></td> 
+					<td><img src="Images/menu-bar-right.gif" /></td>
+				</tr>
+			</table></td>
+  	    </tr>
+  	</table></td>
+  </tr>
+  <tr>
+    	<td colspan="2"><img src="Images/blank.gif" width="1" height="2" /></td>
+  </tr>
+  <tr>
+  	<td></td>
+	<td><table cellpadding="0" cellspacing="0" border="0"><tr><td><img src="Images/round-corner-top-left.gif" /></td><td width="99%" bgcolor="#FFFFFF"><img src="Images/blank.gif" width="1" height="1" /></td><td bgcolor="#FFFFFF"><img src="Images/blank.gif" width="1" height="1" /></td></tr></table></td>
+  </tr>
+  <tr>
+  	  <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  	  <td id="tdcontent" height="99%" valign="top" bgcolor="#FFFFFF"><table id="tblpenampung" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td class="divcontentinside" bgcolor="#FFFFFF">
+			<asp:validationsummary id="ValidationSummary1" runat="server" HeaderText="There were errors on the page:" Width="95%" CssClass="validation" ></asp:validationsummary>
+                <asp:contentplaceholder id="cpContent" runat="server">
+        	</asp:contentplaceholder></td>
+		</tr>
+	  </table></td>
+  </tr>
+  <tr>
+  	<td></td>
+	<td><table cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FFFFFF"><img src="Images/blank.gif" width="1" height="1" /></td><td width="99%" bgcolor="#FFFFFF"><img src="Images/blank.gif" width="1" height="1" /></td><td><img src="Images/round-corner-bottom-right.gif" /></td></tr></table></td>
+  </tr>
+  
+</table>
+</form>
+<script>arrangeView();</script>
+</body>
+</html>

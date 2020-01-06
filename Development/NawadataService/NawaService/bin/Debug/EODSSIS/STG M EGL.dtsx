@@ -1,0 +1,2204 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/28/2019 7:19:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HENDRA"
+  DTS:CreatorName="HENDRA\nawadata"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{1603DA0D-41D9-4C32-AAAC-2B13458012E9}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="STG M EGL"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{0EF087DF-8CFC-4919-9C9A-C90FEDD3D0AE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AntasenaConnection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{906D93F5-603B-4F15-A3A4-70413D88AC73}"
+      DTS:ObjectName="AntasenaConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=HENDRA;Initial Catalog=DemoAntasena4;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FF835CC2-922B-4263-8E32-FFFB048DD4D7}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Project\AntasenaBTPN\STG M EGL.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUSS_DATE"
+              DTS:DTSID="{902160A0-4456-4910-9FA8-5578F3662C0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BRANCH"
+              DTS:DTSID="{F899D178-4367-4641-A5A4-833383597A06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GL_ACCOUNT"
+              DTS:DTSID="{B6E31CE4-EE2B-482B-9BD7-DDFF2278207A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SUFIX"
+              DTS:DTSID="{961C4D1D-96E5-4E84-901F-3B81767AFD4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GL_DESCRIPTION"
+              DTS:DTSID="{57C9D61D-814A-4E7A-82D9-B6CAEB13A856}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CCY"
+              DTS:DTSID="{709CA785-F07F-486E-95D4-8167B128B136}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACCOUNT_TYPE"
+              DTS:DTSID="{036A836E-2437-45B9-A4B0-2C4EDFFDE2BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUSTOMER_TYPE"
+              DTS:DTSID="{A1F0B55D-46B6-43DC-9953-3B6BD74FFFD1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ANALYSIS_CODE"
+              DTS:DTSID="{45157AB2-5F47-45A6-A378-31E53254572A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GOL_DEBITUR"
+              DTS:DTSID="{3C959196-0E18-4225-B9E1-C97523D4AD92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SNDBI_FORM_LBU"
+              DTS:DTSID="{17D2622F-7C32-463A-B3CD-D44EB7174558}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SNDBI_LBU"
+              DTS:DTSID="{DDB140C4-AD73-4255-85FB-E960F21B4D46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SNDBI_FORM_LHBU"
+              DTS:DTSID="{4FA757DF-159F-430D-9A8E-7ACE385B5D48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SNDBI_LMB"
+              DTS:DTSID="{83AB8C21-A573-449A-B58E-4FB43D979D4F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SNDBI_JENIS"
+              DTS:DTSID="{D634D4D2-CC09-4656-BCA2-7DC4040FA79C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SNDBI_GOL"
+              DTS:DTSID="{B7E7ACC6-6172-4C06-8BAB-861617AA160C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TODAY_DB"
+              DTS:DTSID="{856AE4B1-8644-4DD8-A1BB-3062414180ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TODAY_CR"
+              DTS:DTSID="{17106FEB-9D0E-4636-B4D8-0D02D5B25EE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CLOSING_BALANCE"
+              DTS:DTSID="{D1944A8B-098F-4DE5-92C8-22E3FD05D5EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AVG_BALANCE"
+              DTS:DTSID="{B87882EA-5DD5-481E-8B59-CCD7BF376F67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHADOW_BALANCE"
+              DTS:DTSID="{6D2AA94C-2011-4A1E-AA9D-0E932F2823DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BEGINING_BALANCE"
+              DTS:DTSID="{3E2E4721-2B0A-4243-B24A-C445811BDC72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GROWTH_BALANCE"
+              DTS:DTSID="{86D641BC-EAE1-4997-B8BA-2DAFB7FA0941}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_SOURCE"
+              DTS:DTSID="{48345291-C998-4EFC-BB51-27C7FEFC513F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EGL_ACCOUNT"
+              DTS:DTSID="{6A499A39-E324-406C-A377-5585BCAD1435}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOMAIN_ID"
+              DTS:DTSID="{D2A5CB39-A92F-44B4-8C3E-849440FD1A0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AMOUNT_CLASS"
+              DTS:DTSID="{693066C1-71BB-4D5E-9DA3-16C37F24C0E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ENTITY"
+              DTS:DTSID="{1F431880-718D-428B-AA7C-BC41370ADB3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CLOSING_BALANCE_LEV"
+              DTS:DTSID="{1C6AA44B-BC3E-478D-97EF-7BB2B4A4C4F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BEGINING_BALANCE_LEV"
+              DTS:DTSID="{442AF6F8-56BB-4699-8EBA-AF7EE95AC11C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHADOW_BALANCE_LEV"
+              DTS:DTSID="{B5AE6848-2254-45E1-AD3D-4B15E5B58E74}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMPANY_CODE"
+              DTS:DTSID="{7806F077-D043-4B0A-8250-F7EA97738BB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GL_ACCOUNT_NEW"
+              DTS:DTSID="{7D1B297A-9C6A-4D1A-A055-978FB2763EE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LOB_CC"
+              DTS:DTSID="{FAF0C58E-2885-4A5B-A772-407657EE4F67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CCID"
+              DTS:DTSID="{C87EC969-A91E-4ACE-B38D-62FD23933774}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAST_UPDATE"
+              DTS:DTSID="{4A46ED72-6680-474D-A40B-3005D4E3C15E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;AntasenaConnection&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;STG M EGL&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{16003831-3F50-4062-9915-A28F3854C29F}"
+      DTS:ObjectName="STG M EGL" />
+  </DTS:Configurations>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{3DFC0999-7A73-418E-90B3-19858A487127}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - STG_M_EGL"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - STG_M_EGL"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_M_EGL]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AntasenaConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AntasenaConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[BUSS_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BUSS_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[BUSS_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[BRANCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BRANCH"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[BRANCH]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BRANCH]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[GL_ACCOUNT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GL_ACCOUNT"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GL_ACCOUNT]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_ACCOUNT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SUFIX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SUFIX"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SUFIX]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SUFIX]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[GL_DESCRIPTION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GL_DESCRIPTION"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GL_DESCRIPTION]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[CCY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CCY"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CCY]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CCY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[ACCOUNT_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACCOUNT_TYPE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[ACCOUNT_TYPE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_TYPE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[CUSTOMER_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CUSTOMER_TYPE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CUSTOMER_TYPE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CUSTOMER_TYPE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[ANALYSIS_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ANALYSIS_CODE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[ANALYSIS_CODE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ANALYSIS_CODE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[GOL_DEBITUR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GOL_DEBITUR"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GOL_DEBITUR]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GOL_DEBITUR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SNDBI_FORM_LBU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SNDBI_FORM_LBU"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_FORM_LBU]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_FORM_LBU]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SNDBI_LBU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SNDBI_LBU"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_LBU]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_LBU]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SNDBI_FORM_LHBU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SNDBI_FORM_LHBU"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_FORM_LHBU]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_FORM_LHBU]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SNDBI_LMB]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SNDBI_LMB"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_LMB]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_LMB]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SNDBI_JENIS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SNDBI_JENIS"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_JENIS]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_JENIS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SNDBI_GOL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SNDBI_GOL"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_GOL]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_GOL]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[TODAY_DB]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TODAY_DB"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[TODAY_DB]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[TODAY_DB]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[TODAY_CR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TODAY_CR"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[TODAY_CR]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[TODAY_CR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[CLOSING_BALANCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLOSING_BALANCE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CLOSING_BALANCE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CLOSING_BALANCE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[AVG_BALANCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AVG_BALANCE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[AVG_BALANCE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[AVG_BALANCE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SHADOW_BALANCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SHADOW_BALANCE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SHADOW_BALANCE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SHADOW_BALANCE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[BEGINING_BALANCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BEGINING_BALANCE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[BEGINING_BALANCE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BEGINING_BALANCE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[GROWTH_BALANCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GROWTH_BALANCE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GROWTH_BALANCE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GROWTH_BALANCE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[DATA_SOURCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_SOURCE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[DATA_SOURCE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[DATA_SOURCE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[EGL_ACCOUNT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EGL_ACCOUNT"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[EGL_ACCOUNT]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[EGL_ACCOUNT]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[DOMAIN_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DOMAIN_ID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[DOMAIN_ID]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[DOMAIN_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[AMOUNT_CLASS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AMOUNT_CLASS"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[AMOUNT_CLASS]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[AMOUNT_CLASS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[ENTITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ENTITY"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[ENTITY]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ENTITY]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[CLOSING_BALANCE_LEV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLOSING_BALANCE_LEV"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CLOSING_BALANCE_LEV]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CLOSING_BALANCE_LEV]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[BEGINING_BALANCE_LEV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BEGINING_BALANCE_LEV"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[BEGINING_BALANCE_LEV]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BEGINING_BALANCE_LEV]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[SHADOW_BALANCE_LEV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SHADOW_BALANCE_LEV"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SHADOW_BALANCE_LEV]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SHADOW_BALANCE_LEV]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[COMPANY_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COMPANY_CODE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[COMPANY_CODE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[COMPANY_CODE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[GL_ACCOUNT_NEW]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GL_ACCOUNT_NEW"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GL_ACCOUNT_NEW]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_ACCOUNT_NEW]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[LOB_CC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LOB_CC"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[LOB_CC]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[LOB_CC]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[CCID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CCID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CCID]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CCID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].Columns[LAST_UPDATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAST_UPDATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[LAST_UPDATE]"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[LAST_UPDATE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GL_ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GL_ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SUFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SUFIX" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GL_DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GL_DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CCY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CCY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[ACCOUNT_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACCOUNT_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CUSTOMER_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUSTOMER_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[ANALYSIS_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ANALYSIS_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GOL_DEBITUR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GOL_DEBITUR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_FORM_LBU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_FORM_LBU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_LBU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_LBU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_FORM_LHBU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_FORM_LHBU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_LMB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_LMB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_JENIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_JENIS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SNDBI_GOL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_GOL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[TODAY_DB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TODAY_DB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[TODAY_CR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TODAY_CR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CLOSING_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLOSING_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[AVG_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AVG_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SHADOW_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHADOW_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[BEGINING_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BEGINING_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GROWTH_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GROWTH_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[DATA_SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[EGL_ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EGL_ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[DOMAIN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DOMAIN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[AMOUNT_CLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AMOUNT_CLASS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[ENTITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ENTITY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CLOSING_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLOSING_BALANCE_LEV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[BEGINING_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BEGINING_BALANCE_LEV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[SHADOW_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHADOW_BALANCE_LEV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[COMPANY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COMPANY_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[GL_ACCOUNT_NEW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GL_ACCOUNT_NEW" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[LOB_CC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LOB_CC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[CCID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CCID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input].ExternalColumns[LAST_UPDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAST_UPDATE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - STG_M_EGL.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - STG_M_EGL.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - STG_M_EGL.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - STG M EGL_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - STG M EGL_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[BUSS_DATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BUSS_DATE]"
+                      name="BUSS_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BRANCH]"
+                      name="BRANCH"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GL_ACCOUNT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_ACCOUNT]"
+                      name="GL_ACCOUNT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SUFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SUFIX]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SUFIX]"
+                      name="SUFIX"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GL_DESCRIPTION]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_DESCRIPTION]"
+                      name="GL_DESCRIPTION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CCY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CCY]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CCY]"
+                      name="CCY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[ACCOUNT_TYPE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ACCOUNT_TYPE]"
+                      name="ACCOUNT_TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CUSTOMER_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_TYPE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CUSTOMER_TYPE]"
+                      name="CUSTOMER_TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ANALYSIS_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[ANALYSIS_CODE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ANALYSIS_CODE]"
+                      name="ANALYSIS_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GOL_DEBITUR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GOL_DEBITUR]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GOL_DEBITUR]"
+                      name="GOL_DEBITUR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_FORM_LBU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_FORM_LBU]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_FORM_LBU]"
+                      name="SNDBI_FORM_LBU"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_LBU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_LBU]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_LBU]"
+                      name="SNDBI_LBU"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_FORM_LHBU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_FORM_LHBU]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_FORM_LHBU]"
+                      name="SNDBI_FORM_LHBU"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_LMB]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_LMB]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_LMB]"
+                      name="SNDBI_LMB"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_JENIS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_JENIS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_JENIS]"
+                      name="SNDBI_JENIS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_GOL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_GOL]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SNDBI_GOL]"
+                      name="SNDBI_GOL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[TODAY_DB]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[TODAY_DB]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[TODAY_DB]"
+                      name="TODAY_DB"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[TODAY_CR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[TODAY_CR]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[TODAY_CR]"
+                      name="TODAY_CR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CLOSING_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CLOSING_BALANCE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CLOSING_BALANCE]"
+                      name="CLOSING_BALANCE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[AVG_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[AVG_BALANCE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[AVG_BALANCE]"
+                      name="AVG_BALANCE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SHADOW_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SHADOW_BALANCE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SHADOW_BALANCE]"
+                      name="SHADOW_BALANCE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BEGINING_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[BEGINING_BALANCE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BEGINING_BALANCE]"
+                      name="BEGINING_BALANCE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GROWTH_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GROWTH_BALANCE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GROWTH_BALANCE]"
+                      name="GROWTH_BALANCE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[DATA_SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[DATA_SOURCE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[DATA_SOURCE]"
+                      name="DATA_SOURCE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[EGL_ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[EGL_ACCOUNT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[EGL_ACCOUNT]"
+                      name="EGL_ACCOUNT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[DOMAIN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[DOMAIN_ID]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[DOMAIN_ID]"
+                      name="DOMAIN_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[AMOUNT_CLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[AMOUNT_CLASS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[AMOUNT_CLASS]"
+                      name="AMOUNT_CLASS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ENTITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[ENTITY]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[ENTITY]"
+                      name="ENTITY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CLOSING_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CLOSING_BALANCE_LEV]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CLOSING_BALANCE_LEV]"
+                      name="CLOSING_BALANCE_LEV"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BEGINING_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[BEGINING_BALANCE_LEV]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[BEGINING_BALANCE_LEV]"
+                      name="BEGINING_BALANCE_LEV"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SHADOW_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SHADOW_BALANCE_LEV]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[SHADOW_BALANCE_LEV]"
+                      name="SHADOW_BALANCE_LEV"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[COMPANY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[COMPANY_CODE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[COMPANY_CODE]"
+                      name="COMPANY_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_ACCOUNT_NEW]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GL_ACCOUNT_NEW]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[GL_ACCOUNT_NEW]"
+                      name="GL_ACCOUNT_NEW"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[LOB_CC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[LOB_CC]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[LOB_CC]"
+                      name="LOB_CC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CCID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CCID]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[CCID]"
+                      name="CCID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[LAST_UPDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[LAST_UPDATE]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].Columns[LAST_UPDATE]"
+                      name="LAST_UPDATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[BUSS_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[BRANCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GL_ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GL_ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SUFIX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SUFIX" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GL_DESCRIPTION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GL_DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CCY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CCY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[ACCOUNT_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACCOUNT_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUSTOMER_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[ANALYSIS_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ANALYSIS_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GOL_DEBITUR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GOL_DEBITUR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_FORM_LBU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_FORM_LBU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_LBU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_LBU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_FORM_LHBU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_FORM_LHBU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_LMB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_LMB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_JENIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_JENIS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SNDBI_GOL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SNDBI_GOL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[TODAY_DB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TODAY_DB" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[TODAY_CR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TODAY_CR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CLOSING_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLOSING_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[AVG_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AVG_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SHADOW_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHADOW_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[BEGINING_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BEGINING_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GROWTH_BALANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GROWTH_BALANCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[DATA_SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[EGL_ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EGL_ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[DOMAIN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DOMAIN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[AMOUNT_CLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AMOUNT_CLASS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[ENTITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ENTITY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CLOSING_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLOSING_BALANCE_LEV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[BEGINING_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BEGINING_BALANCE_LEV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[SHADOW_BALANCE_LEV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHADOW_BALANCE_LEV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[COMPANY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COMPANY_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[GL_ACCOUNT_NEW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GL_ACCOUNT_NEW" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[LOB_CC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LOB_CC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[CCID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CCID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output].ExternalColumns[LAST_UPDATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAST_UPDATE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - STG_M_EGL.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - STG M EGL_txt.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{05DB11F1-6BDD-4000-B2FF-36889326DEF9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{906D93F5-603B-4F15-A3A4-70413D88AC73}"
+          SQLTask:SqlStatementSource="truncate table [STG_M_EGL]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{16B18F04-D739-4A0A-B0B7-AA84C8E79942\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{16B18F04-D739-4A0A-B0B7-AA84C8E79942}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{16B18F04-D739-4A0A-B0B7-AA84C8E79942}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task 1"
+          TopLeft="20.8333333333334,108.166666666667" />
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Preparation SQL Task 1"
+          TopLeft="5.50000000000001,5.50000000000004" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{16B18F04-D739-4A0A-B0B7-AA84C8E79942\}]"
+          TopLeft="102.166666666667,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package\Data Flow Task 1\Destination - STG_M_EGL"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package\Data Flow Task 1\Source - STG M EGL_txt"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

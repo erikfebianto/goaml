@@ -1,0 +1,129 @@
+D:\Project\CocaCola The Core\Development\DLL\NawaDevBLL.dll
+D:\Project\CocaCola The Core\Development\DLL\NawaDevBLL.pdb
+D:\Project\CocaCola The Core\Development\DLL\NawaDevBLL.xml
+D:\Project\CocaCola The Core\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojResolveAssemblyReference.cache
+D:\Project\CocaCola The Core\Development\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\CocaCola The Core\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.Cache
+D:\Project\CocaCola The Core\Development\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\CocaCola The Core\Development\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\CocaCola The Core\Development\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\TransVision\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojResolveAssemblyReference.cache
+D:\Project\TransVision\Development\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\TransVision\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.Cache
+D:\Project\TransVision\Development\DLL\NawaDevBLL.dll
+D:\Project\TransVision\Development\DLL\NawaDevBLL.pdb
+D:\Project\TransVision\Development\DLL\NawaDevBLL.xml
+D:\Project\TransVision\Development\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\TransVision\Development\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\TransVision\Development\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\EProject Danamon\Development\DLL\NawaDevBLL.dll
+D:\Project\EProject Danamon\Development\DLL\NawaDevBLL.pdb
+D:\Project\EProject Danamon\Development\DLL\NawaDevBLL.xml
+D:\Project\EProject Danamon\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojResolveAssemblyReference.cache
+D:\Project\EProject Danamon\Development\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\EProject Danamon\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.Cache
+D:\Project\EProject Danamon\Development\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\EProject Danamon\Development\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\EProject Danamon\Development\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\AML ANZ\Development\DLL\NawaDevBLL.dll
+D:\Project\AML ANZ\Development\DLL\NawaDevBLL.pdb
+D:\Project\AML ANZ\Development\DLL\NawaDevBLL.xml
+D:\Project\AML ANZ\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojResolveAssemblyReference.cache
+D:\Project\AML ANZ\Development\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\AML ANZ\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.Cache
+D:\Project\AML ANZ\Development\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\AML ANZ\Development\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\AML ANZ\Development\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\NDS LHBU Niaga\Web\Development\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\NDS LHBU Niaga\Web\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.Cache
+D:\Project\NDS LHBU Niaga\Web\Development\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\NDS LHBU Niaga\Web\Development\DLL\NawaDevBLL.dll
+D:\Project\NDS LHBU Niaga\Web\Development\DLL\NawaDevBLL.pdb
+D:\Project\NDS LHBU Niaga\Web\Development\DLL\NawaDevBLL.xml
+D:\Project\NDS LHBU Niaga\Web\Development\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\NDS LHBU Niaga\Web\Development\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\NDS LHBU Niaga\Web\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+D:\Project\NDS LHBU Niaga\Web\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CoreCompileInputs.cache
+D:\Project\NDS LHBU Niaga\Web\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+F:\Kantor\CIMB\Development\DLL\NawaDevBLL.dll
+F:\Kantor\CIMB\Development\DLL\NawaDevBLL.pdb
+F:\Kantor\CIMB\Development\DLL\NawaDevBLL.xml
+F:\Kantor\CIMB\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+F:\Kantor\CIMB\Development\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+F:\Kantor\CIMB\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
+F:\Kantor\CIMB\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CoreCompileInputs.cache
+F:\Kantor\CIMB\Development\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+F:\Kantor\CIMB\Development\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+F:\Kantor\CIMB\Development\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+F:\Kantor\CIMB\Development\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Indra\Demo - Antasena\Source Code\Web\DLL\NawaDevBLL.dll
+D:\Indra\Demo - Antasena\Source Code\Web\DLL\NawaDevBLL.pdb
+D:\Indra\Demo - Antasena\Source Code\Web\DLL\NawaDevBLL.xml
+D:\Indra\Demo - Antasena\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+D:\Indra\Demo - Antasena\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Indra\Demo - Antasena\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
+D:\Indra\Demo - Antasena\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CoreCompileInputs.cache
+D:\Indra\Demo - Antasena\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+D:\Indra\Demo - Antasena\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Indra\Demo - Antasena\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Indra\Demo - Antasena\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\CIMBAntasena\Web\Web\Web\DLL\NawaDevBLL.dll
+D:\Project\CIMBAntasena\Web\Web\Web\DLL\NawaDevBLL.pdb
+D:\Project\CIMBAntasena\Web\Web\Web\DLL\NawaDevBLL.xml
+D:\Project\CIMBAntasena\Web\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+D:\Project\CIMBAntasena\Web\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\CIMBAntasena\Web\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
+D:\Project\CIMBAntasena\Web\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CoreCompileInputs.cache
+D:\Project\CIMBAntasena\Web\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+D:\Project\CIMBAntasena\Web\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\CIMBAntasena\Web\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\CIMBAntasena\Web\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\DLL\NawaDevBLL.dll
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\DLL\NawaDevBLL.pdb
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\DLL\NawaDevBLL.xml
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CoreCompileInputs.cache
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Indra\Demo - Antasena\Source Code\Antasena-Webwithworkflow\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\BtpnAntasena\Web\Web\DLL\NawaDevBLL.dll
+D:\Project\BtpnAntasena\Web\Web\DLL\NawaDevBLL.pdb
+D:\Project\BtpnAntasena\Web\Web\DLL\NawaDevBLL.xml
+D:\Project\BtpnAntasena\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+D:\Project\BtpnAntasena\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\BtpnAntasena\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
+D:\Project\BtpnAntasena\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CoreCompileInputs.cache
+D:\Project\BtpnAntasena\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+D:\Project\BtpnAntasena\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\BtpnAntasena\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\BtpnAntasena\Web\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+G:\Project Antasena\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+G:\Project Antasena\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+G:\Project Antasena\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
+G:\Project Antasena\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CoreCompileInputs.cache
+G:\Project Antasena\Web\DLL\NawaDevBLL.dll
+G:\Project Antasena\Web\DLL\NawaDevBLL.pdb
+G:\Project Antasena\Web\DLL\NawaDevBLL.xml
+G:\Project Antasena\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+G:\Project Antasena\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+G:\Project Antasena\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+G:\Project Antasena\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
+D:\Project\Antasena\Development\Source Code\Web\DLL\NawaDevBLL.dll
+D:\Project\Antasena\Development\Source Code\Web\DLL\NawaDevBLL.pdb
+D:\Project\Antasena\Development\Source Code\Web\DLL\NawaDevBLL.xml
+D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb

@@ -1,0 +1,1511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NawaDevDAL" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NawaDatadevEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AuditTrail_UserAccess" EntityType="NawaDevDAL.AuditTrail_UserAccess" />
+    <EntitySet Name="AuditTrail_UserLogin" EntityType="NawaDevDAL.AuditTrail_UserLogin" />
+    <EntitySet Name="AuditTrailStatus" EntityType="NawaDevDAL.AuditTrailStatu" />
+    <EntitySet Name="ELMAH_Error" EntityType="NawaDevDAL.ELMAH_Error" />
+    <EntitySet Name="EmailStatus" EntityType="NawaDevDAL.EmailStatu" />
+    <EntitySet Name="EODSchedulers" EntityType="NawaDevDAL.EODScheduler" />
+    <EntitySet Name="EODSchedulerDetails" EntityType="NawaDevDAL.EODSchedulerDetail" />
+    <EntitySet Name="EODSchedulerLogs" EntityType="NawaDevDAL.EODSchedulerLog" />
+    <EntitySet Name="EODTasks" EntityType="NawaDevDAL.EODTask" />
+    <EntitySet Name="EODTaskDetails" EntityType="NawaDevDAL.EODTaskDetail" />
+    <EntitySet Name="EODTaskDetailLogs" EntityType="NawaDevDAL.EODTaskDetailLog" />
+    <EntitySet Name="EODTaskDetailTypes" EntityType="NawaDevDAL.EODTaskDetailType" />
+    <EntitySet Name="EODTaskLogs" EntityType="NawaDevDAL.EODTaskLog" />
+    <EntitySet Name="FileSecurities" EntityType="NawaDevDAL.FileSecurity" />
+    <EntitySet Name="LogConsoleServices" EntityType="NawaDevDAL.LogConsoleService" />
+    <EntitySet Name="MenuTemplates" EntityType="NawaDevDAL.MenuTemplate" />
+    <EntitySet Name="MExtTypes" EntityType="NawaDevDAL.MExtType" />
+    <EntitySet Name="MFieldTypes" EntityType="NawaDevDAL.MFieldType" />
+    <EntitySet Name="MGroupMenuAccesses" EntityType="NawaDevDAL.MGroupMenuAccess" />
+    <EntitySet Name="MGroupMenuSetttings" EntityType="NawaDevDAL.MGroupMenuSettting" />
+    <EntitySet Name="Modules" EntityType="NawaDevDAL.Module" />
+    <EntitySet Name="ModuleActions" EntityType="NawaDevDAL.ModuleAction" />
+    <EntitySet Name="ModuleApprovals" EntityType="NawaDevDAL.ModuleApproval" />
+    <EntitySet Name="ModuleFields" EntityType="NawaDevDAL.ModuleField" />
+    <EntitySet Name="ModuleFieldDefaults" EntityType="NawaDevDAL.ModuleFieldDefault" />
+    <EntitySet Name="ModuleFieldRegexes" EntityType="NawaDevDAL.ModuleFieldRegex" />
+    <EntitySet Name="ModuleTimes" EntityType="NawaDevDAL.ModuleTime" />
+    <EntitySet Name="ModuleValidations" EntityType="NawaDevDAL.ModuleValidation" />
+    <EntitySet Name="MRoles" EntityType="NawaDevDAL.MRole" />
+    <EntitySet Name="MRole_Upload" EntityType="NawaDevDAL.MRole_Upload" />
+    <EntitySet Name="MsEODPeriods" EntityType="NawaDevDAL.MsEODPeriod" />
+    <EntitySet Name="MsEODStatus" EntityType="NawaDevDAL.MsEODStatu" />
+    <EntitySet Name="MUserHistoryPasswords" EntityType="NawaDevDAL.MUserHistoryPassword" />
+    <EntitySet Name="ReportQueries" EntityType="NawaDevDAL.ReportQuery" />
+    <EntitySet Name="SystemParameters" EntityType="NawaDevDAL.SystemParameter" />
+    <EntitySet Name="SystemParameterGroups" EntityType="NawaDevDAL.SystemParameterGroup" />
+    <AssociationSet Name="FK_ModuleField_MExtType" Association="NawaDevDAL.FK_ModuleField_MExtType">
+      <End Role="MExtType" EntitySet="MExtTypes" />
+      <End Role="ModuleField" EntitySet="ModuleFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleField_MFieldType" Association="NawaDevDAL.FK_ModuleField_MFieldType">
+      <End Role="MFieldType" EntitySet="MFieldTypes" />
+      <End Role="ModuleField" EntitySet="ModuleFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleField_Module" Association="NawaDevDAL.FK_ModuleField_Module">
+      <End Role="Module" EntitySet="Modules" />
+      <End Role="ModuleField" EntitySet="ModuleFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleValidation_Module" Association="NawaDevDAL.FK_ModuleValidation_Module">
+      <End Role="Module" EntitySet="Modules" />
+      <End Role="ModuleValidation" EntitySet="ModuleValidations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleValidation_ModuleAction" Association="NawaDevDAL.FK_ModuleValidation_ModuleAction">
+      <End Role="ModuleAction" EntitySet="ModuleActions" />
+      <End Role="ModuleValidation" EntitySet="ModuleValidations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleFieldRegex_ModuleFieldRegex" Association="NawaDevDAL.FK_ModuleFieldRegex_ModuleFieldRegex">
+      <End Role="ModuleField" EntitySet="ModuleFields" />
+      <End Role="ModuleFieldRegex" EntitySet="ModuleFieldRegexes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleValidation_ModuleTime" Association="NawaDevDAL.FK_ModuleValidation_ModuleTime">
+      <End Role="ModuleTime" EntitySet="ModuleTimes" />
+      <End Role="ModuleValidation" EntitySet="ModuleValidations" />
+    </AssociationSet>
+    <EntitySet Name="MonitoringDurations" EntityType="NawaDevDAL.MonitoringDuration" />
+    <AssociationSet Name="FK_MonitoringDuration_MonitoringDuration" Association="NawaDevDAL.FK_MonitoringDuration_MonitoringDuration">
+      <End Role="MonitoringDuration" EntitySet="MonitoringDurations" />
+      <End Role="MonitoringDuration1" EntitySet="MonitoringDurations" />
+    </AssociationSet>
+    <EntitySet Name="EmailTemplateDetails" EntityType="NawaDevDAL.EmailTemplateDetail" />
+    <EntitySet Name="EmailTemplates" EntityType="NawaDevDAL.EmailTemplate" />
+    <AssociationSet Name="FK_EmailTemplate_MonitoringDuration" Association="NawaDevDAL.FK_EmailTemplate_MonitoringDuration">
+      <End Role="MonitoringDuration" EntitySet="MonitoringDurations" />
+      <End Role="EmailTemplate" EntitySet="EmailTemplates" />
+    </AssociationSet>
+    <EntitySet Name="EmailTemplateSchedulers" EntityType="NawaDevDAL.EmailTemplateScheduler" />
+    <EntitySet Name="MGroupMenus" EntityType="NawaDevDAL.MGroupMenu" />
+    <AssociationSet Name="FK_FileSecurity_MGroupMenu" Association="NawaDevDAL.FK_FileSecurity_MGroupMenu">
+      <End Role="MGroupMenu" EntitySet="MGroupMenus" />
+      <End Role="FileSecurity" EntitySet="FileSecurities" />
+    </AssociationSet>
+    <EntitySet Name="EmailTemplateSchedulerDetails" EntityType="NawaDevDAL.EmailTemplateSchedulerDetail" />
+    <EntitySet Name="MUsers" EntityType="NawaDevDAL.MUser" />
+    <EntitySet Name="AuditTrailDetails" EntityType="NawaDevDAL.AuditTrailDetail" />
+    <EntitySet Name="AuditTrailHeaders" EntityType="NawaDevDAL.AuditTrailHeader" />
+    <AssociationSet Name="FK_AuditTrailDetail_AuditTrailHeader" Association="NawaDevDAL.FK_AuditTrailDetail_AuditTrailHeader">
+      <End Role="AuditTrailHeader" EntitySet="AuditTrailHeaders" />
+      <End Role="AuditTrailDetail" EntitySet="AuditTrailDetails" />
+    </AssociationSet>
+    <EntitySet Name="GenerateFileTemplateDetails" EntityType="NawaDevDAL.GenerateFileTemplateDetail" />
+    <EntitySet Name="SLIKParameters" EntityType="NawaDevDAL.SLIKParameter" />
+    <EntitySet Name="GeneratedFileLists" EntityType="NawaDevDAL.GeneratedFileList" />
+    <EntitySet Name="GenerateFileTemplates" EntityType="NawaDevDAL.GenerateFileTemplate" />
+    <EntitySet Name="Vw_GeneratedFileList" EntityType="NawaDevDAL.Vw_GeneratedFileList" />
+    <EntitySet Name="Web_ValidationReport_RowComplate" EntityType="NawaDevDAL.Web_ValidationReport_RowComplate" />
+    <EntitySet Name="vw_ValidationReport" EntityType="NawaDevDAL.vw_ValidationReport" />
+    <EntitySet Name="vw_TextFileTemporaryTable" EntityType="NawaDevDAL.vw_TextFileTemporaryTable" />
+    <EntitySet Name="TextFileTemporaryTables" EntityType="NawaDevDAL.TextFileTemporaryTable" />
+    <EntitySet Name="TextFileTemporaryTableDetails" EntityType="NawaDevDAL.TextFileTemporaryTableDetail" />
+    <AssociationSet Name="FK_TextFileTemporaryTableDetail_TextFileTemporaryTable" Association="NawaDevDAL.FK_TextFileTemporaryTableDetail_TextFileTemporaryTable">
+      <End Role="TextFileTemporaryTable" EntitySet="TextFileTemporaryTables" />
+      <End Role="TextFileTemporaryTableDetail" EntitySet="TextFileTemporaryTableDetails" />
+    </AssociationSet>
+    <EntitySet Name="Web_ValidationReport_Row" EntityType="NawaDevDAL.Web_ValidationReport_Row" />
+    <EntitySet Name="ValidationSummaries" EntityType="NawaDevDAL.ValidationSummary" />
+    <EntitySet Name="SettingPersonals" EntityType="NawaDevDAL.SettingPersonal" />
+    <EntitySet Name="GenerateFileTemplateAdditionals" EntityType="NawaDevDAL.GenerateFileTemplateAdditional" />
+    <EntitySet Name="Vw_validationReport_List" EntityType="NawaDevDAL.Vw_validationReport_List" />
+    <EntitySet Name="CleansingReports" EntityType="NawaDevDAL.CleansingReport" />
+    <EntitySet Name="ORS_FormInfo" EntityType="NawaDevDAL.ORS_FormInfo" />
+    <EntitySet Name="ORS_ValidationKey" EntityType="NawaDevDAL.ORS_ValidationKey" />
+    <EntitySet Name="Ref_KategoriValidasi" EntityType="NawaDevDAL.Ref_KategoriValidasi" />
+    <EntitySet Name="ValidationTypes" EntityType="NawaDevDAL.ValidationType" />
+    <EntitySet Name="Ref_DataSet" EntityType="NawaDevDAL.Ref_DataSet" />
+    <EntitySet Name="LastLogins" EntityType="NawaDevDAL.LastLogin" />
+    <EntitySet Name="ReportofDisableNames" EntityType="NawaDevDAL.ReportofDisableName" />
+    <EntitySet Name="vw_AuditTrail_UserAccess" EntityType="NawaDevDAL.vw_AuditTrail_UserAccess" />
+    <EntitySet Name="Vw_KelompokInformasiRelation" EntityType="NawaDevDAL.Vw_KelompokInformasiRelation" />
+    <EntitySet Name="vw_KodeCabangActive" EntityType="NawaDevDAL.vw_KodeCabangActive" />
+    <EntitySet Name="Vw_ListAllCabang" EntityType="NawaDevDAL.Vw_ListAllCabang" />
+    <EntitySet Name="vw_MappingCounterparty" EntityType="NawaDevDAL.vw_MappingCounterparty" />
+    <EntitySet Name="vw_Menuall" EntityType="NawaDevDAL.vw_Menuall" />
+    <EntitySet Name="vw_Ref_SandiBankAlias" EntityType="NawaDevDAL.vw_Ref_SandiBankAlias" />
+    <EntitySet Name="vw_Ref_SandiNasabahLainDalamNegeriAlias" EntityType="NawaDevDAL.vw_Ref_SandiNasabahLainDalamNegeriAlias" />
+    <EntitySet Name="Vw_SettingPersonal" EntityType="NawaDevDAL.Vw_SettingPersonal" />
+    <EntitySet Name="Vw_ValidationReportSummary" EntityType="NawaDevDAL.Vw_ValidationReportSummary" />
+    <EntitySet Name="Prefix_Module_Generator" EntityType="NawaDevDAL.Prefix_Module_Generator" />
+    <EntitySet Name="ValidationParameters" EntityType="NawaDevDAL.ValidationParameter" />
+    <EntitySet Name="vw_EODLog" EntityType="NawaDevDAL.vw_EODLog" />
+  </EntityContainer>
+  <EntityType Name="AuditTrail_UserAccess">
+    <Key>
+      <PropertyRef Name="PK_UserAccessID" />
+    </Key>
+    <Property Name="PK_UserAccessID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="ActionDate" Type="DateTime" Precision="3" />
+    <Property Name="Action" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="AuditTrail_UserLogin">
+    <Key>
+      <PropertyRef Name="UserLoginID" />
+    </Key>
+    <Property Name="UserLoginID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserLoginUserid" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="UserLoginActionDate" Type="DateTime" Precision="3" />
+    <Property Name="UserLoginAction" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UserLoginIPAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UserLoginDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AuditTrailStatu">
+    <Key>
+      <PropertyRef Name="Pk_AuditTrailStatus_ID" />
+    </Key>
+    <Property Name="Pk_AuditTrailStatus_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditTrailStatusName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ELMAH_Error">
+    <Key>
+      <PropertyRef Name="ErrorId" />
+    </Key>
+    <Property Name="ErrorId" Type="Guid" Nullable="false" />
+    <Property Name="Application" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="Host" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Source" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="User" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StatusCode" Type="Int32" Nullable="false" />
+    <Property Name="TimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AllXml" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="EmailStatu">
+    <Key>
+      <PropertyRef Name="PK_EmailStatus_ID" />
+    </Key>
+    <Property Name="PK_EmailStatus_ID" Type="Int32" Nullable="false" />
+    <Property Name="EmailStatusName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="EODScheduler">
+    <Key>
+      <PropertyRef Name="PK_EODScheduler_ID" />
+    </Key>
+    <Property Name="PK_EODScheduler_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EODSchedulerName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="EODSchedulerDescription" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="EODPeriod" Type="Int32" />
+    <Property Name="FK_MsEODPeriod" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Type="Boolean" Name="HasPeriodikScheduler" />
+  </EntityType>
+  <EntityType Name="EODSchedulerDetail">
+    <Key>
+      <PropertyRef Name="PK_EODSchedulerDetail_ID" />
+    </Key>
+    <Property Name="PK_EODSchedulerDetail_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_EODSCheduler_ID" Type="Int64" />
+    <Property Name="FK_EODTask_ID" Type="Int64" />
+    <Property Name="OrderNo" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EODSchedulerLog">
+    <Key>
+      <PropertyRef Name="PK_EODSchedulerLog_ID" />
+    </Key>
+    <Property Name="PK_EODSchedulerLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_EODSchedulerID" Type="Int64" />
+    <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="DataDate" Type="DateTime" Precision="3" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="Enddate" Type="DateTime" Precision="3" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+    <Property Name="KodeCabang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EODTask">
+    <Key>
+      <PropertyRef Name="PK_EODTask_ID" />
+    </Key>
+    <Property Name="PK_EODTask_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EODTaskName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="EODTaskDescription" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EODTaskDetail">
+    <Key>
+      <PropertyRef Name="PK_EODTaskDetail_ID" />
+    </Key>
+    <Property Name="PK_EODTaskDetail_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_EODTask_ID" Type="Int64" />
+    <Property Name="FK_EODTaskDetailType_ID" Type="Int32" />
+    <Property Name="OrderNo" Type="Int32" />
+    <Property Name="SSISName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="SSISFIle" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="StoreProcedureName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Keterangan" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="IsUseParameterProcessDate" Type="Boolean" />
+    <Property Name="IsUseParameterBranch" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="EODTaskDetailLog">
+    <Key>
+      <PropertyRef Name="PK_EODTaskDetailLog_ID" />
+    </Key>
+    <Property Name="PK_EODTaskDetailLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EODSchedulerLogID" Type="Int64" />
+    <Property Name="EODTaskLogID" Type="Int64" />
+    <Property Name="FK_EODTAskDetail_ID" Type="Int64" />
+    <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="Enddate" Type="DateTime" Precision="3" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+    <Property Type="String" Name="executionID" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EODTaskDetailType">
+    <Key>
+      <PropertyRef Name="PK_EODTaskDetailType_ID" />
+    </Key>
+    <Property Name="PK_EODTaskDetailType_ID" Type="Int32" Nullable="false" />
+    <Property Name="EODTaskDetailType1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="EODTaskLog">
+    <Key>
+      <PropertyRef Name="PK_EODTaskLog_ID" />
+    </Key>
+    <Property Name="PK_EODTaskLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EODSchedulerLogID" Type="Int64" />
+    <Property Name="FK_EODTaskID" Type="Int64" />
+    <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="Enddate" Type="DateTime" Precision="3" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FileSecurity">
+    <Key>
+      <PropertyRef Name="FileSecurityID" />
+    </Key>
+    <Property Name="FileSecurityID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FileSecurityGroupId" Type="Int32" />
+    <Property Name="FileSecurityFileName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="MGroupMenu" Relationship="NawaDevDAL.FK_FileSecurity_MGroupMenu" FromRole="FileSecurity" ToRole="MGroupMenu" />
+  </EntityType>
+  <EntityType Name="LogConsoleService">
+    <Key>
+      <PropertyRef Name="Pk_LogConsoleService_Id" />
+    </Key>
+    <Property Name="Pk_LogConsoleService_Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="LogCreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LogStatus" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="LogInfo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="LogDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MenuTemplate">
+    <Key>
+      <PropertyRef Name="mMenuID" />
+    </Key>
+    <Property Name="mMenuID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="mMenuLabel" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="mMenuParentID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="mMenuURL" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="FK_Module_ID" Type="Int32" />
+    <Property Name="FK_Action_ID" Type="Int32" />
+    <Property Name="urutan" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MExtType">
+    <Key>
+      <PropertyRef Name="PK_ExtType_ID" />
+    </Key>
+    <Property Name="PK_ExtType_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ExtTypeName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="ExtTypeDesc" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ModuleFields" Relationship="NawaDevDAL.FK_ModuleField_MExtType" FromRole="MExtType" ToRole="ModuleField" />
+  </EntityType>
+  <EntityType Name="MFieldType">
+    <Key>
+      <PropertyRef Name="PK_FieldType_ID" />
+    </Key>
+    <Property Name="PK_FieldType_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FieldTypeCaption" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FieldTypeDescription" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="FieldTypeSQLName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FieldTypeNetName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ModuleFields" Relationship="NawaDevDAL.FK_ModuleField_MFieldType" FromRole="MFieldType" ToRole="ModuleField" />
+    <Property Name="CodeEffecttype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodeEffectNETType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MGroupMenuAccess">
+    <Key>
+      <PropertyRef Name="PK_MGroupMenuAcess_ID" />
+    </Key>
+    <Property Name="PK_MGroupMenuAcess_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_GroupMenu_ID" Type="Int32" />
+    <Property Name="FK_Module_ID" Type="Int32" />
+    <Property Name="bAdd" Type="Boolean" />
+    <Property Name="bEdit" Type="Boolean" />
+    <Property Name="bDelete" Type="Boolean" />
+    <Property Name="bActivation" Type="Boolean" />
+    <Property Name="bView" Type="Boolean" />
+    <Property Name="bApproval" Type="Boolean" />
+    <Property Name="bUpload" Type="Boolean" />
+    <Property Name="bDetail" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MGroupMenuSettting">
+    <Key>
+      <PropertyRef Name="PK_MGroupMenuSettting_ID" />
+    </Key>
+    <Property Name="PK_MGroupMenuSettting_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_MGroupMenu_ID" Type="Int32" />
+    <Property Name="mMenuID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="mMenuLabel" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="mMenuParentID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="mMenuURL" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="FK_Module_ID" Type="Int32" />
+    <Property Name="FK_Action_ID" Type="Int32" />
+    <Property Name="urutan" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="PK_Module_ID" />
+    </Key>
+    <Property Name="PK_Module_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleLabel" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleDescription" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="IsUseDesigner" Type="Boolean" />
+    <Property Name="IsUseApproval" Type="Boolean" />
+    <Property Name="IsSupportAdd" Type="Boolean" />
+    <Property Name="IsSupportEdit" Type="Boolean" />
+    <Property Name="IsSupportDelete" Type="Boolean" />
+    <Property Name="IsSupportActivation" Type="Boolean" />
+    <Property Name="IsSupportView" Type="Boolean" />
+    <Property Name="IsSupportUpload" Type="Boolean" />
+    <Property Name="IsSupportDetail" Type="Boolean" />
+    <Property Name="UrlAdd" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="UrlEdit" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="UrlDelete" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="UrlActivation" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="UrlView" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="UrlUpload" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="UrlApproval" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="UrlApprovalDetail" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="UrlDetail" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="IsUseStoreProcedureValidation" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ModuleFields" Relationship="NawaDevDAL.FK_ModuleField_Module" FromRole="Module" ToRole="ModuleField" />
+    <NavigationProperty Name="ModuleValidations" Relationship="NawaDevDAL.FK_ModuleValidation_Module" FromRole="Module" ToRole="ModuleValidation" />
+  </EntityType>
+  <EntityType Name="ModuleAction">
+    <Key>
+      <PropertyRef Name="PK_ModuleAction_ID" />
+    </Key>
+    <Property Name="PK_ModuleAction_ID" Type="Int32" Nullable="false" />
+    <Property Name="ModuleActionName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleActionDescription" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ModuleValidations" Relationship="NawaDevDAL.FK_ModuleValidation_ModuleAction" FromRole="ModuleAction" ToRole="ModuleValidation" />
+  </EntityType>
+  <EntityType Name="ModuleApproval">
+    <Key>
+      <PropertyRef Name="PK_ModuleApproval_ID" />
+    </Key>
+    <Property Name="PK_ModuleApproval_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleKey" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleField" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleFieldBefore" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="PK_ModuleAction_ID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ModuleField">
+    <Key>
+      <PropertyRef Name="PK_ModuleField_ID" />
+    </Key>
+    <Property Name="PK_ModuleField_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Module_ID" Type="Int32" />
+    <Property Name="FieldName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="FieldLabel" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Sequence" Type="Int32" />
+    <Property Name="Required" Type="Boolean" />
+    <Property Name="IsPrimaryKey" Type="Boolean" />
+    <Property Name="IsUnik" Type="Boolean" />
+    <Property Name="IsShowInView" Type="Boolean" />
+    <Property Name="FK_FieldType_ID" Type="Int32" />
+    <Property Name="SizeField" Type="Int32" />
+    <Property Name="FK_ExtType_ID" Type="Int32" />
+    <Property Name="TabelReferenceName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="TableReferenceFieldKey" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="TableReferenceFieldDisplayName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="TableReferenceFilter" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="IsUseRegexValidation" Type="Boolean" />
+    <NavigationProperty Name="MExtType" Relationship="NawaDevDAL.FK_ModuleField_MExtType" FromRole="ModuleField" ToRole="MExtType" />
+    <NavigationProperty Name="MFieldType" Relationship="NawaDevDAL.FK_ModuleField_MFieldType" FromRole="ModuleField" ToRole="MFieldType" />
+    <NavigationProperty Name="Module" Relationship="NawaDevDAL.FK_ModuleField_Module" FromRole="ModuleField" ToRole="Module" />
+    <NavigationProperty Name="ModuleFieldRegexes" Relationship="NawaDevDAL.FK_ModuleFieldRegex_ModuleFieldRegex" FromRole="ModuleField" ToRole="ModuleFieldRegex" />
+    <Property Type="String" Name="TabelReferenceNameAlias" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsShowInForm" />
+    <Property Type="String" Name="DefaultValue" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TableReferenceAdditonalJoin" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="BCasCade" Type="Boolean" />
+    <Property Name="FieldNameParent" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FilterCascade" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModuleFieldDefault">
+    <Key>
+      <PropertyRef Name="PK_ModuleField_ID" />
+    </Key>
+    <Property Name="PK_ModuleField_ID" Type="Int64" Nullable="false" />
+    <Property Name="FieldName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="FieldLabel" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Sequence" Type="Int32" />
+    <Property Name="Required" Type="Boolean" />
+    <Property Name="IsPrimaryKey" Type="Boolean" />
+    <Property Name="IsUnik" Type="Boolean" />
+    <Property Name="FK_FieldType_ID" Type="Int32" />
+    <Property Name="SizeField" Type="Int32" />
+    <Property Name="FK_ExtType_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ModuleFieldRegex">
+    <Key>
+      <PropertyRef Name="PK_ModuleFieldRegex" />
+    </Key>
+    <Property Name="PK_ModuleFieldRegex" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_ModuleField_ID" Type="Int64" />
+    <Property Name="Regex" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ModuleField" Relationship="NawaDevDAL.FK_ModuleFieldRegex_ModuleFieldRegex" FromRole="ModuleFieldRegex" ToRole="ModuleField" />
+  </EntityType>
+  <EntityType Name="ModuleTime">
+    <Key>
+      <PropertyRef Name="PK_ModuleTime_ID" />
+    </Key>
+    <Property Name="PK_ModuleTime_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleTimeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ModuleValidations" Relationship="NawaDevDAL.FK_ModuleValidation_ModuleTime" FromRole="ModuleTime" ToRole="ModuleValidation" />
+  </EntityType>
+  <EntityType Name="ModuleValidation">
+    <Key>
+      <PropertyRef Name="PK_ModuleValidation_ID" />
+    </Key>
+    <Property Name="PK_ModuleValidation_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Module_ID" Type="Int32" />
+    <Property Name="FK_ModuleAction_ID" Type="Int32" />
+    <Property Name="FK_ModuleTime_ID" Type="Int32" />
+    <Property Name="StoreProcedureName" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="StoreProcedureParameter" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="StoreProcedureParameterValueFieldSequence" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Module" Relationship="NawaDevDAL.FK_ModuleValidation_Module" FromRole="ModuleValidation" ToRole="Module" />
+    <NavigationProperty Name="ModuleAction" Relationship="NawaDevDAL.FK_ModuleValidation_ModuleAction" FromRole="ModuleValidation" ToRole="ModuleAction" />
+    <NavigationProperty Name="ModuleTime" Relationship="NawaDevDAL.FK_ModuleValidation_ModuleTime" FromRole="ModuleValidation" ToRole="ModuleTime" />
+  </EntityType>
+  <EntityType Name="MRole">
+    <Key>
+      <PropertyRef Name="PK_MRole_ID" />
+    </Key>
+    <Property Name="PK_MRole_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="RoleDescription" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MRole_Upload">
+    <Key>
+      <PropertyRef Name="PK_upload_ID" />
+    </Key>
+    <Property Name="PK_upload_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nawa_userid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="nawa_recordnumber" Type="Int64" />
+    <Property Name="KeteranganError" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="nawa_Action" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PK_MRole_ID" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="RoleName" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="RoleDescription" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MsEODPeriod">
+    <Key>
+      <PropertyRef Name="PK_MsEODPeriod_Id" />
+    </Key>
+    <Property Name="PK_MsEODPeriod_Id" Type="Int32" Nullable="false" />
+    <Property Name="MsEODPeriodName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MsEODStatu">
+    <Key>
+      <PropertyRef Name="PK_MsEODStatus_ID" />
+    </Key>
+    <Property Name="PK_MsEODStatus_ID" Type="Int32" Nullable="false" />
+    <Property Name="MsEODStatusName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MUserHistoryPassword">
+    <Key>
+      <PropertyRef Name="PK_MUser_HistoryPassword_ID" />
+    </Key>
+    <Property Name="PK_MUser_HistoryPassword_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="HistoryPassword" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="HistoryPasswordDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ReportQuery">
+    <Key>
+      <PropertyRef Name="PK_ReportQuery_ID" />
+    </Key>
+    <Property Name="PK_ReportQuery_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportName" Type="String" MaxLength="550" Unicode="false" FixedLength="false" />
+    <Property Name="ReportDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="QueryData" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Type="Boolean" Name="IsUseDesigner" />
+    <Property Type="String" Name="QueryObjectDesigner" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SystemParameter">
+    <Key>
+      <PropertyRef Name="PK_SystemParameter_ID" />
+    </Key>
+    <Property Name="PK_SystemParameter_ID" Type="Int32" Nullable="false" />
+    <Property Name="FK_SystemParameterGroup_ID" Type="Int32" />
+    <Property Name="SettingName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="SettingValue" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Hide" Type="Boolean" />
+    <Property Name="fk_MFieldType_ID" Type="Int32" />
+    <Property Name="IsEncript" Type="Boolean" />
+    <Property Name="EncriptionKey" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SystemParameterGroup">
+    <Key>
+      <PropertyRef Name="PK_SystemParameterGroup_ID" />
+    </Key>
+    <Property Name="PK_SystemParameterGroup_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SystemParameterGroup1" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_ModuleField_MExtType">
+    <End Role="MExtType" Type="NawaDevDAL.MExtType" Multiplicity="0..1" />
+    <End Role="ModuleField" Type="NawaDevDAL.ModuleField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MExtType">
+        <PropertyRef Name="PK_ExtType_ID" />
+      </Principal>
+      <Dependent Role="ModuleField">
+        <PropertyRef Name="FK_ExtType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleField_MFieldType">
+    <End Role="MFieldType" Type="NawaDevDAL.MFieldType" Multiplicity="0..1" />
+    <End Role="ModuleField" Type="NawaDevDAL.ModuleField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MFieldType">
+        <PropertyRef Name="PK_FieldType_ID" />
+      </Principal>
+      <Dependent Role="ModuleField">
+        <PropertyRef Name="FK_FieldType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleField_Module">
+    <End Role="Module" Type="NawaDevDAL.Module" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModuleField" Type="NawaDevDAL.ModuleField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="PK_Module_ID" />
+      </Principal>
+      <Dependent Role="ModuleField">
+        <PropertyRef Name="FK_Module_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleValidation_Module">
+    <End Role="Module" Type="NawaDevDAL.Module" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModuleValidation" Type="NawaDevDAL.ModuleValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="PK_Module_ID" />
+      </Principal>
+      <Dependent Role="ModuleValidation">
+        <PropertyRef Name="FK_Module_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleValidation_ModuleAction">
+    <End Role="ModuleAction" Type="NawaDevDAL.ModuleAction" Multiplicity="0..1" />
+    <End Role="ModuleValidation" Type="NawaDevDAL.ModuleValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleAction">
+        <PropertyRef Name="PK_ModuleAction_ID" />
+      </Principal>
+      <Dependent Role="ModuleValidation">
+        <PropertyRef Name="FK_ModuleAction_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleFieldRegex_ModuleFieldRegex">
+    <End Role="ModuleField" Type="NawaDevDAL.ModuleField" Multiplicity="0..1" />
+    <End Role="ModuleFieldRegex" Type="NawaDevDAL.ModuleFieldRegex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleField">
+        <PropertyRef Name="PK_ModuleField_ID" />
+      </Principal>
+      <Dependent Role="ModuleFieldRegex">
+        <PropertyRef Name="FK_ModuleField_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleValidation_ModuleTime">
+    <End Role="ModuleTime" Type="NawaDevDAL.ModuleTime" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModuleValidation" Type="NawaDevDAL.ModuleValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuleTime">
+        <PropertyRef Name="PK_ModuleTime_ID" />
+      </Principal>
+      <Dependent Role="ModuleValidation">
+        <PropertyRef Name="FK_ModuleTime_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MonitoringDuration">
+    <Key>
+      <PropertyRef Name="PK_MonitoringDuration_Id" />
+    </Key>
+    <Property Type="Int32" Name="PK_MonitoringDuration_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MonitoringDurationName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MonitoringDuration1" Relationship="NawaDevDAL.FK_MonitoringDuration_MonitoringDuration" FromRole="MonitoringDuration" ToRole="MonitoringDuration1" />
+    <NavigationProperty Name="MonitoringDuration2" Relationship="NawaDevDAL.FK_MonitoringDuration_MonitoringDuration" FromRole="MonitoringDuration1" ToRole="MonitoringDuration" />
+    <NavigationProperty Name="EmailTemplates" Relationship="NawaDevDAL.FK_EmailTemplate_MonitoringDuration" FromRole="MonitoringDuration" ToRole="EmailTemplate" />
+  </EntityType>
+  <Association Name="FK_MonitoringDuration_MonitoringDuration">
+    <End Type="NawaDevDAL.MonitoringDuration" Role="MonitoringDuration" Multiplicity="1" />
+    <End Type="NawaDevDAL.MonitoringDuration" Role="MonitoringDuration1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringDuration">
+        <PropertyRef Name="PK_MonitoringDuration_Id" />
+      </Principal>
+      <Dependent Role="MonitoringDuration1">
+        <PropertyRef Name="PK_MonitoringDuration_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmailTemplateDetail">
+    <Key>
+      <PropertyRef Name="PK_EmailTemplateDetail_ID" />
+    </Key>
+    <Property Type="Int32" Name="PK_EmailTemplateDetail_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FK_EmailTemplate_ID" />
+    <Property Type="String" Name="Replacer" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FieldReplacer" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmailTemplate">
+    <Key>
+      <PropertyRef Name="PK_EmailTemplate_ID" />
+    </Key>
+    <Property Name="PK_EmailTemplate_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailTemplateName" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Name="EmailTo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EmailCC" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EmailBCC" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EmailSubject" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FK_Monitoringduration_ID" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="StartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExcludeHoliday" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MonitoringDuration" Relationship="NawaDevDAL.FK_EmailTemplate_MonitoringDuration" FromRole="EmailTemplate" ToRole="MonitoringDuration" />
+    <Property Name="IsSupportEmail" Type="Boolean" />
+    <Property Name="IsSupportNotification" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_EmailTemplate_MonitoringDuration">
+    <End Type="NawaDevDAL.MonitoringDuration" Role="MonitoringDuration" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="NawaDevDAL.EmailTemplate" Role="EmailTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonitoringDuration">
+        <PropertyRef Name="PK_MonitoringDuration_Id" />
+      </Principal>
+      <Dependent Role="EmailTemplate">
+        <PropertyRef Name="FK_Monitoringduration_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmailTemplateScheduler">
+    <Key>
+      <PropertyRef Name="PK_EmailTemplateScheduler_ID" />
+    </Key>
+    <Property Name="PK_EmailTemplateScheduler_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PK_EmailTemplate_ID" Type="Int64" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+    <Property Name="FK_EmailStatus_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MGroupMenu">
+    <Key>
+      <PropertyRef Name="PK_MGroupMenu_ID" />
+    </Key>
+    <Property Name="PK_MGroupMenu_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupMenuName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GroupMenuDesciption" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FileSecurities" Relationship="NawaDevDAL.FK_FileSecurity_MGroupMenu" FromRole="MGroupMenu" ToRole="FileSecurity" />
+    <Property Name="DataMenu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_FileSecurity_MGroupMenu">
+    <End Type="NawaDevDAL.MGroupMenu" Role="MGroupMenu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="NawaDevDAL.FileSecurity" Role="FileSecurity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MGroupMenu">
+        <PropertyRef Name="PK_MGroupMenu_ID" />
+      </Principal>
+      <Dependent Role="FileSecurity">
+        <PropertyRef Name="FileSecurityGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmailTemplateSchedulerDetail">
+    <Key>
+      <PropertyRef Name="PK_EmailTemplateSchedulerDetail_ID" />
+    </Key>
+    <Property Name="PK_EmailTemplateSchedulerDetail_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_EmailTEmplateScheduler_ID" Type="Int64" />
+    <Property Name="UnikFieldTablePrimary" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EmailTo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EmailCC" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EmailBCC" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EmailSubject" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="EmailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+    <Property Name="SendEmailDate" Type="DateTime" Precision="3" />
+    <Property Name="FK_EmailStatus_ID" Type="Int32" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="retrycount" Type="Int32" />
+    <Property Name="EmailID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="resendByUserCount" Type="Int32" Nullable="false" />
+    <Property Name="EmailIDReference" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MUser">
+    <Key>
+      <PropertyRef Name="PK_MUser_ID" />
+    </Key>
+    <Property Name="PK_MUser_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FK_MRole_ID" Type="Int32" />
+    <Property Name="FK_MGroupMenu_ID" Type="Int32" />
+    <Property Name="UserPasword" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserPasswordSalt" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserEmailAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="IPAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="InUsed" Type="Boolean" />
+    <Property Name="IsDisabled" Type="Boolean" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="LastChangePassword" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AuditTrailDetail">
+    <Key>
+      <PropertyRef Name="PK_AuditTrailDetail_id" />
+    </Key>
+    <Property Name="PK_AuditTrailDetail_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_AuditTrailHeader_ID" Type="Int64" />
+    <Property Name="FieldName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OldValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NewValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AuditTrailHeader" Relationship="NawaDevDAL.FK_AuditTrailDetail_AuditTrailHeader" FromRole="AuditTrailDetail" ToRole="AuditTrailHeader" />
+  </EntityType>
+  <EntityType Name="AuditTrailHeader">
+    <Key>
+      <PropertyRef Name="PK_AuditTrail_ID" />
+    </Key>
+    <Property Name="PK_AuditTrail_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApproveBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleLabel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FK_ModuleAction_ID" Type="Int32" />
+    <Property Name="FK_AuditTrailStatus_ID" Type="Int32" />
+    <NavigationProperty Name="AuditTrailDetails" Relationship="NawaDevDAL.FK_AuditTrailDetail_AuditTrailHeader" FromRole="AuditTrailHeader" ToRole="AuditTrailDetail" />
+    <Property Name="PK_ModuleApproval_ID" Type="Int64" />
+  </EntityType>
+  <Association Name="FK_AuditTrailDetail_AuditTrailHeader">
+    <End Type="NawaDevDAL.AuditTrailHeader" Role="AuditTrailHeader" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="NawaDevDAL.AuditTrailDetail" Role="AuditTrailDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditTrailHeader">
+        <PropertyRef Name="PK_AuditTrail_ID" />
+      </Principal>
+      <Dependent Role="AuditTrailDetail">
+        <PropertyRef Name="FK_AuditTrailHeader_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GenerateFileTemplateDetail">
+    <Key>
+      <PropertyRef Name="PK_GenerateFileTemplateDetail_ID" />
+    </Key>
+    <Property Name="PK_GenerateFileTemplateDetail_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_GenerationFileTemplate_ID" Type="Int32" />
+    <Property Name="Replacer" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FieldReplacer" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SLIKParameter">
+    <Key>
+      <PropertyRef Name="PK_SLIKParameter_ID" />
+      <PropertyRef Name="OJK_KodeJenisLJK" />
+      <PropertyRef Name="OJK_KodeLJK" />
+    </Key>
+    <Property Name="PK_SLIKParameter_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OJK_KodeJenisLJK" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="OJK_KodeLJK" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Bulan" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Tahun" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GeneratedFileList">
+    <Key>
+      <PropertyRef Name="PK_GeneratedFileList_ID" />
+    </Key>
+    <Property Name="PK_GeneratedFileList_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TanggalData" Type="DateTime" Precision="3" />
+    <Property Name="FK_LHBU_FormInfo_ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileBin" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="CompleteDate" Type="DateTime" Precision="0" />
+    <Property Name="ErrorMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="GenerationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="0" />
+    <Property Name="SubmitStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalData" Type="Int32" />
+    <Property Name="SubmitNote" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="KodeCabang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FK_Template_ID" Type="Int32" />
+    <Property Name="Request_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GenerateFileTemplate">
+    <Key>
+      <PropertyRef Name="PK_GenerationFileTemplate_ID" />
+    </Key>
+    <Property Name="PK_GenerationFileTemplate_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenerateFileTemplateName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FileNameFormat" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="OutputFormat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LHBUFormName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="FK_DelivMethod_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vw_GeneratedFileList">
+    <Key>
+      <PropertyRef Name="PK_GeneratedFileList_ID" />
+      <PropertyRef Name="FormInfo" />
+    </Key>
+    <Property Name="PeriodeLaporan" Type="DateTime" Precision="3" />
+    <Property Name="PK_GeneratedFileList_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_LHBU_FormInfo_ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="CompleteDate" Type="DateTime" Precision="0" />
+    <Property Name="ErrorMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="GenerationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SubmitStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubmitNote" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="TotalData" Type="Int32" />
+    <Property Name="KodeCabang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FormInfo" Type="String" Nullable="false" MaxLength="263" FixedLength="false" Unicode="false" />
+    <Property Name="FK_Template_ID" Type="Int32" />
+    <Property Name="Request_ID" Type="Int32" />
+    <Property Name="GenerateFileTemplateName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Web_ValidationReport_RowComplate">
+    <Key>
+      <PropertyRef Name="PK_ID" />
+      <PropertyRef Name="SegmentData" />
+      <PropertyRef Name="Messagedetail" />
+    </Key>
+    <Property Name="PK_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TanggalData" Type="DateTime" Precision="3" />
+    <Property Name="SegmentData" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RecordID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="KeyFieldValue" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="KeyField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Messagedetail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Edited" Type="Boolean" />
+    <Property Name="KodeCabang" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MessageDetailView" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReferenceField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReferenceValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vw_ValidationReport">
+    <Key>
+      <PropertyRef Name="TanggalData" />
+      <PropertyRef Name="SegmentData" />
+      <PropertyRef Name="ValidationType" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="TanggalData" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SegmentData" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NamaField" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ValidationMessage" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="KeyFieldValue" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="KeyField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RecordID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="ValidationType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_TextFileTemporaryTable">
+    <Key>
+      <PropertyRef Name="Pk_ORS_TextFileTemporaryTable_ID" />
+    </Key>
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalRecord" Type="Int32" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="290" FixedLength="false" Unicode="false" />
+    <Property Name="Pk_ORS_TextFileTemporaryTable_ID" Type="Int64" Nullable="false" />
+    <Property Name="UploadFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleLabel" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Report_Date" Type="DateTime" Precision="3" />
+    <Property Name="StatusUpload" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TextFileTemporaryTable">
+    <Key>
+      <PropertyRef Name="Pk_TextFileTemporaryTable_ID" />
+    </Key>
+    <Property Name="Pk_TextFileTemporaryTable_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FK_FormInfo_ID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DataSource" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TanggalData" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalRecord" Type="Int32" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="TextFileTemporaryTableDetails" Relationship="NawaDevDAL.FK_TextFileTemporaryTableDetail_TextFileTemporaryTable" FromRole="TextFileTemporaryTable" ToRole="TextFileTemporaryTableDetail" />
+  </EntityType>
+  <EntityType Name="TextFileTemporaryTableDetail">
+    <Key>
+      <PropertyRef Name="FK_TextFileTemporaryTable_ID" />
+      <PropertyRef Name="Line" />
+    </Key>
+    <Property Name="FK_TextFileTemporaryTable_ID" Type="Int32" Nullable="false" />
+    <Property Name="Line" Type="Int32" Nullable="false" />
+    <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TextFileTemporaryTable" Relationship="NawaDevDAL.FK_TextFileTemporaryTableDetail_TextFileTemporaryTable" FromRole="TextFileTemporaryTableDetail" ToRole="TextFileTemporaryTable" />
+  </EntityType>
+  <Association Name="FK_TextFileTemporaryTableDetail_TextFileTemporaryTable">
+    <End Type="NawaDevDAL.TextFileTemporaryTable" Role="TextFileTemporaryTable" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="NawaDevDAL.TextFileTemporaryTableDetail" Role="TextFileTemporaryTableDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TextFileTemporaryTable">
+        <PropertyRef Name="Pk_TextFileTemporaryTable_ID" />
+      </Principal>
+      <Dependent Role="TextFileTemporaryTableDetail">
+        <PropertyRef Name="FK_TextFileTemporaryTable_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Web_ValidationReport_Row">
+    <Key>
+      <PropertyRef Name="SegmentData" />
+    </Key>
+    <Property Name="TanggalData" Type="DateTime" Precision="3" />
+    <Property Name="SegmentData" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RecordID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="KeyFieldValue" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="KeyField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="KodeCabang" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="ReferenceField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReferenceValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ValidationSummary">
+    <Key>
+      <PropertyRef Name="PK_Record_ID" />
+    </Key>
+    <Property Name="PK_Record_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SegmentData" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TanggalData" Type="DateTime" Precision="3" />
+    <Property Name="ModuleURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KodeCabang" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SettingPersonal">
+    <Key>
+      <PropertyRef Name="PK_SettingPersonal_ID" />
+    </Key>
+    <Property Name="PK_SettingPersonal_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReportDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KodeCabang" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="GenerateFileTemplateAdditional">
+    <Key>
+      <PropertyRef Name="PK_GenerateFileTemplateAdditional_ID" />
+    </Key>
+    <Property Name="PK_GenerateFileTemplateAdditional_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_GenerationFileTemplate_ID" Type="Int64" />
+    <Property Name="SQLQuery" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Alias" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UnikField" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="OutputFormat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TableSource" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TanggalData" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RecordId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="KodeCabang" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_validationReport_List">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SegmentData" />
+      <PropertyRef Name="TanggalData" />
+    </Key>
+    <Property Name="FieldName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SegmentData" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NamaField" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ValidationMessage" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="KeyFieldValue" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="KeyField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RecordID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="FK_ValidationType" Type="Int32" />
+    <Property Name="Edited" Type="Boolean" />
+    <Property Name="ErrorType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FieldValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TanggalData" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KodeCabang" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CleansingReport">
+    <Key>
+      <PropertyRef Name="PK_Record_ID" />
+    </Key>
+    <Property Name="PK_Record_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SegmentData" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="KeyField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="KeyFieldValue" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="NamaField" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OriginalValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CleanedValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="UniqueField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UniqueValue" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Clean" Type="Boolean" />
+    <Property Name="Keep" Type="Boolean" />
+    <Property Name="FieldName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Report_Date" Type="DateTime" Precision="3" />
+    <Property Name="Kode_Cabang_BI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CleansingRules" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ORS_FormInfo">
+    <Key>
+      <PropertyRef Name="Kode" />
+    </Key>
+    <Property Name="Kode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Nama" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FK_Module_ID" Type="Int32" />
+    <Property Name="KeyField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KeyValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Periode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayField" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FK_DataSet" Type="Int32" />
+    <Property Name="FK_KelompokInformasi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VersionCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NoUrut" Type="Int32" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InformationID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PeriodePelaporan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DataDateDiffH" Type="Int32" />
+    <Property Name="FK_GenerateType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TanggalTepatWaktuAkhir" Type="Int32" />
+    <Property Name="JamTepatWaktuAkhir" Type="Int32" />
+    <Property Name="TanggalKoreksiAkhir" Type="Int32" />
+    <Property Name="JamKoreksiAkhir" Type="Int32" />
+    <Property Name="TanggalKeterlambatanAkhir" Type="Int32" />
+    <Property Name="JamKeterlambatanAkhir" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ORS_ValidationKey">
+    <Key>
+      <PropertyRef Name="Pk_LHBU_ValidationKey_ID" />
+    </Key>
+    <Property Name="Pk_LHBU_ValidationKey_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Module_ID" Type="Int32" Nullable="false" />
+    <Property Name="KeyField" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="KeyValue" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Ref_KategoriValidasi">
+    <Key>
+      <PropertyRef Name="Pk_Ref_KategoriValidasi_Id" />
+    </Key>
+    <Property Name="Pk_Ref_KategoriValidasi_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ref_KategoriValidasiName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ValidationType">
+    <Key>
+      <PropertyRef Name="PK_ValidationType_ID" />
+    </Key>
+    <Property Name="PK_ValidationType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ValidationType1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Ref_DataSet">
+    <Key>
+      <PropertyRef Name="Pk_Ref_DataSet_Id" />
+    </Key>
+    <Property Name="Pk_Ref_DataSet_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ref_DataSetName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LastLogin">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserEmailAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LastLogin1" Type="DateTime" Precision="3" />
+    <Property Name="LastLoginInDays" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ReportofDisableName">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserEmailAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="LastLoginInDays" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_AuditTrail_UserAccess">
+    <Key>
+      <PropertyRef Name="PK_UserAccessID" />
+    </Key>
+    <Property Name="PK_UserAccessID" Type="Int64" Nullable="false" />
+    <Property Name="Userid" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ActionDate" Type="DateTime" Precision="3" />
+    <Property Name="Action" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="GroupMenuName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_KelompokInformasiRelation">
+    <Key>
+      <PropertyRef Name="SandiKelompokInformasi" />
+      <PropertyRef Name="SandiJenisLaporanInformasi" />
+      <PropertyRef Name="Nama" />
+    </Key>
+    <Property Name="SandiKelompokInformasi" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="KelompokInformasi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SandiJenisLaporanInformasi" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="JenisLaporanInformasi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FK_Module_ID" Type="Int32" />
+    <Property Name="Nama" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vw_KodeCabangActive">
+    <Key>
+      <PropertyRef Name="Kode" />
+    </Key>
+    <Property Name="Kode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NamaCabang" Type="String" MaxLength="113" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_ListAllCabang">
+    <Key>
+      <PropertyRef Name="OJK_Kode" />
+    </Key>
+    <Property Name="OJK_Kode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="FileSequence" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_MappingCounterparty">
+    <Key>
+      <PropertyRef Name="PK_MappingCounterparty_ID" />
+      <PropertyRef Name="ProductFamily" />
+      <PropertyRef Name="CounterpartyName" />
+    </Key>
+    <Property Name="PK_MappingCounterparty_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductFamily" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CounterpartyName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PergerakanDana" Type="Boolean" />
+    <Property Name="PihakTerkait" Type="Boolean" />
+    <Property Name="Bank" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vw_Menuall">
+    <Key>
+      <PropertyRef Name="PK_MGroupMenuSettting_ID" />
+    </Key>
+    <Property Name="PK_MGroupMenuSettting_ID" Type="Int32" Nullable="false" />
+    <Property Name="FK_MGroupMenu_ID" Type="Int32" />
+    <Property Name="mMenuID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mMenuLabel" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="mMenuParentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mMenuURL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FK_Module_ID" Type="Int32" />
+    <Property Name="FK_Action_ID" Type="Int32" />
+    <Property Name="urutan" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_Ref_SandiBankAlias">
+    <Key>
+      <PropertyRef Name="PK_SandiBankAlias_ID" />
+      <PropertyRef Name="KodeSandiBankAlias" />
+    </Key>
+    <Property Name="PK_SandiBankAlias_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KodeSandiBankAlias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NamaAlias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vw_Ref_SandiNasabahLainDalamNegeriAlias">
+    <Key>
+      <PropertyRef Name="PK_SandiNasabahLainDalamNegeriAlias_ID" />
+    </Key>
+    <Property Name="PK_SandiNasabahLainDalamNegeriAlias_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KodeNasabahLainDalamNegeriAlias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NamaNasabahLainDalamNegeriAlias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LabelNasabahLainDalamNegeriAlias" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_SettingPersonal">
+    <Key>
+      <PropertyRef Name="PK_SettingPersonal_ID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="ReportDate" />
+    </Key>
+    <Property Name="PK_SettingPersonal_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReportDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KdCabang" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vw_ValidationReportSummary">
+    <Key>
+      <PropertyRef Name="SegmentData" />
+    </Key>
+    <Property Name="SegmentData" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NamaField" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ValidationMessage" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="Jumlah" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Prefix_Module_Generator">
+    <Key>
+      <PropertyRef Name="PK_Prefix_ID" />
+    </Key>
+    <Property Name="PK_Prefix_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ValidationParameter">
+    <Key>
+      <PropertyRef Name="PK_ValidationParameter" />
+    </Key>
+    <Property Name="PK_ValidationParameter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableName" Type="Int32" Nullable="false" />
+    <Property Name="FieldName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ExpressionType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ValidationExpression" Type="String" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ValidationMessage" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ValidationType" Type="Int32" Nullable="false" />
+    <Property Name="ErrorType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fk_Ref_DataSet_Id" Type="Int32" />
+    <Property Name="Fk_Ref_KategoriValidasi_Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_EODLog">
+    <Key>
+      <PropertyRef Name="PK_EODSchedulerLog_ID" />
+      <PropertyRef Name="PK_EODTaskLog_ID" />
+      <PropertyRef Name="PK_EODTaskDetailLog_ID" />
+    </Key>
+    <Property Name="PK_EODSchedulerLog_ID" Type="Int64" Nullable="false" />
+    <Property Name="PK_EODTaskLog_ID" Type="Int64" Nullable="false" />
+    <Property Name="PK_EODTaskDetailLog_ID" Type="Int64" Nullable="false" />
+    <Property Name="EODSchedulerName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EODTaskName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="EODTaskDetailType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ExecuteBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DataDate" Type="DateTime" Precision="3" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="Enddate" Type="DateTime" Precision="3" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MsEODStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+    <Property Name="TaskStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FK_EODSchedulerID" Type="Int64" />
+  </EntityType>
+</Schema>

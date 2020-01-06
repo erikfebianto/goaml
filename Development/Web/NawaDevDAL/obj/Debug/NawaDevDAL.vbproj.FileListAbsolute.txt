@@ -1,0 +1,10 @@
+D:\Project\goAML\Development\Web\DLL\NawaDevDAL.dll.config
+D:\Project\goAML\Development\Web\DLL\NawaDevDAL.dll
+D:\Project\goAML\Development\Web\DLL\NawaDevDAL.pdb
+D:\Project\goAML\Development\Web\DLL\NawaDevDAL.xml
+D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.vbproj.CoreCompileInputs.cache
+D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.vbproj.CopyComplete
+D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.dll
+D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.xml
+D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.pdb
+D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.vbprojAssemblyReference.cache

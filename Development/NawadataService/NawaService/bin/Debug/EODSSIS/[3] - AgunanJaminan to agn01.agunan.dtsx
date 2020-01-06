@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/3/2019 3:48:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANTASENADEV"
+  DTS:CreatorName="NT AUTHORITY\SYSTEM"
+  DTS:DTSID="{2CD4BA7F-4F36-444A-A823-7CDC8F18CC97}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4604.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="{2CD4BA7F-4F36-444A-A823-7CDC8F18CC97}"
+  DTS:VersionGUID="{2804B08E-E97F-4553-BDF8-09BA6A5B14EF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DSV00P02]"
+      DTS:CreationName="OLEDB"
+      DTS:Description="OLE DB connection to the DSV00P02 database."
+      DTS:DTSID="{C193FEA8-185B-4ABC-9ABF-3095A7E9D09D}"
+      DTS:ObjectName="DSV00P02">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com;User ID=hendra;Initial Catalog=DSV00P02; Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgcJBOHvHDkG6Xwtj+hwAHwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD3Yn+Rvb0yIUuvJRUXV6NNowxsLPoEzqYAYyYZzVW1YQAAAAAOgAAAAAIAACAAAADYqg4GJB6S4sDrxO4naT/+CdvXnfgExuPhkxzRnseTGSAAAAA/JMnp4JieqI9mo4d+VjfKH7i+CPhULm5ehSbkKJfGe0AAAAC/WjQZDwIS/f8pVYTvWkqNGT+EX8JOPl2gJSTZYel0uUJvnHiUYW9w5q096yXMsLvk8AH7K80/G+0bysc7tWz3</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OneReportingDB]"
+      DTS:CreationName="OLEDB"
+      DTS:Description="OLE DB connection to the OneReportingDB database."
+      DTS:DTSID="{128D9598-0AA9-4BA7-91CB-CE45F8EB9A57}"
+      DTS:ObjectName="OneReportingDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com;User ID=hendra;Initial Catalog=OneReportingDB ; Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgcJBOHvHDkG6Xwtj+hwAHwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA6RORRSFv6SMU6Yu5tcisWLiWkhpPHKdueraI6dlzMkQAAAAAOgAAAAAIAACAAAADrrkczujIHI/HocLuLxC9nMR0FwzP9ErLpQXiixEaA+SAAAADvS2UtVwrXEoopF8bZKNBoWW8ytepNAK8VAfVdOpCs+0AAAAC/CxHa/phoyKgW71/1uuf18d3Jj52b+yN+14nAoV0NNc22GO7McaoXGZzxb58wq/VWM5qU9HcEu/m0G709aTot</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;OneReportingDB&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;PK_EODTaskDetailLog_ID&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{45F4C451-8894-4D93-9565-423A02DEE6E4}"
+      DTS:ObjectName="OneReportingDB - PK_EODTaskDetailLog_ID" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;OneReportingDB&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;DataDate&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{1F1ED742-9525-48AC-BB78-181CF2238921}"
+      DTS:ObjectName="OneReportingDB - DataDate" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;OneReportingDB&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;Report_Date&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{4EA20AEA-0E49-4E1A-9767-5FFFB465B923}"
+      DTS:ObjectName="OneReportingDB - Report_Date" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;OneReportingDB&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;Kode_Cabang&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{2E209915-DC0C-4985-A8E8-4118900B48EC}"
+      DTS:ObjectName="OneReportingDB - Kode_Cabang" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;DSV00P02&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;PK_EODTaskDetailLog_ID&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{D795E49C-F334-4D49-94F2-A45FEF51CE14}"
+      DTS:ObjectName="DSV00P02 - PK_EODTaskDetailLog_ID" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;DSV00P02&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;DataDate&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{816E2DB6-DBEC-49C7-AFCF-FD801112285B}"
+      DTS:ObjectName="DSV00P02 - DataDate" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;DSV00P02&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;Report_Date&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{C6EE71A7-F895-45A5-95BC-BC91084EE230}"
+      DTS:ObjectName="DSV00P02 - Report_Date" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;DSV00P02&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;Kode_Cabang&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{303E9FDB-7837-43A0-A051-5060224D3250}"
+      DTS:ObjectName="DSV00P02 - Kode_Cabang" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="OneReportingDB"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:DTSID="{E078FF86-04C0-423B-A517-8CCB30597692}"
+      DTS:ObjectName="Log Provider SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{94B32897-102B-41E1-8293-176FFE40C97B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Kode_Cabang">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B434481F-9EAE-4C70-BA61-90465D290CD2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PK_EODTaskDetailLog_ID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FDF23D30-0018-4F55-8BC0-A026B8A5C0A9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Report_Date">
+      <DTS:VariableValue
+        DTS:DataType="7">12/3/2019 3:48:07 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">4,7,OnError,13,OnInformation,10,OnProgress,12,OnTaskFailed</DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{E078FF86-04C0-423B-A517-8CCB30597692}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\(Task 1) Audit Trail"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{3BBC1837-1889-44A0-AE7C-7610A93B1593}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="(Task 1) Audit Trail"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="OneReportingDB"
+          SQLTask:SqlStatementSource="UPDATE EODTaskDetailLog SET executionID = REPLACE(REPLACE( ?,'{',''),'}','') WHERE PK_EODTaskDetailLog_ID=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PK_EODTaskDetailLog_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\(Task 2) Clear Data"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{9373240A-FA4D-49BC-B10B-711AB0423B56}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="(Task 2) Clear Data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="DSV00P02"
+          SQLTask:SqlStatementSource="DELETE FROM agn01.agunan WHERE 1=1 AND DATEDIFF(DAY, periodeData, ?) = 0 AND RIGHT(idPelapor,6) = CASE ? WHEN 'All' THEN RIGHT(idPelapor,6) ELSE ? END&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Report_Date"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Kode_Cabang"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::Kode_Cabang"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\(Task 3) Insert agn01agunan From ANT_B_Agunan"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{9A381D69-27EC-4B35-AEC3-C067F7521C91}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="(Task 3) Insert agn01agunan From ANT_B_Agunan"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{128D9598-0AA9-4BA7-91CB-CE45F8EB9A57}"
+          SQLTask:SqlStatementSource="INSERT INTO DSV00P02.agn01.agunan (periodeLaporan, idPelapor, jenisAgunan, nilaiAgunan, noAgunan, periodeData)&#xA;SELECT TRY_CONVERT(VARCHAR(50), 'M') AS periodeLaporan, TRY_CONVERT(VARCHAR(50), (SELECT SettingValue from SystemParameter WHERE PK_SystemParameter_ID=9008) + Kode_Cabang_BI) AS idPelapor, TRY_CONVERT(VARCHAR(50), Jenis_Agunan) AS jenisAgunan, TRY_CONVERT(NUMERIC(28,2), Nilai_Agunan) AS nilaiAgunan, TRY_CONVERT(VARCHAR(25), Nomor_Agunan) AS noAgunan, TRY_CONVERT(DATETIME, Report_Date) AS periodeData&#xA; FROM OneReportingDB.dbo.ANT_B_Agunan&#xA; &#xA; WHERE 1=1  AND DATEDIFF(DAY, Report_Date, ?) = 0 AND Kode_Cabang_BI = CASE ? WHEN 'All' THEN Kode_Cabang_BI ELSE ? END;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Report_Date"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Kode_Cabang"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::Kode_Cabang"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{1DD62B42-9D1B-4D83-A7F7-93B34375E939\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{1DD62B42-9D1B-4D83-A7F7-93B34375E939}"
+      DTS:From="Package\(Task 2) Clear Data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{1DD62B42-9D1B-4D83-A7F7-93B34375E939}"
+      DTS:To="Package\(Task 3) Insert agn01agunan From ANT_B_Agunan" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{CAD14A5D-6F7F-4297-8B66-7EA28D084ECF\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{CAD14A5D-6F7F-4297-8B66-7EA28D084ECF}"
+      DTS:From="Package\(Task 1) Audit Trail"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{CAD14A5D-6F7F-4297-8B66-7EA28D084ECF}"
+      DTS:To="Package\(Task 2) Clear Data" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>

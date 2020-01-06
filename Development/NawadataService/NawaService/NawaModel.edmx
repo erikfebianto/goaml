@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NawaDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EODScheduler">
+          <Key>
+            <PropertyRef Name="PK_EODScheduler_ID" />
+          </Key>
+          <Property Name="PK_EODScheduler_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EODSchedulerName" Type="varchar" MaxLength="255" />
+          <Property Name="EODSchedulerDescription" Type="varchar" MaxLength="8000" />
+          <Property Name="HasPeriodikScheduler" Type="bit" />
+          <Property Name="EODPeriod" Type="int" />
+          <Property Name="FK_MsEODPeriod" Type="int" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EODSchedulerDetail">
+          <Key>
+            <PropertyRef Name="PK_EODSchedulerDetail_ID" />
+          </Key>
+          <Property Name="PK_EODSchedulerDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EODSCheduler_ID" Type="bigint" />
+          <Property Name="FK_EODTask_ID" Type="bigint" />
+          <Property Name="OrderNo" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EODSchedulerLog">
+          <Key>
+            <PropertyRef Name="PK_EODSchedulerLog_ID" />
+          </Key>
+          <Property Name="PK_EODSchedulerLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EODSchedulerID" Type="bigint" />
+          <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+          <Property Name="DataDate" Type="datetime" />
+          <Property Name="ProcessDate" Type="datetime" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Enddate" Type="datetime" />
+          <Property Name="ErrorMessage" Type="varchar(max)" />
+          <Property Name="FK_MsEODStatus_ID" Type="int" />
+          <Property Name="KodeCabang" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="EODTask">
+          <Key>
+            <PropertyRef Name="PK_EODTask_ID" />
+          </Key>
+          <Property Name="PK_EODTask_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EODTaskName" Type="varchar" MaxLength="250" />
+          <Property Name="EODTaskDescription" Type="varchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EODTaskDetail">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetail_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EODTask_ID" Type="bigint" />
+          <Property Name="FK_EODTaskDetailType_ID" Type="int" />
+          <Property Name="OrderNo" Type="int" />
+          <Property Name="SSISName" Type="varchar" MaxLength="250" />
+          <Property Name="SSISFIle" Type="varbinary(max)" />
+          <Property Name="StoreProcedureName" Type="varchar" MaxLength="250" />
+          <Property Name="Keterangan" Type="varchar" MaxLength="8000" />
+          <Property Name="IsUseParameterProcessDate" Type="bit" />
+          <Property Name="IsUseParameterBranch" Type="bit" />
+        </EntityType>
+        <EntityType Name="EODTaskDetailLog">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetailLog_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetailLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EODSchedulerLogID" Type="bigint" />
+          <Property Name="EODTaskLogID" Type="bigint" />
+          <Property Name="FK_EODTAskDetail_ID" Type="bigint" />
+          <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Enddate" Type="datetime" />
+          <Property Name="ErrorMessage" Type="varchar(max)" />
+          <Property Name="FK_MsEODStatus_ID" Type="int" />
+          <Property Name="executionID" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="EODTaskDetailType">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetailType_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetailType_ID" Type="int" Nullable="false" />
+          <Property Name="EODTaskDetailType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EODTaskLog">
+          <Key>
+            <PropertyRef Name="PK_EODTaskLog_ID" />
+          </Key>
+          <Property Name="PK_EODTaskLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EODSchedulerLogID" Type="bigint" />
+          <Property Name="FK_EODTaskID" Type="bigint" />
+          <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Enddate" Type="datetime" />
+          <Property Name="ErrorMessage" Type="varchar(max)" />
+          <Property Name="FK_MsEODStatus_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="GeneratedFileList">
+          <Key>
+            <PropertyRef Name="PK_GeneratedFileList_ID" />
+          </Key>
+          <Property Name="PK_GeneratedFileList_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TanggalData" Type="datetime" />
+          <Property Name="FK_LHBU_FormInfo_ID" Type="varchar" MaxLength="5" />
+          <Property Name="FileName" Type="varchar" MaxLength="250" />
+          <Property Name="FileType" Type="varchar" MaxLength="50" />
+          <Property Name="FileBin" Type="varbinary(max)" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="CompleteDate" Type="smalldatetime" />
+          <Property Name="ErrorMsg" Type="varchar(max)" />
+          <Property Name="Comment" Type="varchar" MaxLength="2000" />
+          <Property Name="GenerationStatus" Type="varchar" MaxLength="20" />
+          <Property Name="ApprovalStatus" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="smalldatetime" />
+          <Property Name="UpdatedDate" Type="smalldatetime" />
+          <Property Name="ApprovedDate" Type="smalldatetime" />
+          <Property Name="SubmitStatus" Type="varchar" MaxLength="50" />
+          <Property Name="SubmitNote" Type="varchar" MaxLength="2000" />
+          <Property Name="TotalData" Type="int" />
+          <Property Name="KodeCabang" Type="varchar" MaxLength="10" />
+          <Property Name="FK_Template_ID" Type="int" />
+          <Property Name="Request_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="GenerateFileTemplate">
+          <Key>
+            <PropertyRef Name="PK_GenerationFileTemplate_ID" />
+          </Key>
+          <Property Name="PK_GenerationFileTemplate_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GenerateFileTemplateName" Type="varchar" MaxLength="250" />
+          <Property Name="FileNameFormat" Type="varchar" MaxLength="250" />
+          <Property Name="OutputFormat" Type="varchar(max)" />
+          <Property Name="LHBUFormName" Type="varchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="150" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="150" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="FK_DelivMethod_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="LogConsoleService">
+          <Key>
+            <PropertyRef Name="Pk_LogConsoleService_Id" />
+          </Key>
+          <Property Name="Pk_LogConsoleService_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogCreatedDate" Type="datetime" />
+          <Property Name="LogStatus" Type="varchar" MaxLength="255" />
+          <Property Name="LogInfo" Type="varchar(max)" />
+          <Property Name="LogDescription" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="NawadataConnectionString">
+          <Key>
+            <PropertyRef Name="PK_NawaDataConnectionString_ID" />
+          </Key>
+          <Property Name="PK_NawaDataConnectionString_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConnecitonName" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="ConnectionValue" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="PasswordValue" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="Alternateby" Type="varchar" MaxLength="50" />
+          <Property Name="PasswordValue1" Type="varchar" MaxLength="8000" />
+          <Property Name="PasswordEncript" Type="varchar" MaxLength="8000" />
+          <Property Name="PasswordBinary" Type="varbinary(max)" />
+          <Property Name="PasswordBinaryName" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="SystemParameter">
+          <Key>
+            <PropertyRef Name="PK_SystemParameter_ID" />
+          </Key>
+          <Property Name="PK_SystemParameter_ID" Type="int" Nullable="false" />
+          <Property Name="FK_SystemParameterGroup_ID" Type="int" />
+          <Property Name="SettingName" Type="varchar" MaxLength="250" />
+          <Property Name="SettingValue" Type="varchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="fk_MFieldType_ID" Type="int" />
+          <Property Name="IsEncript" Type="bit" />
+          <Property Name="EncriptionKey" Type="varchar" MaxLength="550" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OneReportingDB.dbo.Vw_GeneratedFileList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_GeneratedFileList">
+          <Key>
+            <PropertyRef Name="PK_GeneratedFileList_ID" />
+            <PropertyRef Name="FormInfo" />
+          </Key>
+          <Property Name="Request_ID" Type="int" />
+          <Property Name="PK_GeneratedFileList_ID" Type="bigint" Nullable="false" />
+          <Property Name="PeriodeLaporan" Type="datetime" />
+          <Property Name="KodeCabang" Type="varchar" MaxLength="10" />
+          <Property Name="FK_LHBU_FormInfo_ID" Type="varchar" MaxLength="5" />
+          <Property Name="FormInfo" Type="varchar" MaxLength="263" Nullable="false" />
+          <Property Name="FK_Template_ID" Type="int" />
+          <Property Name="GenerateFileTemplateName" Type="varchar" MaxLength="250" />
+          <Property Name="FileName" Type="varchar" MaxLength="250" />
+          <Property Name="FileType" Type="varchar" MaxLength="50" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="CompleteDate" Type="smalldatetime" />
+          <Property Name="ErrorMsg" Type="varchar(max)" />
+          <Property Name="Comment" Type="varchar" MaxLength="2000" />
+          <Property Name="GenerationStatus" Type="varchar" MaxLength="20" />
+          <Property Name="ApprovalStatus" Type="varchar" MaxLength="20" />
+          <Property Name="SubmitStatus" Type="varchar" MaxLength="50" />
+          <Property Name="SubmitNote" Type="varchar" MaxLength="2000" />
+          <Property Name="TotalData" Type="int" />
+        </EntityType>
+        <EntityContainer Name="NawaDataModelStoreContainer">
+          <EntitySet Name="EODScheduler" EntityType="Self.EODScheduler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODSchedulerDetail" EntityType="Self.EODSchedulerDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODSchedulerLog" EntityType="Self.EODSchedulerLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTask" EntityType="Self.EODTask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTaskDetail" EntityType="Self.EODTaskDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTaskDetailLog" EntityType="Self.EODTaskDetailLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTaskDetailType" EntityType="Self.EODTaskDetailType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTaskLog" EntityType="Self.EODTaskLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GeneratedFileList" EntityType="Self.GeneratedFileList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GenerateFileTemplate" EntityType="Self.GenerateFileTemplate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogConsoleService" EntityType="Self.LogConsoleService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NawadataConnectionString" EntityType="Self.NawadataConnectionString" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemParameter" EntityType="Self.SystemParameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vw_GeneratedFileList" EntityType="Self.Vw_GeneratedFileList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Vw_GeneratedFileList].[Request_ID] AS [Request_ID], 
+[Vw_GeneratedFileList].[PK_GeneratedFileList_ID] AS [PK_GeneratedFileList_ID], 
+[Vw_GeneratedFileList].[PeriodeLaporan] AS [PeriodeLaporan], 
+[Vw_GeneratedFileList].[KodeCabang] AS [KodeCabang], 
+[Vw_GeneratedFileList].[FK_LHBU_FormInfo_ID] AS [FK_LHBU_FormInfo_ID], 
+[Vw_GeneratedFileList].[FormInfo] AS [FormInfo], 
+[Vw_GeneratedFileList].[FK_Template_ID] AS [FK_Template_ID], 
+[Vw_GeneratedFileList].[GenerateFileTemplateName] AS [GenerateFileTemplateName], 
+[Vw_GeneratedFileList].[FileName] AS [FileName], 
+[Vw_GeneratedFileList].[FileType] AS [FileType], 
+[Vw_GeneratedFileList].[StartDate] AS [StartDate], 
+[Vw_GeneratedFileList].[CompleteDate] AS [CompleteDate], 
+[Vw_GeneratedFileList].[ErrorMsg] AS [ErrorMsg], 
+[Vw_GeneratedFileList].[Comment] AS [Comment], 
+[Vw_GeneratedFileList].[GenerationStatus] AS [GenerationStatus], 
+[Vw_GeneratedFileList].[ApprovalStatus] AS [ApprovalStatus], 
+[Vw_GeneratedFileList].[SubmitStatus] AS [SubmitStatus], 
+[Vw_GeneratedFileList].[SubmitNote] AS [SubmitNote], 
+[Vw_GeneratedFileList].[TotalData] AS [TotalData]
+FROM [dbo].[Vw_GeneratedFileList] AS [Vw_GeneratedFileList]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NawaDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NawaDataEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="EODSchedulers" EntityType="NawaDataModel.EODScheduler" />
+          <EntitySet Name="EODSchedulerDetails" EntityType="NawaDataModel.EODSchedulerDetail" />
+          <EntitySet Name="EODSchedulerLogs" EntityType="NawaDataModel.EODSchedulerLog" />
+          <EntitySet Name="EODTasks" EntityType="NawaDataModel.EODTask" />
+          <EntitySet Name="EODTaskDetailLogs" EntityType="NawaDataModel.EODTaskDetailLog" />
+          <EntitySet Name="EODTaskDetailTypes" EntityType="NawaDataModel.EODTaskDetailType" />
+          <EntitySet Name="EODTaskLogs" EntityType="NawaDataModel.EODTaskLog" />
+          <EntitySet Name="LogConsoleServices" EntityType="NawaDataModel.LogConsoleService" />
+          <EntitySet Name="SystemParameters" EntityType="NawaDataModel.SystemParameter" />
+          <EntitySet Name="NawadataConnectionStrings" EntityType="NawaDataModel.NawadataConnectionString" />
+          <EntitySet Name="EODTaskDetails" EntityType="NawaDataModel.EODTaskDetail" />
+          <EntitySet Name="GeneratedFileLists" EntityType="NawaDataModel.GeneratedFileList" />
+          <EntitySet Name="GenerateFileTemplates" EntityType="NawaDataModel.GenerateFileTemplate" />
+          <EntitySet Name="Vw_GeneratedFileList" EntityType="NawaDataModel.Vw_GeneratedFileList" />
+        </EntityContainer>
+        <EntityType Name="EODScheduler">
+          <Key>
+            <PropertyRef Name="PK_EODScheduler_ID" />
+          </Key>
+          <Property Name="PK_EODScheduler_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EODSchedulerName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="EODSchedulerDescription" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+          <Property Name="EODPeriod" Type="Int32" />
+          <Property Name="FK_MsEODPeriod" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="HasPeriodikScheduler" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="EODSchedulerDetail">
+          <Key>
+            <PropertyRef Name="PK_EODSchedulerDetail_ID" />
+          </Key>
+          <Property Name="PK_EODSchedulerDetail_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EODSCheduler_ID" Type="Int64" />
+          <Property Name="FK_EODTask_ID" Type="Int64" />
+          <Property Name="OrderNo" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EODSchedulerLog">
+          <Key>
+            <PropertyRef Name="PK_EODSchedulerLog_ID" />
+          </Key>
+          <Property Name="PK_EODSchedulerLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EODSchedulerID" Type="Int64" />
+          <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Enddate" Type="DateTime" Precision="3" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+          <Property Type="DateTime" Name="DataDate" Precision="3" />
+          <Property Name="KodeCabang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EODTask">
+          <Key>
+            <PropertyRef Name="PK_EODTask_ID" />
+          </Key>
+          <Property Name="PK_EODTask_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EODTaskName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="EODTaskDescription" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EODTaskDetailLog">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetailLog_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetailLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EODSchedulerLogID" Type="Int64" />
+          <Property Name="EODTaskLogID" Type="Int64" />
+          <Property Name="FK_EODTAskDetail_ID" Type="Int64" />
+          <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Enddate" Type="DateTime" Precision="3" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+          <Property Name="executionID" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EODTaskDetailType">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetailType_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetailType_ID" Type="Int32" Nullable="false" />
+          <Property Name="EODTaskDetailType1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="EODTaskLog">
+          <Key>
+            <PropertyRef Name="PK_EODTaskLog_ID" />
+          </Key>
+          <Property Name="PK_EODTaskLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EODSchedulerLogID" Type="Int64" />
+          <Property Name="FK_EODTaskID" Type="Int64" />
+          <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Enddate" Type="DateTime" Precision="3" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LogConsoleService">
+          <Key>
+            <PropertyRef Name="Pk_LogConsoleService_Id" />
+          </Key>
+          <Property Name="Pk_LogConsoleService_Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LogCreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LogStatus" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LogInfo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="LogDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SystemParameter">
+          <Key>
+            <PropertyRef Name="PK_SystemParameter_ID" />
+          </Key>
+          <Property Type="Int32" Name="PK_SystemParameter_ID" Nullable="false" />
+          <Property Type="Int32" Name="FK_SystemParameterGroup_ID" />
+          <Property Type="String" Name="SettingName" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SettingValue" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="fk_MFieldType_ID" Type="Int32" />
+          <Property Name="IsEncript" Type="Boolean" />
+          <Property Name="EncriptionKey" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NawadataConnectionString">
+          <Key>
+            <PropertyRef Name="PK_NawaDataConnectionString_ID" />
+          </Key>
+          <Property Name="PK_NawaDataConnectionString_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConnecitonName" Type="String" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="ConnectionValue" Type="String" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordValue" Type="String" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="Alternateby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordValue1" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordEncript" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordBinary" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PasswordBinaryName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EODTaskDetail">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetail_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetail_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EODTask_ID" Type="Int64" />
+          <Property Name="FK_EODTaskDetailType_ID" Type="Int32" />
+          <Property Name="OrderNo" Type="Int32" />
+          <Property Name="SSISName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SSISFIle" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="StoreProcedureName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Keterangan" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="IsUseParameterProcessDate" Type="Boolean" />
+          <Property Name="IsUseParameterBranch" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="GeneratedFileList">
+          <Key>
+            <PropertyRef Name="PK_GeneratedFileList_ID" />
+          </Key>
+          <Property Name="PK_GeneratedFileList_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TanggalData" Type="DateTime" Precision="3" />
+          <Property Name="FK_LHBU_FormInfo_ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FileName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FileBin" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="0" />
+          <Property Name="ErrorMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="GenerationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="0" />
+          <Property Name="SubmitStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubmitNote" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="TotalData" Type="Int32" />
+          <Property Name="KodeCabang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FK_Template_ID" Type="Int32" />
+          <Property Name="Request_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="GenerateFileTemplate">
+          <Key>
+            <PropertyRef Name="PK_GenerationFileTemplate_ID" />
+          </Key>
+          <Property Name="PK_GenerationFileTemplate_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GenerateFileTemplateName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FileNameFormat" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OutputFormat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LHBUFormName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="FK_DelivMethod_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Vw_GeneratedFileList">
+          <Key>
+            <PropertyRef Name="PK_GeneratedFileList_ID" />
+            <PropertyRef Name="FormInfo" />
+          </Key>
+          <Property Name="Request_ID" Type="Int32" />
+          <Property Name="PK_GeneratedFileList_ID" Type="Int64" Nullable="false" />
+          <Property Name="PeriodeLaporan" Type="DateTime" Precision="3" />
+          <Property Name="KodeCabang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FK_LHBU_FormInfo_ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FormInfo" Type="String" Nullable="false" MaxLength="263" FixedLength="false" Unicode="false" />
+          <Property Name="FK_Template_ID" Type="Int32" />
+          <Property Name="GenerateFileTemplateName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FileName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="0" />
+          <Property Name="ErrorMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="GenerationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SubmitStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubmitNote" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="TotalData" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NawaDataModelStoreContainer" CdmEntityContainer="NawaDataEntities">
+          <EntitySetMapping Name="EODSchedulers">
+            <EntityTypeMapping TypeName="NawaDataModel.EODScheduler">
+              <MappingFragment StoreEntitySet="EODScheduler">
+                <ScalarProperty Name="HasPeriodikScheduler" ColumnName="HasPeriodikScheduler" />
+                <ScalarProperty Name="PK_EODScheduler_ID" ColumnName="PK_EODScheduler_ID" />
+                <ScalarProperty Name="EODSchedulerName" ColumnName="EODSchedulerName" />
+                <ScalarProperty Name="EODSchedulerDescription" ColumnName="EODSchedulerDescription" />
+                <ScalarProperty Name="EODPeriod" ColumnName="EODPeriod" />
+                <ScalarProperty Name="FK_MsEODPeriod" ColumnName="FK_MsEODPeriod" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODSchedulerDetails">
+            <EntityTypeMapping TypeName="NawaDataModel.EODSchedulerDetail">
+              <MappingFragment StoreEntitySet="EODSchedulerDetail">
+                <ScalarProperty Name="PK_EODSchedulerDetail_ID" ColumnName="PK_EODSchedulerDetail_ID" />
+                <ScalarProperty Name="FK_EODSCheduler_ID" ColumnName="FK_EODSCheduler_ID" />
+                <ScalarProperty Name="FK_EODTask_ID" ColumnName="FK_EODTask_ID" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODSchedulerLogs">
+            <EntityTypeMapping TypeName="NawaDataModel.EODSchedulerLog">
+              <MappingFragment StoreEntitySet="EODSchedulerLog">
+                <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+                <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+                <ScalarProperty Name="PK_EODSchedulerLog_ID" ColumnName="PK_EODSchedulerLog_ID" />
+                <ScalarProperty Name="FK_EODSchedulerID" ColumnName="FK_EODSchedulerID" />
+                <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+                <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTasks">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTask">
+              <MappingFragment StoreEntitySet="EODTask">
+                <ScalarProperty Name="PK_EODTask_ID" ColumnName="PK_EODTask_ID" />
+                <ScalarProperty Name="EODTaskName" ColumnName="EODTaskName" />
+                <ScalarProperty Name="EODTaskDescription" ColumnName="EODTaskDescription" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTaskDetailLogs">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetailLog">
+              <MappingFragment StoreEntitySet="EODTaskDetailLog">
+                <ScalarProperty Name="executionID" ColumnName="executionID" />
+                <ScalarProperty Name="PK_EODTaskDetailLog_ID" ColumnName="PK_EODTaskDetailLog_ID" />
+                <ScalarProperty Name="EODSchedulerLogID" ColumnName="EODSchedulerLogID" />
+                <ScalarProperty Name="EODTaskLogID" ColumnName="EODTaskLogID" />
+                <ScalarProperty Name="FK_EODTAskDetail_ID" ColumnName="FK_EODTAskDetail_ID" />
+                <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTaskDetailTypes">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetailType">
+              <MappingFragment StoreEntitySet="EODTaskDetailType">
+                <ScalarProperty Name="PK_EODTaskDetailType_ID" ColumnName="PK_EODTaskDetailType_ID" />
+                <ScalarProperty Name="EODTaskDetailType1" ColumnName="EODTaskDetailType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTaskLogs">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTaskLog">
+              <MappingFragment StoreEntitySet="EODTaskLog">
+                <ScalarProperty Name="PK_EODTaskLog_ID" ColumnName="PK_EODTaskLog_ID" />
+                <ScalarProperty Name="EODSchedulerLogID" ColumnName="EODSchedulerLogID" />
+                <ScalarProperty Name="FK_EODTaskID" ColumnName="FK_EODTaskID" />
+                <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogConsoleServices">
+            <EntityTypeMapping TypeName="NawaDataModel.LogConsoleService">
+              <MappingFragment StoreEntitySet="LogConsoleService">
+                <ScalarProperty Name="Pk_LogConsoleService_Id" ColumnName="Pk_LogConsoleService_Id" />
+                <ScalarProperty Name="LogCreatedDate" ColumnName="LogCreatedDate" />
+                <ScalarProperty Name="LogStatus" ColumnName="LogStatus" />
+                <ScalarProperty Name="LogInfo" ColumnName="LogInfo" />
+                <ScalarProperty Name="LogDescription" ColumnName="LogDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemParameters">
+            <EntityTypeMapping TypeName="NawaDataModel.SystemParameter">
+              <MappingFragment StoreEntitySet="SystemParameter">
+                <ScalarProperty Name="EncriptionKey" ColumnName="EncriptionKey" />
+                <ScalarProperty Name="IsEncript" ColumnName="IsEncript" />
+                <ScalarProperty Name="fk_MFieldType_ID" ColumnName="fk_MFieldType_ID" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+                <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+                <ScalarProperty Name="FK_SystemParameterGroup_ID" ColumnName="FK_SystemParameterGroup_ID" />
+                <ScalarProperty Name="PK_SystemParameter_ID" ColumnName="PK_SystemParameter_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NawadataConnectionStrings">
+            <EntityTypeMapping TypeName="NawaDataModel.NawadataConnectionString">
+              <MappingFragment StoreEntitySet="NawadataConnectionString">
+                <ScalarProperty Name="PasswordBinaryName" ColumnName="PasswordBinaryName" />
+                <ScalarProperty Name="PasswordBinary" ColumnName="PasswordBinary" />
+                <ScalarProperty Name="PasswordEncript" ColumnName="PasswordEncript" />
+                <ScalarProperty Name="PasswordValue1" ColumnName="PasswordValue1" />
+                <ScalarProperty Name="Alternateby" ColumnName="Alternateby" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="PasswordValue" ColumnName="PasswordValue" />
+                <ScalarProperty Name="ConnectionValue" ColumnName="ConnectionValue" />
+                <ScalarProperty Name="ConnecitonName" ColumnName="ConnecitonName" />
+                <ScalarProperty Name="PK_NawaDataConnectionString_ID" ColumnName="PK_NawaDataConnectionString_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTaskDetails">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetail">
+              <MappingFragment StoreEntitySet="EODTaskDetail">
+                <ScalarProperty Name="IsUseParameterBranch" ColumnName="IsUseParameterBranch" />
+                <ScalarProperty Name="IsUseParameterProcessDate" ColumnName="IsUseParameterProcessDate" />
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="StoreProcedureName" ColumnName="StoreProcedureName" />
+                <ScalarProperty Name="SSISFIle" ColumnName="SSISFIle" />
+                <ScalarProperty Name="SSISName" ColumnName="SSISName" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="FK_EODTaskDetailType_ID" ColumnName="FK_EODTaskDetailType_ID" />
+                <ScalarProperty Name="FK_EODTask_ID" ColumnName="FK_EODTask_ID" />
+                <ScalarProperty Name="PK_EODTaskDetail_ID" ColumnName="PK_EODTaskDetail_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GeneratedFileLists">
+            <EntityTypeMapping TypeName="NawaDataModel.GeneratedFileList">
+              <MappingFragment StoreEntitySet="GeneratedFileList">
+                <ScalarProperty Name="Request_ID" ColumnName="Request_ID" />
+                <ScalarProperty Name="FK_Template_ID" ColumnName="FK_Template_ID" />
+                <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+                <ScalarProperty Name="TotalData" ColumnName="TotalData" />
+                <ScalarProperty Name="SubmitNote" ColumnName="SubmitNote" />
+                <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+                <ScalarProperty Name="GenerationStatus" ColumnName="GenerationStatus" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ErrorMsg" ColumnName="ErrorMsg" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FileBin" ColumnName="FileBin" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FK_LHBU_FormInfo_ID" ColumnName="FK_LHBU_FormInfo_ID" />
+                <ScalarProperty Name="TanggalData" ColumnName="TanggalData" />
+                <ScalarProperty Name="PK_GeneratedFileList_ID" ColumnName="PK_GeneratedFileList_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GenerateFileTemplates">
+            <EntityTypeMapping TypeName="NawaDataModel.GenerateFileTemplate">
+              <MappingFragment StoreEntitySet="GenerateFileTemplate">
+                <ScalarProperty Name="FK_DelivMethod_ID" ColumnName="FK_DelivMethod_ID" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="LHBUFormName" ColumnName="LHBUFormName" />
+                <ScalarProperty Name="OutputFormat" ColumnName="OutputFormat" />
+                <ScalarProperty Name="FileNameFormat" ColumnName="FileNameFormat" />
+                <ScalarProperty Name="GenerateFileTemplateName" ColumnName="GenerateFileTemplateName" />
+                <ScalarProperty Name="PK_GenerationFileTemplate_ID" ColumnName="PK_GenerationFileTemplate_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_GeneratedFileList">
+            <EntityTypeMapping TypeName="NawaDataModel.Vw_GeneratedFileList">
+              <MappingFragment StoreEntitySet="Vw_GeneratedFileList">
+                <ScalarProperty Name="TotalData" ColumnName="TotalData" />
+                <ScalarProperty Name="SubmitNote" ColumnName="SubmitNote" />
+                <ScalarProperty Name="SubmitStatus" ColumnName="SubmitStatus" />
+                <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+                <ScalarProperty Name="GenerationStatus" ColumnName="GenerationStatus" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ErrorMsg" ColumnName="ErrorMsg" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="GenerateFileTemplateName" ColumnName="GenerateFileTemplateName" />
+                <ScalarProperty Name="FK_Template_ID" ColumnName="FK_Template_ID" />
+                <ScalarProperty Name="FormInfo" ColumnName="FormInfo" />
+                <ScalarProperty Name="FK_LHBU_FormInfo_ID" ColumnName="FK_LHBU_FormInfo_ID" />
+                <ScalarProperty Name="KodeCabang" ColumnName="KodeCabang" />
+                <ScalarProperty Name="PeriodeLaporan" ColumnName="PeriodeLaporan" />
+                <ScalarProperty Name="PK_GeneratedFileList_ID" ColumnName="PK_GeneratedFileList_ID" />
+                <ScalarProperty Name="Request_ID" ColumnName="Request_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
