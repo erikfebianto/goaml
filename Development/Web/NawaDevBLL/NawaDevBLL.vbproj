@@ -109,6 +109,8 @@
     <Compile Include="EODSchedulerDataBLL.vb" />
     <Compile Include="EODTaskBLL.vb" />
     <Compile Include="EODTaskDataBLL.vb" />
+    <Compile Include="FileGenerationBLL.vb" />
+    <Compile Include="FileGenerationDataBLL.vb" />
     <Compile Include="GettingStartedBLL.vb" />
     <Compile Include="ModuleUploadBLL.vb" />
     <Compile Include="NawaDataPicker.vb" />
@@ -130,9 +132,11 @@
     </Compile>
     <Compile Include="ResetPasswordBLL.vb" />
     <Compile Include="ServicesForWeb.vb" />
+    <Compile Include="SLIKParameterBLL.vb" />
     <Compile Include="TablePropertiesBLL.vb" />
     <Compile Include="TablePropertiesDataBLL.vb" />
     <Compile Include="UserLockBLL.vb" />
+    <Compile Include="ValidationReportBLL.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

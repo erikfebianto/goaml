@@ -39,22 +39,22 @@ Public Class _Default
                             type = HttpUtility.ParseQueryString(New Uri(struri).Query).GetValues("Type")(0)
                         End If
 
-                        If type = "ValidReport" Then
-                            Dim id As String = HttpUtility.ParseQueryString(New Uri(struri).Query).GetValues("PK_ID")(0)
-                            Dim objData = ValidationReportBLL.GetDataByID(id)
+                        'If type = "ValidReport" Then
+                        '    Dim id As String = HttpUtility.ParseQueryString(New Uri(struri).Query).GetValues("PK_ID")(0)
+                        '    Dim objData = ValidationReportBLL.GetDataByID(id)
 
-                            Dim recordID As String = NawaBLL.Common.EncryptQueryString(objData.RecordID, NawaBLL.SystemParameterBLL.GetEncriptionKey)
-                            Dim tableName As String = "Web_ValidationReport_RowComplate"
-                            Dim fieldID As String = "PK_ID"
-                            Dim fieldValue As String = id
-                            Dim msgField As String = "Messagedetail"
-                            Dim intModuleBack As String = NawaBLL.Common.EncryptQueryString(strModulevalue, NawaBLL.SystemParameterBLL.GetEncriptionKey)
-                            Dim actionBack As String = NawaBLL.SystemParameterBLL.ModuleAction.View
+                        '    Dim recordID As String = NawaBLL.Common.EncryptQueryString(objData.RecordID, NawaBLL.SystemParameterBLL.GetEncriptionKey)
+                        '    Dim tableName As String = "Web_ValidationReport_RowComplate"
+                        '    Dim fieldID As String = "PK_ID"
+                        '    Dim fieldValue As String = id
+                        '    Dim msgField As String = "Messagedetail"
+                        '    Dim intModuleBack As String = NawaBLL.Common.EncryptQueryString(strModulevalue, NawaBLL.SystemParameterBLL.GetEncriptionKey)
+                        '    Dim actionBack As String = NawaBLL.SystemParameterBLL.ModuleAction.View
 
-                            strRedirect = String.Format(objData.ModuleURL & "?ID={0}&ModuleID={1}&Table={2}&PKName={3}&PKValue={4}&MsgField={5}&ModuleBack={6}&actionback={7}", recordID, strencriptmodule, tableName, fieldID, fieldValue, msgField, intModuleBack, actionBack)
-                        Else
-                            strRedirect = strpath.Replace("moduleid=" & strModulevalue, "moduleid=" & strencriptmodule)
-                        End If
+                        '    strRedirect = String.Format(objData.ModuleURL & "?ID={0}&ModuleID={1}&Table={2}&PKName={3}&PKValue={4}&MsgField={5}&ModuleBack={6}&actionback={7}", recordID, strencriptmodule, tableName, fieldID, fieldValue, msgField, intModuleBack, actionBack)
+                        'Else
+                        '    strRedirect = strpath.Replace("moduleid=" & strModulevalue, "moduleid=" & strencriptmodule)
+                        'End If
 
                         Panel1.Loader = New ComponentLoader()
                         Panel1.Loader.Url = "~" & strRedirect

@@ -121,13 +121,13 @@ D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.
 D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
 D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
 D:\Project\Antasena\Development\Source Code\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
-D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
-D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
-D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
-D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
-D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
-D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
 D:\Project\goAML\Development\Web\DLL\NawaDevBLL.dll
 D:\Project\goAML\Development\Web\DLL\NawaDevBLL.pdb
 D:\Project\goAML\Development\Web\DLL\NawaDevBLL.xml
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojAssemblyReference.cache
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.cache
 D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
