@@ -127,3 +127,7 @@ D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.Generate
 D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
 D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
 D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+D:\Project\goAML\Development\Web\DLL\NawaDevBLL.dll
+D:\Project\goAML\Development\Web\DLL\NawaDevBLL.pdb
+D:\Project\goAML\Development\Web\DLL\NawaDevBLL.xml
+D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComplete

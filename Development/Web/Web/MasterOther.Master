@@ -242,7 +242,7 @@
             <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Crisp" DirectMethodNamespace="NawadataDirect" ShowWarningOnAjaxFailure="false">
             </ext:ResourceManager>
 
-            <ext:Window ID="windowSetting" Title="Setting Branch & Period" runat="server" ButtonAlign="Right" Width="500" Hidden="true" Layout="AnchorLayout" Modal="true">
+     <%--       <ext:Window ID="windowSetting" Title="Setting Branch & Period" runat="server" ButtonAlign="Right" Width="500" Hidden="true" Layout="AnchorLayout" Modal="true">
                 <Items>
                     <ext:FormPanel ID="FormPanel1" runat="server" BodyPadding="15">
                         <Items>
@@ -295,7 +295,7 @@
                 <Listeners>
                     <Resize Handler="#{windowSetting}.center()" />
                 </Listeners>
-            </ext:Window>
+            </ext:Window>--%>
             <ext:Viewport ID="Viewport1" runat="server" Layout="border" EnableTheming="true">
                 <Items>
                     <ext:Panel ID="TopPanel" runat="server" Height="100" Region="North" Split="True" Title="Logo" DefaultAlign="right" Collapsible="true">
@@ -371,11 +371,11 @@
                                             </ext:Button>--%>
                                             <%--<ext:ToolbarSeparator ID="ToolbarSeparator4" runat="server" />--%>
                                             
-                                            <ext:ToolbarTextItem ID="barSLIKParameter" runat="server" Text="SLIK Parameter:" />
+                                           <%-- <ext:ToolbarTextItem ID="barSLIKParameter" runat="server" Text="SLIK Parameter:" />
 
                                             <ext:ToolbarSeparator ID="ToolbarSeparator6" runat="server" />
                                             <ext:Button ID="BtnSettingBranchAndPeriod" runat="server" Text="Setting Branch & Period" Handler="NawadataDirect.BtnSettingBranchAndPeriod_DirectClick()">
-                                            </ext:Button>
+                                            </ext:Button>--%>
                                             <ext:ToolbarSeparator ID="ToolbarSeparator5" runat="server" />
                                             <ext:Button ID="BtnChangePassword" runat="server" Text="Change Password" Handler="NawadataDirect.BtnChangePassword_DirectClick()">
                                             </ext:Button>

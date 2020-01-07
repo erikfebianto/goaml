@@ -83,17 +83,17 @@ Partial Class MasterOther
                     'hLogout.Href = "~/Logout.aspx"
                     'hChangePassword.Href = "~/ChangePassword.aspx"
 
-                    NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal = NawaDevBLL.SLIKParameterBLL.getSettingSLIKPersonal(NawaBLL.Common.SessionCurrentUser.UserID)
+                    '  NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal = NawaDevBLL.SLIKParameterBLL.getSettingSLIKPersonal(NawaBLL.Common.SessionCurrentUser.UserID)
 
-                    cboKantorCabang.PageSize = NawaBLL.SystemParameterBLL.GetPageSize
-                    StoreBranch.PageSize = NawaBLL.SystemParameterBLL.GetPageSize
-                    If Not NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal Is Nothing Then
-                        barSLIKParameter.Text = " Period : " & NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal.ReportDate.ToString("dd-MMM-yyyy") & " | Branch : " & NawaDevBLL.SLIKParameterBLL.getCabangName(NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal.KodeCabang)
-                    Else
-                        barSLIKParameter.Text = " Period :  [Not Selected] | Branch : [Not Selected]"
-                        windowSetting.Hidden = False
+                    'cboKantorCabang.PageSize = NawaBLL.SystemParameterBLL.GetPageSize
+                    'StoreBranch.PageSize = NawaBLL.SystemParameterBLL.GetPageSize
+                    'If Not NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal Is Nothing Then
+                    '    barSLIKParameter.Text = " Period : " & NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal.ReportDate.ToString("dd-MMM-yyyy") & " | Branch : " & NawaDevBLL.SLIKParameterBLL.getCabangName(NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal.KodeCabang)
+                    'Else
+                    '    barSLIKParameter.Text = " Period :  [Not Selected] | Branch : [Not Selected]"
+                    '    windowSetting.Hidden = False
 
-                    End If
+                    'End If
 
                     CountNotification()
                     CountTaskList()
@@ -307,89 +307,89 @@ Partial Class MasterOther
 
 #Region "Setting Branch"
 
-    Protected Sub BtnSaveSLIK_DirectEvent(sender As Object, e As DirectEventArgs)
-        Try
-            Dim objnewparam As NawaDevDAL.SettingPersonal = NawaDevBLL.SLIKParameterBLL.getSettingSLIKPersonal(NawaBLL.Common.SessionCurrentUser.UserID)
-            Dim objslikparameter As NawaDevDAL.SLIKParameter = NawaDevBLL.SLIKParameterBLL.getSlikparameter
-            If objnewparam Is Nothing Then
-                objnewparam = New NawaDevDAL.SettingPersonal
-                objnewparam.ReportDate = Date.Now
-            End If
-            objnewparam.ReportDate = txtPeriod.Text
-            objnewparam.UserID = NawaBLL.Common.SessionCurrentUser.UserID
-            objnewparam.KodeCabang = cboKantorCabang.Value
+    'Protected Sub BtnSaveSLIK_DirectEvent(sender As Object, e As DirectEventArgs)
+    '    Try
+    '        Dim objnewparam As NawaDevDAL.SettingPersonal = NawaDevBLL.SLIKParameterBLL.getSettingSLIKPersonal(NawaBLL.Common.SessionCurrentUser.UserID)
+    '        Dim objslikparameter As NawaDevDAL.SLIKParameter = NawaDevBLL.SLIKParameterBLL.getSlikparameter
+    '        If objnewparam Is Nothing Then
+    '            objnewparam = New NawaDevDAL.SettingPersonal
+    '            objnewparam.ReportDate = Date.Now
+    '        End If
+    '        objnewparam.ReportDate = txtPeriod.Text
+    '        objnewparam.UserID = NawaBLL.Common.SessionCurrentUser.UserID
+    '        objnewparam.KodeCabang = cboKantorCabang.Value
 
-            NawaDevBLL.SLIKParameterBLL.SaveSettingToDb(objnewparam)
-            NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal = objnewparam
-            windowSetting.Hidden = True
-            Dim objbarslik As ToolbarTextItem = TopPanel.FindControl("barSLIKParameter")
+    '        NawaDevBLL.SLIKParameterBLL.SaveSettingToDb(objnewparam)
+    '        NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal = objnewparam
+    '        windowSetting.Hidden = True
+    '        Dim objbarslik As ToolbarTextItem = TopPanel.FindControl("barSLIKParameter")
 
-            If Not NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal Is Nothing Then
-                objbarslik.Text = " Period : " & NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal.ReportDate.ToString("dd-MMM-yyyy") & " | Branch : " & NawaDevBLL.SLIKParameterBLL.getCabangName(NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal.KodeCabang)
-            Else
-                objbarslik.Text = " Period :  [Not Selected] | Branch : [Not Selected]"
-            End If
-
-
-        Catch ex As Exception
-            Elmah.ErrorSignal.FromCurrentContext.Raise(ex)
-            Ext.Net.X.Msg.Alert("Error", ex.Message).Show()
-        End Try
-    End Sub
-
-    Protected Sub StoreBranch_ReadData(sender As Object, e As StoreReadDataEventArgs)
-        Try
-            Dim query As String = e.Parameters("query")
-            If query Is Nothing Then query = ""
+    '        If Not NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal Is Nothing Then
+    '            objbarslik.Text = " Period : " & NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal.ReportDate.ToString("dd-MMM-yyyy") & " | Branch : " & NawaDevBLL.SLIKParameterBLL.getCabangName(NawaDevBLL.SLIKParameterBLL.SessionSettingSLIKPersonal.KodeCabang)
+    '        Else
+    '            objbarslik.Text = " Period :  [Not Selected] | Branch : [Not Selected]"
+    '        End If
 
 
-            Dim strfilter As String = ""
-            If query.Length > 0 Then
-                strfilter = " NamaCabang like '%" & query & "%'"
-            End If
+    '    Catch ex As Exception
+    '        Elmah.ErrorSignal.FromCurrentContext.Raise(ex)
+    '        Ext.Net.X.Msg.Alert("Error", ex.Message).Show()
+    '    End Try
+    'End Sub
 
-            ''Indra Bu 15 April 2019:
-            ''Sementara ditutup dulu
-            'If strfilter = "" Then
-            '    strfilter += " kode IN (SELECT  mbu.FK_Branch_ID FROM MappingBranchUser mbu WHERE mbu.UserID='" & NawaBLL.Common.SessionCurrentUser.UserID & "')"
-            'Else
-            '    strfilter += " and kode IN (SELECT  mbu.FK_Branch_ID FROM MappingBranchUser mbu WHERE mbu.UserID='" & NawaBLL.Common.SessionCurrentUser.UserID & "')"
-            'End If
+    'Protected Sub StoreBranch_ReadData(sender As Object, e As StoreReadDataEventArgs)
+    '    Try
+    '        Dim query As String = e.Parameters("query")
+    '        If query Is Nothing Then query = ""
 
-            StoreBranch.DataSource = NawaDAL.SQLHelper.ExecuteTabelPaging("vw_KodeCabangActive", "Kode,NamaCabang", strfilter, "Kode", e.Start, e.Limit, e.Total)
-            StoreBranch.DataBind()
-        Catch ex As Exception
-            Elmah.ErrorSignal.FromCurrentContext.Raise(ex)
-            Ext.Net.X.Msg.Alert("Error", ex.Message).Show()
-        End Try
 
-    End Sub
+    '        Dim strfilter As String = ""
+    '        If query.Length > 0 Then
+    '            strfilter = " NamaCabang like '%" & query & "%'"
+    '        End If
 
-    <DirectMethod>
-    Sub BtnSettingBranchAndPeriod_DirectClick()
-        Try
-            windowSetting.Hidden = False
-            If StoreBranch.DataSource = Nothing Then
-                StoreBranch.DataSource = SQLHelper.ExecuteTable(SQLHelper.strConnectionString, CommandType.Text, "SELECT Kode, NamaCabang FROM vw_KodeCabangActive", Nothing)
-            End If
+    '        ''Indra Bu 15 April 2019:
+    '        ''Sementara ditutup dulu
+    '        'If strfilter = "" Then
+    '        '    strfilter += " kode IN (SELECT  mbu.FK_Branch_ID FROM MappingBranchUser mbu WHERE mbu.UserID='" & NawaBLL.Common.SessionCurrentUser.UserID & "')"
+    '        'Else
+    '        '    strfilter += " and kode IN (SELECT  mbu.FK_Branch_ID FROM MappingBranchUser mbu WHERE mbu.UserID='" & NawaBLL.Common.SessionCurrentUser.UserID & "')"
+    '        'End If
 
-            Dim objnewparam As NawaDevDAL.SettingPersonal = NawaDevBLL.SLIKParameterBLL.getSettingSLIKPersonal(NawaBLL.Common.SessionCurrentUser.UserID)
-            If objnewparam Is Nothing Then
-                cboKantorCabang.Value = ""
-                txtPeriod.SetValue("")
-            Else
-                cboKantorCabang.ClearValue()
-                cboKantorCabang.DoQuery(objnewparam.KodeCabang, True)
-                cboKantorCabang.SetValueAndFireSelect(objnewparam.KodeCabang)
+    '        StoreBranch.DataSource = NawaDAL.SQLHelper.ExecuteTabelPaging("vw_KodeCabangActive", "Kode,NamaCabang", strfilter, "Kode", e.Start, e.Limit, e.Total)
+    '        StoreBranch.DataBind()
+    '    Catch ex As Exception
+    '        Elmah.ErrorSignal.FromCurrentContext.Raise(ex)
+    '        Ext.Net.X.Msg.Alert("Error", ex.Message).Show()
+    '    End Try
 
-                txtPeriod.SetValue(objnewparam.ReportDate)
-                BtnSaveSLIK.Focus()
-            End If
-        Catch ex As Exception
-            Elmah.ErrorSignal.FromCurrentContext.Raise(ex)
-            Ext.Net.X.Msg.Alert("Error", ex.Message).Show()
-        End Try
-    End Sub
+    'End Sub
+
+    '<DirectMethod>
+    'Sub BtnSettingBranchAndPeriod_DirectClick()
+    '    Try
+    '        windowSetting.Hidden = False
+    '        If StoreBranch.DataSource = Nothing Then
+    '            StoreBranch.DataSource = SQLHelper.ExecuteTable(SQLHelper.strConnectionString, CommandType.Text, "SELECT Kode, NamaCabang FROM vw_KodeCabangActive", Nothing)
+    '        End If
+
+    '        Dim objnewparam As NawaDevDAL.SettingPersonal = NawaDevBLL.SLIKParameterBLL.getSettingSLIKPersonal(NawaBLL.Common.SessionCurrentUser.UserID)
+    '        If objnewparam Is Nothing Then
+    '            cboKantorCabang.Value = ""
+    '            txtPeriod.SetValue("")
+    '        Else
+    '            cboKantorCabang.ClearValue()
+    '            cboKantorCabang.DoQuery(objnewparam.KodeCabang, True)
+    '            cboKantorCabang.SetValueAndFireSelect(objnewparam.KodeCabang)
+
+    '            txtPeriod.SetValue(objnewparam.ReportDate)
+    '            BtnSaveSLIK.Focus()
+    '        End If
+    '    Catch ex As Exception
+    '        Elmah.ErrorSignal.FromCurrentContext.Raise(ex)
+    '        Ext.Net.X.Msg.Alert("Error", ex.Message).Show()
+    '    End Try
+    'End Sub
 
 #End Region
 
