@@ -3,25 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "goAML", "http://localhost/goAML", "{008205C3-54C4-4F37-A160-7491D5E5AE48}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "goaml", "http://localhost/goaml", "{008205C3-54C4-4F37-A160-7491D5E5AE48}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/goAML"
-		Debug.AspNetCompiler.PhysicalPath = "..\Web\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\goAML\"
+		ProjectReferences = "{4589dd81-6752-47c7-b788-f721d1383658}|NawaDevBLL.dll;{A9E082D0-5C61-470D-84BE-F6246EF92458}|NawaDevDAL.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/goaml"
+		Debug.AspNetCompiler.PhysicalPath = "Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\goaml\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/goAML"
-		Release.AspNetCompiler.PhysicalPath = "..\Web\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\goAML\"
+		Release.AspNetCompiler.VirtualPath = "/goaml"
+		Release.AspNetCompiler.PhysicalPath = "Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\goaml\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\Web\"
+		SlnRelativePath = "Web\"
 	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NawaDevBLL", "NawaDevBLL\NawaDevBLL.vbproj", "{4589DD81-6752-47C7-B788-F721D1383658}"
@@ -51,6 +52,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {748DA43C-7EFA-475C-BBDF-AF8E5A70F29B}
+		SolutionGuid = {413D5B50-5457-4571-8A9D-CB92F372BCA5}
 	EndGlobalSection
 EndGlobal
