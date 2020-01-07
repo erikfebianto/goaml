@@ -64,6 +64,8 @@ Partial Class MasterOther
                 If Not NawaBLL.Common.SessionCurrentUser Is Nothing Then
                     Session("Show") = False
 
+
+
                     NawaBLL.AuditTrail_UserLoginBLL.AuditAccesss(Request.UserHostAddress, NawaBLL.Common.SessionCurrentUser.UserID, System.IO.Path.GetFileName(Request.Path))
 
                     'MenuPanel1.ID = "MainMenu"
