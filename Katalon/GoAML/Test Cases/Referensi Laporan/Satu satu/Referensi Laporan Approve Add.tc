@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Referensi Laporan Approve Add</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>79491fb1-1a15-45c0-8ed5-bec5d9dba4e8</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5df019b3-067e-4b38-8ca2-dbba6af4e3fb</id>
+      <masked>false</masked>
+      <name>filter</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Referensi Laporan</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a649ec2d-8c99-4c21-9d8c-9433802f0561</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ef0b2959-fbf0-4afc-946b-18da6103b12d</id>
+      <masked>false</masked>
+      <name>Filter</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>1f4004ba-66e1-400c-b925-0034160676dc</id>
+      <masked>false</masked>
+      <name>RefLaporan</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>25d9832f-2975-4f81-b881-e7cc6904c03d</id>
+      <masked>false</masked>
+      <name>Kode</name>
+   </variable>
+</TestCaseEntity>

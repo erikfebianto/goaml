@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Reject</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>101fb8e5-c315-491a-a136-9c15f47f7fbd</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>16e29502-c781-4bd2-8dfd-4fed7aabdc20</id>
+      <masked>false</masked>
+      <name>filter</name>
+   </variable>
+</TestCaseEntity>
