@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-02-19T14:28:03</date>
+  <millis>1582097283584</millis>
+  <sequence>0</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startSuite</method>
+  <thread>1</thread>
+  <message>Start Test Suite : Test Suites/Ref Laporan</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="name">Ref Laporan</property>
+  <property name="description"></property>
+  <property name="id">Test Suites/Ref Laporan</property>
+</record>
+<record>
+  <date>2020-02-19T14:28:03</date>
+  <millis>1582097283707</millis>
+  <sequence>1</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>hostName = user - NDS-LPT-0080</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="hostName">user - NDS-LPT-0080</property>
+</record>
+<record>
+  <date>2020-02-19T14:28:03</date>
+  <millis>1582097283710</millis>
+  <sequence>2</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>os = Windows 10 64bit</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="os">Windows 10 64bit</property>
+</record>
+<record>
+  <date>2020-02-19T14:28:03</date>
+  <millis>1582097283711</millis>
+  <sequence>3</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>hostAddress = 10.5.50.95</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="hostAddress">10.5.50.95</property>
+</record>
+<record>
+  <date>2020-02-19T14:28:03</date>
+  <millis>1582097283713</millis>
+  <sequence>4</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>katalonVersion = 6.3.3.11</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="katalonVersion">6.3.3.11</property>
+</record>
+<record>
+  <date>2020-02-19T14:28:05</date>
+  <millis>1582097285176</millis>
+  <sequence>5</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Referensi Laporan/Satu satu/Referensi Laporan Approve Add</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Referensi Laporan/Satu satu/Referensi Laporan Approve Add</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Referensi Laporan/Satu satu/Referensi Laporan Approve Add</property>
+  <property name="source">D:\\poject\\goaml2\\Katalon\\GoAML\\Test Cases\\Referensi Laporan\\Satu satu\\Referensi Laporan Approve Add.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2020-02-19T14:28:05</date>
+  <millis>1582097285305</millis>
+  <sequence>7</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>filter = Jenis Transaksi</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-19T14:28:08</date>
+  <millis>1582097288671</millis>
+  <sequence>8</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : openBrowser(\&amp;quot;http://ndsantasena.southeastasia.cloudapp.azure.com:8080/Default.aspx\&amp;quot;)</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">18</property>
+  <property name="stepIndex">1</property>
+</record>
+<record>
+  <date>2020-02-19T14:28:10</date>
+  <millis>1582097290260</millis>
+  <sequence>10</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Starting &amp;apos;Chrome&amp;apos; driver</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-19T14:28:10</date>
+  <millis>1582097290346</millis>
+  <sequence>12</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>User set preference: [&amp;apos;property&amp;apos;, &amp;apos;&amp;apos;]</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-19T14:28:10</date>
+  <millis>1582097290394</millis>
+  <sequence>13</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Action delay is set to 0 seconds</message>
+  <nestedLevel>1</nestedLevel>
+</record>

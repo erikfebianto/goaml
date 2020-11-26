@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Approve</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fcef5708-7e26-4308-8b44-cea997382dff</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6ce0d25d-e022-41b0-b2e6-1e48b55d86f5</id>
+      <masked>false</masked>
+      <name>filter</name>
+   </variable>
+</TestCaseEntity>

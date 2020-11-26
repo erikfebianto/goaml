@@ -1,0 +1,3275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-03-02T11:35:02</date>
+  <millis>1583123702629</millis>
+  <sequence>0</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startSuite</method>
+  <thread>1</thread>
+  <message>Start Test Suite : Test Suites/WIC</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="name">WIC</property>
+  <property name="description"></property>
+  <property name="id">Test Suites/WIC</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:02</date>
+  <millis>1583123702656</millis>
+  <sequence>1</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>hostName = user - NDS-LPT-0080</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="hostName">user - NDS-LPT-0080</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:02</date>
+  <millis>1583123702658</millis>
+  <sequence>2</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>os = Windows 10 64bit</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="os">Windows 10 64bit</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:02</date>
+  <millis>1583123702659</millis>
+  <sequence>3</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>hostAddress = 10.5.50.100</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="hostAddress">10.5.50.100</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:02</date>
+  <millis>1583123702660</millis>
+  <sequence>4</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>katalonVersion = 7.2.1.1</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="katalonVersion">7.2.1.1</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:03</date>
+  <millis>1583123703026</millis>
+  <sequence>5</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Parameter/WIC/Add</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Parameter/WIC/Add</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Parameter/WIC/Add</property>
+  <property name="source">D:\\poject\\goaml2\\Katalon\\GoAML\\Test Cases\\Parameter\\WIC\\Add.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:04</date>
+  <millis>1583123704654</millis>
+  <sequence>7</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : openBrowser(\&amp;quot;http://ndsantasena.southeastasia.cloudapp.azure.com:8080/Default.aspx\&amp;quot;)</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">20</property>
+  <property name="stepIndex">1</property>
+  <property name="description">Buka Browser\r\n</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:05</date>
+  <millis>1583123705153</millis>
+  <sequence>9</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Starting &amp;apos;Chrome&amp;apos; driver</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:05</date>
+  <millis>1583123705249</millis>
+  <sequence>11</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>User set preference: [&amp;apos;property&amp;apos;, &amp;apos;&amp;apos;]</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:05</date>
+  <millis>1583123705351</millis>
+  <sequence>12</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Action delay is set to 0 seconds</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:13</date>
+  <millis>1583123713882</millis>
+  <sequence>14</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>sessionId = 1fbf630968721005217bcbba3474f775</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="sessionId">1fbf630968721005217bcbba3474f775</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:13</date>
+  <millis>1583123713932</millis>
+  <sequence>15</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>browser = Chrome 80.0.3987.122</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="browser">Chrome 80.0.3987.122</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:13</date>
+  <millis>1583123713933</millis>
+  <sequence>16</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>platform = Windows 10</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="platform">Windows 10</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:13</date>
+  <millis>1583123713933</millis>
+  <sequence>17</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>seleniumVersion = 3.141.59</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="seleniumVersion">3.141.59</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:13</date>
+  <millis>1583123713935</millis>
+  <sequence>18</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>proxyInformation = ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0, executionList=}</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="proxyInformation">ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0, executionList=}</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:19</date>
+  <millis>1583123719431</millis>
+  <sequence>20</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Browser is opened with url: &amp;apos;http://ndsantasena.southeastasia.cloudapp.azure.com:8080/Default.aspx&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:19</date>
+  <millis>1583123719432</millis>
+  <sequence>21</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : openBrowser(\&amp;quot;http://ndsantasena.southeastasia.cloudapp.azure.com:8080/Default.aspx\&amp;quot;)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:19</date>
+  <millis>1583123719433</millis>
+  <sequence>22</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : maximizeWindow()</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">23</property>
+  <property name="stepIndex">2</property>
+  <property name="description">Maksimal Windows\r\n</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:23</date>
+  <millis>1583123723710</millis>
+  <sequence>24</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Current window maximized</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:23</date>
+  <millis>1583123723711</millis>
+  <sequence>25</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : maximizeWindow()</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:23</date>
+  <millis>1583123723712</millis>
+  <sequence>26</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;All/UserName\&amp;quot;), \&amp;quot;anggi1\&amp;quot;)</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">25</property>
+  <property name="stepIndex">3</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:24</date>
+  <millis>1583123724619</millis>
+  <sequence>37</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;anggi1&amp;apos; is set on object &amp;apos;Object Repository/All/UserName&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:24</date>
+  <millis>1583123724621</millis>
+  <sequence>38</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;All/UserName\&amp;quot;), \&amp;quot;anggi1\&amp;quot;)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:24</date>
+  <millis>1583123724621</millis>
+  <sequence>39</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setEncryptedText(findTestObject(\&amp;quot;All/password\&amp;quot;), \&amp;quot;iFGeFYmXIrWy72D5I5E8Dw==\&amp;quot;)</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">27</property>
+  <property name="stepIndex">4</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:25</date>
+  <millis>1583123725345</millis>
+  <sequence>50</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text ****** has been set on object &amp;apos;Object Repository/All/password&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:25</date>
+  <millis>1583123725345</millis>
+  <sequence>51</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setEncryptedText(findTestObject(\&amp;quot;All/password\&amp;quot;), \&amp;quot;iFGeFYmXIrWy72D5I5E8Dw==\&amp;quot;)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:25</date>
+  <millis>1583123725346</millis>
+  <sequence>52</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;All/Sign In\&amp;quot;))</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">29</property>
+  <property name="stepIndex">5</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:29</date>
+  <millis>1583123729113</millis>
+  <sequence>63</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/All/Sign In&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:29</date>
+  <millis>1583123729115</millis>
+  <sequence>64</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;All/Sign In\&amp;quot;))</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:29</date>
+  <millis>1583123729116</millis>
+  <sequence>65</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : for ([rowNum = 1, rowNum &amp;lt;= findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getRowNumbers(), (rowNum++)])</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">31</property>
+  <property name="stepIndex">6</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:30</date>
+  <millis>1583123730762</millis>
+  <sequence>70</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : refresh()</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">32</property>
+  <property name="stepIndex">1</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:35</date>
+  <millis>1583123735134</millis>
+  <sequence>72</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Refresh successfully</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:35</date>
+  <millis>1583123735135</millis>
+  <sequence>73</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : refresh()</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:35</date>
+  <millis>1583123735135</millis>
+  <sequence>74</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">34</property>
+  <property name="stepIndex">2</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:38</date>
+  <millis>1583123738179</millis>
+  <sequence>76</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 3 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:38</date>
+  <millis>1583123738180</millis>
+  <sequence>77</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:38</date>
+  <millis>1583123738180</millis>
+  <sequence>78</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;All/filter\&amp;quot;), \&amp;quot;WIC\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">36</property>
+  <property name="stepIndex">3</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:39</date>
+  <millis>1583123739440</millis>
+  <sequence>89</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;WIC&amp;apos; is set on object &amp;apos;Object Repository/All/filter&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:39</date>
+  <millis>1583123739441</millis>
+  <sequence>90</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;All/filter\&amp;quot;), \&amp;quot;WIC\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:39</date>
+  <millis>1583123739442</millis>
+  <sequence>91</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">38</property>
+  <property name="stepIndex">4</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:40</date>
+  <millis>1583123740447</millis>
+  <sequence>93</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:40</date>
+  <millis>1583123740448</millis>
+  <sequence>94</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:40</date>
+  <millis>1583123740448</millis>
+  <sequence>95</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;All/View\&amp;quot;))</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">40</property>
+  <property name="stepIndex">5</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:40</date>
+  <millis>1583123740941</millis>
+  <sequence>106</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/All/View&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:40</date>
+  <millis>1583123740942</millis>
+  <sequence>107</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;All/View\&amp;quot;))</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:40</date>
+  <millis>1583123740942</millis>
+  <sequence>108</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">42</property>
+  <property name="stepIndex">6</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:43</date>
+  <millis>1583123743947</millis>
+  <sequence>110</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 3 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:43</date>
+  <millis>1583123743948</millis>
+  <sequence>111</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:43</date>
+  <millis>1583123743948</millis>
+  <sequence>112</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;All/New Record\&amp;quot;))</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">44</property>
+  <property name="stepIndex">7</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:45</date>
+  <millis>1583123745511</millis>
+  <sequence>133</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/All/New Record&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:45</date>
+  <millis>1583123745575</millis>
+  <sequence>135</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;All/New Record\&amp;quot;))</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:45</date>
+  <millis>1583123745576</millis>
+  <sequence>136</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">46</property>
+  <property name="stepIndex">8</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:48</date>
+  <millis>1583123748580</millis>
+  <sequence>138</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 3 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:48</date>
+  <millis>1583123748581</millis>
+  <sequence>139</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:48</date>
+  <millis>1583123748582</millis>
+  <sequence>140</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : if (findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(32, rowNum) == \&amp;quot;Individu\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">48</property>
+  <property name="stepIndex">9</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:48</date>
+  <millis>1583123748875</millis>
+  <sequence>149</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : if (findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(32, rowNum) == \&amp;quot;Individu\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:48</date>
+  <millis>1583123748876</millis>
+  <sequence>150</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : else if (findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(32, rowNum) == \&amp;quot;Corporate\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">165</property>
+  <property name="stepIndex">10</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:48</date>
+  <millis>1583123748879</millis>
+  <sequence>151</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Button/Corp\&amp;quot;), \&amp;quot;Corporate\&amp;quot;)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">166</property>
+  <property name="stepIndex">1</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:51</date>
+  <millis>1583123751112</millis>
+  <sequence>171</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Corporate&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Button/Corp&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:51</date>
+  <millis>1583123751136</millis>
+  <sequence>173</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Button/Corp\&amp;quot;), \&amp;quot;Corporate\&amp;quot;)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:51</date>
+  <millis>1583123751137</millis>
+  <sequence>174</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/1 Nama Korporasi\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(33, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">168</property>
+  <property name="stepIndex">2</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:52</date>
+  <millis>1583123752892</millis>
+  <sequence>198</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;asdasda&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Corporate/1/1 Nama Korporasi&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:52</date>
+  <millis>1583123752904</millis>
+  <sequence>200</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/1 Nama Korporasi\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(33, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:52</date>
+  <millis>1583123752905</millis>
+  <sequence>201</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/2 Nama Komersial\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(34, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">171</property>
+  <property name="stepIndex">3</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:53</date>
+  <millis>1583123753701</millis>
+  <sequence>225</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;asdasdas&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Corporate/1/2 Nama Komersial&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:53</date>
+  <millis>1583123753729</millis>
+  <sequence>227</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/2 Nama Komersial\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(34, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:53</date>
+  <millis>1583123753730</millis>
+  <sequence>228</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/3 Bentuk Korporasi\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(35, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">174</property>
+  <property name="stepIndex">4</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:54</date>
+  <millis>1583123754560</millis>
+  <sequence>252</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;sadsada&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Corporate/1/3 Bentuk Korporasi&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:54</date>
+  <millis>1583123754579</millis>
+  <sequence>254</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/3 Bentuk Korporasi\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(35, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:54</date>
+  <millis>1583123754580</millis>
+  <sequence>255</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/4 No Induk Berusaha\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(36, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">177</property>
+  <property name="stepIndex">5</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:55</date>
+  <millis>1583123755932</millis>
+  <sequence>279</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;sadsad&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Corporate/1/4 No Induk Berusaha&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:55</date>
+  <millis>1583123755990</millis>
+  <sequence>281</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/4 No Induk Berusaha\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(36, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:55</date>
+  <millis>1583123755991</millis>
+  <sequence>282</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/5 Bidang Usaha\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(33, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">180</property>
+  <property name="stepIndex">6</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:57</date>
+  <millis>1583123757462</millis>
+  <sequence>306</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;asdasda&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Corporate/1/5 Bidang Usaha&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:57</date>
+  <millis>1583123757487</millis>
+  <sequence>308</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/5 Bidang Usaha\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(33, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:57</date>
+  <millis>1583123757488</millis>
+  <sequence>309</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/5 Bidang Usaha\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(34, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">183</property>
+  <property name="stepIndex">7</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:58</date>
+  <millis>1583123758374</millis>
+  <sequence>333</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;asdasdas&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Corporate/1/5 Bidang Usaha&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:58</date>
+  <millis>1583123758458</millis>
+  <sequence>339</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Corporate/1/5 Bidang Usaha\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(34, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:58</date>
+  <millis>1583123758458</millis>
+  <sequence>340</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : else if (findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(32, rowNum) == \&amp;quot;Corporate\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:58</date>
+  <millis>1583123758458</millis>
+  <sequence>341</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : refresh()</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">32</property>
+  <property name="stepIndex">1</property>
+</record>
+<record>
+  <date>2020-03-02T11:35:59</date>
+  <millis>1583123759698</millis>
+  <sequence>343</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Refresh successfully</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:59</date>
+  <millis>1583123759698</millis>
+  <sequence>344</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : refresh()</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:35:59</date>
+  <millis>1583123759699</millis>
+  <sequence>345</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">34</property>
+  <property name="stepIndex">2</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:02</date>
+  <millis>1583123762701</millis>
+  <sequence>347</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 3 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:02</date>
+  <millis>1583123762701</millis>
+  <sequence>348</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:02</date>
+  <millis>1583123762702</millis>
+  <sequence>349</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;All/filter\&amp;quot;), \&amp;quot;WIC\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">36</property>
+  <property name="stepIndex">3</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:03</date>
+  <millis>1583123763219</millis>
+  <sequence>360</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;WIC&amp;apos; is set on object &amp;apos;Object Repository/All/filter&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:03</date>
+  <millis>1583123763221</millis>
+  <sequence>361</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;All/filter\&amp;quot;), \&amp;quot;WIC\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:03</date>
+  <millis>1583123763222</millis>
+  <sequence>362</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">38</property>
+  <property name="stepIndex">4</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:04</date>
+  <millis>1583123764224</millis>
+  <sequence>364</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:04</date>
+  <millis>1583123764224</millis>
+  <sequence>365</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:04</date>
+  <millis>1583123764224</millis>
+  <sequence>366</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;All/View\&amp;quot;))</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">40</property>
+  <property name="stepIndex">5</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:04</date>
+  <millis>1583123764678</millis>
+  <sequence>377</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/All/View&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:04</date>
+  <millis>1583123764678</millis>
+  <sequence>378</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;All/View\&amp;quot;))</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:04</date>
+  <millis>1583123764679</millis>
+  <sequence>379</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">42</property>
+  <property name="stepIndex">6</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:07</date>
+  <millis>1583123767682</millis>
+  <sequence>381</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 3 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:07</date>
+  <millis>1583123767683</millis>
+  <sequence>382</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:07</date>
+  <millis>1583123767684</millis>
+  <sequence>383</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;All/New Record\&amp;quot;))</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">44</property>
+  <property name="stepIndex">7</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:08</date>
+  <millis>1583123768226</millis>
+  <sequence>403</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/All/New Record&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:08</date>
+  <millis>1583123768239</millis>
+  <sequence>405</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;All/New Record\&amp;quot;))</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:08</date>
+  <millis>1583123768239</millis>
+  <sequence>406</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">46</property>
+  <property name="stepIndex">8</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:11</date>
+  <millis>1583123771243</millis>
+  <sequence>408</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 3 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:11</date>
+  <millis>1583123771243</millis>
+  <sequence>409</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(3)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:11</date>
+  <millis>1583123771244</millis>
+  <sequence>410</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : if (findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(32, rowNum) == \&amp;quot;Individu\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+  <property name="startLine">48</property>
+  <property name="stepIndex">9</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:11</date>
+  <millis>1583123771338</millis>
+  <sequence>415</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/1 Gelar\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(1, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">49</property>
+  <property name="stepIndex">1</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:11</date>
+  <millis>1583123771978</millis>
+  <sequence>439</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Mr&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/1 Gelar&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:11</date>
+  <millis>1583123771993</millis>
+  <sequence>441</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/1 Gelar\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(1, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:11</date>
+  <millis>1583123771994</millis>
+  <sequence>442</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/2 Nama Lengkap\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(2, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">51</property>
+  <property name="stepIndex">2</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:13</date>
+  <millis>1583123773328</millis>
+  <sequence>466</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Anggi Firmansah&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/2 Nama Lengkap&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:13</date>
+  <millis>1583123773350</millis>
+  <sequence>468</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/2 Nama Lengkap\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(2, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:13</date>
+  <millis>1583123773350</millis>
+  <sequence>469</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/3 Tanggal Lahir\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(3, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">54</property>
+  <property name="stepIndex">3</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:15</date>
+  <millis>1583123775132</millis>
+  <sequence>493</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;3/13/1993&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/3 Tanggal Lahir&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:15</date>
+  <millis>1583123775159</millis>
+  <sequence>495</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/3 Tanggal Lahir\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(3, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:15</date>
+  <millis>1583123775159</millis>
+  <sequence>496</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/4 Tempat Lahir\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(4, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">57</property>
+  <property name="stepIndex">4</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:16</date>
+  <millis>1583123776241</millis>
+  <sequence>520</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Jakarta&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/4 Tempat Lahir&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:16</date>
+  <millis>1583123776253</millis>
+  <sequence>522</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/4 Tempat Lahir\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(4, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:16</date>
+  <millis>1583123776253</millis>
+  <sequence>523</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/5 Nama Ibu Kandung\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(5, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">60</property>
+  <property name="stepIndex">5</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:17</date>
+  <millis>1583123777266</millis>
+  <sequence>547</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Ibu&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/5 Nama Ibu Kandung&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:17</date>
+  <millis>1583123777283</millis>
+  <sequence>549</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/5 Nama Ibu Kandung\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(5, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:17</date>
+  <millis>1583123777284</millis>
+  <sequence>550</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/6 Nama Alias\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(6, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">63</property>
+  <property name="stepIndex">6</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:18</date>
+  <millis>1583123778117</millis>
+  <sequence>574</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Bo&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/6 Nama Alias&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:18</date>
+  <millis>1583123778129</millis>
+  <sequence>576</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/6 Nama Alias\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(6, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:18</date>
+  <millis>1583123778129</millis>
+  <sequence>577</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/7 NIK\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(7, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">65</property>
+  <property name="stepIndex">7</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:18</date>
+  <millis>1583123778874</millis>
+  <sequence>601</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;123123&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/7 NIK&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:18</date>
+  <millis>1583123778888</millis>
+  <sequence>603</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/7 NIK\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(7, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:18</date>
+  <millis>1583123778888</millis>
+  <sequence>604</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/8 No Passport\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(8, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">67</property>
+  <property name="stepIndex">8</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:19</date>
+  <millis>1583123779529</millis>
+  <sequence>628</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;321321&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/8 No Passport&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:19</date>
+  <millis>1583123779542</millis>
+  <sequence>630</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/8 No Passport\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(8, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:19</date>
+  <millis>1583123779542</millis>
+  <sequence>631</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/9 Negara Penerbit Passport\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(9, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">69</property>
+  <property name="stepIndex">9</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:20</date>
+  <millis>1583123780185</millis>
+  <sequence>655</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;INDONESIA&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/9 Negara Penerbit Passport&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:20</date>
+  <millis>1583123780197</millis>
+  <sequence>657</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/9 Negara Penerbit Passport\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(9, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:20</date>
+  <millis>1583123780197</millis>
+  <sequence>658</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_10 No Identitas Lain\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(10, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">72</property>
+  <property name="stepIndex">10</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:20</date>
+  <millis>1583123780783</millis>
+  <sequence>682</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;1122&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_10 No Identitas Lain&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:20</date>
+  <millis>1583123780798</millis>
+  <sequence>684</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_10 No Identitas Lain\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(10, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:20</date>
+  <millis>1583123780798</millis>
+  <sequence>685</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_11 Kwarga 1\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(11, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">75</property>
+  <property name="stepIndex">11</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:21</date>
+  <millis>1583123781513</millis>
+  <sequence>709</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;INDONESIA&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_11 Kwarga 1&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:21</date>
+  <millis>1583123781524</millis>
+  <sequence>711</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_11 Kwarga 1\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(11, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:21</date>
+  <millis>1583123781524</millis>
+  <sequence>712</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">77</property>
+  <property name="stepIndex">12</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:22</date>
+  <millis>1583123782528</millis>
+  <sequence>714</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:22</date>
+  <millis>1583123782528</millis>
+  <sequence>715</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:22</date>
+  <millis>1583123782529</millis>
+  <sequence>716</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_11 Kwarga 1\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">79</property>
+  <property name="stepIndex">13</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:22</date>
+  <millis>1583123782983</millis>
+  <sequence>733</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Keys &amp;apos;ENTER + &amp;apos; sent to object: &amp;apos;Object Repository/Parameter/WIC/Add/_11 Kwarga 1&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:22</date>
+  <millis>1583123782993</millis>
+  <sequence>735</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_11 Kwarga 1\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:22</date>
+  <millis>1583123782993</millis>
+  <sequence>736</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_12 Kwarga 2\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(12, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">81</property>
+  <property name="stepIndex">14</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:23</date>
+  <millis>1583123783672</millis>
+  <sequence>760</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;INDONESIA&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_12 Kwarga 2&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:23</date>
+  <millis>1583123783682</millis>
+  <sequence>762</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_12 Kwarga 2\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(12, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:23</date>
+  <millis>1583123783683</millis>
+  <sequence>763</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">83</property>
+  <property name="stepIndex">15</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:24</date>
+  <millis>1583123784687</millis>
+  <sequence>765</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:24</date>
+  <millis>1583123784687</millis>
+  <sequence>766</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:24</date>
+  <millis>1583123784688</millis>
+  <sequence>767</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_12 Kwarga 2\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">85</property>
+  <property name="stepIndex">16</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:25</date>
+  <millis>1583123785155</millis>
+  <sequence>784</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Keys &amp;apos;ENTER + &amp;apos; sent to object: &amp;apos;Object Repository/Parameter/WIC/Add/_12 Kwarga 2&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:25</date>
+  <millis>1583123785164</millis>
+  <sequence>786</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_12 Kwarga 2\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:25</date>
+  <millis>1583123785165</millis>
+  <sequence>787</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_13 Kwarga 3\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(13, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">87</property>
+  <property name="stepIndex">17</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:25</date>
+  <millis>1583123785814</millis>
+  <sequence>811</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;INDONESIA&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_13 Kwarga 3&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:25</date>
+  <millis>1583123785835</millis>
+  <sequence>813</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_13 Kwarga 3\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(13, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:25</date>
+  <millis>1583123785835</millis>
+  <sequence>814</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">89</property>
+  <property name="stepIndex">18</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:26</date>
+  <millis>1583123786839</millis>
+  <sequence>816</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:26</date>
+  <millis>1583123786840</millis>
+  <sequence>817</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:26</date>
+  <millis>1583123786840</millis>
+  <sequence>818</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_13 Kwarga 3\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">91</property>
+  <property name="stepIndex">19</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:27</date>
+  <millis>1583123787251</millis>
+  <sequence>835</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Keys &amp;apos;ENTER + &amp;apos; sent to object: &amp;apos;Object Repository/Parameter/WIC/Add/_13 Kwarga 3&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:27</date>
+  <millis>1583123787261</millis>
+  <sequence>837</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_13 Kwarga 3\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:27</date>
+  <millis>1583123787261</millis>
+  <sequence>838</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/Negara Domisili\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(14, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">93</property>
+  <property name="stepIndex">20</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:27</date>
+  <millis>1583123787911</millis>
+  <sequence>862</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;INDONESIA&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/Negara Domisili&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:27</date>
+  <millis>1583123787922</millis>
+  <sequence>864</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/Negara Domisili\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(14, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:27</date>
+  <millis>1583123787923</millis>
+  <sequence>865</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">96</property>
+  <property name="stepIndex">21</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:28</date>
+  <millis>1583123788925</millis>
+  <sequence>867</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:28</date>
+  <millis>1583123788925</millis>
+  <sequence>868</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:28</date>
+  <millis>1583123788925</millis>
+  <sequence>869</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/Negara Domisili\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">98</property>
+  <property name="stepIndex">22</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:29</date>
+  <millis>1583123789317</millis>
+  <sequence>886</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Keys &amp;apos;ENTER + &amp;apos; sent to object: &amp;apos;Object Repository/Parameter/WIC/Add/Negara Domisili&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:29</date>
+  <millis>1583123789326</millis>
+  <sequence>888</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/Negara Domisili\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:29</date>
+  <millis>1583123789326</millis>
+  <sequence>889</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_14 Email\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(15, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">100</property>
+  <property name="stepIndex">23</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:29</date>
+  <millis>1583123789957</millis>
+  <sequence>913</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;d@gmail.com&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_14 Email&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:29</date>
+  <millis>1583123789968</millis>
+  <sequence>915</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_14 Email\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(15, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:29</date>
+  <millis>1583123789968</millis>
+  <sequence>916</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_15 Pekerjaan\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(16, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">102</property>
+  <property name="stepIndex">24</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:30</date>
+  <millis>1583123790513</millis>
+  <sequence>940</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;RT&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_15 Pekerjaan&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:30</date>
+  <millis>1583123790522</millis>
+  <sequence>942</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_15 Pekerjaan\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(16, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:30</date>
+  <millis>1583123790522</millis>
+  <sequence>943</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_16 Tempat Bekerja\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(17, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">105</property>
+  <property name="stepIndex">25</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:31</date>
+  <millis>1583123791105</millis>
+  <sequence>967</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Jakarta&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_16 Tempat Bekerja&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:31</date>
+  <millis>1583123791114</millis>
+  <sequence>969</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_16 Tempat Bekerja\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(17, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:31</date>
+  <millis>1583123791114</millis>
+  <sequence>970</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;Parameter/WIC/Button/New Detail 1\&amp;quot;))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">108</property>
+  <property name="stepIndex">26</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:31</date>
+  <millis>1583123791650</millis>
+  <sequence>990</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/Parameter/WIC/Button/New Detail 1&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:31</date>
+  <millis>1583123791668</millis>
+  <sequence>992</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;Parameter/WIC/Button/New Detail 1\&amp;quot;))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:31</date>
+  <millis>1583123791668</millis>
+  <sequence>993</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_17 Kategori Kontak\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(18, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">110</property>
+  <property name="stepIndex">27</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:32</date>
+  <millis>1583123792493</millis>
+  <sequence>1017</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Rumah&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_17 Kategori Kontak&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:32</date>
+  <millis>1583123792504</millis>
+  <sequence>1019</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_17 Kategori Kontak\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(18, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:32</date>
+  <millis>1583123792504</millis>
+  <sequence>1020</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">113</property>
+  <property name="stepIndex">28</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:33</date>
+  <millis>1583123793507</millis>
+  <sequence>1022</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:33</date>
+  <millis>1583123793507</millis>
+  <sequence>1023</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:33</date>
+  <millis>1583123793508</millis>
+  <sequence>1024</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_17 Kategori Kontak\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">115</property>
+  <property name="stepIndex">29</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:33</date>
+  <millis>1583123793923</millis>
+  <sequence>1041</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Keys &amp;apos;ENTER + &amp;apos; sent to object: &amp;apos;Object Repository/Parameter/WIC/Add/_17 Kategori Kontak&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:33</date>
+  <millis>1583123793932</millis>
+  <sequence>1043</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_17 Kategori Kontak\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:33</date>
+  <millis>1583123793932</millis>
+  <sequence>1044</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_18 J Alat Kom\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(19, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">117</property>
+  <property name="stepIndex">30</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:34</date>
+  <millis>1583123794506</millis>
+  <sequence>1068</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;PSTN&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_18 J Alat Kom&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:34</date>
+  <millis>1583123794521</millis>
+  <sequence>1070</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_18 J Alat Kom\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(19, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:34</date>
+  <millis>1583123794521</millis>
+  <sequence>1071</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">120</property>
+  <property name="stepIndex">31</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:35</date>
+  <millis>1583123795524</millis>
+  <sequence>1073</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:35</date>
+  <millis>1583123795524</millis>
+  <sequence>1074</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:35</date>
+  <millis>1583123795525</millis>
+  <sequence>1075</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_18 J Alat Kom\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">122</property>
+  <property name="stepIndex">32</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:35</date>
+  <millis>1583123795939</millis>
+  <sequence>1092</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Keys &amp;apos;ENTER + &amp;apos; sent to object: &amp;apos;Object Repository/Parameter/WIC/Add/_18 J Alat Kom&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:35</date>
+  <millis>1583123795949</millis>
+  <sequence>1094</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_18 J Alat Kom\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:35</date>
+  <millis>1583123795949</millis>
+  <sequence>1095</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_19 Kode Area Tlp\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(20, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">124</property>
+  <property name="stepIndex">33</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:36</date>
+  <millis>1583123796527</millis>
+  <sequence>1119</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;001&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_19 Kode Area Tlp&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:36</date>
+  <millis>1583123796537</millis>
+  <sequence>1121</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_19 Kode Area Tlp\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(20, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:36</date>
+  <millis>1583123796537</millis>
+  <sequence>1122</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_20 No Tlp\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(21, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">127</property>
+  <property name="stepIndex">34</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:37</date>
+  <millis>1583123797130</millis>
+  <sequence>1146</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;123&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_20 No Tlp&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:37</date>
+  <millis>1583123797138</millis>
+  <sequence>1148</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_20 No Tlp\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(21, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:37</date>
+  <millis>1583123797138</millis>
+  <sequence>1149</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_21 No Extensi\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(22, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">129</property>
+  <property name="stepIndex">35</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:37</date>
+  <millis>1583123797740</millis>
+  <sequence>1173</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;321&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_21 No Extensi&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:37</date>
+  <millis>1583123797750</millis>
+  <sequence>1175</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_21 No Extensi\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(22, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:37</date>
+  <millis>1583123797751</millis>
+  <sequence>1176</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_22 Catatan\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(23, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">132</property>
+  <property name="stepIndex">36</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:38</date>
+  <millis>1583123798274</millis>
+  <sequence>1200</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;No&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_22 Catatan&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:38</date>
+  <millis>1583123798283</millis>
+  <sequence>1202</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_22 Catatan\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(23, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:38</date>
+  <millis>1583123798283</millis>
+  <sequence>1203</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;Parameter/WIC/Button/Save\&amp;quot;))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">134</property>
+  <property name="stepIndex">37</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:38</date>
+  <millis>1583123798797</millis>
+  <sequence>1223</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/Parameter/WIC/Button/Save&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:38</date>
+  <millis>1583123798806</millis>
+  <sequence>1225</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;Parameter/WIC/Button/Save\&amp;quot;))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:38</date>
+  <millis>1583123798806</millis>
+  <sequence>1226</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;Parameter/WIC/Button/New Detail 2\&amp;quot;))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">136</property>
+  <property name="stepIndex">38</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:41</date>
+  <millis>1583123801044</millis>
+  <sequence>1247</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/Parameter/WIC/Button/New Detail 2&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:41</date>
+  <millis>1583123801055</millis>
+  <sequence>1249</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;Parameter/WIC/Button/New Detail 2\&amp;quot;))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:41</date>
+  <millis>1583123801055</millis>
+  <sequence>1250</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_23 Type Alamat\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(24, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">138</property>
+  <property name="stepIndex">39</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:41</date>
+  <millis>1583123801763</millis>
+  <sequence>1274</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Rumah&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_23 Type Alamat&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:41</date>
+  <millis>1583123801773</millis>
+  <sequence>1276</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_23 Type Alamat\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(24, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:41</date>
+  <millis>1583123801773</millis>
+  <sequence>1277</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">141</property>
+  <property name="stepIndex">40</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:42</date>
+  <millis>1583123802776</millis>
+  <sequence>1279</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:42</date>
+  <millis>1583123802776</millis>
+  <sequence>1280</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:42</date>
+  <millis>1583123802776</millis>
+  <sequence>1281</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_23 Type Alamat\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">143</property>
+  <property name="stepIndex">41</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:43</date>
+  <millis>1583123803211</millis>
+  <sequence>1298</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Keys &amp;apos;ENTER + &amp;apos; sent to object: &amp;apos;Object Repository/Parameter/WIC/Add/_23 Type Alamat&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:43</date>
+  <millis>1583123803224</millis>
+  <sequence>1300</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_23 Type Alamat\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:43</date>
+  <millis>1583123803224</millis>
+  <sequence>1301</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_24 Alamat\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(25, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">145</property>
+  <property name="stepIndex">42</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:43</date>
+  <millis>1583123803915</millis>
+  <sequence>1325</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;JKT&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_24 Alamat&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:43</date>
+  <millis>1583123803933</millis>
+  <sequence>1327</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_24 Alamat\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(25, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:43</date>
+  <millis>1583123803933</millis>
+  <sequence>1328</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_25 Kecamatan\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(26, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">147</property>
+  <property name="stepIndex">43</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:44</date>
+  <millis>1583123804932</millis>
+  <sequence>1352</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;TGR&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_25 Kecamatan&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:44</date>
+  <millis>1583123804943</millis>
+  <sequence>1354</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_25 Kecamatan\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(26, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:44</date>
+  <millis>1583123804944</millis>
+  <sequence>1355</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_26 Kota\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(27, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">150</property>
+  <property name="stepIndex">44</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:45</date>
+  <millis>1583123805656</millis>
+  <sequence>1379</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;JKT&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_26 Kota&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:45</date>
+  <millis>1583123805670</millis>
+  <sequence>1381</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_26 Kota\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(27, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:45</date>
+  <millis>1583123805670</millis>
+  <sequence>1382</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_27 Kode Pos\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(28, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">152</property>
+  <property name="stepIndex">45</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:46</date>
+  <millis>1583123806255</millis>
+  <sequence>1406</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;1122&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_27 Kode Pos&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:46</date>
+  <millis>1583123806263</millis>
+  <sequence>1408</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_27 Kode Pos\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(28, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:46</date>
+  <millis>1583123806263</millis>
+  <sequence>1409</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_28 Negara\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(29, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">154</property>
+  <property name="stepIndex">46</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:46</date>
+  <millis>1583123806912</millis>
+  <sequence>1433</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;Indonesia&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_28 Negara&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:46</date>
+  <millis>1583123806921</millis>
+  <sequence>1435</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_28 Negara\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(29, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:46</date>
+  <millis>1583123806922</millis>
+  <sequence>1436</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">156</property>
+  <property name="stepIndex">47</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:47</date>
+  <millis>1583123807926</millis>
+  <sequence>1438</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Delayed 1 second(s)</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:47</date>
+  <millis>1583123807927</millis>
+  <sequence>1439</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : delay(1)</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:47</date>
+  <millis>1583123807928</millis>
+  <sequence>1440</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_28 Negara\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">158</property>
+  <property name="stepIndex">48</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:48</date>
+  <millis>1583123808385</millis>
+  <sequence>1457</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Keys &amp;apos;ENTER + &amp;apos; sent to object: &amp;apos;Object Repository/Parameter/WIC/Add/_28 Negara&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:48</date>
+  <millis>1583123808394</millis>
+  <sequence>1459</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendKeys(findTestObject(\&amp;quot;Parameter/WIC/Add/_28 Negara\&amp;quot;), Keys.chord(ENTER))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:48</date>
+  <millis>1583123808394</millis>
+  <sequence>1460</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_29 Provinsi\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(30, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">160</property>
+  <property name="stepIndex">49</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:49</date>
+  <millis>1583123809032</millis>
+  <sequence>1484</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;jkt&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_29 Provinsi&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:49</date>
+  <millis>1583123809041</millis>
+  <sequence>1486</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_29 Provinsi\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(30, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:49</date>
+  <millis>1583123809041</millis>
+  <sequence>1487</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_30 catatan\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(31, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">162</property>
+  <property name="stepIndex">50</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:49</date>
+  <millis>1583123809780</millis>
+  <sequence>1511</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Text &amp;apos;nope&amp;apos; is set on object &amp;apos;Object Repository/Parameter/WIC/Add/_30 catatan&amp;apos;</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:49</date>
+  <millis>1583123809790</millis>
+  <sequence>1513</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : setText(findTestObject(\&amp;quot;Parameter/WIC/Add/_30 catatan\&amp;quot;), findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(31, rowNum))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:49</date>
+  <millis>1583123809790</millis>
+  <sequence>1514</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : click(findTestObject(\&amp;quot;Parameter/WIC/Button/save 2\&amp;quot;))</message>
+  <nestedLevel>3</nestedLevel>
+  <property name="startLine">164</property>
+  <property name="stepIndex">51</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:50</date>
+  <millis>1583123810381</millis>
+  <sequence>1534</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Object: &amp;apos;Object Repository/Parameter/WIC/Button/save 2&amp;apos; is clicked on</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:50</date>
+  <millis>1583123810424</millis>
+  <sequence>1540</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : click(findTestObject(\&amp;quot;Parameter/WIC/Button/save 2\&amp;quot;))</message>
+  <nestedLevel>3</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:50</date>
+  <millis>1583123810424</millis>
+  <sequence>1541</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : if (findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getValue(32, rowNum) == \&amp;quot;Individu\&amp;quot;)</message>
+  <nestedLevel>2</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:50</date>
+  <millis>1583123810425</millis>
+  <sequence>1542</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : for ([rowNum = 1, rowNum &amp;lt;= findTestData(\&amp;quot;Parameter/WIC Add\&amp;quot;).getRowNumbers(), (rowNum++)])</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:50</date>
+  <millis>1583123810425</millis>
+  <sequence>1543</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : closeBrowser()</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">188</property>
+  <property name="stepIndex">7</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:51</date>
+  <millis>1583123811451</millis>
+  <sequence>1545</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Browser is closed</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:51</date>
+  <millis>1583123811452</millis>
+  <sequence>1546</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : closeBrowser()</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:51</date>
+  <millis>1583123811452</millis>
+  <sequence>1547</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test Cases/Parameter/WIC/Add</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:53</date>
+  <millis>1583123813617</millis>
+  <sequence>1548</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : Video</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:53</date>
+  <millis>1583123813617</millis>
+  <sequence>1549</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Video recording for test case &amp;apos;Test Cases/Parameter/WIC/Add&amp;apos; .</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="attachment">D:\\poject\\goaml2\\Katalon\\GoAML\\Reports\\20200302_113453\\WIC\\20200302_113453/videos\\test_1.avi</property>
+</record>
+<record>
+  <date>2020-03-02T11:36:53</date>
+  <millis>1583123813617</millis>
+  <sequence>1550</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End End action : Video</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:53</date>
+  <millis>1583123813618</millis>
+  <sequence>1551</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endTest</method>
+  <thread>1</thread>
+  <message>End Test Case : Test Cases/Parameter/WIC/Add</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:53</date>
+  <millis>1583123813622</millis>
+  <sequence>1552</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start listener action : exportKatalonReports</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:54</date>
+  <millis>1583123814281</millis>
+  <sequence>2090</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Start generating HTML report folder at: D:\\poject\\goaml2\\Katalon\\GoAML\\Reports\\20200302_113453\\WIC\\20200302_113453...</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:55</date>
+  <millis>1583123815149</millis>
+  <sequence>2091</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>HTML report generated</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:55</date>
+  <millis>1583123815150</millis>
+  <sequence>2092</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Start generating CSV report folder at: D:\\poject\\goaml2\\Katalon\\GoAML\\Reports\\20200302_113453\\WIC\\20200302_113453...</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:55</date>
+  <millis>1583123815204</millis>
+  <sequence>2093</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>CSV report generated</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:55</date>
+  <millis>1583123815204</millis>
+  <sequence>2095</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End listener action : exportKatalonReports</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-02T11:36:55</date>
+  <millis>1583123815209</millis>
+  <sequence>2096</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endSuite</method>
+  <thread>1</thread>
+  <message>End Test Suite : Test Suites/WIC</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+</log><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-03-13T10:38:21</date>
+  <millis>1584070701603</millis>
+  <sequence>2593</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Finding test data with id &amp;apos;Data Files/System Parameter/Module Designer&amp;apos;</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-13T10:38:21</date>
+  <millis>1584070701681</millis>
+  <sequence>2594</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test data is excel file, reading excel file</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-13T10:38:21</date>
+  <millis>1584070701681</millis>
+  <sequence>2595</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Reading excel file with source file &amp;apos;D:\\training\\Module Designer.xlsx&amp;apos; and sheet name &amp;apos;Data Model Designer&amp;apos;</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-13T10:38:57</date>
+  <millis>1584070737498</millis>
+  <sequence>2596</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Finding test data with id &amp;apos;Data Files/System Parameter/Module Designer&amp;apos;</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-13T10:38:57</date>
+  <millis>1584070737498</millis>
+  <sequence>2597</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test data is excel file, reading excel file</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-03-13T10:38:57</date>
+  <millis>1584070737498</millis>
+  <sequence>2598</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Reading excel file with source file &amp;apos;D:\\training\\Module Designer.xlsx&amp;apos; and sheet name &amp;apos;Data Model Designer&amp;apos;</message>
+  <nestedLevel>0</nestedLevel>
+</record>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Edit Exchange Rate</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3377fc09-134f-4ae4-bc1b-c1cd7ad7e8b7</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>68a10144-846f-4610-a806-2a92072135f6</id>
+      <masked>false</masked>
+      <name>variable</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6ee532a1-94eb-43c2-88b7-42013f51761a</id>
+      <masked>false</masked>
+      <name>variable_0</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6a13c44c-1ecc-489d-89cb-9a7ed13c1cfb</id>
+      <masked>false</masked>
+      <name>variable_1</name>
+   </variable>
+</TestCaseEntity>

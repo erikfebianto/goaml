@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-02-04T15:42:48</date>
+  <millis>1580805768587</millis>
+  <sequence>0</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startSuite</method>
+  <thread>1</thread>
+  <message>Start Test Suite : Test Suites/add</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="name">add</property>
+  <property name="description"></property>
+  <property name="id">Test Suites/add</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:48</date>
+  <millis>1580805768607</millis>
+  <sequence>1</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>hostName = user - NDS-LPT-0080.mshome.net</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="hostName">user - NDS-LPT-0080.mshome.net</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:48</date>
+  <millis>1580805768609</millis>
+  <sequence>2</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>os = Windows 10 64bit</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="os">Windows 10 64bit</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:48</date>
+  <millis>1580805768610</millis>
+  <sequence>3</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>hostAddress = 192.168.137.1</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="hostAddress">192.168.137.1</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:48</date>
+  <millis>1580805768613</millis>
+  <sequence>4</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>katalonVersion = 6.3.3.11</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="katalonVersion">6.3.3.11</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769081</millis>
+  <sequence>5</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="source">D:\\poject\\goaml2\\Katalon\\GoAML\\Test Cases\\Referensi Laporan\\Tipe Kantor Add.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769139</millis>
+  <sequence>7</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable = 00001</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769140</millis>
+  <sequence>8</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_0 = Tes Add 00001</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769141</millis>
+  <sequence>9</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_1 = Keterangan 00001</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769561</millis>
+  <sequence>11</sequence>
+  <level>ERROR</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test Cases/Referensi Laporan/Tipe Kantor Add FAILED.\nReason:\norg.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&amp;apos;delete 1&amp;apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&amp;apos;delete 2&amp;apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</message>
+  <exception>
+    <message>org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe 
+ @ line 45, column 48.
+   dTestObject('delete 1'), Tipe variable)
+                                 ^
+
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe 
+ @ line 48, column 48.
+   dTestObject('delete 2'), Tipe variable_0
+                                 ^
+
+2 errors
+</message>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>getScript</method>
+      <line>199</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>run</method>
+      <line>194</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>runScriptAsRawText</method>
+      <line>119</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>runScript</method>
+      <line>337</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>doExecute</method>
+      <line>328</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>processExecutionPhase</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>accessMainPhase</method>
+      <line>299</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>execute</method>
+      <line>233</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestCaseMainPhase</method>
+      <line>169</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestSuiteMainPhase</method>
+      <line>142</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>execute</method>
+      <line>91</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain</class>
+      <method>startTestSuite</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain$startTestSuite$0</class>
+      <method>call</method>
+    </frame>
+    <frame>
+      <class>TempTestSuite1580805765875</class>
+      <method>run</method>
+      <line>35</line>
+    </frame>
+  </exception>
+  <nestedLevel>0</nestedLevel>
+  <property name="failed.exception.stacktrace">org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</property>
+  <property name="failed.exception.class">org.codehaus.groovy.control.MultipleCompilationErrorsException</property>
+  <property name="failed.exception.message">startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769662</millis>
+  <sequence>13</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endTest</method>
+  <thread>1</thread>
+  <message>End Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769793</millis>
+  <sequence>14</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="source">D:\\poject\\goaml2\\Katalon\\GoAML\\Test Cases\\Referensi Laporan\\Tipe Kantor Add.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769817</millis>
+  <sequence>16</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable = 00002</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769833</millis>
+  <sequence>17</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_0 = Tes Add 00002</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:49</date>
+  <millis>1580805769834</millis>
+  <sequence>18</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_1 = Keterangan 00002</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:50</date>
+  <millis>1580805770158</millis>
+  <sequence>20</sequence>
+  <level>ERROR</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test Cases/Referensi Laporan/Tipe Kantor Add FAILED.\nReason:\norg.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&amp;apos;delete 1&amp;apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&amp;apos;delete 2&amp;apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</message>
+  <exception>
+    <message>org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe 
+ @ line 45, column 48.
+   dTestObject('delete 1'), Tipe variable)
+                                 ^
+
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe 
+ @ line 48, column 48.
+   dTestObject('delete 2'), Tipe variable_0
+                                 ^
+
+2 errors
+</message>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>getScript</method>
+      <line>199</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>run</method>
+      <line>194</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>runScriptAsRawText</method>
+      <line>119</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>runScript</method>
+      <line>337</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>doExecute</method>
+      <line>328</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>processExecutionPhase</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>accessMainPhase</method>
+      <line>299</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>execute</method>
+      <line>233</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestCaseMainPhase</method>
+      <line>169</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestSuiteMainPhase</method>
+      <line>142</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>execute</method>
+      <line>91</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain</class>
+      <method>startTestSuite</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain$startTestSuite$0</class>
+      <method>call</method>
+    </frame>
+    <frame>
+      <class>TempTestSuite1580805765875</class>
+      <method>run</method>
+      <line>35</line>
+    </frame>
+  </exception>
+  <nestedLevel>0</nestedLevel>
+  <property name="failed.exception.stacktrace">org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</property>
+  <property name="failed.exception.class">org.codehaus.groovy.control.MultipleCompilationErrorsException</property>
+  <property name="failed.exception.message">startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:50</date>
+  <millis>1580805770175</millis>
+  <sequence>22</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endTest</method>
+  <thread>1</thread>
+  <message>End Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:50</date>
+  <millis>1580805770286</millis>
+  <sequence>23</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="source">D:\\poject\\goaml2\\Katalon\\GoAML\\Test Cases\\Referensi Laporan\\Tipe Kantor Add.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:50</date>
+  <millis>1580805770339</millis>
+  <sequence>25</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable = 00003</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:50</date>
+  <millis>1580805770339</millis>
+  <sequence>26</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_0 = Tes Add 00003</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:50</date>
+  <millis>1580805770339</millis>
+  <sequence>27</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_1 = Keterangan 00003</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:50</date>
+  <millis>1580805770753</millis>
+  <sequence>29</sequence>
+  <level>ERROR</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test Cases/Referensi Laporan/Tipe Kantor Add FAILED.\nReason:\norg.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&amp;apos;delete 1&amp;apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&amp;apos;delete 2&amp;apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</message>
+  <exception>
+    <message>org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe 
+ @ line 45, column 48.
+   dTestObject('delete 1'), Tipe variable)
+                                 ^
+
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe 
+ @ line 48, column 48.
+   dTestObject('delete 2'), Tipe variable_0
+                                 ^
+
+2 errors
+</message>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>getScript</method>
+      <line>199</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>run</method>
+      <line>194</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>runScriptAsRawText</method>
+      <line>119</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>runScript</method>
+      <line>337</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>doExecute</method>
+      <line>328</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>processExecutionPhase</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>accessMainPhase</method>
+      <line>299</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>execute</method>
+      <line>233</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestCaseMainPhase</method>
+      <line>169</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestSuiteMainPhase</method>
+      <line>142</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>execute</method>
+      <line>91</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain</class>
+      <method>startTestSuite</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain$startTestSuite$0</class>
+      <method>call</method>
+    </frame>
+    <frame>
+      <class>TempTestSuite1580805765875</class>
+      <method>run</method>
+      <line>35</line>
+    </frame>
+  </exception>
+  <nestedLevel>0</nestedLevel>
+  <property name="failed.exception.stacktrace">org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</property>
+  <property name="failed.exception.class">org.codehaus.groovy.control.MultipleCompilationErrorsException</property>
+  <property name="failed.exception.message">startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:50</date>
+  <millis>1580805770904</millis>
+  <sequence>31</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endTest</method>
+  <thread>1</thread>
+  <message>End Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771271</millis>
+  <sequence>32</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="source">D:\\poject\\goaml2\\Katalon\\GoAML\\Test Cases\\Referensi Laporan\\Tipe Kantor Add.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771385</millis>
+  <sequence>34</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable = 00004</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771425</millis>
+  <sequence>35</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_0 = Tes Add 00004</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771426</millis>
+  <sequence>36</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_1 = Keterangan 00004</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771709</millis>
+  <sequence>38</sequence>
+  <level>ERROR</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test Cases/Referensi Laporan/Tipe Kantor Add FAILED.\nReason:\norg.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&amp;apos;delete 1&amp;apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&amp;apos;delete 2&amp;apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</message>
+  <exception>
+    <message>org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe 
+ @ line 45, column 48.
+   dTestObject('delete 1'), Tipe variable)
+                                 ^
+
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe 
+ @ line 48, column 48.
+   dTestObject('delete 2'), Tipe variable_0
+                                 ^
+
+2 errors
+</message>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>getScript</method>
+      <line>199</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>run</method>
+      <line>194</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>runScriptAsRawText</method>
+      <line>119</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>runScript</method>
+      <line>337</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>doExecute</method>
+      <line>328</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>processExecutionPhase</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>accessMainPhase</method>
+      <line>299</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>execute</method>
+      <line>233</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestCaseMainPhase</method>
+      <line>169</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestSuiteMainPhase</method>
+      <line>142</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>execute</method>
+      <line>91</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain</class>
+      <method>startTestSuite</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain$startTestSuite$0</class>
+      <method>call</method>
+    </frame>
+    <frame>
+      <class>TempTestSuite1580805765875</class>
+      <method>run</method>
+      <line>35</line>
+    </frame>
+  </exception>
+  <nestedLevel>0</nestedLevel>
+  <property name="failed.exception.stacktrace">org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</property>
+  <property name="failed.exception.class">org.codehaus.groovy.control.MultipleCompilationErrorsException</property>
+  <property name="failed.exception.message">startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771714</millis>
+  <sequence>40</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endTest</method>
+  <thread>1</thread>
+  <message>End Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771792</millis>
+  <sequence>41</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Referensi Laporan/Tipe Kantor Add</property>
+  <property name="source">D:\\poject\\goaml2\\Katalon\\GoAML\\Test Cases\\Referensi Laporan\\Tipe Kantor Add.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771829</millis>
+  <sequence>43</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable = 00005</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771830</millis>
+  <sequence>44</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_0 = Tes Add 00005</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:51</date>
+  <millis>1580805771833</millis>
+  <sequence>45</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>variable_1 = Keterangan 00005</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:52</date>
+  <millis>1580805772123</millis>
+  <sequence>47</sequence>
+  <level>ERROR</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test Cases/Referensi Laporan/Tipe Kantor Add FAILED.\nReason:\norg.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&amp;apos;delete 1&amp;apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&amp;apos;delete 2&amp;apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</message>
+  <exception>
+    <message>org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe 
+ @ line 45, column 48.
+   dTestObject('delete 1'), Tipe variable)
+                                 ^
+
+file:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe 
+ @ line 48, column 48.
+   dTestObject('delete 2'), Tipe variable_0
+                                 ^
+
+2 errors
+</message>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>getScript</method>
+      <line>199</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>run</method>
+      <line>194</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.ScriptEngine</class>
+      <method>runScriptAsRawText</method>
+      <line>119</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>runScript</method>
+      <line>337</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>doExecute</method>
+      <line>328</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>processExecutionPhase</method>
+      <line>307</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>accessMainPhase</method>
+      <line>299</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseExecutor</class>
+      <method>execute</method>
+      <line>233</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestCaseMainPhase</method>
+      <line>169</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>accessTestSuiteMainPhase</method>
+      <line>142</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestSuiteExecutor</class>
+      <method>execute</method>
+      <line>91</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain</class>
+      <method>startTestSuite</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>com.kms.katalon.core.main.TestCaseMain$startTestSuite$0</class>
+      <method>call</method>
+    </frame>
+    <frame>
+      <class>TempTestSuite1580805765875</class>
+      <method>run</method>
+      <line>35</line>
+    </frame>
+  </exception>
+  <nestedLevel>0</nestedLevel>
+  <property name="failed.exception.stacktrace">org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n\r\n\tat com.kms.katalon.core.main.ScriptEngine.getScript(ScriptEngine.java:199)\r\n\tat com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)\r\n\tat com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:337)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:328)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:307)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:299)\r\n\tat com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:233)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:169)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:142)\r\n\tat com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:91)\r\n\tat com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:157)\r\n\tat com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)\r\n\tat TempTestSuite1580805765875.run(TempTestSuite1580805765875.groovy:35)\r\n</property>
+  <property name="failed.exception.class">org.codehaus.groovy.control.MultipleCompilationErrorsException</property>
+  <property name="failed.exception.message">startup failed:\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 45: unable to resolve class Tipe \n @ line 45, column 48.\r\n   dTestObject(&apos;delete 1&apos;), Tipe variable)\r\n                                 ^\r\n\r\nfile:/D:/poject/goaml2/Katalon/GoAML/Scripts/Referensi%20Laporan/Tipe%20Kantor%20Add/Script1580801873764.groovy: 48: unable to resolve class Tipe \n @ line 48, column 48.\r\n   dTestObject(&apos;delete 2&apos;), Tipe variable_0\r\n                                 ^\r\n\r\n2 errors\r\n</property>
+</record>
+<record>
+  <date>2020-02-04T15:42:52</date>
+  <millis>1580805772128</millis>
+  <sequence>49</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endTest</method>
+  <thread>1</thread>
+  <message>End Test Case : Test Cases/Referensi Laporan/Tipe Kantor Add</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2020-02-04T15:42:52</date>
+  <millis>1580805772273</millis>
+  <sequence>50</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endSuite</method>
+  <thread>1</thread>
+  <message>End Test Suite : Test Suites/add</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+</log>

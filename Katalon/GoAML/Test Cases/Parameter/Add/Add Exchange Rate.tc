@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Add Exchange Rate</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6964de31-f2e8-4df5-b8c8-180376642ef8</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bd973131-e413-4b2d-99f3-b83791083338</id>
+      <masked>false</masked>
+      <name>variable</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>2c649cd8-e20a-47d8-b975-86647ec5c6fb</id>
+      <masked>false</masked>
+      <name>variable_0</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>055df8e9-d9ac-409d-87f2-f9f0d40a47de</id>
+      <masked>false</masked>
+      <name>variable_1</name>
+   </variable>
+</TestCaseEntity>

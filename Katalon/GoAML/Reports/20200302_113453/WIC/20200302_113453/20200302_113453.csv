@@ -1,0 +1,14 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+WIC,Chrome 80.0.3987.122,,,2020-03-02 11:35:02,2020-03-02 11:36:53,1m - 50.989s,PASSED
+,,,,,,,
+Test Cases/Parameter/WIC/Add,Chrome 80.0.3987.122,,,2020-03-02 11:35:03,2020-03-02 11:36:53,1m - 50.592s,PASSED
+"openBrowser(""http://ndsantasena.southeastasia.cloudapp.azure.com:8080/Default.aspx"")",Chrome 80.0.3987.122,"Buka Browser
+",,2020-03-02 11:35:04,2020-03-02 11:35:19,14.778s,PASSED
+maximizeWindow(),Chrome 80.0.3987.122,"Maksimal Windows
+",,2020-03-02 11:35:19,2020-03-02 11:35:23,4.278s,PASSED
+"setText(findTestObject(""All/UserName""), ""anggi1"")",Chrome 80.0.3987.122,,,2020-03-02 11:35:23,2020-03-02 11:35:24,0.909s,PASSED
+"setEncryptedText(findTestObject(""All/password""), ""iFGeFYmXIrWy72D5I5E8Dw=="")",Chrome 80.0.3987.122,,,2020-03-02 11:35:24,2020-03-02 11:35:25,0.724s,PASSED
+"click(findTestObject(""All/Sign In""))",Chrome 80.0.3987.122,,,2020-03-02 11:35:25,2020-03-02 11:35:29,3.769s,PASSED
+"for ([rowNum = 1, rowNum <= findTestData(""Parameter/WIC Add"").getRowNumbers(), (rowNum++)])",Chrome 80.0.3987.122,,,2020-03-02 11:35:29,2020-03-02 11:36:50,1m - 21.309s,PASSED
+closeBrowser(),Chrome 80.0.3987.122,,,2020-03-02 11:36:50,2020-03-02 11:36:51,1.027s,PASSED
+Video,Chrome 80.0.3987.122,,,2020-03-02 11:36:53,2020-03-02 11:36:53,0.000s,PASSED

@@ -1,0 +1,18 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Module Designer,Chrome 87.0.4280.66,,,2020-11-25 14:23:09,2020-11-25 14:25:15,2m - 6.193s,PASSED
+,,,,,,,
+Test Cases/System Parameter/Data Model Designer,Chrome 87.0.4280.66,,,2020-11-25 14:23:10,2020-11-25 14:25:15,2m - 5.702s,PASSED
+"openBrowser(""http://goaml.southeastasia.cloudapp.azure.com/goaml/Default.aspx"")",Chrome 87.0.4280.66,,,2020-11-25 14:23:11,2020-11-25 14:23:22,11.018s,PASSED
+maximizeWindow(),Chrome 87.0.4280.66,,,2020-11-25 14:23:22,2020-11-25 14:23:24,2.212s,PASSED
+"setText(findTestObject(""All/UserName""), ""sysadmin"")",Chrome 87.0.4280.66,,,2020-11-25 14:23:24,2020-11-25 14:23:25,1.122s,PASSED
+"setText(findTestObject(""All/password""), ""superuser"")",Chrome 87.0.4280.66,,,2020-11-25 14:23:25,2020-11-25 14:23:26,0.794s,PASSED
+"click(findTestObject(""All/Sign In""))",Chrome 87.0.4280.66,,,2020-11-25 14:23:26,2020-11-25 14:23:28,2.378s,PASSED
+"setText(findTestObject(""All/filter""), ""Data Model Designer"")",Chrome 87.0.4280.66,,,2020-11-25 14:23:28,2020-11-25 14:23:31,2.983s,PASSED
+delay(1),Chrome 87.0.4280.66,,,2020-11-25 14:23:31,2020-11-25 14:23:32,1.051s,PASSED
+"click(findTestObject(""All/View""))",Chrome 87.0.4280.66,,,2020-11-25 14:23:32,2020-11-25 14:23:33,0.436s,PASSED
+delay(3),Chrome 87.0.4280.66,,,2020-11-25 14:23:33,2020-11-25 14:23:36,3.005s,PASSED
+"click(findTestObject(""All/New Record""))",Chrome 87.0.4280.66,,,2020-11-25 14:23:36,2020-11-25 14:23:37,1.004s,PASSED
+delay(1),Chrome 87.0.4280.66,,,2020-11-25 14:23:37,2020-11-25 14:23:38,1.004s,PASSED
+"for ([rowNum = 1, rowNum <= findTestData(""System Parameter/Module Designer"").getRowNumbers(), (rowNum++)])",Chrome 87.0.4280.66,,,2020-11-25 14:23:38,2020-11-25 14:23:49,10.642s,PASSED
+"for ([rowNum = 1, rowNum <= findTestData(""System Parameter/Module Designer 2"").getRowNumbers(), (rowNum++)])",Chrome 87.0.4280.66,,,2020-11-25 14:23:49,2020-11-25 14:25:13,1m - 24.577s,PASSED
+Video,Chrome 87.0.4280.66,,,2020-11-25 14:25:15,2020-11-25 14:25:15,0.001s,PASSED

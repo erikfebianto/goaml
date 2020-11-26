@@ -1,0 +1,17 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Module Designer,Chrome 87.0.4280.66,,,2020-11-25 14:18:40,2020-11-25 14:21:10,2m - 30.317s,FAILED
+,,,,,,,
+Test Cases/System Parameter/Data Model Designer,Chrome 87.0.4280.66,,,2020-11-25 14:18:40,2020-11-25 14:21:10,2m - 29.886s,FAILED
+"openBrowser(""http://goaml.southeastasia.cloudapp.azure.com/goaml/Default.aspx"")",Chrome 87.0.4280.66,,,2020-11-25 14:18:42,2020-11-25 14:18:55,12.929s,PASSED
+maximizeWindow(),Chrome 87.0.4280.66,,,2020-11-25 14:18:55,2020-11-25 14:18:58,2.575s,PASSED
+"setText(findTestObject(""All/UserName""), ""sysadmin"")",Chrome 87.0.4280.66,,,2020-11-25 14:18:58,2020-11-25 14:19:01,3.248s,PASSED
+"setText(findTestObject(""All/password""), ""superuser"")",Chrome 87.0.4280.66,,,2020-11-25 14:19:01,2020-11-25 14:19:02,0.860s,PASSED
+"click(findTestObject(""All/Sign In""))",Chrome 87.0.4280.66,,,2020-11-25 14:19:02,2020-11-25 14:19:04,2.527s,PASSED
+"setText(findTestObject(""All/filter""), ""Data Model Designer"")",Chrome 87.0.4280.66,,,2020-11-25 14:19:04,2020-11-25 14:19:08,4.259s,PASSED
+delay(1),Chrome 87.0.4280.66,,,2020-11-25 14:19:08,2020-11-25 14:19:10,1.037s,PASSED
+"click(findTestObject(""All/View""))",Chrome 87.0.4280.66,,,2020-11-25 14:19:10,2020-11-25 14:19:10,0.626s,PASSED
+delay(3),Chrome 87.0.4280.66,,,2020-11-25 14:19:10,2020-11-25 14:19:13,3.006s,PASSED
+"click(findTestObject(""All/New Record""))",Chrome 87.0.4280.66,,,2020-11-25 14:19:13,2020-11-25 14:19:15,1.838s,PASSED
+delay(1),Chrome 87.0.4280.66,,,2020-11-25 14:19:15,2020-11-25 14:19:16,1.004s,PASSED
+"for ([rowNum = 1, rowNum <= findTestData(""System Parameter/Module Designer"").getRowNumbers(), (rowNum++)])",Chrome 87.0.4280.66,,,2020-11-25 14:19:16,2020-11-25 14:19:41,24.507s,PASSED
+"for ([rowNum = 1, rowNum <= findTestData(""System Parameter/Module Designer 2"").getRowNumbers(), (rowNum++)])",Chrome 87.0.4280.66,,,2020-11-25 14:19:41,2020-11-25 14:21:08,1m - 27.313s,FAILED
