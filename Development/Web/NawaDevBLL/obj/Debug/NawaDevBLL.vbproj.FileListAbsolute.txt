@@ -131,3 +131,12 @@ D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.CopyComp
 D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
 D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
 D:\Project\goAML\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\DLL\NawaDevBLL.dll
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\DLL\NawaDevBLL.pdb
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\DLL\NawaDevBLL.xml
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbprojResolveAssemblyReference.cache
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.Resources.resources
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.vbproj.GenerateResource.Cache
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.dll
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.xml
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevBLL\obj\Debug\NawaDevBLL.pdb

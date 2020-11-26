@@ -6,3 +6,11 @@ D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.vbproj.CopyComp
 D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.dll
 D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.xml
 D:\Project\goAML\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.pdb
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\DLL\NawaDevDAL.dll.config
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\DLL\NawaDevDAL.dll
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\DLL\NawaDevDAL.pdb
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\DLL\NawaDevDAL.xml
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.vbprojResolveAssemblyReference.cache
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.dll
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.xml
+C:\Users\NAWADATA\Source\Repos\goaml2\Development\Web\NawaDevDAL\obj\Debug\NawaDevDAL.pdb
