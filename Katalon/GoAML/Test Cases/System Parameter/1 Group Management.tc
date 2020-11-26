@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>1 Group Management</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bf58736b-a796-41c7-83b3-aedd15c91029</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>535753bf-ae74-4612-80cc-838a5ee3f297</id>
+      <masked>false</masked>
+      <name>variable</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>872110c6-7bbb-4cf7-9a8b-a6183f5662c2</id>
+      <masked>false</masked>
+      <name>variable_0</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>3efc3564-b5cf-4b78-9595-1c21edabf623</id>
+      <masked>false</masked>
+      <name>variable_1</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ee45c418-4c16-4e1b-949b-7a6b5924a65c</id>
+      <masked>false</masked>
+      <name>variable_2</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b5d4835c-d24f-46c7-ae0c-5f3f2b3ca117</id>
+      <masked>false</masked>
+      <name>variable_3</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e49147c0-bfd5-4897-bbd1-ab7fc8e5c1af</id>
+      <masked>false</masked>
+      <name>variable_4</name>
+   </variable>
+   <variable>
+      <defaultValue>'WebUI.openBrowser(\'http://localhost/GoAml/Default.aspx\')'</defaultValue>
+      <description></description>
+      <id>da37ad4b-e5a6-492c-ab45-ac8c150f1164</id>
+      <masked>false</masked>
+      <name>test</name>
+   </variable>
+</TestCaseEntity>
