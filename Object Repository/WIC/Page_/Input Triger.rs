@@ -6,12 +6,12 @@
    <elementGuidId>470cbbf3-f432-43fc-a3bf-703916fbf45f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id='textfield-1295-inputEl']</value>
-      </entry>
-      <entry>
          <key>CSS</key>
          <value>#textfield-1295-inputEl</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;textfield-1295-inputEl&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
